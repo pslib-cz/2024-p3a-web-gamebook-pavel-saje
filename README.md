@@ -1,7 +1,8 @@
 # **Stíny Popela**
 
-#**Figma**
-https://www.figma.com/design/VfzOFKeLXmNlbIef31ZgVV/Untitled?m=auto&t=GMpBWLjuV1CZ3tli-6
+**<a href="https://www.figma.com/design/VfzOFKeLXmNlbIef31ZgVV/Untitled?m=auto&t=GMpBWLjuV1CZ3tli-6">Figma</a>**
+<br>
+**<a href="https://codepen.io/Jakub-ajer/pen/RwXXGZv">Codepen Koncept</a>**
 
 
 # **Prolog:**
