@@ -1,5 +1,9 @@
 # **Stíny Popela**
 
+#**Figma**
+https://www.figma.com/design/VfzOFKeLXmNlbIef31ZgVV/Untitled?m=auto&t=GMpBWLjuV1CZ3tli-6
+
+
 # **Prolog:**
 
 Svět, jak ho známe, je pryč. Po katastrofální jaderné katastrofě je Země spustošená, zamořená, mrtvá. Vše, co kdysi tvořilo život, bylo smazáno, a přežívající lidé se teď toulají po zpustošených krajinách, kde vládne chaos, a každý den je boj o přežití. Města, která byla kdysi domovem milionů, jsou nyní jen tichými hřbitovy, zničenými neuvěřitelnou silou. A mezi tím vším se skrývá záhadná legenda – „Zelený horizont“.
