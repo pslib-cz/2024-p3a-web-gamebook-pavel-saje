@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\GameBook\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\controllers\\cigancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\cigancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\models\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\models\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\GameBook\\GameBook.Server\\Migrations\\20241208200047_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameBook.Server\\Migrations\\20241208200047_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +21,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\migrations\\20241208200047_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\migrations\\20241208200047_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +34,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20241208200047_Initial.cs",
-              "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Migrations\\20241208200047_Initial.cs",
-              "RelativeDocumentMoniker": "GameBook.Server\\Migrations\\20241208200047_Initial.cs",
-              "ToolTip": "D:\\GameBook\\GameBook.Server\\Migrations\\20241208200047_Initial.cs",
-              "RelativeToolTip": "GameBook.Server\\Migrations\\20241208200047_Initial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "CiganController.cs",
+              "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Controllers\\CiganController.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\CiganController.cs",
+              "ToolTip": "D:\\GameBook\\GameBook.Server\\Controllers\\CiganController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\CiganController.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAwHYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T20:00:47.52Z",
+              "WhenOpened": "2024-12-09T17:37:35.652Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Data\\AppDbContext.cs",
@@ -56,33 +68,60 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Items.cs",
-              "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Models\\Items.cs",
-              "RelativeDocumentMoniker": "GameBook.Server\\Models\\Items.cs",
-              "ToolTip": "D:\\GameBook\\GameBook.Server\\Models\\Items.cs",
-              "RelativeToolTip": "GameBook.Server\\Models\\Items.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T19:58:22.807Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Program.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Program.cs",
               "ToolTip": "D:\\GameBook\\GameBook.Server\\Program.cs",
               "RelativeToolTip": "GameBook.Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAADgvx8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-08T19:56:20.359Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20241208200047_Initial.cs",
+              "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Migrations\\20241208200047_Initial.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Migrations\\20241208200047_Initial.cs",
+              "ToolTip": "D:\\GameBook\\GameBook.Server\\Migrations\\20241208200047_Initial.cs",
+              "RelativeToolTip": "GameBook.Server\\Migrations\\20241208200047_Initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T20:00:47.52Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\GameBook\\GameBook.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T17:37:10.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Items.cs",
+              "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Models\\Items.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Models\\Items.cs",
+              "ToolTip": "D:\\GameBook\\GameBook.Server\\Models\\Items.cs",
+              "RelativeToolTip": "GameBook.Server\\Models\\Items.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowBgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T19:58:22.807Z",
+              "EditorCaption": ""
             }
           ]
         }
