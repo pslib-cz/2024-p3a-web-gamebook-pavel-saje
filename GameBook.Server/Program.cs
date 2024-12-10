@@ -31,6 +31,15 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapFallbackToFile("/index.html");
+app.MapFallbackToFile("index.html");
+
+app.UseSpa(spa =>
+{
+    spa.Options.SourcePath = "gameBook.client"; // Zadejte správnou cestu k adresáøi klienta
+    if (app.Environment.IsDevelopment())
+    {
+        spa.UseProxyToSpaDevelopmentServer("http://localhost:5173"); // Port vývojového serveru SPA
+    }
+});
 
 app.Run();

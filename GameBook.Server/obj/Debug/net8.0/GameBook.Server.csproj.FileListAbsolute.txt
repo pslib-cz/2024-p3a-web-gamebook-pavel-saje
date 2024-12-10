@@ -160,3 +160,4 @@ D:\GameBook\GameBook.Server\obj\Debug\net8.0\refint\GameBook.Server.dll
 D:\GameBook\GameBook.Server\obj\Debug\net8.0\GameBook.Server.pdb
 D:\GameBook\GameBook.Server\obj\Debug\net8.0\GameBook.Server.genruntimeconfig.cache
 D:\GameBook\GameBook.Server\obj\Debug\net8.0\ref\GameBook.Server.dll
+D:\GameBook\GameBook.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaServices.Extensions.dll
