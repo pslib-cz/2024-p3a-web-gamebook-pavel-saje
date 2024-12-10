@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GameBook.Server.Models;
-using SQLitePCL;
 using GameBook.Server.Data;
 
 
@@ -10,7 +9,6 @@ namespace GameBook.Server.Controllers
     [Route("api/[controller]")]
     public class LocationsController : Controller
     {
-
         private AppDbContext _context;
         public LocationsController(AppDbContext context)
         {

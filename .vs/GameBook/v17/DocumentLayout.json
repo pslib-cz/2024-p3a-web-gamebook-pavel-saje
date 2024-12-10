@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\GameBook\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\models\\locations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\models\\locations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\gamebook\\gamebook.server\\controllers\\cigancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,24 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LocationController.cs",
               "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Controllers\\LocationController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\LocationController.cs",
-              "ToolTip": "D:\\GameBook\\GameBook.Server\\Controllers\\LocationController.cs*",
-              "RelativeToolTip": "GameBook.Server\\Controllers\\LocationController.cs*",
+              "ToolTip": "D:\\GameBook\\GameBook.Server\\Controllers\\LocationController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\LocationController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T18:41:40.992Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -129,13 +129,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Locations.cs",
               "DocumentMoniker": "D:\\GameBook\\GameBook.Server\\Models\\Locations.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\Locations.cs",
               "ToolTip": "D:\\GameBook\\GameBook.Server\\Models\\Locations.cs",
               "RelativeToolTip": "GameBook.Server\\Models\\Locations.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T18:43:02.711Z",
               "EditorCaption": ""

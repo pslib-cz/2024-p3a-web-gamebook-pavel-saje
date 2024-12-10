@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using GameBook.Server.Models;
-using SQLitePCL;
 using GameBook.Server.Data;
 
 
