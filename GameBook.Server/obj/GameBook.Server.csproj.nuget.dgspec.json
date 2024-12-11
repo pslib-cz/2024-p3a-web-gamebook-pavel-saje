@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GameBook\\GameBook.Server\\GameBook.Server.csproj": {}
+    "D:\\GameBook\\github\\GameBook.Server\\GameBook.Server.csproj": {}
   },
   "projects": {
-    "D:\\GameBook\\GameBook.Server\\GameBook.Server.csproj": {
+    "D:\\GameBook\\github\\GameBook.Server\\GameBook.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GameBook\\GameBook.Server\\GameBook.Server.csproj",
+        "projectUniqueName": "D:\\GameBook\\github\\GameBook.Server\\GameBook.Server.csproj",
         "projectName": "GameBook.Server",
-        "projectPath": "D:\\GameBook\\GameBook.Server\\GameBook.Server.csproj",
+        "projectPath": "D:\\GameBook\\github\\GameBook.Server\\GameBook.Server.csproj",
         "packagesPath": "C:\\Users\\juki_\\.nuget\\packages\\",
-        "outputPath": "D:\\GameBook\\GameBook.Server\\obj\\",
+        "outputPath": "D:\\GameBook\\github\\GameBook.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

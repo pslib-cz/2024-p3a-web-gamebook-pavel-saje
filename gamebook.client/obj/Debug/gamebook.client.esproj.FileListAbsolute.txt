@@ -1,1 +1,2 @@
 D:\GameBook\gamebook.client\obj\Debug\gamebook.client.esproj.CoreCompileInputs.cache
+D:\GameBook\github\gamebook.client\obj\Debug\gamebook.client.esproj.CoreCompileInputs.cache
