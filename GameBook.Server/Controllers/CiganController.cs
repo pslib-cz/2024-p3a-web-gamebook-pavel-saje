@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GameBook.Server.Data;
-
+using GameBook.Server.Models;
 
 namespace GameBook.Server.Controllers
 {
@@ -16,13 +16,13 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Items>> Get()
+        public ActionResult<IEnumerable<Item>> Get()
         {
             return Ok(_context.Items.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Items> GetId(int id)
+        public ActionResult<Item> GetId(int id)
         {
             var item = _context.Items.Find(id);
             if (item == null)
@@ -35,7 +35,7 @@ namespace GameBook.Server.Controllers
 
 
         [HttpPost]
-        public ActionResult<Items> Post(Items item)
+        public ActionResult<Item> Post(Item item)
         {
             _context.Items.Add(item);
             _context.SaveChanges();
@@ -71,13 +71,13 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<ItemCategories>> Get()
+        public ActionResult<IEnumerable<ItemCategory>> Get()
         {
             return Ok(_context.ItemCategories.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<ItemCategories> GetId(int id)
+        public ActionResult<ItemCategory> GetId(int id)
         {
             var itemCategory = _context.ItemCategories.Find(id);
             if (itemCategory == null)
@@ -89,7 +89,7 @@ namespace GameBook.Server.Controllers
 
 
         [HttpPost]
-        public ActionResult<ItemCategories> Post(ItemCategories itemCategory)
+        public ActionResult<ItemCategory> Post(ItemCategory itemCategory)
         {
             _context.ItemCategories.Add(itemCategory);
             _context.SaveChanges();
@@ -125,13 +125,13 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<ConsumableItems>> Get()
+        public ActionResult<IEnumerable<ConsumableItem>> Get()
         {
             return Ok(_context.ConsumableItems.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<ConsumableItems> GetId(int id)
+        public ActionResult<ConsumableItem> GetId(int id)
         {
             var consumableItem = _context.ConsumableItems.Find(id);
             if (consumableItem == null)
@@ -143,7 +143,7 @@ namespace GameBook.Server.Controllers
 
 
         [HttpPost]
-        public ActionResult<ConsumableItems> Post(ConsumableItems consumableItem)
+        public ActionResult<ConsumableItem> Post(ConsumableItem consumableItem)
         {
             _context.ConsumableItems.Add(consumableItem);
             _context.SaveChanges();

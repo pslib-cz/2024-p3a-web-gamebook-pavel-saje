@@ -16,13 +16,13 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Locations>> Get()
+        public ActionResult<IEnumerable<Location>> Get()
         {
             return Ok(_context.Locations.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Locations> GetId(int id)
+        public ActionResult<Location> GetId(int id)
         {
             var location = _context.Locations.Find(id);
             if (location == null)
@@ -35,7 +35,7 @@ namespace GameBook.Server.Controllers
 
 
         [HttpPost]
-        public ActionResult<Locations> Post(Locations location)
+        public ActionResult<Location> Post(Location location)
         {
             _context.Locations.Add(location);
             _context.SaveChanges();
@@ -128,13 +128,13 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<LocationPaths>> Get()
+        public ActionResult<IEnumerable<LocationPath>> Get()
         {
             return Ok(_context.LocationPaths.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<LocationPaths> GetId(int id)
+        public ActionResult<LocationPath> GetId(int id)
         {
             var locationPaths = _context.LocationPaths.Find(id);
             if (locationPaths == null)
@@ -147,7 +147,7 @@ namespace GameBook.Server.Controllers
 
 
         [HttpPost]
-        public ActionResult<LocationPaths> Post(LocationPaths locationPaths)
+        public ActionResult<LocationPath> Post(LocationPath locationPaths)
         {
             _context.LocationPaths.Add(locationPaths);
             _context.SaveChanges();

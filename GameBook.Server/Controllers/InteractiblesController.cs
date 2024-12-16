@@ -16,13 +16,13 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Interactibles>> Get()
+        public ActionResult<IEnumerable<Interactible>> Get()
         {
             return Ok(_context.Interactibles.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Interactibles> GetId(int id)
+        public ActionResult<Interactible> GetId(int id)
         {
             var interactible = _context.Interactibles.Find(id);
             if (interactible == null)
@@ -33,7 +33,7 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Interactibles> Post(Interactibles interactible)
+        public ActionResult<Interactible> Post(Interactible interactible)
         {
             _context.Interactibles.Add(interactible);
             _context.SaveChanges();
@@ -66,15 +66,15 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<InteractibleOptions>> Get()
+        public ActionResult<IEnumerable<InteractiblesOption>> Get()
         {
-            return Ok(_context.InteractibleOptions.ToList());
+            return Ok(_context.InteractiblesOptions.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<InteractibleOptions> GetId(int id)
+        public ActionResult<InteractiblesOption> GetId(int id)
         {
-            var option = _context.InteractibleOptions.Find(id);
+            var option = _context.InteractiblesOptions.Find(id);
             if (option == null)
             {
                 return NotFound();
@@ -83,9 +83,9 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<InteractibleOptions> Post(InteractibleOptions option)
+        public ActionResult<InteractiblesOption> Post(InteractiblesOption option)
         {
-            _context.InteractibleOptions.Add(option);
+            _context.InteractiblesOptions.Add(option);
             _context.SaveChanges();
             return Ok(option);
         }
@@ -93,13 +93,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var option = _context.InteractibleOptions.Find(id);
+            var option = _context.InteractiblesOptions.Find(id);
             if (option == null)
             {
                 return NotFound();
             }
 
-            _context.InteractibleOptions.Remove(option);
+            _context.InteractiblesOptions.Remove(option);
             _context.SaveChanges();
             return NoContent();
         }
@@ -116,15 +116,15 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<OptionsEnum>> Get()
+        public ActionResult<IEnumerable<InteractOption>> Get()
         {
-            return Ok(_context.OptionsEnum.ToList());
+            return Ok(_context.InteractOptions.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<OptionsEnum> GetId(int id)
+        public ActionResult<InteractOption> GetId(int id)
         {
-            var option = _context.OptionsEnum.Find(id);
+            var option = _context.InteractOptions.Find(id);
             if (option == null)
             {
                 return NotFound();
@@ -133,9 +133,9 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<OptionsEnum> Post(OptionsEnum option)
+        public ActionResult<InteractOption> Post(InteractOption option)
         {
-            _context.OptionsEnum.Add(option);
+            _context.InteractOptions.Add(option);
             _context.SaveChanges();
             return Ok(option);
         }
@@ -143,13 +143,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var option = _context.OptionsEnum.Find(id);
+            var option = _context.InteractOptions.Find(id);
             if (option == null)
             {
                 return NotFound();
             }
 
-            _context.OptionsEnum.Remove(option);
+            _context.InteractOptions.Remove(option);
             _context.SaveChanges();
             return NoContent();
         }
@@ -166,15 +166,15 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<NpcDialog>> Get()
+        public ActionResult<IEnumerable<Dialog>> Get()
         {
-            return Ok(_context.NpcDialog.ToList());
+            return Ok(_context.Dialogs.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<NpcDialog> GetId(int id)
+        public ActionResult<Dialog> GetId(int id)
         {
-            var dialog = _context.NpcDialog.Find(id);
+            var dialog = _context.Dialogs.Find(id);
             if (dialog == null)
             {
                 return NotFound();
@@ -183,9 +183,9 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<NpcDialog> Post(NpcDialog dialog)
+        public ActionResult<Dialog> Post(Dialog dialog)
         {
-            _context.NpcDialog.Add(dialog);
+            _context.Dialogs.Add(dialog);
             _context.SaveChanges();
             return Ok(dialog);
         }
@@ -193,13 +193,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var dialog = _context.NpcDialog.Find(id);
+            var dialog = _context.Dialogs.Find(id);
             if (dialog == null)
             {
                 return NotFound();
             }
 
-            _context.NpcDialog.Remove(dialog);
+            _context.Dialogs.Remove(dialog);
             _context.SaveChanges();
             return NoContent();
         }
@@ -216,15 +216,15 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<NpcDialogResponses>> Get()
+        public ActionResult<IEnumerable<DialogResponse>> Get()
         {
-            return Ok(_context.NpcDialogResponses.ToList());
+            return Ok(_context.DialogResponses.ToList());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<NpcDialogResponses> GetId(int id)
+        public ActionResult<DialogResponse> GetId(int id)
         {
-            var response = _context.NpcDialogResponses.Find(id);
+            var response = _context.DialogResponses.Find(id);
             if (response == null)
             {
                 return NotFound();
@@ -233,9 +233,9 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<NpcDialogResponses> Post(NpcDialogResponses response)
+        public ActionResult<DialogResponse> Post(DialogResponse response)
         {
-            _context.NpcDialogResponses.Add(response);
+            _context.DialogResponses.Add(response);
             _context.SaveChanges();
             return Ok(response);
         }
@@ -243,13 +243,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var response = _context.NpcDialogResponses.Find(id);
+            var response = _context.DialogResponses.Find(id);
             if (response == null)
             {
                 return NotFound();
             }
 
-            _context.NpcDialogResponses.Remove(response);
+            _context.DialogResponses.Remove(response);
             _context.SaveChanges();
             return NoContent();
         }
