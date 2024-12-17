@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Location } from "../types";
 
@@ -42,7 +43,7 @@ const Map: React.FC<mapProps> = ({curLoc}) => {
         {locations != null &&
           locations.map((lokace, index) => (
             <li key={index} className="card" onClick={() => curLoc(lokace)}>
-              {lokace.name}
+              <Link to={`/Game/${lokace.locationID}`}>{lokace.name}</Link>
             </li>
           ))}
       </ul>
