@@ -8,7 +8,7 @@ namespace GameBook.Server.Models
         [Key]
         public int DialogResponseID { get; set; }
         public int DialogID { get; set; }
-        public string ResponseText { get; set; }
+        public required string ResponseText { get; set; }
         public int RelationshipEffect { get; set; }
 
         [ForeignKey(nameof(DialogID))]

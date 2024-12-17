@@ -1,3 +1,4 @@
 D:\GameBook\gamebook.client\obj\Debug\gamebook.client.esproj.CoreCompileInputs.cache
 D:\GameBook\github\gamebook.client\obj\Debug\gamebook.client.esproj.CoreCompileInputs.cache
 C:\Users\User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\gamebook.client\obj\Debug\gamebook.client.esproj.CoreCompileInputs.cache
+D:\GameBook\last commit\gamebook.client\obj\Debug\gamebook.client.esproj.CoreCompileInputs.cache

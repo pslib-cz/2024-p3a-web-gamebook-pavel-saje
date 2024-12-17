@@ -13,6 +13,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=database.db"));
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()   // Allow requests from any origin
+              .AllowAnyHeader()   // Allow all headers
+              .AllowAnyMethod();  // Allow all HTTP methods
+    });
+});
+
 var app = builder.Build();
 
 app.UseDefaultFiles();
@@ -31,6 +41,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors();
 
 app.MapFallbackToFile("index.html");
 

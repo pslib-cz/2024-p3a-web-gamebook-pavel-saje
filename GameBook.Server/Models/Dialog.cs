@@ -9,11 +9,11 @@ namespace GameBook.Server.Models
         public int DialogID { get; set; }
         public int IteractibleID { get; set; }
         public int DialogOrder { get; set; }
-        public string Text { get; set; }
+        public required string Text { get; set; }
 
         [ForeignKey(nameof(IteractibleID))]
-        public Interactible Interactible { get; set; }
+        public Interactible Interactible { get; set; } = null!;
 
-        public ICollection<DialogResponse> DialogResponses { get; set; }
+        public ICollection<DialogResponse> DialogResponses { get; set; } = null!;
     }
 }
