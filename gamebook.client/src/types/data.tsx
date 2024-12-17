@@ -1,92 +1,92 @@
 export type ConsumableItem = {
-    ConsumableItemID : number,
-    ItemID : number,
-    HealthValue : number,
-    EnergyValue : number,
-    RadiationValue : number,
-    Item : Item,
+    consumableItemID : number,
+    itemID : number,
+    healthValue : number,
+    energyValue : number,
+    radiationValue : number,
+    item : Item,
 }
 
 export type Dialog = {
-    DialogID : number,
-    IteractibleID : number,
-    DialogOrder : number,
-    Text : string,
-    Interactible : Interactible,
-    DialogResponses : Array<DialogResponse>,
+    dialogID : number,
+    iteractibleID : number,
+    dialogOrder : number,
+    text : string,
+    interactible : Interactible,
+    dialogResponses : Array<DialogResponse>,
 }
 
 export type DialogResponse = {
-    DialogResponseID : number,
-    DialogID : number,
-    ResponseText : string,
-    RelationshipEffect : number,
-    Dialog : Dialog
+    dialogResponseID : number,
+    dialogID : number,
+    responseText : string,
+    relationshipEffect : number,
+    dialog : Dialog
 }
 
 export type Interactible = {
-    IteractibleID : number,
-    Name : string,
-    Image : string
+    iteractibleID : number,
+    name : string,
+    image : string
 }
 
 export type InteractiblesItem = {
-    InteractibleItemID : number,
-    InteractibleID : number,
-    ItemId : number,
-    Interactible : Interactible,
-    Item : Item
+    interactibleItemID : number,
+    interactibleID : number,
+    itemId : number,
+    interactible : Interactible,
+    item : Item
 }
 
 export type InteractiblesOption = {
-    InteractibleOptionID : number,
-    InteractibleID : number,
-    OptionID : number,
-    Interactible : Interactible,
-    Option : InteractiblesOption
+    interactibleOptionID : number,
+    interactibleID : number,
+    optionID : number,
+    interactible : Interactible,
+    option : InteractiblesOption
 }
 
 export type InteractOption = {
-    OptionID : number,
-    OptionText : string
+    optionID : number,
+    optionText : string
 }
 
 export type Item = {
-    ItemID : number,
-    Name : string,
-    TradeValue : number,
-    Stackable : boolean,
-    CategoryId : number,
-    Category : ItemCategory
+    itemID : number,
+    name : string,
+    tradeValue : number,
+    stackable : boolean,
+    categoryId : number,
+    category : ItemCategory
 }
 
 export type ItemCategory = {
-    CategoryID : number,
-    Name : string
+    categoryID : number,
+    name : string
 }
 
 export type Location = {
-    LocationID : number,
+    locationID : number,
     name : string,
-    BackgroundImage : string,
-    RadiationGain : number
+    backgroundImage : string,
+    radiationGain : number
 }
 
 export type LocationContent = {
-    LocationContentID : number,
-    LocationID : number,
-    InteractibleID : number,
-    XPos : number,
-    YPos : number,
-    Location : Location,
-    Interactible : Interactible
+    locationContentID : number,
+    locationID : number,
+    interactibleID : number,
+    xPos : number,
+    yPos : number,
+    location : Location,
+    interactible : Interactible
 }
 
 export type LocationPath = {
-    PathID : number,
-    FirstNodeID : number,
-    SecondNodeID : number,
-    EnergyTravelCost : number,
-    FirstNode : Location,
-    SecondNode : Location
+    pathID : number,
+    firstNodeID : number,
+    secondNodeID : number,
+    energyTravelCost : number,
+    firstNode : Location,
+    secondNode : Location
 }

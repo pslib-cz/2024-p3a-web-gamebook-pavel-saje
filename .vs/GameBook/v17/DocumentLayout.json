@@ -50,9 +50,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\GameBook\\last commit\\GameBook.Server\\Program.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Program.cs",
-              "ToolTip": "D:\\GameBook\\last commit\\GameBook.Server\\Program.cs*",
-              "RelativeToolTip": "GameBook.Server\\Program.cs*",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAACwAAAAMAAAAAAAAAA==",
+              "ToolTip": "D:\\GameBook\\last commit\\GameBook.Server\\Program.cs",
+              "RelativeToolTip": "GameBook.Server\\Program.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T12:07:33.688Z",
               "EditorCaption": ""
@@ -67,8 +67,7 @@
               "RelativeToolTip": "GameBook.Server\\Models\\ConsumableItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:00:06.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T10:00:06.937Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "GameBook.Server\\Models\\DialogResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:01:12.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T10:01:12.046Z"
             },
             {
               "$type": "Document",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "GameBook.Server\\Models\\Dialog.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwBAAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T10:00:52.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T10:00:52.208Z"
             },
             {
               "$type": "Document",
@@ -106,8 +103,7 @@
               "RelativeToolTip": "GameBook.Server\\Controllers\\LocationController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:35:12.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T18:35:12.406Z"
             },
             {
               "$type": "Document",

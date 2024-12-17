@@ -1,15 +1,32 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { useState } from 'react';
+import './styles/App.css';
 
-import Map from './components/map';
+import Game from './pages/Game';
+import { Location } from './types';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: "/Game",
+    element: <Game />,
+    children: [
+      {
+        path: "/Game:id",
+        element: <Game />,
+      },
+    ],
+  },
+]);
+
+
+
+const App: React.FC = () => {
+
     return (
-    <>
-        <p>mrdka</p>
-        <Map />
-    </>
-    )
+      <>
+        <RouterProvider router={router} />
+      </>
+    );
 }
 
 export default App;
