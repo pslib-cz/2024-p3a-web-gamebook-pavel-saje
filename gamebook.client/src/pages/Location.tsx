@@ -8,11 +8,9 @@ interface locationProps {
 
 const NetopyriVarle: React.FC<locationProps> = ({lokace}) =>{
 
-    return(
-        <>
-            {lokace != null && <h2 className="title">{lokace.name}</h2>}
-        </>
-    )
+    return (<>
+    {lokace != null && <h2 className="title">{lokace.name}</h2>}
+    </>);
 
 }
 

@@ -22,8 +22,9 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Location> GetId(int id)
+        public ActionResult<Location> GetId(int id, int energy)
         {
+            if (energy <= 0) { return NotFound("YOU HAVE NO ENERGY YOU STUPID STINKY APE"); }
             var location = _context.Locations.Find(id);
             if (location == null)
             {

@@ -11,11 +11,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/Game",
-    element: <Game />,
+    element: <Game energy={-10}/>,
     children: [
       {
         path: "/Game:id",
-        element: <Game />,
+        element: <Game energy={-100}/>,
       },
     ],
   },

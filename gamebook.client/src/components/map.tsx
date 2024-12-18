@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 
 import { Location } from "../types";
 
-interface mapProps {
-    curLoc: (curLoc: Location) => void;
-}
 
-const Map: React.FC<mapProps> = ({curLoc}) => {
+const Map: React.FC = () => {
   let [locations, setLocations] = useState<Location[] | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -42,7 +39,7 @@ const Map: React.FC<mapProps> = ({curLoc}) => {
       <ul className="map">
         {locations != null &&
           locations.map((lokace, index) => (
-            <li key={index} className="card" onClick={() => curLoc(lokace)}>
+            <li key={index} className="card">
               <Link to={`/Game/${lokace.locationID}`}>{lokace.name}</Link>
             </li>
           ))}
