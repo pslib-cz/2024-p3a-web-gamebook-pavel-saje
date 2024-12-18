@@ -1,11 +1,19 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    return(
+    return (
         <>
-        <p><Link to="/Game">chci hrát</Link></p>
-        <p onClick={() => alert("Já to věděl 😉")}>Jsem kokot</p>
+            <h1>Hlavni Menu</h1>
+            <p>
+                <Link to="/Game">chci bobik</Link>
+            </p>
+            <p>
+                <Link to="/SexAdmin">chci sex</Link>
+            </p>
+            <p onClick={() => alert("YOU ARE KOKOT🐒🐒🐒AND NIGGA🐒🐒🐒")}>
+                Jsem kokot
+            </p>
         </>
-    )
-}
-export default Home
+    );
+};
+export default Home;
