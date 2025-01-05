@@ -1,0 +1,9 @@
+.title{
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: rgb(0, 255, 34);
+    -webkit-text-stroke: 1px #000000;
+}
