@@ -1,0 +1,20 @@
+.hp{
+    color: var(--red);
+}
+.energy{
+    color: var(--yellow);
+}
+.radiation{
+    color: var(--orange);
+}
+.money{
+    color: var(--green);
+}
+
+.stats{
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 700;
+    top: 1rem;
+    left: 2rem;
+}

@@ -1,17 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { GameContext } from '../context/GameContext';
 
 import Map from '../components/map';
 import NetopyriVarle from './Location';
+import Stats from '../components/Stats';
 
 import { Location } from '../types';
 
-interface gameProps{
-  energy: number;
-}
 
-const Game: React.FC<gameProps> = ({energy}) => {
-    
+const Game: React.FC = () => {
+
+    const gameContext = useContext(GameContext);
+    const energy = gameContext ? gameContext.energy : null;
+
     const { id } = useParams();
     const [currentLocation, setCurrentLocation] = useState<Location | null>(null);
     
@@ -47,6 +50,7 @@ const Game: React.FC<gameProps> = ({energy}) => {
       console.log(currentLocation)
     return (
       <>
+        <Stats />
         <Map />
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}
