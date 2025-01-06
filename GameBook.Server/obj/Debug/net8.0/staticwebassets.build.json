@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "Fw/O+EyOHkZJzmAdc0bAsEvs6o3oDHYbbpd5sAeHimw=",
+  "Hash": "rsR07s1cDfszVpGjN/a/jgGgWxzdyflnk/s3BzGPXhk=",
   "Source": "GameBook.Server",
   "BasePath": "_content/GameBook.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "D:\\Gamebook\\gamebook.client\\gamebook.client.esproj",
+      "Identity": "D:\\GameBook\\gamebook.client\\gamebook.client.esproj",
       "Version": 2,
       "Source": "gamebook.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

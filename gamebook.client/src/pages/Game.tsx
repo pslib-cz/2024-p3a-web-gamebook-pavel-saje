@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 
 import { GameContext } from '../context/GameContext';
 
-import Map from '../components/map';
+// import Map from '../components/map';
+import MapWithGraph from '../components/map';
 import NetopyriVarle from './Location';
 import Stats from '../components/Stats';
 
@@ -51,7 +52,7 @@ const Game: React.FC = () => {
     return (
       <>
         <Stats />
-        <Map />
+        <MapWithGraph />
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}
         {currentLocation && <NetopyriVarle lokace={currentLocation} />}
