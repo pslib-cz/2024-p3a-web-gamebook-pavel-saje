@@ -52,7 +52,8 @@ const Game: React.FC = () => {
     return (
       <>
         <Stats />
-        <MapWithGraph />
+        <span className='map'><MapWithGraph /></span>
+        
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}
         {currentLocation && <NetopyriVarle lokace={currentLocation} />}

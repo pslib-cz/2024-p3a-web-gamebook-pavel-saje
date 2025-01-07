@@ -79,7 +79,7 @@ const MapWithGraph: React.FC = () => {
 };
 
 export default MapWithGraph;
-*/
+
 
 //NOTE 3D
 import React, { useEffect, useState, useRef } from "react";
@@ -180,4 +180,139 @@ const MapWithGraph: React.FC = () => {
   );
 };
 
-export default MapWithGraph;
+export default MapWithGraph;*/
+
+import React, { useEffect, useState, useRef } from "react";
+import ForceGraph2D from "react-force-graph-2d";
+import { useNavigate } from "react-router-dom";
+import { Location } from "../types";
+import { FaMap, FaTimes } from "react-icons/fa";
+
+const MapWithGraph2D: React.FC = () => {
+  const [locations, setLocations] = useState<Location[] | null>(null);
+  const [paths, setPaths] = useState<any[] | null>(null);
+  const [error, setError] = useState<Error | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [showGraph, setShowGraph] = useState<boolean>(false);
+  const navigate = useNavigate();
+  const graphRef = useRef<any>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const locationsResponse = await fetch("https://localhost:7092/api/Locations");
+        const pathsResponse = await fetch("https://localhost:7092/api/LocationPaths");
+        const locationsJson = await locationsResponse.json();
+        const pathsJson = await pathsResponse.json();
+        console.log("Locations (raw):", locationsJson);
+        console.log("Paths (raw):", pathsJson);
+        setLocations(locationsJson);
+        setPaths(pathsJson);
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error);
+        } else {
+          setError(new Error("Unknown error"));
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const calculateNodePosition = (locations: Location[]) => {
+    const spacing = 200;
+    return locations.map((location, index) => ({
+      id: location.locationID.toString(),
+      name: location.name,
+      x: (index % 5) * spacing,
+      y: Math.floor(index / 5) * spacing,
+    }));
+  };
+
+  const createEdges = (locations: Location[], paths: any[]) => {
+    return paths
+      ?.filter((path) => {
+        const firstNodeExists = locations?.some(
+          (loc) => Number(loc.locationID) === Number(path.firstNodeID)
+        );
+        const secondNodeExists = locations?.some(
+          (loc) => Number(loc.locationID) === Number(path.secondNodeID)
+        );
+        return firstNodeExists && secondNodeExists;
+      })
+      .map((path) => ({
+        source: path.firstNodeID.toString(),
+        target: path.secondNodeID.toString(),
+        label: `Cost: ${path.energyTravelCost}`,
+      })) || [];
+  };
+
+  const handleNodeClick = (node: any) => {
+    setShowGraph(false);
+    navigate(`/Game/${node.id}`);
+  };
+
+  return (
+    <div>
+      {!showGraph ? (
+        <button className="map--button"
+          onClick={() => setShowGraph(true)}
+          title="Open Map"
+        >
+          <FaMap />
+        </button>
+      ) : (
+        <button
+          onClick={() => setShowGraph(false)}
+          title="Close Map"
+        >
+          <FaTimes />
+        </button>
+      )}
+
+      {showGraph && (
+        <div className="map--graph">
+          {loading && <p>Loading...</p>}
+          {error && <p>Error: {error.message}</p>}
+          {!loading && !error && locations && paths && (
+            <ForceGraph2D
+              ref={graphRef}
+              graphData={{
+                nodes: calculateNodePosition(locations),
+                links: createEdges(locations, paths),
+              }}
+              nodeAutoColorBy="group"
+              linkWidth={2}
+              linkDirectionalParticles={2}
+              linkDirectionalParticleSpeed={0.01}
+              onNodeClick={handleNodeClick}
+              nodeCanvasObject={(node, ctx, globalScale) => {
+                const label = node.name;
+                const fontSize = 12 / globalScale;
+                ctx.font = `${fontSize}px Sans-Serif`;
+                ctx.fillStyle = "black";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText(label, node.x as number, (node.y as number) - 10);
+
+                const radius = 8;
+                ctx.beginPath();
+                ctx.arc(node.x as number, node.y as number, radius, 0, 2 * Math.PI, false);
+                ctx.fillStyle = node.color || "blue";
+                ctx.fill();
+              }}
+              width={window.innerWidth}
+              height={window.innerHeight}
+            />
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default MapWithGraph2D;
