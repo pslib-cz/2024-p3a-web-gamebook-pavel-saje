@@ -1,3 +1,4 @@
+/*
 import React, { useEffect, useState } from "react";
 import ReactFlow, { Node, Edge } from "react-flow-renderer";
 import { useNavigate } from "react-router-dom";
@@ -78,8 +79,8 @@ const MapWithGraph: React.FC = () => {
 };
 
 export default MapWithGraph;
+*/
 
-/*
 //NOTE 3D
 import React, { useEffect, useState, useRef } from "react";
 import ForceGraph3D from "3d-force-graph";
@@ -179,4 +180,4 @@ const MapWithGraph: React.FC = () => {
   );
 };
 
-export default MapWithGraph;*/
+export default MapWithGraph;
