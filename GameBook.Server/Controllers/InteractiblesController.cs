@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GameBook.Server.Data;
 using GameBook.Server.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace GameBook.Server.Controllers
@@ -103,6 +104,49 @@ namespace GameBook.Server.Controllers
             _context.SaveChanges();
             return NoContent();
         }
+    }
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class InteractibleItemsController : Controller
+    {
+
+        private AppDbContext _context;
+        public InteractibleItemsController(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<InteractiblesItem> GetId(int id)
+        {
+            var interactibleItem = _context.InteractiblesItems.Find(id);
+            if (interactibleItem == null)
+            {
+                return NotFound();
+            }
+            return Ok(interactibleItem);
+        }
+
+        [HttpGet("GetInteractibleIDs/{locationId}")]
+        public async Task<ActionResult<IEnumerable<int>>> GetInteractibleIDs(int locationId)
+        {
+            var interactibleIds = await _context.LocationContent
+                .Where(x => x.LocationID == locationId)
+                .Select(x => x.InteractibleID)
+                .ToListAsync();
+
+            return Ok(interactibleIds);
+        }
+
+        [HttpPost]
+        public ActionResult<InteractiblesItem> Post(InteractiblesItem interactibleItem)
+        {
+            _context.InteractiblesItems.Add(interactibleItem);
+            _context.SaveChanges();
+            return Ok(interactibleItem);
+        }
+
     }
 
     [ApiController]

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U7Wuu0/I9dM=",
+  "dgSpecHash": "0vijRdq4h38=",
   "success": true,
-  "projectFilePath": "D:\\GameBook\\GameBook.Server\\GameBook.Server.csproj",
+  "projectFilePath": "C:\\Users\\juki_\\Documents\\Gamebook\\GameBook.Server\\GameBook.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juki_\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\juki_\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.11\\microsoft.aspnetcore.spaproxy.8.0.11.nupkg.sha512",
