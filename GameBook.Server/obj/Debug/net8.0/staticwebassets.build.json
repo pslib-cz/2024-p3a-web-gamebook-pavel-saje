@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "G78VY99UIzLaQwUqsoQo90B1szqTZSNPEB1NqE8o5p4=",
+  "Hash": "ikNIbVu7lVyKL4DrRKAlyYQM8yxaMkPfEb5OJxtEJMg=",
   "Source": "GameBook.Server",
   "BasePath": "_content/GameBook.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.client\\gamebook.client.esproj",
+      "Identity": "C:\\Users\\juki_\\Documents\\Gamebook\\gamebook.client\\gamebook.client.esproj",
       "Version": 2,
       "Source": "gamebook.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
