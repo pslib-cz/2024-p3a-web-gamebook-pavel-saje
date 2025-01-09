@@ -1,10 +1,33 @@
-﻿.map{
+﻿:root{
+    --red: #B54242;
+    --yellow: #e7d13d;
+    --green: #3cd43c;
+    --orange: #f5c030;
+}
+
+.map{
     position: absolute;
     top: 1rem;
     right: 2rem;
 
-    background-color: bisque;
     padding: 1rem 2rem 1rem 2rem;
+}
+.map--graph{
+    background-color: wheat;
+}
+.map--button{
+    position: "absolute";
+            top: 10;
+            left: 10;
+            padding: "10px";
+            font-size: "24px";
+            background: "none";
+            border: "none";
+            cursor: "pointer";
+}
+
+body{
+    background-image: url('../images/home.jpg');
 }
 
 .NetopyriVarle {

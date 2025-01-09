@@ -4,6 +4,9 @@ import "./styles/App.css";
 import Game from "./pages/Game";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
+import Fight from "./pages/Fight";
+import path from "path";
+import Stats from "./components/Stats";
 
 const router = createBrowserRouter([
     {
@@ -12,11 +15,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/Game",
-        element: <Game energy={-10} />,
+        element: <Game />,
         children: [
             {
                 path: "/Game:id",
-                element: <Game energy={-100} />,
+                element: <Game />,
             },
         ],
     },
@@ -24,6 +27,10 @@ const router = createBrowserRouter([
         path: "/SexAdmin",
         element: <Admin />,
     },
+    {
+        path: "/Fight",
+        element: <Fight />,
+    }
 ]);
 
 const App: React.FC = () => {
