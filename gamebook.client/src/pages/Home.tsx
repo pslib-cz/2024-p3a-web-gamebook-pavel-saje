@@ -5,10 +5,10 @@ const Home = () => {
         <>
             <h1>Hlavni Menu</h1>
             <p>
-                <Link to="/Game">chci bobik</Link>
+                <Link to="/Game">Play</Link>
             </p>
             <p>
-                <Link to="/SexAdmin">chci sex</Link>
+                <Link to="/Admin">Admin</Link>
             </p>
             <p onClick={() => alert("YOU ARE KOKOT🐒🐒🐒AND NIGGA🐒🐒🐒")}>
                 Jsem kokot

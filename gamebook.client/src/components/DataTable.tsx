@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-interface DataTableProps {
+type DataTableProps = {
     endpoint: string;
-}
+};
 
 const DataTable: React.FC<DataTableProps> = ({ endpoint }) => {
     const [data, setData] = useState<Array<object>>();
@@ -19,10 +19,11 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint }) => {
                 const json = await response.json();
                 setData(json);
             } catch (error) {
+                setData([]);
                 if (error instanceof Error) {
                     setError(error);
                 } else {
-                    setError(new Error("neznámá chyba"));
+                    setError(new Error("Unknown chyba"));
                 }
             } finally {
                 setLoading(false);
@@ -83,6 +84,14 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint }) => {
                             </td>
                         </tr>
                     ))
+                ) : loading ? (
+                    <tr>
+                        <td className="table-cell">Loading...</td>
+                    </tr>
+                ) : error ? (
+                    <tr>
+                        <td className="table-cell">{error.message}</td>
+                    </tr>
                 ) : (
                     <tr>
                         <td className="table-cell">No data available</td>

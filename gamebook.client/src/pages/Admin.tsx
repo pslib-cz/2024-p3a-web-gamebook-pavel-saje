@@ -9,7 +9,7 @@ const Admin = () => {
     return (
         <>
             <div className="leftmenu">
-                <h3>this is sex</h3>
+                <h3>Admin :)</h3>
                 <Dropdown title="Locations">
                     <a
                         onClick={() =>
@@ -45,13 +45,73 @@ const Admin = () => {
                     >
                         Items
                     </a>
-                    <a>bagr</a>
-                    <a>kuřecí varlata</a>
+                    <a
+                        onClick={() =>
+                            setEndpoint("https://localhost:7092/api/Category")
+                        }
+                    >
+                        Category
+                    </a>
+                    <a
+                        onClick={() =>
+                            setEndpoint("https://localhost:7092/api/Consumable")
+                        }
+                    >
+                        Consumable
+                    </a>
                 </Dropdown>
-                <a>pohlavní styk s vopicí</a>
+                <Dropdown title="Interactibles">
+                    <a
+                        onClick={() =>
+                            setEndpoint(
+                                "https://localhost:7092/api/Interactibles"
+                            )
+                        }
+                    >
+                        Interactibles
+                    </a>
+                    <a
+                        onClick={() =>
+                            setEndpoint(
+                                "https://localhost:7092/api/InteractiblesOptions"
+                            )
+                        }
+                    >
+                        InteractiblesOptions
+                    </a>
+                    <a
+                        onClick={() =>
+                            setEndpoint(
+                                "https://localhost:7092/api/OptionsEnum"
+                            )
+                        }
+                    >
+                        OptionsEnum
+                    </a>
+                    <Dropdown title="NPCs">
+                        <a
+                            onClick={() =>
+                                setEndpoint(
+                                    "https://localhost:7092/api/NpcDialog"
+                                )
+                            }
+                        >
+                            NpcDialog
+                        </a>
+                        <a
+                            onClick={() =>
+                                setEndpoint(
+                                    "https://localhost:7092/api/NpcDialogResponses"
+                                )
+                            }
+                        >
+                            NpcDialogResponses
+                        </a>
+                    </Dropdown>
+                </Dropdown>
             </div>
             <div style={{ marginLeft: "300px" }}>
-                <h1>SEXADMIN</h1>
+                <h1>ADMIN</h1>
                 <DataTable endpoint={endpoint} />
             </div>
         </>

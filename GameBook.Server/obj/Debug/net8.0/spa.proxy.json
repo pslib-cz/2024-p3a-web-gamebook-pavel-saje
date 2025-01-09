@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "D:\\GameBook\\GameBook.Server\\..\\gamebook.client",
+"WorkingDirectory": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\..\\gamebook.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }
