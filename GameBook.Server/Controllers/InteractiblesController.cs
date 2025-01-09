@@ -136,7 +136,21 @@ namespace GameBook.Server.Controllers
                 .Select(x => x.InteractibleID)
                 .ToListAsync();
 
-            return Ok(interactibleIds);
+            var interactibleItems = await _context.InteractiblesItems
+                .Where(item => interactibleIds.Contains(item.InteractibleID))
+                .Select(x => x.ItemId)
+                .ToListAsync();
+
+            //var items = await _context.Items
+            //    .Where(item => interactibleItems.Contains(item.ItemID)
+            //    .Select(x => x.ItemId)
+            //    .ToListAsync();
+
+            var items = await _context.Items
+                .Where(item => interactibleItems.Contains(item.ItemID))
+                .ToListAsync();
+
+            return Ok(items);
         }
 
         [HttpPost]

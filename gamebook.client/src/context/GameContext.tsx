@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import { Item } from '../types';
 
 interface GameContextProps {
   hp: number;
@@ -11,8 +12,12 @@ interface GameContextProps {
   setRadiation: React.Dispatch<React.SetStateAction<number>>;
   resetRadiation: () => void;
   money: number;
-    setMoney: React.Dispatch<React.SetStateAction<number>>;
-    resetMoney: () => void;
+  setMoney: React.Dispatch<React.SetStateAction<number>>;
+  resetMoney: () => void;
+
+  inventory: Item[];
+  setInventory: React.Dispatch<React.SetStateAction<Item[]>>;
+  resetInventory: () => void;
 }
 
 export const GameContext = createContext<GameContextProps | undefined>(undefined);
@@ -41,11 +46,23 @@ const [radiation, setRadiation] = useState<number>(() => {
         return savedMoney !== null ? parseInt(savedMoney, 10) : defaultMoney;
     });
 
+const [inventory, setInventory] = useState<Item[]>(() => {
+    const savedInventory = localStorage.getItem("inventory");
+    return savedInventory !== null ? JSON.parse(savedInventory) : [];
+  });
+
+
+
+
   useEffect(() => {
     localStorage.setItem('hp', hp.toString());
     localStorage.setItem('energy', energy.toString());
     localStorage.setItem('radiation', radiation.toString());
-  }, [hp, energy, radiation, money]);
+    localStorage.setItem('money', money.toString());
+
+    localStorage.setItem('inventory', JSON.stringify(inventory));
+
+  }, [hp, energy, radiation, money, inventory]);
 
   const resetHp = () => {
     setHp(defaultHp);
@@ -63,6 +80,10 @@ const [radiation, setRadiation] = useState<number>(() => {
         setMoney(defaultMoney);
     }
 
+    const resetInventory = () => {
+        setInventory([]);
+    }
+
   return (
     <GameContext.Provider
       value={{
@@ -77,7 +98,10 @@ const [radiation, setRadiation] = useState<number>(() => {
         resetRadiation,
         money,
         setMoney,
-        resetMoney
+        resetMoney,
+        inventory,
+        setInventory,
+        resetInventory,
       }}
     >
       {children}

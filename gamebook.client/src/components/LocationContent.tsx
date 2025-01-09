@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
-import { Location, LocationContent } from "../types";
+import { useEffect, useState, useContext } from "react";
+import { Location, LocationContent, Item } from "../types";
+
+import { GameContext } from '../context/GameContext';
 
 interface ContentProps {
     lokace: Location | null;
     }
 
 const Content: React.FC<ContentProps> = ({lokace}) => {
-    const [contents , setContents] = useState<LocationContent[] | null>(null);
+  const [items, setItems] = useState<Item[] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,9 +18,7 @@ const Content: React.FC<ContentProps> = ({lokace}) => {
           throw new Error("Failed to fetch data");
         }
         const json = await response.json();
-        console.log(`contentjson : ${json}`);
-        setContents(json);
-        console.log(`content : ${contents}`);
+        setItems(json);
       }
       catch (error) {
         console.error(error);
@@ -31,8 +31,8 @@ const Content: React.FC<ContentProps> = ({lokace}) => {
     return (
       <>
         <p>{lokace != null && lokace.name}</p>
-        {contents && contents.map((content, index) => (
-          <p key={index}>{`ID : ${content}`}</p>
+        {items && items.map((item, index) => (
+          <p key={index}>{`${item.name}`}</p>
         ))}
       </>
     );
