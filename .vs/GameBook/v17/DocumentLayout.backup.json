@@ -26,12 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -51,9 +47,9 @@
               "Title": "InteractiblesController.cs",
               "DocumentMoniker": "C:\\Users\\juki_\\Documents\\Gamebook\\GameBook.Server\\Controllers\\InteractiblesController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\InteractiblesController.cs",
-              "ToolTip": "C:\\Users\\juki_\\Documents\\Gamebook\\GameBook.Server\\Controllers\\InteractiblesController.cs*",
-              "RelativeToolTip": "GameBook.Server\\Controllers\\InteractiblesController.cs*",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAgwKUAAAASAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\juki_\\Documents\\Gamebook\\GameBook.Server\\Controllers\\InteractiblesController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\InteractiblesController.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAgwJsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-16T18:31:52.242Z",
               "EditorCaption": ""
@@ -81,7 +77,8 @@
               "RelativeToolTip": "GameBook.Server\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:27:15.16Z"
+              "WhenOpened": "2024-12-16T18:27:15.16Z",
+              "EditorCaption": ""
             }
           ]
         }
