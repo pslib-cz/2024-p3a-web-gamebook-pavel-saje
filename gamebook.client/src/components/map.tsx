@@ -79,7 +79,7 @@ const MapWithGraph: React.FC = () => {
 };
 
 export default MapWithGraph;
-
+*/
 
 //NOTE 3D
 import React, { useEffect, useState, useRef } from "react";
@@ -88,100 +88,114 @@ import { useNavigate } from "react-router-dom";
 import { Location } from "../types";
 
 const MapWithGraph: React.FC = () => {
-  const [locations, setLocations] = useState<Location[] | null>(null);
-  const [paths, setPaths] = useState<any[] | null>(null);
-  const [error, setError] = useState<Error | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-  const navigate = useNavigate();
-  const graphContainerRef = useRef<HTMLDivElement | null>(null);
+    const [locations, setLocations] = useState<Location[] | null>(null);
+    const [paths, setPaths] = useState<any[] | null>(null);
+    const [error, setError] = useState<Error | null>(null);
+    const [loading, setLoading] = useState<boolean>(false);
+    const navigate = useNavigate();
+    const graphContainerRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const locationsResponse = await fetch("https://localhost:7092/api/Locations");
-        const pathsResponse = await fetch("https://localhost:7092/api/LocationPaths");
-        const locationsJson = await locationsResponse.json();
-        const pathsJson = await pathsResponse.json();
-        console.log("Locations (raw):", locationsJson);
-        console.log("Paths (raw):", pathsJson);
-        setLocations(locationsJson);
-        setPaths(pathsJson);
-      } catch (error) {
-        if (error instanceof Error) {
-          setError(error);
-        } else {
-          setError(new Error("Unknown error"));
-        }
-      } finally {
-        setLoading(false);
-      }
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const locationsResponse = await fetch(
+                    "https://localhost:7092/api/Locations"
+                );
+                const pathsResponse = await fetch(
+                    "https://localhost:7092/api/LocationPaths"
+                );
+                const locationsJson = await locationsResponse.json();
+                const pathsJson = await pathsResponse.json();
+                console.log("Locations (raw):", locationsJson);
+                console.log("Paths (raw):", pathsJson);
+                setLocations(locationsJson);
+                setPaths(pathsJson);
+            } catch (error) {
+                if (error instanceof Error) {
+                    setError(error);
+                } else {
+                    setError(new Error("Unknown error"));
+                }
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    // Function to create node positions (force-directed layout will handle most of it)
+    const calculateNodePosition = (locations: Location[]) => {
+        return locations.map((location, index) => ({
+            id: location.locationID.toString(),
+            name: location.name,
+            x: Math.random() * 1000,
+            y: Math.random() * 1000,
+            z: Math.random() * 1000,
+        }));
     };
 
-    fetchData();
-  }, []);
-
-  // Function to create node positions (force-directed layout will handle most of it)
-  const calculateNodePosition = (locations: Location[]) => {
-    return locations.map((location, index) => ({
-      id: location.locationID.toString(),
-      name: location.name,
-      x: Math.random() * 1000,
-      y: Math.random() * 1000,
-      z: Math.random() * 1000,
-    }));
-  };
-
-  // Create edges based on paths
-  const createEdges = (locations: Location[], paths: any[]) => {
-    return paths
-      ?.filter((path) => {
-        const firstNodeExists = locations?.some(
-          (loc) => Number(loc.locationID) === Number(path.firstNodeID)
+    // Create edges based on paths
+    const createEdges = (locations: Location[], paths: any[]) => {
+        return (
+            paths
+                ?.filter((path) => {
+                    const firstNodeExists = locations?.some(
+                        (loc) =>
+                            Number(loc.locationID) === Number(path.firstNodeID)
+                    );
+                    const secondNodeExists = locations?.some(
+                        (loc) =>
+                            Number(loc.locationID) === Number(path.secondNodeID)
+                    );
+                    return firstNodeExists && secondNodeExists;
+                })
+                .map((path) => ({
+                    source: path.firstNodeID.toString(),
+                    target: path.secondNodeID.toString(),
+                    label: `Cost: ${path.energyTravelCost}`,
+                })) || []
         );
-        const secondNodeExists = locations?.some(
-          (loc) => Number(loc.locationID) === Number(path.secondNodeID)
-        );
-        return firstNodeExists && secondNodeExists;
-      })
-      .map((path) => ({
-        source: path.firstNodeID.toString(),
-        target: path.secondNodeID.toString(),
-        label: `Cost: ${path.energyTravelCost}`,
-      })) || [];
-  };
+    };
 
-  const handleNodeClick = (node: any) => {
-    navigate(`/Game/${node.id}`);
-  };
+    const handleNodeClick = (node: any) => {
+        navigate(`/Game/${node.id}`);
+    };
 
-  useEffect(() => {
-    if (graphContainerRef.current && locations && paths) {
-      const graph = new ForceGraph3D(graphContainerRef.current)
-        .graphData({
-          nodes: calculateNodePosition(locations),
-          links: createEdges(locations, paths),
-        })
-        .nodeAutoColorBy("group")
-        .linkWidth(2)
-        .linkColor(() => "#cccccc")
-        .linkDirectionalParticles(4)
-        .linkDirectionalParticleSpeed(0.01)
-        .onNodeClick(handleNodeClick);
-    }
-  }, [locations, paths]);
+    useEffect(() => {
+        if (graphContainerRef.current && locations && paths) {
+            const graph = new ForceGraph3D(graphContainerRef.current)
+                .graphData({
+                    nodes: calculateNodePosition(locations),
+                    links: createEdges(locations, paths),
+                })
+                .nodeAutoColorBy("group")
+                .linkWidth(2)
+                .linkColor(() => "#cccccc")
+                .linkDirectionalParticles(4)
+                .linkDirectionalParticleSpeed(0.01)
+                .onNodeClick(handleNodeClick);
+        }
+    }, [locations, paths]);
 
-  return (
-    <div style={{ height: "100vh", width: "100%" }}>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error.message}</p>}
-      {!loading && !error && <div ref={graphContainerRef} style={{ width: "100%", height: "100%" }} />}
-    </div>
-  );
+    return (
+        <div style={{ height: "100vh", width: "100%" }}>
+            {loading && <p>Loading...</p>}
+            {error && <p>Error: {error.message}</p>}
+            {!loading && !error && (
+                <div
+                    ref={graphContainerRef}
+                    style={{ width: "100%", height: "100%" }}
+                />
+            )}
+        </div>
+    );
 };
 
-export default MapWithGraph;*/
+export default MapWithGraph;
 
+/*
 import React, { useEffect, useState, useRef } from "react";
 import ForceGraph2D from "react-force-graph-2d";
 import { useNavigate } from "react-router-dom";
@@ -316,3 +330,4 @@ const MapWithGraph2D: React.FC = () => {
 };
 
 export default MapWithGraph2D;
+\*/

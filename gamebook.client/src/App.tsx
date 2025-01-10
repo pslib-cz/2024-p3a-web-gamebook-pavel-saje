@@ -24,13 +24,13 @@ const router = createBrowserRouter([
         ],
     },
     {
-        path: "/SexAdmin",
+        path: "/Admin",
         element: <Admin />,
     },
     {
         path: "/Fight",
         element: <Fight />,
-    }
+    },
 ]);
 
 const App: React.FC = () => {
