@@ -7,6 +7,7 @@ import { GameContext } from '../context/GameContext';
 import MapWithGraph from '../components/map';
 import NetopyriVarle from './Location';
 import Stats from '../components/Stats';
+import Inventory from '../components/Inventory';
 
 import { Location } from '../types';
 
@@ -52,7 +53,7 @@ const Game: React.FC = () => {
     return (
       <>
         <Stats />
-        <span className='map'><MapWithGraph /></span>
+        <span className='map'><MapWithGraph /><Inventory/></span>
         
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}

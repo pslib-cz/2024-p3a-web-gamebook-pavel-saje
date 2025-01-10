@@ -89,7 +89,16 @@ namespace GameBook.Server.Controllers
             return Ok(locationContent);
         }
 
-
+        [HttpGet("podlelokace/{locationId}")]
+        public ActionResult<IEnumerable<LocationContent>> GetLocationContent(int locationId)
+        {
+            var locationContent = _context.LocationContent.Where(lc => lc.LocationID == locationId).ToList();
+            if (locationContent == null || !locationContent.Any())
+            {
+                return NotFound();
+            }
+            return Ok(locationContent);
+        }
 
         [HttpPost]
         public ActionResult<LocationContent> Post(LocationContent locationContent)
