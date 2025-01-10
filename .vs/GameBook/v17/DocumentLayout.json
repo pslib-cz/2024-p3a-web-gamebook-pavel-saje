@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\juki_\\Documents\\Gamebook\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\juki_\\documents\\gamebook\\gamebook.server\\controllers\\interactiblescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\interactiblescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\juki_\\documents\\gamebook\\gamebook.server\\models\\interactiblesitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\models\\interactiblesitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\juki_\\documents\\gamebook\\gamebook.server\\controllers\\interactiblescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\interactiblescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\juki_\\documents\\gamebook\\gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,28 +46,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "InteractiblesController.cs",
               "DocumentMoniker": "C:\\Users\\juki_\\Documents\\Gamebook\\GameBook.Server\\Controllers\\InteractiblesController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\InteractiblesController.cs",
               "ToolTip": "C:\\Users\\juki_\\Documents\\Gamebook\\GameBook.Server\\Controllers\\InteractiblesController.cs",
               "RelativeToolTip": "GameBook.Server\\Controllers\\InteractiblesController.cs",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAgwJsAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAgwKAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:31:52.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T18:31:52.242Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "InteractiblesItem.cs",
               "DocumentMoniker": "C:\\Users\\juki_\\Documents\\Gamebook\\GameBook.Server\\Models\\InteractiblesItem.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InteractiblesItem.cs",
               "ToolTip": "C:\\Users\\juki_\\Documents\\Gamebook\\GameBook.Server\\Models\\InteractiblesItem.cs",
               "RelativeToolTip": "GameBook.Server\\Models\\InteractiblesItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T08:57:15.771Z"
+              "WhenOpened": "2025-01-09T08:57:15.771Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

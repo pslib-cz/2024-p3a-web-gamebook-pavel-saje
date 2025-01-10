@@ -17,6 +17,7 @@ interface ContentProps {
         throw new Error("GameContext is undefined");
       }
       const { inventory, setInventory } = gameContext;
+      const { InteractiblesRemovedFromLocation, setInteractiblesRemovedFromLocation } = gameContext;
     
       useEffect(() => {
         const fetchData = async () => {
@@ -52,13 +53,16 @@ interface ContentProps {
         localStorage.setItem('inventory', JSON.stringify(inventory));
       }, [inventory]);
 
+      useEffect(() => {
+        localStorage.setItem('InteractiblesRemovedFromLocation', JSON.stringify(InteractiblesRemovedFromLocation));
+      }, [InteractiblesRemovedFromLocation]);
+
       
 
     
       const getItemByInteractibleID = (interactibleID: number): Item | undefined => {
         console.log("item",interactibleID);
         return items.find(item => item.itemID === interactibleID);
-        
       };
 
       return (
@@ -95,11 +99,12 @@ interface ContentProps {
 
         {content &&
           content.map((contentItem, index) => {
+            const key = lokace?.locationID + "-" + index;
             const item = getItemByInteractibleID(contentItem.interactibleID);
             console.log("pes",item);
             return (
               <span
-                key={index}
+                key={key}
                 style={{
                   cursor: "pointer",
                   position: "absolute",
@@ -108,15 +113,16 @@ interface ContentProps {
                 }}
               
                 onClick={() =>
-                  item &&
-                  setInventory((prevInventory: Item[]) => [...prevInventory, item])
-                }
+                  item && (
+                  setInventory((prevInventory: Item[]) => [...prevInventory, item]),
+                  setInteractiblesRemovedFromLocation((prevInteractiblesRemovedFromLocation: string[]) => [...prevInteractiblesRemovedFromLocation, key])
+            )}
               >
                 {/* <p>{contentItem.interactibleID}</p> */}
-                {item ? (
+                {item && InteractiblesRemovedFromLocation.find((removed) => removed === key) === undefined ? (
                   <p>{item.name}</p>
                 ) : (
-                  <p>Unknown Item</p>
+                  null
                 )}
               </span>
             );
