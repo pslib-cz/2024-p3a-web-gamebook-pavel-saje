@@ -3,6 +3,7 @@ import { Location, LocationContent, Item } from "../types";
 
 import { GameContext } from '../context/GameContext';
 
+
 interface ContentProps {
     lokace: Location | null;
     }
@@ -51,27 +52,17 @@ interface ContentProps {
         localStorage.setItem('inventory', JSON.stringify(inventory));
       }, [inventory]);
 
-      const getItemById = async (itemId: number) => {
-        const fetchItems = async () => {
-          try {
-            const response = await fetch(`https://localhost:7092/api/InteractibleItems/api/interactibleItemByInteractibleId/${itemId}`);
-            if (!response.ok) {
-              throw new Error("Failed to fetch data");
-            }
-            const json = await response.json();
-            return(json);
-          } catch (error) {
-            console.error(error);
-          }
-        };
-        fetchItems();
-      }
+      
 
     
-    
+      const getItemByInteractibleID = (interactibleID: number): Item | undefined => {
+        console.log("item",interactibleID);
+        return items.find(item => item.itemID === interactibleID);
+        
+      };
+
       return (
         <>
-          <p>{lokace != null && lokace.name}</p>
           {/* {items &&
             items.map((item, index) => (
               <p style={{ cursor: "pointer", position: "absolute" }}
@@ -84,7 +75,7 @@ interface ContentProps {
                 key={index}
               >{`${item.name}`}</p>
             ))} */}
-          {content &&
+          {/* {content &&
             content.map((content, index) => (
               <span
                 style={{
@@ -95,26 +86,43 @@ interface ContentProps {
                 }}
               >
                 <p key={index}>{content.interactibleID}</p>
-                <ItemName itemId={content.interactibleID} />
-                
+                <p></p>
               </span>
             ))}
         </>
       );
-    };
-    
-    const ItemName: React.FC<{ itemId: number }> = ({ itemId }) => {
-      const [itemName, setItemName] = useState<string | null>(null);
+    }; */}
 
-      useEffect(() => {
-        const fetchItemName = async () => {
-          const item = await getItemById(itemId);
-          setItemName(item?.name || null);
-        };
-        fetchItemName();
-      }, [itemId]);
-
-      return <>{itemName}</>;
-    };
+        {content &&
+          content.map((contentItem, index) => {
+            const item = getItemByInteractibleID(contentItem.interactibleID);
+            console.log("pes",item);
+            return (
+              <span
+                key={index}
+                style={{
+                  cursor: "pointer",
+                  position: "absolute",
+                  bottom: `${contentItem.yPos}%`,
+                  left: `${contentItem.xPos}%`,
+                }}
+              
+                onClick={() =>
+                  item &&
+                  setInventory((prevInventory: Item[]) => [...prevInventory, item])
+                }
+              >
+                {/* <p>{contentItem.interactibleID}</p> */}
+                {item ? (
+                  <p>{item.name}</p>
+                ) : (
+                  <p>Unknown Item</p>
+                )}
+              </span>
+            );
+          })}
+      </>
+    );
     
+  }
     export default Content;

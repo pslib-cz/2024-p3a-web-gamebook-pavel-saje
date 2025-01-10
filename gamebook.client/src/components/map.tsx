@@ -80,7 +80,7 @@ const MapWithGraph: React.FC = () => {
 
 export default MapWithGraph;
 */
-
+/*
 //NOTE 3D
 import React, { useEffect, useState, useRef } from "react";
 import ForceGraph3D from "3d-force-graph";
@@ -194,8 +194,8 @@ const MapWithGraph: React.FC = () => {
 };
 
 export default MapWithGraph;
+*/
 
-/*
 import React, { useEffect, useState, useRef } from "react";
 import ForceGraph2D from "react-force-graph-2d";
 import { useNavigate } from "react-router-dom";
@@ -330,4 +330,4 @@ const MapWithGraph2D: React.FC = () => {
 };
 
 export default MapWithGraph2D;
-\*/
+

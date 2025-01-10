@@ -42,8 +42,7 @@
               "RelativeToolTip": "GameBook.Server\\Controllers\\LocationController.cs",
               "ViewState": "AgIAAIgAAAAAAAAAAAAqwGEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T18:40:31.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T18:40:31.865Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InteractiblesItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T08:57:15.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-09T08:57:15.771Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "GameBook.Server\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:27:15.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T18:27:15.16Z"
             }
           ]
         }
