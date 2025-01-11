@@ -139,3 +139,16 @@ button:focus-visible {
 .table-image {
     height: 100px;
 }
+
+.status-label {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.warning-label {
+    color: #fccf00;
+}
+
+.error-label {
+    color: red;
+}

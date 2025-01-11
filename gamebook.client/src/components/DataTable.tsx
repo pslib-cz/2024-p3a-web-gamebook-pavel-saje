@@ -14,12 +14,14 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint, header }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true);
                 const response = await fetch(endpoint);
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
                 }
                 const json = await response.json();
                 setData(json);
+                setLoading(false);
             } catch (error) {
                 setData([]);
                 if (error instanceof Error) {
@@ -97,7 +99,7 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint, header }) => {
                                     ) : property.type == "boolean" ? (
                                         <input
                                             type="checkbox"
-                                            value={item[property.key]}
+                                            checked={item[property.key]}
                                             disabled={true}
                                         ></input>
                                     ) : (
@@ -119,17 +121,15 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint, header }) => {
                         </tr>
                     ))
                 ) : loading ? (
-                    <tr>
-                        <td className="table-cell">Loading...</td>
-                    </tr>
+                    <label className="status-label warning-label">
+                        Loading...
+                    </label>
                 ) : error ? (
-                    <tr>
-                        <td className="table-cell">{error.message}</td>
-                    </tr>
+                    <label className="status-label error-label">
+                        {error.message}
+                    </label>
                 ) : (
-                    <tr>
-                        <td className="table-cell">smrdis prdis</td>
-                    </tr>
+                    <label className="status-label error-label">No data</label>
                 )}
             </tbody>
         </table>

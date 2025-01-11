@@ -18,6 +18,11 @@ interface GameContextProps {
   inventory: Item[];
   setInventory: React.Dispatch<React.SetStateAction<Item[]>>;
   resetInventory: () => void;
+
+  //NOTE vzor: LocatioID-KEY
+  InteractiblesRemovedFromLocation: string[];
+  setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<string[]>>;
+  resetInteractiblesRemovedFromLocation: () => void;
 }
 
 export const GameContext = createContext<GameContextProps | undefined>(undefined);
@@ -51,6 +56,10 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     return savedInventory !== null ? JSON.parse(savedInventory) : [];
   });
 
+  const [InteractiblesRemovedFromLocation, setInteractiblesRemovedFromLocation] = useState<string[]>(() => {
+    const savedInteractiblesRemovedFromLocation = localStorage.getItem('InteractiblesRemovedFromLocation');
+    return savedInteractiblesRemovedFromLocation !== null ? JSON.parse(savedInteractiblesRemovedFromLocation) : [];
+  });
 
 
 
@@ -62,7 +71,9 @@ const [inventory, setInventory] = useState<Item[]>(() => {
 
     localStorage.setItem('inventory', JSON.stringify(inventory));
 
-  }, [hp, energy, radiation, money, inventory]);
+    localStorage.setItem('InteractiblesRemovedFromLocation', JSON.stringify(InteractiblesRemovedFromLocation));
+
+  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation]);
 
   const resetHp = () => {
     setHp(defaultHp);
@@ -84,6 +95,9 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         setInventory([]);
     }
 
+    const resetInteractiblesRemovedFromLocation = () => {
+        setInteractiblesRemovedFromLocation([]);}
+
   return (
     <GameContext.Provider
       value={{
@@ -102,6 +116,9 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         inventory,
         setInventory,
         resetInventory,
+        InteractiblesRemovedFromLocation,
+        setInteractiblesRemovedFromLocation,
+        resetInteractiblesRemovedFromLocation
       }}
     >
       {children}

@@ -81,14 +81,14 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
         primaryKey: "interactibleID",
         content: [
             {
-                key: "name",
-                label: "Name",
-                type: "string",
-            },
-            {
                 key: "image",
                 label: "Image",
                 type: "image",
+            },
+            {
+                key: "name",
+                label: "Name",
+                type: "string",
             },
         ],
     },
@@ -147,12 +147,12 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
         content: [
             {
                 key: "firstNodeID",
-                label: "1. Node ID",
+                label: "1st Node ID",
                 type: "number",
             },
             {
                 key: "secondNodeID",
-                label: "2. Node ID",
+                label: "2nd Node ID",
                 type: "number",
             },
         ],
