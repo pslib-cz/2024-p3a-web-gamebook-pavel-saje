@@ -5,8 +5,6 @@ import Game from "./pages/Game";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Fight from "./pages/Fight";
-import path from "path";
-import Stats from "./components/Stats";
 
 const router = createBrowserRouter([
     {

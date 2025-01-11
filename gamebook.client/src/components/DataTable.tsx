@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { EndpointHeader } from "../types/admin";
 
 type DataTableProps = {
     endpoint: string;
+    header: EndpointHeader;
 };
 
-const DataTable: React.FC<DataTableProps> = ({ endpoint }) => {
+const DataTable: React.FC<DataTableProps> = ({ endpoint, header }) => {
     const [data, setData] = useState<Array<object>>();
     const [error, setError] = useState<Error | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -36,6 +38,25 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint }) => {
         console.log(data);
     }, [data]);
 
+    const deleteData = async (id: number) => {
+        try {
+            console.log(`${endpoint}/${id}`);
+            const response = await fetch(`${endpoint}/${id}`, {
+                method: "DELETE",
+            });
+            if (!response.ok) {
+                throw new Error("Delete failed");
+            }
+
+            setData((prevData) =>
+                prevData.filter((item) => item[header.primaryKey] !== id)
+            );
+        } catch (error) {
+            console.error(error);
+            alert("Delete failed :(");
+        }
+    };
+
     return (
         <table className="table">
             <caption className="table-caption">
@@ -44,11 +65,12 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint }) => {
             </caption>
             <thead>
                 <tr className="table-row">
-                    {data && data.length > 0 && (
+                    {header.content.length > 0 && (
                         <>
-                            {Object.keys(data[0]).map((key) => (
-                                <th key={key} className="table-cell">
-                                    {key}
+                            <th className="table-cell">ID</th>
+                            {header.content.map((property) => (
+                                <th key={property.key} className="table-cell">
+                                    {property.label}
                                 </th>
                             ))}
                             <th className="table-cell">CONFIG</th>
@@ -58,27 +80,39 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint }) => {
             </thead>
             <tbody>
                 {data && data.length > 0 ? (
-                    data.map((item, rowIndex) => (
-                        <tr key={rowIndex} className="table-row">
-                            {Object.keys(item).map((key) => (
+                    data.map((item, itemIndex) => (
+                        <tr key={`row${itemIndex}`} className="table-row">
+                            <td className="table-cell">
+                                {item[header.primaryKey]}
+                            </td>
+                            {header.content.map((property, propertyIndex) => (
                                 <td
-                                    key={`${rowIndex}-${key}`}
+                                    key={`row${itemIndex}.${propertyIndex}`}
                                     className="table-cell"
                                 >
-                                    {typeof item[key] == "boolean" ? (
+                                    {property.type == "string" ? (
+                                        item[property.key]
+                                    ) : property.type == "number" ? (
+                                        item[property.key]
+                                    ) : property.type == "boolean" ? (
                                         <input
                                             type="checkbox"
-                                            checked={item[key]}
+                                            value={item[property.key]}
                                             disabled={true}
-                                        />
+                                        ></input>
                                     ) : (
-                                        item[key]
+                                        "unsupported type"
                                     )}
                                 </td>
                             ))}
                             <td className="table-cell">
                                 <a className="button">✏️Edit</a>
-                                <a className="button button--danger">
+                                <a
+                                    className="button button--danger"
+                                    onClick={() =>
+                                        deleteData(item[header.primaryKey])
+                                    }
+                                >
                                     🗑️Delete
                                 </a>
                             </td>
@@ -94,7 +128,7 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint }) => {
                     </tr>
                 ) : (
                     <tr>
-                        <td className="table-cell">No data available</td>
+                        <td className="table-cell">smrdis prdis</td>
                     </tr>
                 )}
             </tbody>
