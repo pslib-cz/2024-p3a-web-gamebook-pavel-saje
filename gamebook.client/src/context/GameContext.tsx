@@ -19,6 +19,8 @@ interface GameContextProps {
   setInventory: React.Dispatch<React.SetStateAction<Item[]>>;
   resetInventory: () => void;
 
+  defaultEnergy: number;
+
   //NOTE vzor: LocatioID-KEY
   InteractiblesRemovedFromLocation: string[];
   setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<string[]>>;
@@ -118,7 +120,8 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         resetInventory,
         InteractiblesRemovedFromLocation,
         setInteractiblesRemovedFromLocation,
-        resetInteractiblesRemovedFromLocation
+        resetInteractiblesRemovedFromLocation,
+        defaultEnergy,
       }}
     >
       {children}
