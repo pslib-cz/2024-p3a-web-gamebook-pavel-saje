@@ -12,6 +12,7 @@ const NetopyriVarle: React.FC = () =>{
 
   const gameContext = useContext(GameContext);
   const energy = gameContext ? gameContext.energy : null;
+  const inventory = gameContext ? gameContext.inventory : [];
 
     const { id } = useParams();
     const [currentLocation, setCurrentLocation] = useState<Location | null>(null);
@@ -31,7 +32,7 @@ const NetopyriVarle: React.FC = () =>{
             }
             const json = await response.json();
             console.log(json);
-            setCurrentLocation(json);
+            setTargetLocation(json);
           }
           catch (error) {
             if (error instanceof Error) {
@@ -48,35 +49,47 @@ const NetopyriVarle: React.FC = () =>{
         fetchData();
       }, [id]);
 
-    useEffect(() => {
-      const fetchRequiredItems = async () => {
-        try{
-          const response = await fetch(`https://localhost:7092/api/RequiredItems/GetByLocation/${currentLocation?.locationID}`);
-          if (!response.ok) {
-            throw new Error("Failed to fetch data");
+      useEffect(() => {
+        const fetchRequiredItems = async () => {
+          try {
+            const response = await fetch(`https://localhost:7092/api/RequiredItems/GetByLocation/${targetLocation?.locationID}`);
+            if (!response.ok) {
+              throw new Error("Failed to fetch data");
+            }
+            const json = await response.json();
+            console.log(json);
+            setRequiredItems(json);
+    
+            // Check if all required items are in the inventory
+            const requiredItemIds = json.map((item: RequiredItems) => item.itemID);
+            const inventoryItemIds = inventory.map((item) => item.itemID);
+            const allItemsPresent = requiredItemIds.every((itemId: number) => inventoryItemIds.includes(itemId));
+    
+            if (allItemsPresent) {
+              setCurrentLocation(targetLocation);
+            }
+            else {
+              setError(new Error("Nemáš všechny potřebné věci"));
+            }
+          } catch (error) {
+            if (error instanceof Error) {
+              setError(error);
+            } else {
+              setError(new Error("neznámá chyba"));
+            }
+          } finally {
+            setLoading(false);
           }
-          const json = await response.json();
-          console.log(json);
-          setRequiredItems(json);
+        };
+        if (targetLocation) {
+          fetchRequiredItems();
         }
-        catch (error) {
-          if (error instanceof Error) {
-              setError(error)
-          }
-          else {
-              setError(new Error("neznámá chyba"))
-          }
-      }
-      finally {
-        setLoading(false)
-    }
-      };
-      fetchRequiredItems();
-    }, [currentLocation]);
+      }, [targetLocation, inventory]);
 
 
     return (
       <>
+      <p>{error?.message}</p>
         {currentLocation != null && <h2 className="title">{currentLocation.name}</h2>}
         <Content lokace={currentLocation} />
       </>
