@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GameBook.Server.Models;
 using GameBook.Server.Data;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace GameBook.Server.Controllers
@@ -179,6 +180,37 @@ namespace GameBook.Server.Controllers
             _context.SaveChanges();
             return NoContent();
         }
+    }
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class RequiredItemsController : Controller
+    {
+        private AppDbContext _context;
+        public RequiredItemsController(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        [HttpPost]
+        public ActionResult<RequiredItems> Post(RequiredItems RequiredItems)
+        {
+            _context.RequiredItems.Add(RequiredItems);
+            _context.SaveChanges();
+            return Ok(RequiredItems);
+        }
+
+
+        [HttpGet("GetByLocation/{locationId}")]
+        public async Task<ActionResult> GetRequiredByLocation(int locationId)
+        {
+            var RequiredItems = await _context.RequiredItems
+                .Where(x => x.LocationID == locationId)
+                .ToListAsync();
+
+            return Ok(RequiredItems);
+        }
+
     }
 
 }
