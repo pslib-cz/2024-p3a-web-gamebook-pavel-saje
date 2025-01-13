@@ -81,7 +81,7 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
         primaryKey: "interactibleID",
         content: [
             {
-                key: "image",
+                key: "imagePath",
                 label: "Image",
                 type: "image",
             },
@@ -161,7 +161,7 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
         primaryKey: "locationID",
         content: [
             {
-                key: "backgroundImage",
+                key: "backgroundImagePath",
                 label: "Image",
                 type: "image",
             },

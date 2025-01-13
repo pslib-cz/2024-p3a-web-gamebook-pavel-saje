@@ -36,8 +36,41 @@ namespace GameBook.Server.Controllers
 
 
         [HttpPost]
-        public ActionResult<Location> Post(Location location)
+        public ActionResult<Location> Post([FromForm] Location location)
         {
+            if (location.BackgroundImage == null || location.BackgroundImage.Length == 0) {
+                return BadRequest("BackgroundImage not provided.");
+            }
+
+            string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Uploads", "Locations");
+
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+            // rename file
+            string fileExtension = Path.GetExtension(location.BackgroundImage.FileName);
+            string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(location.BackgroundImage.FileName);
+            uniqueFileName = string.Join("_", uniqueFileName.Split(Path.GetInvalidFileNameChars())); // Sanitize file name
+
+            location.BackgroundImagePath = Path.Combine("/Uploads/Locations", uniqueFileName).Replace("\\", "/");
+
+            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            try
+            {
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    location.BackgroundImage.CopyTo(fileStream);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+
+
             _context.Locations.Add(location);
             _context.SaveChanges();
             return Ok(location);
@@ -52,6 +85,30 @@ namespace GameBook.Server.Controllers
             if (location == null)
             {
                 return NotFound();
+            }
+
+
+            if (location.BackgroundImagePath != null)
+            {
+                //temporary solution - Path.Combile() requires directories to be separated
+                char separator = Path.AltDirectorySeparatorChar;
+                string fileLocation = Directory.GetCurrentDirectory() + separator + "wwwroot" + separator + location.BackgroundImagePath;
+                
+                if (System.IO.File.Exists(fileLocation))
+                {
+                    try
+                    {
+                        System.IO.File.Delete(fileLocation);
+                    }
+                    catch (Exception ex)
+                    {
+                        return StatusCode(500, $"Error deleting file: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    return NotFound($"File {fileLocation} not found.");
+                }
             }
 
             _context.Locations.Remove(location);
@@ -103,6 +160,21 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<LocationContent> Post(LocationContent locationContent)
         {
+            var location = _context.Locations.Find(locationContent.LocationID);
+            var interactible = _context.Interactibles.Find(locationContent.InteractibleID);
+
+            if (location == null)
+            {
+                return BadRequest($"Location with ID {locationContent.LocationID} does not exist.");
+            }
+            if (interactible == null)
+            {
+                return BadRequest($"Interactible with ID {locationContent.InteractibleID} does not exist.");
+            }
+
+            locationContent.Location = location;
+            locationContent.Interactible = interactible;
+
             _context.LocationContent.Add(locationContent);
             _context.SaveChanges();
             return Ok(locationContent);
@@ -159,6 +231,21 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<LocationPath> Post(LocationPath locationPaths)
         {
+            var Node1 = _context.Locations.Find(locationPaths.FirstNodeID);
+            var Node2 = _context.Locations.Find(locationPaths.SecondNodeID);
+
+            if (Node1 == null)
+            {
+                return BadRequest($"Location with ID {locationPaths.FirstNodeID} does not exist.");
+            }
+            if (Node2 == null)
+            {
+                return BadRequest($"Location with ID {locationPaths.SecondNodeID} does not exist.");
+            }
+
+            locationPaths.FirstNode = Node1;
+            locationPaths.SecondNode = Node2;
+
             _context.LocationPaths.Add(locationPaths);
             _context.SaveChanges();
             return Ok(locationPaths);

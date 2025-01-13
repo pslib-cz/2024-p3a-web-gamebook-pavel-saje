@@ -34,8 +34,39 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Interactible> Post(Interactible interactible)
+        public ActionResult<Interactible> Post([FromForm] Interactible interactible)
         {
+            if (interactible.Image == null || interactible.Image.Length == 0)
+            {
+                return BadRequest("BackgroundImage not provided.");
+            }
+
+            string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Uploads", "Interactibles");
+
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+            // rename file
+            string fileExtension = Path.GetExtension(interactible.Image.FileName);
+            string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(interactible.Image.FileName);
+            uniqueFileName = string.Join("_", uniqueFileName.Split(Path.GetInvalidFileNameChars())); // Sanitize file name
+
+            interactible.ImagePath = Path.Combine("/Uploads/Interactibles", uniqueFileName).Replace("\\", "/");
+
+            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            try
+            {
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    interactible.Image.CopyTo(fileStream);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
             _context.Interactibles.Add(interactible);
             _context.SaveChanges();
             return Ok(interactible);
@@ -48,6 +79,29 @@ namespace GameBook.Server.Controllers
             if (interactible == null)
             {
                 return NotFound();
+            }
+
+            if (interactible.ImagePath != null)
+            {
+                //temporary solution - Path.Combile() requires directories to be separated
+                char separator = Path.AltDirectorySeparatorChar;
+                string fileLocation = Directory.GetCurrentDirectory() + separator + "wwwroot" + separator + interactible.ImagePath;
+
+                if (System.IO.File.Exists(fileLocation))
+                {
+                    try
+                    {
+                        System.IO.File.Delete(fileLocation);
+                    }
+                    catch (Exception ex)
+                    {
+                        return StatusCode(500, $"Error deleting file: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    return NotFound($"File {fileLocation} not found.");
+                }
             }
 
             _context.Interactibles.Remove(interactible);
@@ -84,11 +138,26 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<InteractiblesOption> Post(InteractiblesOption option)
+        public ActionResult<InteractiblesOption> Post(InteractiblesOption interactiblesOption)
         {
-            _context.InteractiblesOptions.Add(option);
+            var interactible = _context.Interactibles.Find(interactiblesOption.InteractibleID);
+            var option = _context.InteractOptions.Find(interactiblesOption.OptionID);
+
+            if (interactible == null)
+            {
+                return BadRequest($"Interactible with ID {interactiblesOption.InteractibleID} does not exist.");
+            }
+            if (option == null)
+            {
+                return BadRequest($"Option with ID {interactiblesOption.OptionID} does not exist.");
+            }
+
+            interactiblesOption.Interactible = interactible;
+            interactiblesOption.Option = option;
+
+            _context.InteractiblesOptions.Add(interactiblesOption);
             _context.SaveChanges();
-            return Ok(option);
+            return Ok(interactiblesOption);
         }
 
         [HttpDelete("{id}")]
@@ -115,6 +184,12 @@ namespace GameBook.Server.Controllers
         public InteractibleItemsController(AppDbContext context)
         {
             _context = context;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<InteractiblesItem>> Get()
+        {
+            return Ok(_context.InteractiblesItems.ToList());
         }
 
         [HttpGet("{id}")]
@@ -166,10 +241,40 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<InteractiblesItem> Post(InteractiblesItem interactibleItem)
         {
+            var interactible = _context.Interactibles.Find(interactibleItem.InteractibleID);
+            var item = _context.Items.Find(interactibleItem.ItemId);
+
+            if (interactible == null)
+            {
+                return BadRequest($"Interactible with ID {interactibleItem.InteractibleID} does not exist.");
+            }
+
+            if (item == null)
+            {
+                return BadRequest($"Item with ID {interactibleItem.ItemId} does not exist.");
+            }
+
+            interactibleItem.Interactible = interactible;
+            interactibleItem.Item = item;
+
             _context.InteractiblesItems.Add(interactibleItem);
             _context.SaveChanges();
             return Ok(interactibleItem);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<InteractiblesItem>> Delete(int id)
+        {
+            var item = _context.InteractiblesItems.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.InteractiblesItems.Remove(item);
+            _context.SaveChanges();
+            return NoContent();
+        } 
 
     }
 
@@ -253,6 +358,15 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<Dialog> Post(Dialog dialog)
         {
+            var interactible = _context.Interactibles.Find(dialog.IteractibleID);
+
+            if (interactible == null)
+            {
+                return BadRequest($"Interactible with ID {dialog.IteractibleID} does not exist.");
+            }
+
+            dialog.Interactible = interactible;
+
             _context.Dialogs.Add(dialog);
             _context.SaveChanges();
             return Ok(dialog);
@@ -303,6 +417,15 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<DialogResponse> Post(DialogResponse response)
         {
+            var dialog = _context.Dialogs.Find(response.DialogID);
+            
+            if (dialog == null)
+            {
+                return BadRequest($"Dialog with ID {response.DialogID} does not exist.");
+            }
+
+            response.Dialog = dialog;
+
             _context.DialogResponses.Add(response);
             _context.SaveChanges();
             return Ok(response);

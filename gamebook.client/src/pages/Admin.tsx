@@ -33,6 +33,9 @@ const Admin = () => {
                     <a onClick={() => setEndpoint("/api/Interactibles")}>
                         Interactibles
                     </a>
+                    <a onClick={() => setEndpoint("/api/InteractibleItems")}>
+                        InteractiblesItems
+                    </a>
                     <a onClick={() => setEndpoint("/api/InteractibleOptions")}>
                         InteractibleOptions
                     </a>
