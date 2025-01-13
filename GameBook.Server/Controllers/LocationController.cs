@@ -2,6 +2,7 @@
 using GameBook.Server.Models;
 using GameBook.Server.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 
 namespace GameBook.Server.Controllers
@@ -32,6 +33,28 @@ namespace GameBook.Server.Controllers
                 return NotFound();
             }
             return Ok(location);
+        }
+
+        [HttpGet("GetNearestLocation/{locationId}")]
+        public ActionResult<Location> GetNearestLocation(int locationId)
+        {
+            List<Location> NearBy = new List<Location>();
+
+            var locations = _context.LocationPaths
+                .Where(x => x.FirstNodeID == locationId || x.SecondNodeID == locationId)
+                .ToList();
+
+            var location = locations
+                .Select(x => x.FirstNodeID == locationId ? x.SecondNodeID : x.FirstNodeID)
+                .ToList();
+
+            foreach(int loc in location)
+            {
+               var Near = _context.Locations.Find(loc);
+                NearBy.Add(Near);
+            }
+
+            return Ok(NearBy);
         }
 
 
