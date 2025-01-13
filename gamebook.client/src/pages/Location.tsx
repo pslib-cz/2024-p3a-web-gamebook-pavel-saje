@@ -1,5 +1,6 @@
 import '../styles/Location.css';
 import Content from '../components/LocationContent';
+import NextLocation from '../components/NextLocation';
 
 import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
@@ -92,6 +93,7 @@ const NetopyriVarle: React.FC = () =>{
       <p>{error?.message}</p>
         {currentLocation != null && <h2 className="title">{currentLocation.name}</h2>}
         <Content lokace={currentLocation} />
+        <NextLocation locationId={currentLocation?.locationID || 0} />
       </>
     );
 

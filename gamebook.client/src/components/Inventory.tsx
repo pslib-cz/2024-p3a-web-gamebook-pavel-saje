@@ -3,6 +3,8 @@ import { GameContext } from '../context/GameContext';
 import { FaTimes, FaBox } from 'react-icons/fa';
 import { ConsumableItem } from '../types';
 
+import styles from '../styles/inventory.module.css';
+
 const Inventory: React.FC = () => {
   const gameContext = useContext(GameContext);
   const [inventory, setInventory] = useState(gameContext?.inventory || []);
@@ -66,7 +68,7 @@ const Inventory: React.FC = () => {
         {isVisible ? <FaTimes /> : <FaBox />}
       </button>
       {isVisible && (
-        <div>
+        <div className={styles.inventory}>
           <h2>Inventory</h2>
           <ul>
             {inventory.map((item, index) => (
@@ -86,8 +88,8 @@ const Inventory: React.FC = () => {
                   )
                 }
               >
-                {index}
-                {item.name}
+                <span>{index+1}</span>
+                <p>{item.name}</p>
               </li>
             ))}
           </ul>
