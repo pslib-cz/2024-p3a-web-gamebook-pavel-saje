@@ -58,21 +58,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LocationController.cs",
               "DocumentMoniker": "D:\\Gamebook\\GameBook.Server\\Controllers\\LocationController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\LocationController.cs",
-              "ToolTip": "D:\\Gamebook\\GameBook.Server\\Controllers\\LocationController.cs*",
-              "RelativeToolTip": "GameBook.Server\\Controllers\\LocationController.cs*",
-              "ViewState": "AgIAABsAAAAAAAAAAAAwwDIAAAAoAAAAAAAAAA==",
+              "ToolTip": "D:\\Gamebook\\GameBook.Server\\Controllers\\LocationController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\LocationController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAwwB0AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-12T14:34:17.86Z",
               "EditorCaption": ""

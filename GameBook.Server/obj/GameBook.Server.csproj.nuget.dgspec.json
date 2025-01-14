@@ -11,7 +11,7 @@
         "projectName": "GameBook.Server",
         "projectPath": "D:\\GameBook\\GameBook.Server\\GameBook.Server.csproj",
         "packagesPath": "C:\\Users\\juki_\\.nuget\\packages\\",
-        "outputPath": "D:\\Gamebook\\GameBook.Server\\obj\\",
+        "outputPath": "D:\\GameBook\\GameBook.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
