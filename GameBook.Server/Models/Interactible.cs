@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameBook.Server.Models
 {
@@ -7,6 +8,9 @@ namespace GameBook.Server.Models
         [Key]
         public int InteractibleID { get; set; }
         public string Name { get; set; }
-        public string Image { get; set; }
+        public string? ImagePath { get; set; }
+
+        [NotMapped]
+        public IFormFile Image { get; set; }
     }
 }

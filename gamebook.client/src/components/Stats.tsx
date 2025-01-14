@@ -10,12 +10,15 @@ const Stats: React.FC = () => {
     return <div>Error: Game context is not available.</div>;
   }
 
-  const { hp, money, energy, setEnergy, radiation } = gameContext;
+  const { hp } = gameContext;
+  const { energy } = gameContext;
+    const { radiation } = gameContext;
+    const { money } = gameContext;
 
   return (
     <div className={styles.stats}>
       <p className={styles.hp}>♥️ {hp}</p>
-      <p className={styles.energy}>⚡️ {energy}<button onClick={() => setEnergy((prevEn: number) => prevEn - 10)}>-10</button></p>
+      <p className={styles.energy}>⚡️ {energy}</p>
       <p className={styles.radiation}>☢️ {radiation}</p>
       <p className={styles.money}>💰 {money}</p>
     </div>

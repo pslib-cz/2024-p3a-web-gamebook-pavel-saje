@@ -18,7 +18,7 @@ namespace GameBook.Server.Data
         public DbSet<Location> Locations { get; set; }
         public DbSet<LocationContent> LocationContent { get; set; }
         public DbSet<LocationPath> LocationPaths { get; set; }
-        public DbSet<RequiredItems> RequiredItems { get; set; }
+
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {

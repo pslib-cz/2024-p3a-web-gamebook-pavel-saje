@@ -90,9 +90,3 @@ export type LocationPath = {
     firstNode : Location,
     secondNode : Location
 }
-
-export type RequiredItems = {
-    requiredItemsID : number,
-    locationID : number,
-    itemID : number,
-}

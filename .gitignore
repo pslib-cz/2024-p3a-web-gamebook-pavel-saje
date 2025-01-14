@@ -28,3 +28,5 @@ dist-ssr
 *.jfm
 *.jfm
 .vs/
+/.vs/GameBook/CopilotIndices/0.2.1634.3922/SemanticSymbols.db-shm
+/.vs/GameBook/CopilotIndices/0.2.1634.3922/SemanticSymbols.db-wal

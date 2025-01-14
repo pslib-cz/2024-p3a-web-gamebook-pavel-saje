@@ -13,7 +13,6 @@ namespace GameBook.Server.Models
 
         [ForeignKey(nameof(IteractibleID))]
         public Interactible Interactible { get; set; } = null!;
-
         public ICollection<DialogResponse>? DialogResponses { get; set; } = null!;
     }
 }

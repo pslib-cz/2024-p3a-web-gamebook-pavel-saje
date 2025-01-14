@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { EndpointHeader } from "../types/admin";
+import { domain } from "../utils";
 
 type DataTableProps = {
     endpoint: string;
@@ -102,6 +103,15 @@ const DataTable: React.FC<DataTableProps> = ({ endpoint, header }) => {
                                             checked={item[property.key]}
                                             disabled={true}
                                         ></input>
+                                    ) : property.type == "image" ? (
+                                        <img
+                                            src={
+                                                domain + item[property.key] ||
+                                                ""
+                                            }
+                                            alt="image"
+                                            className="table-image"
+                                        />
                                     ) : (
                                         "unsupported type"
                                     )}

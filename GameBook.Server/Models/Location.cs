@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameBook.Server.Models
 {
@@ -7,7 +8,10 @@ namespace GameBook.Server.Models
         [Key]
         public int LocationID { get; set; }
         public string Name { get; set; }
-        public string BackgroundImage { get; set; }
+        public string? BackgroundImagePath { get; set; }
+
+        [NotMapped]
+        public IFormFile BackgroundImage { get; set; }
         public int RadiationGain { get; set; }
     }
 }

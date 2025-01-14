@@ -33,15 +33,22 @@ namespace GameBook.Server.Controllers
         }
 
 
-
         [HttpPost]
         public ActionResult<Item> Post(Item item)
         {
+            var category = _context.ItemCategories.Find(item.CategoryId);
+
+            if(category == null)
+            {
+                return BadRequest($"Category with ID {item.CategoryId} does not exist.");
+            }
+
+            item.Category = category;
+
             _context.Items.Add(item);
             _context.SaveChanges();
             return Ok(item);
         }
-
 
 
         [HttpDelete("{id}")]
@@ -145,8 +152,17 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<ConsumableItem> Post(ConsumableItem consumableItem)
         {
+            var Item = _context.Items.Find(consumableItem.ItemID);
+
+            if (Item == null)
+            {
+                return BadRequest($"Item with ID {consumableItem.ItemID} does not exist.");
+            }
+
+            consumableItem.Item = Item;
             _context.ConsumableItems.Add(consumableItem);
             _context.SaveChanges();
+
             return Ok(consumableItem);
         }
 

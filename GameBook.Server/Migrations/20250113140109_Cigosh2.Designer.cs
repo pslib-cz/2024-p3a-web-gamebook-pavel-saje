@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameBook.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250112144113_Init2")]
-    partial class Init2
+    [Migration("20250113140109_Cigosh2")]
+    partial class Cigosh2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -213,8 +213,7 @@ namespace GameBook.Server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("BackgroundImage")
-                        .IsRequired()
+                    b.Property<string>("BackgroundImagePath")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
@@ -278,27 +277,6 @@ namespace GameBook.Server.Migrations
                     b.HasIndex("SecondNodeID");
 
                     b.ToTable("LocationPaths");
-                });
-
-            modelBuilder.Entity("GameBook.Server.Models.RequiredItems", b =>
-                {
-                    b.Property<int>("RequiredItemsID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ItemID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("LocationID")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("RequiredItemsID");
-
-                    b.HasIndex("ItemID");
-
-                    b.HasIndex("LocationID");
-
-                    b.ToTable("RequiredItems");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.ConsumableItem", b =>
@@ -419,25 +397,6 @@ namespace GameBook.Server.Migrations
                     b.Navigation("FirstNode");
 
                     b.Navigation("SecondNode");
-                });
-
-            modelBuilder.Entity("GameBook.Server.Models.RequiredItems", b =>
-                {
-                    b.HasOne("GameBook.Server.Models.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GameBook.Server.Models.Location", "Location")
-                        .WithMany()
-                        .HasForeignKey("LocationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Item");
-
-                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.Dialog", b =>

@@ -19,12 +19,15 @@ interface GameContextProps {
   setInventory: React.Dispatch<React.SetStateAction<Item[]>>;
   resetInventory: () => void;
 
+<<<<<<< HEAD
   defaultEnergy: number;
 
   canBeVisited: Location[];
   setCanBeVisited: React.Dispatch<React.SetStateAction<Location[]>>;
   resetCanBeVisited: () => void;
 
+=======
+>>>>>>> ad75db67f9e1adcfbaa63202a19c44dbe9439afc
   //NOTE vzor: LocatioID-KEY
   InteractiblesRemovedFromLocation: string[];
   setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<string[]>>;
@@ -135,11 +138,15 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         resetInventory,
         InteractiblesRemovedFromLocation,
         setInteractiblesRemovedFromLocation,
+<<<<<<< HEAD
         resetInteractiblesRemovedFromLocation,
         defaultEnergy,
         canBeVisited,
         setCanBeVisited,
         resetCanBeVisited
+=======
+        resetInteractiblesRemovedFromLocation
+>>>>>>> ad75db67f9e1adcfbaa63202a19c44dbe9439afc
       }}
     >
       {children}
