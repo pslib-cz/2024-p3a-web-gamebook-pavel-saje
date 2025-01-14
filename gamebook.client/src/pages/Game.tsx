@@ -1,11 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
-<<<<<<< HEAD
-=======
 import { GameContext } from '../context/GameContext';
 
->>>>>>> ad75db67f9e1adcfbaa63202a19c44dbe9439afc
 // import Map from '../components/map';
 import MapWithGraph from '../components/map';
 import NetopyriVarle from './Location';
@@ -15,9 +12,6 @@ import Inventory from '../components/Inventory';
 import { Location } from '../types';
 
 
-<<<<<<< HEAD
-const Game: React.FC = () => {    
-=======
 const Game: React.FC = () => {
 
     const gameContext = useContext(GameContext);
@@ -56,20 +50,14 @@ const Game: React.FC = () => {
         fetchData();
       }, [id]);
       console.log(currentLocation)
->>>>>>> ad75db67f9e1adcfbaa63202a19c44dbe9439afc
     return (
       <>
         <Stats />
         <span className='map'><MapWithGraph /><Inventory/></span>
-<<<<<<< HEAD
-      
-        <NetopyriVarle/>
-=======
         
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}
         {currentLocation && <NetopyriVarle lokace={currentLocation} />}
->>>>>>> ad75db67f9e1adcfbaa63202a19c44dbe9439afc
       </>
     );
 }

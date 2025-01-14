@@ -44,7 +44,6 @@ const Inventory: React.FC = () => {
           <h2>Inventory</h2>
           <ul>
             {inventory.map((item, index) => (
-<<<<<<< HEAD
               <li
                 key={index}
                 onClick={() =>
@@ -64,9 +63,6 @@ const Inventory: React.FC = () => {
                 <span>{index+1}</span>
                 <p>{item.name}</p>
               </li>
-=======
-              <li key={index}>{index}{item.name}</li>
->>>>>>> ad75db67f9e1adcfbaa63202a19c44dbe9439afc
             ))}
           </ul>
         </div>

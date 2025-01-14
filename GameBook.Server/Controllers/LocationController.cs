@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GameBook.Server.Models;
 using GameBook.Server.Data;
-<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-=======
->>>>>>> ad75db67f9e1adcfbaa63202a19c44dbe9439afc
 
 
 namespace GameBook.Server.Controllers
