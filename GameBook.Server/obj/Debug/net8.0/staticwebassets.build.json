@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "4ppbsBY4Bmfi0UOjz2BghFH4Wi/pdsIWROdynlyfz9w=",
+  "Hash": "vVN7Qf9Q7Q41ROikJkrkHTQtKuIt8EWFI9f56o4hVMM=",
   "Source": "GameBook.Server",
   "BasePath": "_content/GameBook.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.client\\gamebook.client.esproj",
+      "Identity": "D:\\GameBook\\gamebook.client\\gamebook.client.esproj",
       "Version": 2,
       "Source": "gamebook.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
@@ -22,17 +22,17 @@
     {
       "Name": "GameBook.Server\\wwwroot",
       "Source": "GameBook.Server",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Interactibles/03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
       "AssetKind": "All",
@@ -48,10 +48,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Interactibles/681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
       "AssetKind": "All",
@@ -65,6 +65,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg"
+    },
+    {
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg",
+      "SourceId": "GameBook.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
+      "BasePath": "_content/GameBook.Server",
+      "RelativePath": "Uploads/Locations/7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg"
+    },
+    {
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg",
+      "SourceId": "GameBook.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
+      "BasePath": "_content/GameBook.Server",
+      "RelativePath": "Uploads/Locations/c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg"
     }
   ]
 }

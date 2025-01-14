@@ -30,7 +30,7 @@ const NextLocation: React.FC<NextLocationProps> = ({locationId}) => {
                     throw new Error("Failed to fetch data");
                 }
                 const json = await response.json();
-                console.log(json);
+                // console.log(json);
                 setLocations(json);
                 
             }

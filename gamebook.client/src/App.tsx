@@ -5,6 +5,7 @@ import Game from "./pages/Game";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Fight from "./pages/Fight";
+import Ending from "./pages/End";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,16 @@ const router = createBrowserRouter([
         path: "/Fight",
         element: <Fight />,
     },
+    {
+        path: "/Ending",
+        element: <Ending/>,
+        children: [
+            {
+                path: "/Ending:id",
+                element: <Ending />
+            }
+        ]
+    }
 ]);
 
 const App: React.FC = () => {

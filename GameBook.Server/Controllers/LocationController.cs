@@ -292,4 +292,86 @@ namespace GameBook.Server.Controllers
         }
     }
 
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class RequiredItemsController : Controller
+    {
+        private AppDbContext _context;
+        public RequiredItemsController(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        [HttpPost]
+        public ActionResult<RequiredItems> Post([FromForm] RequiredItems requiredItems)
+        {
+            if (requiredItems.LocationID <= 0 || requiredItems.ItemID <= 0)
+            {
+                return BadRequest("Invalid LocationID or ItemID provided.");
+            }
+
+            // Optional: Pokud máte připojený soubor (například obrázek) jako součást RequiredItems, můžete to zde ošetřit.
+            // Například pokud by RequiredItems obsahovalo pole BackgroundImage:
+            /*
+            if (requiredItems.BackgroundImage == null || requiredItems.BackgroundImage.Length == 0)
+            {
+                return BadRequest("BackgroundImage not provided.");
+            }
+
+            string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Uploads", "RequiredItems");
+
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+            string fileExtension = Path.GetExtension(requiredItems.BackgroundImage.FileName);
+            string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(requiredItems.BackgroundImage.FileName);
+            uniqueFileName = string.Join("_", uniqueFileName.Split(Path.GetInvalidFileNameChars())); // Sanitize file name
+
+            requiredItems.BackgroundImagePath = Path.Combine("/Uploads/RequiredItems", uniqueFileName).Replace("\\", "/");
+
+            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            try
+            {
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    requiredItems.BackgroundImage.CopyTo(fileStream);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+            */
+
+            try
+            {
+                _context.RequiredItems.Add(requiredItems);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+
+            return Ok(requiredItems);
+        }
+
+
+
+        [HttpGet("GetByLocation/{locationId}")]
+        public async Task<ActionResult> GetRequiredByLocation(int locationId)
+        {
+            var RequiredItems = await _context.RequiredItems
+                .Where(x => x.LocationID == locationId)
+                .ToListAsync();
+
+            return Ok(RequiredItems);
+        }
+
+    }
+
 }

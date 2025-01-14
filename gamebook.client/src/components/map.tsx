@@ -202,6 +202,8 @@ import { useNavigate } from "react-router-dom";
 import { Location } from "../types";
 import { FaMap, FaTimes } from "react-icons/fa";
 
+import styles from "../styles/menu.module.css";
+
 const MapWithGraph2D: React.FC = () => {
   const [locations, setLocations] = useState<Location[] | null>(null);
   const [paths, setPaths] = useState<any[] | null>(null);
@@ -289,7 +291,7 @@ const MapWithGraph2D: React.FC = () => {
       )}
 
       {showGraph && (
-        <div className="map--graph">
+        <div className={styles.map}>
           {loading && <p>Loading...</p>}
           {error && <p>Error: {error.message}</p>}
           {!loading && !error && locations && paths && (
@@ -316,7 +318,7 @@ const MapWithGraph2D: React.FC = () => {
                 const radius = 8;
                 ctx.beginPath();
                 ctx.arc(node.x as number, node.y as number, radius, 0, 2 * Math.PI, false);
-                ctx.fillStyle = node.color || "blue";
+                ctx.fillStyle = node.color || "brown";
                 ctx.fill();
               }}
               width={window.innerWidth}

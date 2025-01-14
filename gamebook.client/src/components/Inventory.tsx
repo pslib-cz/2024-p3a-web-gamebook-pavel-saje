@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../context/GameContext';
 import { FaTimes, FaBox } from 'react-icons/fa';
+import { ConsumableItem } from '../types';
 
 import styles from '../styles/inventory.module.css';
 
@@ -8,6 +9,7 @@ const Inventory: React.FC = () => {
   const gameContext = useContext(GameContext);
   const [inventory, setInventory] = useState(gameContext?.inventory || []);
   const [isVisible, setIsVisible] = useState(false);
+  const [Consumables, setConsumables] = useState<ConsumableItem[]>([]);
 
   useEffect(() => {
     const handleStorageChange = () => {
@@ -26,6 +28,31 @@ const Inventory: React.FC = () => {
     return <div>Error: Game context is not available.</div>;
   }
 
+  const { energy, setEnergy, defaultEnergy } = gameContext;
+
+  useEffect(() => {
+    const fetchConsumables = async () => {
+      const response = await fetch('https://localhost:7092/api/Consumable');
+      const data = await response.json();
+      setConsumables(data);
+    };
+    fetchConsumables();
+  }, []);
+  const findConsumable = (id: number) => {
+    return Consumables.find((consumable: ConsumableItem) => consumable.itemID === id);
+  };
+  const energyGivenByConsumable = (id: number) => {
+    const consumable = findConsumable(id);
+    if (consumable) {
+      if (energy + consumable.energyValue <= defaultEnergy) {
+        return consumable.energyValue;
+      } else {
+        return defaultEnergy-energy;
+      }
+    }
+    return 0;
+  }
+
   const handleToggleInventory = () => {
     setIsVisible(!isVisible);
     if (!isVisible) {
@@ -36,6 +63,7 @@ const Inventory: React.FC = () => {
 
   return (
     <>
+    {/* FIXME odebere všechny itemy stejného typu z inventu  */}
       <button onClick={handleToggleInventory}>
         {isVisible ? <FaTimes /> : <FaBox />}
       </button>
@@ -54,8 +82,7 @@ const Inventory: React.FC = () => {
                       prevEn + energyGivenByConsumable(item.itemID)
                   ),
                   setInventory((prevInventory) =>
-                    prevInventory.filter((i) => i.itemID !==
-                      item.itemID)
+                    prevInventory.filter((invItem) => invItem.itemID !== item.itemID)
                   )
                   )
                 }

@@ -69,7 +69,8 @@ export type Location = {
     locationID : number,
     name : string,
     backgroundImage : string,
-    radiationGain : number
+    radiationGain : number,
+    endID : number,
 }
 
 export type LocationContent = {
@@ -89,4 +90,16 @@ export type LocationPath = {
     energyTravelCost : number,
     firstNode : Location,
     secondNode : Location
+}
+
+export type RequiredItems = {
+    requiredItemsID : number,
+    locationID : number,
+    itemID : number,
+}
+
+export type End = {
+    endID : number,
+    name : string,
+    description : string
 }

@@ -32,6 +32,17 @@ namespace GameBook.Server.Controllers
             return Ok(item);
         }
 
+        [HttpGet("GetByInteractibleId/{id}")]
+        public ActionResult<Item> GetByInteractibleId(int id)
+        {
+            var InteractibleItem = _context.InteractiblesItems
+                .Where(x => x.InteractibleID == id)
+                .ToArray();
+
+            var item = _context.Items.Find(InteractibleItem[0].ItemId);
+
+            return Ok(item);
+        }
 
         [HttpPost]
         public ActionResult<Item> Post(Item item)
@@ -182,4 +193,33 @@ namespace GameBook.Server.Controllers
             return NoContent();
         }
     }
-}
+
+    [ApiController]
+    [Route("api/[controller]")]
+    public class EndController : Controller
+    {
+        private AppDbContext _context;
+
+        public EndController(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<End>> Get()
+        {
+            return Ok(_context.End.ToList());
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<End> GetId(int id)
+        {
+            var end = _context.End.Find(id);
+            if (end == null)
+            {
+                return NotFound();
+            }
+            return Ok(end);
+        }
+    }
+    }

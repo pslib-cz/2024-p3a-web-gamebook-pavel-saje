@@ -67,41 +67,14 @@ interface ContentProps {
 
       return (
         <>
-          {/* {items &&
-            items.map((item, index) => (
-              <p style={{ cursor: "pointer", position: "absolute" }}
-                onClick={() =>
-                  setInventory((prevInventory: Item[]) => [
-                    ...prevInventory,
-                    item,
-                  ])
-                }
-                key={index}
-              >{`${item.name}`}</p>
-            ))} */}
-          {/* {content &&
-            content.map((content, index) => (
-              <span
-                style={{
-                  cursor: "pointer",
-                  position: "absolute",
-                  bottom: `${content.yPos}%`,
-                  left: `${content.xPos}%`,
-                }}
-              >
-                <p key={index}>{content.interactibleID}</p>
-                <p></p>
-              </span>
-            ))}
-        </>
-      );
-    }; */}
 
         {content &&
           content.map((contentItem, index) => {
             const key = lokace?.locationID + "-" + index;
-            const item = getItemByInteractibleID(contentItem.interactibleID);
-            console.log("pes",item);
+            // const item = getItemByInteractibleID(contentItem.interactibleID);
+            const item = items[0];
+            console.log("pes",items[0]);
+            console.log(key,"============",InteractiblesRemovedFromLocation)
             return (
               <span
                 key={key}
@@ -118,8 +91,7 @@ interface ContentProps {
                   setInteractiblesRemovedFromLocation((prevInteractiblesRemovedFromLocation: string[]) => [...prevInteractiblesRemovedFromLocation, key])
             )}
               >
-                {/* <p>{contentItem.interactibleID}</p> */}
-                {item && InteractiblesRemovedFromLocation.find((removed) => removed === key) === undefined ? (
+                {item && !InteractiblesRemovedFromLocation.find((removed) => removed === key) ? (
                   <p>{item.name}</p>
                 ) : (
                   null

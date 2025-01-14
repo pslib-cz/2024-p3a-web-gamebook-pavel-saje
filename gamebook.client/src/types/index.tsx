@@ -10,7 +10,9 @@ import {
     type ItemCategory,
     type Location,
     type LocationContent,
-    type LocationPath
+    type LocationPath,
+    type RequiredItems,
+    type End
 } from "./data";
 
 export type {
@@ -25,5 +27,7 @@ export type {
     ItemCategory,
     Location,
     LocationContent,
-    LocationPath
+    LocationPath,
+    RequiredItems,
+    End
 }

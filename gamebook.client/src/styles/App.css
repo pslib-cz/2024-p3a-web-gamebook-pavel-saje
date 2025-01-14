@@ -5,33 +5,13 @@
     --orange: #f5c030;
 }
 
-.map {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-
-    padding: 1rem 2rem 1rem 2rem;
-}
-.map--graph {
-    background-color: wheat;
-}
-.map--button {
-    position: "absolute";
-    top: 10;
-    left: 10;
-    padding: "10px";
-    font-size: "24px";
-    background: "none";
-    border: "none";
-    cursor: "pointer";
-}
-
 body {
     background-image: url("../images/home.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 .NetopyriVarle {
@@ -44,6 +24,14 @@ ul{
     padding: 0;
 }
 
-.title{
+.title, h1{
     -webkit-text-stroke: 1px #000000;
+}
+
+h1{
+    font-size: 4rem;
+    color: var(--green);
+    position: absolute;
+    top: 10%;
+    left: 20%;
 }
