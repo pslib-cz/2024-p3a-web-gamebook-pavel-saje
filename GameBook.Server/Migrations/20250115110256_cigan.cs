@@ -5,11 +5,25 @@
 namespace GameBook.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class Models_Merge : Migration
+    public partial class cigan : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            //migrationBuilder.CreateTable(
+            //    name: "End",
+            //    columns: table => new
+            //    {
+            //        EndID = table.Column<int>(type: "INTEGER", nullable: false)
+            //            .Annotation("Sqlite:Autoincrement", true),
+            //        Name = table.Column<string>(type: "TEXT", nullable: false),
+            //        Description = table.Column<string>(type: "TEXT", nullable: true)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_End", x => x.EndID);
+            //    });
+
             //migrationBuilder.CreateTable(
             //    name: "Interactibles",
             //    columns: table => new
@@ -58,11 +72,17 @@ namespace GameBook.Server.Migrations
             //            .Annotation("Sqlite:Autoincrement", true),
             //        Name = table.Column<string>(type: "TEXT", nullable: false),
             //        BackgroundImagePath = table.Column<string>(type: "TEXT", nullable: true),
-            //        RadiationGain = table.Column<int>(type: "INTEGER", nullable: false)
+            //        RadiationGain = table.Column<int>(type: "INTEGER", nullable: false),
+            //        EndID = table.Column<int>(type: "INTEGER", nullable: true)
             //    },
             //    constraints: table =>
             //    {
             //        table.PrimaryKey("PK_Locations", x => x.LocationID);
+            //        table.ForeignKey(
+            //            name: "FK_Locations_End_EndID",
+            //            column: x => x.EndID,
+            //            principalTable: "End",
+            //            principalColumn: "EndID");
             //    });
 
             //migrationBuilder.CreateTable(
@@ -196,6 +216,7 @@ namespace GameBook.Server.Migrations
             //        DialogResponseID = table.Column<int>(type: "INTEGER", nullable: false)
             //            .Annotation("Sqlite:Autoincrement", true),
             //        DialogID = table.Column<int>(type: "INTEGER", nullable: false),
+            //        NextDialogID = table.Column<int>(type: "INTEGER", nullable: false),
             //        ResponseText = table.Column<string>(type: "TEXT", nullable: false),
             //        RelationshipEffect = table.Column<int>(type: "INTEGER", nullable: false)
             //    },
@@ -258,31 +279,31 @@ namespace GameBook.Server.Migrations
             //            onDelete: ReferentialAction.Cascade);
             //    });
 
-            //migrationBuilder.CreateTable(
-            //    name: "RequiredItems",
-            //    columns: table => new
-            //    {
-            //        RequiredItemsID = table.Column<int>(type: "INTEGER", nullable: false)
-            //            .Annotation("Sqlite:Autoincrement", true),
-            //        LocationID = table.Column<int>(type: "INTEGER", nullable: false),
-            //        ItemID = table.Column<int>(type: "INTEGER", nullable: false)
-            //    },
-            //    constraints: table =>
-            //    {
-            //        table.PrimaryKey("PK_RequiredItems", x => x.RequiredItemsID);
-            //        table.ForeignKey(
-            //            name: "FK_RequiredItems_Items_ItemID",
-            //            column: x => x.ItemID,
-            //            principalTable: "Items",
-            //            principalColumn: "ItemID",
-            //            onDelete: ReferentialAction.Cascade);
-            //        table.ForeignKey(
-            //            name: "FK_RequiredItems_Locations_LocationID",
-            //            column: x => x.LocationID,
-            //            principalTable: "Locations",
-            //            principalColumn: "LocationID",
-            //            onDelete: ReferentialAction.Cascade);
-            //    });
+            migrationBuilder.CreateTable(
+                name: "RequiredItems",
+                columns: table => new
+                {
+                    RequiredItemsID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    LocationID = table.Column<int>(type: "INTEGER", nullable: false),
+                    ItemID = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RequiredItems", x => x.RequiredItemsID);
+                    table.ForeignKey(
+                        name: "FK_RequiredItems_Items_ItemID",
+                        column: x => x.ItemID,
+                        principalTable: "Items",
+                        principalColumn: "ItemID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RequiredItems_Locations_LocationID",
+                        column: x => x.LocationID,
+                        principalTable: "Locations",
+                        principalColumn: "LocationID",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             //migrationBuilder.CreateIndex(
             //    name: "IX_ConsumableItems_ItemID",
@@ -345,14 +366,19 @@ namespace GameBook.Server.Migrations
             //    column: "SecondNodeID");
 
             //migrationBuilder.CreateIndex(
-            //    name: "IX_RequiredItems_ItemID",
-            //    table: "RequiredItems",
-            //    column: "ItemID");
+            //    name: "IX_Locations_EndID",
+            //    table: "Locations",
+            //    column: "EndID");
 
-            //migrationBuilder.CreateIndex(
-            //    name: "IX_RequiredItems_LocationID",
-            //    table: "RequiredItems",
-            //    column: "LocationID");
+            migrationBuilder.CreateIndex(
+                name: "IX_RequiredItems_ItemID",
+                table: "RequiredItems",
+                column: "ItemID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RequiredItems_LocationID",
+                table: "RequiredItems",
+                column: "LocationID");
         }
 
         /// <inheritdoc />
@@ -396,6 +422,9 @@ namespace GameBook.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "ItemCategories");
+
+            migrationBuilder.DropTable(
+                name: "End");
         }
     }
 }

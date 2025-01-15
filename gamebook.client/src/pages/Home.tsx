@@ -15,7 +15,7 @@ const Home = () => {
     const {resetAll}  = gameContext;
     return (
         <>
-            <h1>Stíny popela</h1>
+            <h1 className={styles.TITLE}>Stíny popela</h1>
             <div className={styles.menubar}>
                 <Link className={styles.link} onClick={() => resetAll()} to="/Game/3">Play</Link>
 

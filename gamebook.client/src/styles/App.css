@@ -1,4 +1,6 @@
-﻿:root {
+﻿@import url("https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic");
+
+:root {
     --red: #b54242;
     --yellow: #e7d13d;
     --green: #3cd43c;
@@ -6,11 +8,13 @@
 }
 
 body {
-    background-image: url("../images/home.jpg");
+    background-image: url("https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vZGNjNGRkNzktOTdmMy00MzQ1LTg2MzQtNGU3Yzg2YTEzNWNiLmpwZWc.webp");
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;
+    font-family: monospace;
+    overflow: hidden;
 }
 
 .NetopyriVarle {
@@ -25,4 +29,8 @@ ul {
 
 .title {
     -webkit-text-stroke: 1px #000000;
+}
+
+.menubuttonvec  {
+    font-family: monospace;
 }

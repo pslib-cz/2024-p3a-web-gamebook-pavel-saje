@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameBook.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250114161600_initinti")]
-    partial class initinti
+    [Migration("20250115110256_cigan")]
+    partial class cigan
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -76,6 +76,9 @@ namespace GameBook.Server.Migrations
                     b.Property<int>("DialogID")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("NextDialogID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("RelationshipEffect")
                         .HasColumnType("INTEGER");
 
@@ -88,6 +91,24 @@ namespace GameBook.Server.Migrations
                     b.HasIndex("DialogID");
 
                     b.ToTable("DialogResponses");
+                });
+
+            modelBuilder.Entity("GameBook.Server.Models.End", b =>
+                {
+                    b.Property<int>("EndID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("EndID");
+
+                    b.ToTable("End");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.InteractOption", b =>
@@ -215,6 +236,9 @@ namespace GameBook.Server.Migrations
                     b.Property<string>("BackgroundImagePath")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("EndID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -223,6 +247,8 @@ namespace GameBook.Server.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("LocationID");
+
+                    b.HasIndex("EndID");
 
                     b.ToTable("Locations");
                 });
@@ -379,6 +405,15 @@ namespace GameBook.Server.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("GameBook.Server.Models.Location", b =>
+                {
+                    b.HasOne("GameBook.Server.Models.End", "End")
+                        .WithMany()
+                        .HasForeignKey("EndID");
+
+                    b.Navigation("End");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.LocationContent", b =>

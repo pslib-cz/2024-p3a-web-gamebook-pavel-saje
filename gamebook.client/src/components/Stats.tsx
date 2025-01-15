@@ -21,7 +21,7 @@ const Stats: React.FC = () => {
       <p className={styles.energy}>⚡ {energy}</p>
       <p className={styles.radiation}>☢️ {radiation}</p>
       <p className={styles.money}>💰 {money}</p>
-      <button onClick={() => gameContext.setEnergy(energy - 10)}>-10⚡</button>
+      {/* <button onClick={() => gameContext.setEnergy(energy - 10)}>-10⚡</button> */}
     </div>
   );
 };

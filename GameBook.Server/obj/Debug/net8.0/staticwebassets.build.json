@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "r4vQkhk521ljVtQW3YJO86f7qxk3r7/WgPd0/FmfwLg=",
+  "Hash": "qGZiFLjrXoZODIV9ViE7EvS14ICn5DrE6lHveB7tuyo=",
   "Source": "GameBook.Server",
   "BasePath": "_content/GameBook.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.client\\gamebook.client.esproj",
+      "Identity": "D:\\GameBook\\gamebook.client\\gamebook.client.esproj",
       "Version": 2,
       "Source": "gamebook.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
@@ -22,17 +22,17 @@
     {
       "Name": "GameBook.Server\\wwwroot",
       "Source": "GameBook.Server",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Interactibles/03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
       "AssetKind": "All",
@@ -48,10 +48,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Interactibles/681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
       "AssetKind": "All",
@@ -67,10 +67,29 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\survivor.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
+      "BasePath": "_content/GameBook.Server",
+      "RelativePath": "Uploads/Interactibles/survivor.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Interactibles\\survivor.png"
+    },
+    {
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg",
+      "SourceId": "GameBook.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg",
       "AssetKind": "All",
@@ -86,10 +105,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Airport.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Airport.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/Airport.png",
       "AssetKind": "All",
@@ -105,10 +124,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Airport.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\BranaKHorizontu.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\BranaKHorizontu.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/BranaKHorizontu.png",
       "AssetKind": "All",
@@ -124,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\BranaKHorizontu.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\BunkrStart.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\BunkrStart.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/BunkrStart.png",
       "AssetKind": "All",
@@ -143,10 +162,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\BunkrStart.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg",
       "AssetKind": "All",
@@ -162,10 +181,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\CommunityBunker.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\CommunityBunker.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/CommunityBunker.png",
       "AssetKind": "All",
@@ -181,10 +200,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\CommunityBunker.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\ControlRoom.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\ControlRoom.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/ControlRoom.png",
       "AssetKind": "All",
@@ -200,10 +219,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\ControlRoom.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\DolniNamesti.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\DolniNamesti.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/DolniNamesti.png",
       "AssetKind": "All",
@@ -219,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\DolniNamesti.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\HlavniCesta.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\HlavniCesta.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/HlavniCesta.png",
       "AssetKind": "All",
@@ -238,10 +257,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\HlavniCesta.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JadernaElektrarna.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JadernaElektrarna.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/JadernaElektrarna.png",
       "AssetKind": "All",
@@ -257,10 +276,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\JadernaElektrarna.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\StorageRoom.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\StorageRoom.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/StorageRoom.png",
       "AssetKind": "All",
@@ -276,10 +295,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\StorageRoom.png"
     },
     {
-      "Identity": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Venku.png",
+      "Identity": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Venku.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\GameBook\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "RelativePath": "Uploads/Locations/Venku.png",
       "AssetKind": "All",
