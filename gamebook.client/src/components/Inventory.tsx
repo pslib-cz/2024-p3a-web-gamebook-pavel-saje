@@ -83,7 +83,19 @@ const Inventory: React.FC = () => {
                   ),
                   setInventory((prevInventory) =>
                     prevInventory.filter((invItem) => invItem.itemID !== item.itemID)
+                  ),
+                  localStorage.setItem(
+                    'inventory',
+                    JSON.stringify(inventory.filter((invItem) => invItem.itemID !== item.itemID))
                   )
+                  // setInventory((prevInventory) =>
+                  //   prevInventory.filter((invItem) => invItem.itemID !== item.itemID)
+                  // ),
+                  // () => {
+                  //   const updatedInventory = inventory.filter((invItem) => invItem.itemID !== item.itemID);
+                  //   localStorage.setItem('inventory', JSON.stringify(updatedInventory));
+                    
+                  // }
                   )
                 }
               >

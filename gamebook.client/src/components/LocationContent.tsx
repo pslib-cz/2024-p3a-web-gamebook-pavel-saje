@@ -87,8 +87,10 @@ interface ContentProps {
               
                 onClick={() =>
                   item && (
+
                   setInventory((prevInventory: Item[]) => [...prevInventory, item]),
-                  setInteractiblesRemovedFromLocation((prevInteractiblesRemovedFromLocation: string[]) => [...prevInteractiblesRemovedFromLocation, key])
+                  setInteractiblesRemovedFromLocation((prevInteractiblesRemovedFromLocation: string[]) => [...prevInteractiblesRemovedFromLocation, key]),
+                  localStorage.setItem('inventory', JSON.stringify(inventory))
             )}
               >
                 {item && !InteractiblesRemovedFromLocation.find((removed) => removed === key) ? (
