@@ -13,8 +13,12 @@
 
 .stats{
     position: absolute;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
     top: 1rem;
     left: 2rem;
+}
+
+.stats p{
+    margin: .5rem;
 }

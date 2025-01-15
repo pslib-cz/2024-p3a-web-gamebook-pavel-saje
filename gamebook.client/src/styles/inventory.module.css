@@ -1,0 +1,25 @@
+.inventory{
+    background-color: bisque;
+    color: black;
+    padding: 1rem;
+}
+
+.inventory p{
+    margin: .2rem;
+}
+
+.inventory li{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.inventory li:hover{
+    color: var(--red);
+    cursor: pointer;
+}
+
+.inventory span{
+    font-weight: 700;
+    color: var(--red);
+}

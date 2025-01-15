@@ -19,10 +19,19 @@ interface GameContextProps {
   setInventory: React.Dispatch<React.SetStateAction<Item[]>>;
   resetInventory: () => void;
 
+  defaultEnergy: number;
+
+  canBeVisited: Location[];
+  setCanBeVisited: React.Dispatch<React.SetStateAction<Location[]>>;
+  resetCanBeVisited: () => void;
+
   //NOTE vzor: LocatioID-KEY
   InteractiblesRemovedFromLocation: string[];
   setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<string[]>>;
   resetInteractiblesRemovedFromLocation: () => void;
+
+
+  resetAll: () => void;
 }
 
 export const GameContext = createContext<GameContextProps | undefined>(undefined);
@@ -61,6 +70,11 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     return savedInteractiblesRemovedFromLocation !== null ? JSON.parse(savedInteractiblesRemovedFromLocation) : [];
   });
 
+  const [canBeVisited, setCanBeVisited] = useState<Location[]>(() => {
+    const savedCanBeVisited = localStorage.getItem('canBeVisited');
+    return savedCanBeVisited !== null ? JSON.parse(savedCanBeVisited) : [];
+  });
+
 
 
   useEffect(() => {
@@ -73,7 +87,9 @@ const [inventory, setInventory] = useState<Item[]>(() => {
 
     localStorage.setItem('InteractiblesRemovedFromLocation', JSON.stringify(InteractiblesRemovedFromLocation));
 
-  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation]);
+    localStorage.setItem('canBeVisited', JSON.stringify(canBeVisited));
+
+  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation, canBeVisited]);
 
   const resetHp = () => {
     setHp(defaultHp);
@@ -98,6 +114,20 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     const resetInteractiblesRemovedFromLocation = () => {
         setInteractiblesRemovedFromLocation([]);}
 
+    const resetCanBeVisited = () => {
+        setCanBeVisited([]);
+    }
+
+    const resetAll = () => {
+        resetHp();
+        resetEnergy();
+        resetRadiation();
+        resetMoney();
+        resetInventory();
+        resetInteractiblesRemovedFromLocation();
+        resetCanBeVisited();
+    }
+
   return (
     <GameContext.Provider
       value={{
@@ -118,7 +148,12 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         resetInventory,
         InteractiblesRemovedFromLocation,
         setInteractiblesRemovedFromLocation,
-        resetInteractiblesRemovedFromLocation
+        resetInteractiblesRemovedFromLocation,
+        defaultEnergy,
+        canBeVisited,
+        setCanBeVisited,
+        resetCanBeVisited,
+        resetAll
       }}
     >
       {children}
