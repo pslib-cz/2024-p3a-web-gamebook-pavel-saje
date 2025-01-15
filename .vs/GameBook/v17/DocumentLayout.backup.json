@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\migrations\\20250114151228_merge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\migrations\\20250114151228_merge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\models\\interactible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\models\\interactible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Migrations\\20250113155411_InteractibleControllerImage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameBook.Server\\Migrations\\20250113155411_InteractibleControllerImage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\controllers\\interactiblescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\interactiblescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\controllers\\cigancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,37 +34,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20250113155411_InteractibleControllerImage.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Migrations\\20250113155411_InteractibleControllerImage.cs",
-              "RelativeDocumentMoniker": "GameBook.Server\\Migrations\\20250113155411_InteractibleControllerImage.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Migrations\\20250113155411_InteractibleControllerImage.cs",
-              "RelativeToolTip": "GameBook.Server\\Migrations\\20250113155411_InteractibleControllerImage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "20250114151228_Merge.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Migrations\\20250114151228_Merge.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Migrations\\20250114151228_Merge.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Migrations\\20250114151228_Merge.cs",
+              "RelativeToolTip": "GameBook.Server\\Migrations\\20250114151228_Merge.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T15:54:12.295Z",
+              "WhenOpened": "2025-01-14T15:12:28.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Interactible.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Models\\Interactible.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\Interactible.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Models\\Interactible.cs",
               "RelativeToolTip": "GameBook.Server\\Models\\Interactible.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T15:41:42.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-13T15:41:42.663Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Location.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Models\\Location.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\Location.cs",
@@ -72,21 +71,19 @@
               "RelativeToolTip": "GameBook.Server\\Models\\Location.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-13T13:23:33.565Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-13T13:23:33.565Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "LocationController.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\LocationController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\LocationController.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\LocationController.cs",
               "RelativeToolTip": "GameBook.Server\\Controllers\\LocationController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwDcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAIA8wBQAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T13:42:29.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T13:42:29.193Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "GameBook.Server\\Controllers\\CiganController.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwCoAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T12:06:55.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-12T12:06:55.505Z"
             },
             {
               "$type": "Document",
@@ -109,10 +105,9 @@
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\InteractiblesController.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\InteractiblesController.cs",
               "RelativeToolTip": "GameBook.Server\\Controllers\\InteractiblesController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAswD4AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAMwEYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T18:31:52.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T18:31:52.242Z"
             }
           ]
         }

@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg"
     },
     {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GameBook.Server.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
