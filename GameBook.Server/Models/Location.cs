@@ -10,7 +10,6 @@ namespace GameBook.Server.Models
         public string Name { get; set; }
         public string? BackgroundImagePath { get; set; }
         
-
         [NotMapped]
         public IFormFile? BackgroundImage { get; set; }
         public int RadiationGain { get; set; }

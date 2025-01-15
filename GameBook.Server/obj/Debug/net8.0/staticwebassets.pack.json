@@ -1,19 +1,59 @@
 {
   "Files": [
     {
-      "Id": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
       "PackagePath": "staticwebassets\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg"
     },
     {
-      "Id": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
       "PackagePath": "staticwebassets\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg"
     },
     {
-      "Id": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg",
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg"
     },
     {
-      "Id": "D:\\GameBook\\GameBook.Server\\wwwroot\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg",
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Airport.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\Airport.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\BranaKHorizontu.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\BranaKHorizontu.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\BunkrStart.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\BunkrStart.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\CommunityBunker.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\CommunityBunker.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\ControlRoom.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\ControlRoom.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\DolniNamesti.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\DolniNamesti.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\HlavniCesta.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\HlavniCesta.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JadernaElektrarna.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\JadernaElektrarna.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\StorageRoom.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\StorageRoom.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Venku.png",
+      "PackagePath": "staticwebassets\\Uploads\\Locations\\Venku.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\c4df782f-2f71-41e3-8144-83e5156721c7_pes.jpg"
     },
     {

@@ -1,4 +1,4 @@
-.menubar{
+.menubar {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -10,21 +10,22 @@
     bottom: 15%;
 }
 
-.link{
+.link {
     color: var(--green);
     font-size: 2rem;
 }
 
-.link:hover{
-    color: var(--yellow);
+.link:hover::before {
+    content: ">";
+    color: var(--green);
 }
 
-.p{
+.p {
     position: absolute;
     bottom: 0;
     right: 0;
     cursor: pointer;
 }
-.p:hover{
+.p:hover {
     color: var(--yellow);
 }

@@ -2,6 +2,7 @@
 using GameBook.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameBook.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250114151228_Merge")]
+    partial class Merge
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
@@ -73,9 +76,6 @@ namespace GameBook.Server.Migrations
                     b.Property<int>("DialogID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("NextDialogID")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("RelationshipEffect")
                         .HasColumnType("INTEGER");
 
@@ -88,24 +88,6 @@ namespace GameBook.Server.Migrations
                     b.HasIndex("DialogID");
 
                     b.ToTable("DialogResponses");
-                });
-
-            modelBuilder.Entity("GameBook.Server.Models.End", b =>
-                {
-                    b.Property<int>("EndID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("EndID");
-
-                    b.ToTable("End");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.InteractOption", b =>
@@ -233,9 +215,6 @@ namespace GameBook.Server.Migrations
                     b.Property<string>("BackgroundImagePath")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("EndID")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -244,8 +223,6 @@ namespace GameBook.Server.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("LocationID");
-
-                    b.HasIndex("EndID");
 
                     b.ToTable("Locations");
                 });
@@ -299,27 +276,6 @@ namespace GameBook.Server.Migrations
                     b.HasIndex("SecondNodeID");
 
                     b.ToTable("LocationPaths");
-                });
-
-            modelBuilder.Entity("GameBook.Server.Models.RequiredItems", b =>
-                {
-                    b.Property<int>("RequiredItemsID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ItemID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("LocationID")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("RequiredItemsID");
-
-                    b.HasIndex("ItemID");
-
-                    b.HasIndex("LocationID");
-
-                    b.ToTable("RequiredItems");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.ConsumableItem", b =>
@@ -404,15 +360,6 @@ namespace GameBook.Server.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.Location", b =>
-                {
-                    b.HasOne("GameBook.Server.Models.End", "End")
-                        .WithMany()
-                        .HasForeignKey("EndID");
-
-                    b.Navigation("End");
-                });
-
             modelBuilder.Entity("GameBook.Server.Models.LocationContent", b =>
                 {
                     b.HasOne("GameBook.Server.Models.Interactible", "Interactible")
@@ -449,25 +396,6 @@ namespace GameBook.Server.Migrations
                     b.Navigation("FirstNode");
 
                     b.Navigation("SecondNode");
-                });
-
-            modelBuilder.Entity("GameBook.Server.Models.RequiredItems", b =>
-                {
-                    b.HasOne("GameBook.Server.Models.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GameBook.Server.Models.Location", "Location")
-                        .WithMany()
-                        .HasForeignKey("LocationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Item");
-
-                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.Dialog", b =>
