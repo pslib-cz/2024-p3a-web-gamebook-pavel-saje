@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GameBook.Server.Models
 {
-    public class ConsumableItem
+    public class DataConsumableItem
     {
         [Key]
         public int ConsumableItemID { get; set; }
@@ -13,6 +13,6 @@ namespace GameBook.Server.Models
         public int RadiationValue { get; set; }
 
         [ForeignKey(nameof(ItemID))]
-        public Item Item { get; set; }
+        public DataItem Item { get; set; }
     }
 }

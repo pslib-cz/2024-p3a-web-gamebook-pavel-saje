@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GameBook.Server.Models
 {
-    public class LocationPath
+    public class DataLocationPath
     {
         [Key]
         public int PathID { get; set; }
@@ -12,9 +12,9 @@ namespace GameBook.Server.Models
         public int EnergyTravelCost { get; set; }
 
         [ForeignKey(nameof(FirstNodeID))]
-        public Location FirstNode { get; set; }
+        public DataLocation FirstNode { get; set; }
 
         [ForeignKey(nameof(SecondNodeID))]
-        public Location SecondNode { get; set; }
+        public DataLocation SecondNode { get; set; }
     }
 }

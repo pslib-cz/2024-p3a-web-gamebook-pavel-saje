@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GameBook.Server.Models
 {
-    public class Item
+    public class DataItem
     {
         [Key]
         public int ItemID { get; set; }
@@ -11,8 +11,8 @@ namespace GameBook.Server.Models
         public int? TradeValue { get; set; }
         public bool Stackable { get; set; }
         public int CategoryId { get; set; }
-
         [ForeignKey(nameof(CategoryId))]
-        public ItemCategory Category { get; set; }
+        public DataItemCategory Category { get; set; }
+        public ICollection<DataRequiredItems> RequiredInLocations { get; set; } = new List<DataRequiredItems>();
     }
 }
