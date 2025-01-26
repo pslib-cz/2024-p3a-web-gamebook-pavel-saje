@@ -14,6 +14,6 @@ namespace GameBook.Server.Models
         public DataInteractible Interactible { get; set; } = null!;
         [ForeignKey(nameof(NextDialogID))]
         public DataDialog? NextDialog { get; set; }
-        public ICollection<DataDialogResponse>? DialogResponses { get; set; } = null!;
+        public ICollection<DataDialogResponse> DialogResponses { get; set; } = new List<DataDialogResponse>();
     }
 }

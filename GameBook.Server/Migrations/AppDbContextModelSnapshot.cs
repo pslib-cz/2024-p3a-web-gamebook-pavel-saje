@@ -16,7 +16,7 @@ namespace GameBook.Server.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
 
-            modelBuilder.Entity("GameBook.Server.Models.ConsumableItem", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataConsumableItem", b =>
                 {
                     b.Property<int>("ConsumableItemID")
                         .ValueGeneratedOnAdd()
@@ -38,19 +38,19 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("ItemID");
 
-                    b.ToTable("ConsumableItems");
+                    b.ToTable("ConsumableItem");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.Dialog", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataDialog", b =>
                 {
                     b.Property<int>("DialogID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DialogOrder")
+                    b.Property<int>("IteractibleID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("IteractibleID")
+                    b.Property<int?>("NextDialogID")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Text")
@@ -61,10 +61,12 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("IteractibleID");
 
-                    b.ToTable("Dialogs");
+                    b.HasIndex("NextDialogID");
+
+                    b.ToTable("DataDialog");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.DialogResponse", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataDialogResponse", b =>
                 {
                     b.Property<int>("DialogResponseID")
                         .ValueGeneratedOnAdd()
@@ -73,7 +75,7 @@ namespace GameBook.Server.Migrations
                     b.Property<int>("DialogID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("NextDialogID")
+                    b.Property<int?>("NextDialogID")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("RelationshipEffect")
@@ -87,28 +89,12 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("DialogID");
 
-                    b.ToTable("DialogResponses");
+                    b.HasIndex("NextDialogID");
+
+                    b.ToTable("DataDialogResponse");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.End", b =>
-                {
-                    b.Property<int>("EndID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("EndID");
-
-                    b.ToTable("End");
-                });
-
-            modelBuilder.Entity("GameBook.Server.Models.InteractOption", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataInteractOption", b =>
                 {
                     b.Property<int>("OptionID")
                         .ValueGeneratedOnAdd()
@@ -120,16 +106,17 @@ namespace GameBook.Server.Migrations
 
                     b.HasKey("OptionID");
 
-                    b.ToTable("InteractOptions");
+                    b.ToTable("InteractOption");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.Interactible", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataInteractible", b =>
                 {
                     b.Property<int>("InteractibleID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ImagePath")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
@@ -138,12 +125,12 @@ namespace GameBook.Server.Migrations
 
                     b.HasKey("InteractibleID");
 
-                    b.ToTable("Interactibles");
+                    b.ToTable("Interactible");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.InteractiblesItem", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataInteractiblesItem", b =>
                 {
-                    b.Property<int>("InteractibleItemID")
+                    b.Property<int>("InteractiblesItemID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -153,18 +140,18 @@ namespace GameBook.Server.Migrations
                     b.Property<int>("ItemId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("InteractibleItemID");
+                    b.HasKey("InteractiblesItemID");
 
                     b.HasIndex("InteractibleID");
 
                     b.HasIndex("ItemId");
 
-                    b.ToTable("InteractiblesItems");
+                    b.ToTable("InteractiblesItem");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.InteractiblesOption", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataInteractiblesOption", b =>
                 {
-                    b.Property<int>("InteractibleOptionID")
+                    b.Property<int>("InteractiblesOptionID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -174,16 +161,16 @@ namespace GameBook.Server.Migrations
                     b.Property<int>("OptionID")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("InteractibleOptionID");
+                    b.HasKey("InteractiblesOptionID");
 
                     b.HasIndex("InteractibleID");
 
                     b.HasIndex("OptionID");
 
-                    b.ToTable("InteractiblesOptions");
+                    b.ToTable("InteractiblesOption");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.Item", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataItem", b =>
                 {
                     b.Property<int>("ItemID")
                         .ValueGeneratedOnAdd()
@@ -206,10 +193,10 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Items");
+                    b.ToTable("Item");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.ItemCategory", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataItemCategory", b =>
                 {
                     b.Property<int>("CategoryID")
                         .ValueGeneratedOnAdd()
@@ -221,20 +208,18 @@ namespace GameBook.Server.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("ItemCategories");
+                    b.ToTable("ItemCategory");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.Location", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataLocation", b =>
                 {
                     b.Property<int>("LocationID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("BackgroundImagePath")
+                        .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("EndID")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -245,12 +230,10 @@ namespace GameBook.Server.Migrations
 
                     b.HasKey("LocationID");
 
-                    b.HasIndex("EndID");
-
-                    b.ToTable("Locations");
+                    b.ToTable("Location");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.LocationContent", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataLocationContent", b =>
                 {
                     b.Property<int>("LocationContentID")
                         .ValueGeneratedOnAdd()
@@ -277,7 +260,7 @@ namespace GameBook.Server.Migrations
                     b.ToTable("LocationContent");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.LocationPath", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataLocationPath", b =>
                 {
                     b.Property<int>("PathID")
                         .ValueGeneratedOnAdd()
@@ -298,10 +281,10 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("SecondNodeID");
 
-                    b.ToTable("LocationPaths");
+                    b.ToTable("LocationPath");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.RequiredItems", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataRequiredItems", b =>
                 {
                     b.Property<int>("RequiredItemsID")
                         .ValueGeneratedOnAdd()
@@ -322,9 +305,9 @@ namespace GameBook.Server.Migrations
                     b.ToTable("RequiredItems");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.ConsumableItem", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataConsumableItem", b =>
                 {
-                    b.HasOne("GameBook.Server.Models.Item", "Item")
+                    b.HasOne("GameBook.Server.Models.DataItem", "Item")
                         .WithMany()
                         .HasForeignKey("ItemID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -333,37 +316,50 @@ namespace GameBook.Server.Migrations
                     b.Navigation("Item");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.Dialog", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataDialog", b =>
                 {
-                    b.HasOne("GameBook.Server.Models.Interactible", "Interactible")
+                    b.HasOne("GameBook.Server.Models.DataInteractible", "Interactible")
                         .WithMany()
                         .HasForeignKey("IteractibleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("GameBook.Server.Models.DataDialog", "NextDialog")
+                        .WithMany()
+                        .HasForeignKey("NextDialogID");
+
                     b.Navigation("Interactible");
+
+                    b.Navigation("NextDialog");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.DialogResponse", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataDialogResponse", b =>
                 {
-                    b.HasOne("GameBook.Server.Models.Dialog", "Dialog")
+                    b.HasOne("GameBook.Server.Models.DataDialog", "Dialog")
                         .WithMany("DialogResponses")
                         .HasForeignKey("DialogID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("GameBook.Server.Models.DataDialog", "NextDialog")
+                        .WithMany()
+                        .HasForeignKey("NextDialogID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.Navigation("Dialog");
+
+                    b.Navigation("NextDialog");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.InteractiblesItem", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataInteractiblesItem", b =>
                 {
-                    b.HasOne("GameBook.Server.Models.Interactible", "Interactible")
+                    b.HasOne("GameBook.Server.Models.DataInteractible", "Interactible")
                         .WithMany()
                         .HasForeignKey("InteractibleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GameBook.Server.Models.Item", "Item")
+                    b.HasOne("GameBook.Server.Models.DataItem", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -374,16 +370,16 @@ namespace GameBook.Server.Migrations
                     b.Navigation("Item");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.InteractiblesOption", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataInteractiblesOption", b =>
                 {
-                    b.HasOne("GameBook.Server.Models.Interactible", "Interactible")
-                        .WithMany()
+                    b.HasOne("GameBook.Server.Models.DataInteractible", "Interactible")
+                        .WithMany("InteractOptions")
                         .HasForeignKey("InteractibleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GameBook.Server.Models.InteractOption", "Option")
-                        .WithMany()
+                    b.HasOne("GameBook.Server.Models.DataInteractOption", "Option")
+                        .WithMany("Interactibles")
                         .HasForeignKey("OptionID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -393,10 +389,10 @@ namespace GameBook.Server.Migrations
                     b.Navigation("Option");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.Item", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataItem", b =>
                 {
-                    b.HasOne("GameBook.Server.Models.ItemCategory", "Category")
-                        .WithMany()
+                    b.HasOne("GameBook.Server.Models.DataItemCategory", "Category")
+                        .WithMany("Items")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -404,25 +400,16 @@ namespace GameBook.Server.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.Location", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataLocationContent", b =>
                 {
-                    b.HasOne("GameBook.Server.Models.End", "End")
-                        .WithMany()
-                        .HasForeignKey("EndID");
-
-                    b.Navigation("End");
-                });
-
-            modelBuilder.Entity("GameBook.Server.Models.LocationContent", b =>
-                {
-                    b.HasOne("GameBook.Server.Models.Interactible", "Interactible")
-                        .WithMany()
+                    b.HasOne("GameBook.Server.Models.DataInteractible", "Interactible")
+                        .WithMany("LocationContents")
                         .HasForeignKey("InteractibleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GameBook.Server.Models.Location", "Location")
-                        .WithMany()
+                    b.HasOne("GameBook.Server.Models.DataLocation", "Location")
+                        .WithMany("LocationContents")
                         .HasForeignKey("LocationID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -432,15 +419,15 @@ namespace GameBook.Server.Migrations
                     b.Navigation("Location");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.LocationPath", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataLocationPath", b =>
                 {
-                    b.HasOne("GameBook.Server.Models.Location", "FirstNode")
+                    b.HasOne("GameBook.Server.Models.DataLocation", "FirstNode")
                         .WithMany()
                         .HasForeignKey("FirstNodeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GameBook.Server.Models.Location", "SecondNode")
+                    b.HasOne("GameBook.Server.Models.DataLocation", "SecondNode")
                         .WithMany()
                         .HasForeignKey("SecondNodeID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -451,16 +438,16 @@ namespace GameBook.Server.Migrations
                     b.Navigation("SecondNode");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.RequiredItems", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataRequiredItems", b =>
                 {
-                    b.HasOne("GameBook.Server.Models.Item", "Item")
-                        .WithMany()
+                    b.HasOne("GameBook.Server.Models.DataItem", "Item")
+                        .WithMany("RequiredInLocations")
                         .HasForeignKey("ItemID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GameBook.Server.Models.Location", "Location")
-                        .WithMany()
+                    b.HasOne("GameBook.Server.Models.DataLocation", "Location")
+                        .WithMany("RequiredItems")
                         .HasForeignKey("LocationID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -470,9 +457,38 @@ namespace GameBook.Server.Migrations
                     b.Navigation("Location");
                 });
 
-            modelBuilder.Entity("GameBook.Server.Models.Dialog", b =>
+            modelBuilder.Entity("GameBook.Server.Models.DataDialog", b =>
                 {
                     b.Navigation("DialogResponses");
+                });
+
+            modelBuilder.Entity("GameBook.Server.Models.DataInteractOption", b =>
+                {
+                    b.Navigation("Interactibles");
+                });
+
+            modelBuilder.Entity("GameBook.Server.Models.DataInteractible", b =>
+                {
+                    b.Navigation("InteractOptions");
+
+                    b.Navigation("LocationContents");
+                });
+
+            modelBuilder.Entity("GameBook.Server.Models.DataItem", b =>
+                {
+                    b.Navigation("RequiredInLocations");
+                });
+
+            modelBuilder.Entity("GameBook.Server.Models.DataItemCategory", b =>
+                {
+                    b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("GameBook.Server.Models.DataLocation", b =>
+                {
+                    b.Navigation("LocationContents");
+
+                    b.Navigation("RequiredItems");
                 });
 #pragma warning restore 612, 618
         }

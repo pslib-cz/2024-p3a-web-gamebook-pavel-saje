@@ -2,6 +2,7 @@ using GameBook.Server.Data;
 using GameBook.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using GameBook.Server.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,12 +54,13 @@ app.UseCors();
 
 app.MapFallbackToFile("index.html");
 
+
 //app.UseSpa(spa =>
 //{
-//    spa.Options.SourcePath = "gameBook.client"; // Zadejte správnou cestu k adresáøi klienta
+//    spa.Options.SourcePath = "gameBook.client"; // Zadejte spr?vnou cestu k adres??i klienta
 //    if (app.Environment.IsDevelopment())
 //    {
-//        spa.UseProxyToSpaDevelopmentServer("https://localhost:5173"); // Port vývojového serveru SPA
+//        spa.UseProxyToSpaDevelopmentServer("https://localhost:5173"); // Port v?vojov?ho serveru SPA
 //    }
 //});
 

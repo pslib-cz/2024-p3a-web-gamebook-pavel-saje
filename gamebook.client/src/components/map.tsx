@@ -199,13 +199,13 @@ export default MapWithGraph;
 import React, { useEffect, useState, useRef } from "react";
 import ForceGraph2D from "react-force-graph-2d";
 import { useNavigate } from "react-router-dom";
-import { Location } from "../types";
+import { DataLocation } from "../types";
 import { FaMap, FaTimes } from "react-icons/fa";
 
 import styles from "../styles/menu.module.css";
 
 const MapWithGraph2D: React.FC = () => {
-  const [locations, setLocations] = useState<Location[] | null>(null);
+  const [locations, setLocations] = useState<DataLocation[] | null>(null);
   const [paths, setPaths] = useState<any[] | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -217,8 +217,8 @@ const MapWithGraph2D: React.FC = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const locationsResponse = await fetch("https://localhost:7092/api/Locations");
-        const pathsResponse = await fetch("https://localhost:7092/api/LocationPaths");
+        const locationsResponse = await fetch("https://localhost:7092/api/DataLocation");
+        const pathsResponse = await fetch("https://localhost:7092/api/DataLocationPath");
         const locationsJson = await locationsResponse.json();
         const pathsJson = await pathsResponse.json();
         console.log("Locations (raw):", locationsJson);
@@ -239,7 +239,7 @@ const MapWithGraph2D: React.FC = () => {
     fetchData();
   }, []);
 
-  const calculateNodePosition = (locations: Location[]) => {
+  const calculateNodePosition = (locations: DataLocation[]) => {
     const spacing = 200;
     return locations.map((location, index) => ({
       id: location.locationID.toString(),
@@ -249,7 +249,7 @@ const MapWithGraph2D: React.FC = () => {
     }));
   };
 
-  const createEdges = (locations: Location[], paths: any[]) => {
+  const createEdges = (locations: DataLocation[], paths: any[]) => {
     return paths
       ?.filter((path) => {
         const firstNodeExists = locations?.some(

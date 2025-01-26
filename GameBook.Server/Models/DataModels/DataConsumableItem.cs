@@ -1,5 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using GameBook.Server.Data;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.OpenApi;
+using Microsoft.EntityFrameworkCore;
 
 namespace GameBook.Server.Models
 {
@@ -15,4 +19,5 @@ namespace GameBook.Server.Models
         [ForeignKey(nameof(ItemID))]
         public DataItem Item { get; set; }
     }
+
 }

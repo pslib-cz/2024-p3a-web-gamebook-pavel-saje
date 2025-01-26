@@ -3,24 +3,22 @@ import Content from "../components/LocationContent";
 import NextLocation from "../components/NextLocation";
 
 import { useState, useEffect, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { GameContext } from "../context/GameContext";
 
-import { Location, RequiredItems } from "../types";
+import { DataLocation, RequiredItems } from "../types";
 import { domain } from "../utils";
 
 const NetopyriVarle: React.FC = () => {
     const gameContext = useContext(GameContext);
-    const energy = gameContext ? gameContext.energy : null;
     const inventory = gameContext ? gameContext.inventory : [];
 
     const { id } = useParams();
-    const navigate = useNavigate();
-    const [currentLocation, setCurrentLocation] = useState<Location | null>(
+    const [currentLocation, setCurrentLocation] = useState<DataLocation | null>(
         null
     );
-    const [targetLocation, setTargetLocation] = useState<Location | null>(null);
+    const [targetLocation, setTargetLocation] = useState<DataLocation | null>(null);
 
     const [requiredItems, setRequiredItems] = useState<RequiredItems[]>([]);
 
@@ -31,7 +29,7 @@ const NetopyriVarle: React.FC = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `https://localhost:7092/api/Locations/${id}?energy=${energy}`
+                    `https://localhost:7092/api/DataLocation/${id}`
                 );
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
@@ -39,6 +37,7 @@ const NetopyriVarle: React.FC = () => {
                 const json = await response.json();
                 console.log(json);
                 setTargetLocation(json);
+                console.log(targetLocation);
             } catch (error) {
                 if (error instanceof Error) {
                     setError(error);
@@ -76,9 +75,6 @@ const NetopyriVarle: React.FC = () => {
 
                 if (allItemsPresent) {
                     setCurrentLocation(targetLocation);
-                    if (targetLocation?.endID != null) {
-                        navigate(`/Ending/${targetLocation.endID}`);
-                    }
                 } else {
                     setError(new Error("Nemáš všechny potřebné věci"));
                 }
@@ -97,12 +93,14 @@ const NetopyriVarle: React.FC = () => {
         }
     }, [targetLocation, inventory]);
 
+    console.log(targetLocation);
+
     return (
         <>
             {!loading && (
                 <img style={{ width: "100%", height: "100vh" }}
                     src={
-                        domain + currentLocation?.backgroundImagePath ||
+                        domain + targetLocation?.backgroundImagePath ||
                         "https://t4.ftcdn.net/jpg/00/89/02/67/360_F_89026793_eyw5a7WCQE0y1RHsizu41uhj7YStgvAA.jpg"
                     }
                     alt=""
@@ -110,11 +108,11 @@ const NetopyriVarle: React.FC = () => {
             )}
 
             <p>{error?.message}</p>
-            {currentLocation != null && (
-                <h2 className="title">{currentLocation.name}</h2>
+            {targetLocation != null && (
+                <h2 className="title">{targetLocation.name}</h2>
             )}
-            <Content lokace={currentLocation} />
-            <NextLocation locationId={currentLocation?.locationID || 0} />
+            <Content lokace={targetLocation} />
+            <NextLocation locationId={targetLocation?.locationID || 0} />
         </>
     );
 };

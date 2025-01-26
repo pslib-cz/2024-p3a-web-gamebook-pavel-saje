@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameBook.Server.Models
 {
     public class DataLocationContent
     {
+        [Key]
+        public int LocationContentID { get; set; }
         public int LocationID { get; set; }
         [ForeignKey(nameof(LocationID))]
         public DataLocation Location { get; set; }
