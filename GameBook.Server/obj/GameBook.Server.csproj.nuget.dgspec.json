@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\GameBook.Server.csproj": {}
+    "D:\\KOKOTSAJA\\GameBook.Server\\GameBook.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\GameBook.Server.csproj": {
+    "D:\\KOKOTSAJA\\GameBook.Server\\GameBook.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\GameBook.Server.csproj",
+        "projectUniqueName": "D:\\KOKOTSAJA\\GameBook.Server\\GameBook.Server.csproj",
         "projectName": "GameBook.Server",
-        "projectPath": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\GameBook.Server.csproj",
-        "packagesPath": "C:\\Users\\Local User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\obj\\",
+        "projectPath": "D:\\KOKOTSAJA\\GameBook.Server\\GameBook.Server.csproj",
+        "packagesPath": "C:\\Users\\juki_\\.nuget\\packages\\",
+        "outputPath": "D:\\KOKOTSAJA\\GameBook.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Local User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\juki_\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,13 +44,16 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Microsoft.AspNetCore.SpaProxy": {
               "target": "Package",
               "version": "[8.*-*, )"
@@ -77,6 +80,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[7.2.0, )"
@@ -101,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

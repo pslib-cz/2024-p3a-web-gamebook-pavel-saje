@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import {Location} from "../types";
+import {DataLocation} from "../types";
 
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ interface NextLocationProps {
 }
 
 const NextLocation: React.FC<NextLocationProps> = ({locationId}) => {
-    const [locations, setLocations] = useState<Location[]>([]);
+    const [locations, setLocations] = useState<DataLocation[]>([]);
     const [error, setError] = useState<Error | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
 
@@ -25,7 +25,7 @@ const NextLocation: React.FC<NextLocationProps> = ({locationId}) => {
     useEffect(() => {
         const fetchData = async () => {
             try{
-                const response = await fetch(`https://localhost:7092/api/Locations/GetNearestLocation/${locationId}`);
+                const response = await fetch(`https://localhost:7092/api/DataLocation/GetNearestLocation/${locationId}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
                 }

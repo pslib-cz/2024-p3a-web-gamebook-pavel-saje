@@ -65,12 +65,11 @@ export type ItemCategory = {
     name: string;
 };
 
-export type Location = {
+export type DataLocation = {
     locationID: number;
     name: string;
     backgroundImagePath: string;
     radiationGain: number;
-    endID: number;
 };
 
 export type LocationContent = {
