@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2jMHvAA8704=",
+  "dgSpecHash": "mnkhxGXZOK4=",
   "success": true,
-  "projectFilePath": "D:\\KOKOTSAJA\\GameBook.Server\\GameBook.Server.csproj",
+  "projectFilePath": "D:\\KokotSaja\\GameBook.Server\\GameBook.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juki_\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\juki_\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

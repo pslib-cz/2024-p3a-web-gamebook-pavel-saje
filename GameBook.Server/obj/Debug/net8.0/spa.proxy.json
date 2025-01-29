@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "D:\\KOKOTSAJA\\GameBook.Server\\..\\gamebook.client",
+"WorkingDirectory": "D:\\KokotSaja\\GameBook.Server\\..\\gamebook.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }
