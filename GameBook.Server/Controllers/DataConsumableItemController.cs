@@ -47,14 +47,39 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<DataConsumableItem> Get(int id)
+        public ActionResult<ViewConsumableItem> Get(int id)
         {
-            var consumableItem = _context.ConsumableItem.Find(id);
+            var consumableItem = _context.ConsumableItem
+                .Include(ci => ci.Item)
+                .ThenInclude(i => i.Category)
+                .FirstOrDefault(ci => ci.ItemID == id);
+
             if (consumableItem == null)
             {
                 return NotFound();
             }
-            return Ok(consumableItem);
+
+            return Ok(new ViewConsumableItem
+                {
+                    ConsumableItemID = consumableItem.ConsumableItemID,
+                    ItemID = consumableItem.ItemID,
+                    HealthValue = consumableItem.HealthValue,
+                    EnergyValue = consumableItem.EnergyValue,
+                    RadiationValue = consumableItem.RadiationValue,
+                    Item = new ViewItem
+                    {
+                        ItemID = consumableItem.Item.ItemID,
+                        Name = consumableItem.Item.Name,
+                        TradeValue = consumableItem.Item.TradeValue,
+                        Stackable = consumableItem.Item.Stackable,
+                        Category = new ViewItemCategory
+                        {
+                            CategoryID = consumableItem.Item.CategoryId,
+                            Name = consumableItem.Item.Name,
+                        }
+                    }
+                }
+            );
         }
 
         [HttpPost]
