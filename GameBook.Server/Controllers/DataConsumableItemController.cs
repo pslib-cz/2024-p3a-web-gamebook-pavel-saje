@@ -7,18 +7,42 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataConsumableItemController : ControllerBase
+    public class ConsumableItemController : ControllerBase
     {
         private AppDbContext _context;
-        public DataConsumableItemController(AppDbContext context)
+        public ConsumableItemController(AppDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<DataConsumableItem>> Get()
+        public ActionResult<IEnumerable<ViewConsumableItem>> Get()
         {
-            return Ok(_context.ConsumableItem.ToList());
+            var consumableItems = _context.ConsumableItem
+                .Include(ci => ci.Item)
+                .Select(ci => new ViewConsumableItem
+                {
+                    ConsumableItemID = ci.ConsumableItemID,
+                    ItemID = ci.ItemID,
+                    HealthValue = ci.HealthValue,
+                    EnergyValue = ci.EnergyValue,
+                    RadiationValue = ci.RadiationValue,
+                    Item = new ViewItem
+                    {
+                        ItemID = ci.Item.ItemID,
+                        Name = ci.Item.Name,
+                        TradeValue = ci.Item.TradeValue,
+                        Stackable = ci.Item.Stackable,
+                        Category = new ViewItemCategory
+                        {
+                            CategoryID = ci.Item.CategoryId,
+                            Name = ci.Item.Name,
+                        }
+                    }
+                })
+                .ToList();
+
+            return Ok(consumableItems);
 
         }
 

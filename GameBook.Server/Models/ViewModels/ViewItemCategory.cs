@@ -6,6 +6,5 @@ namespace GameBook.Server.Models
     {
         public int CategoryID { get; set; }
         public required string Name { get; set; }
-        public ICollection<ViewItem> Items { get; set; } = new List<ViewItem>();
     }
 }
