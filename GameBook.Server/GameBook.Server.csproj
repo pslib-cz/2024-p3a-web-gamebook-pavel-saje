@@ -35,7 +35,6 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="Models\InputModels\" />
-    <Folder Include="Models\ViewModels\" />
     <Folder Include="wwwroot\Uploads\Locations\" />
     <Folder Include="wwwroot\Uploads\Interactibles\" />
   </ItemGroup>
