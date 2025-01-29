@@ -7412,23 +7412,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\juki_\\.nuget\\packages\\": {},
+    "C:\\Users\\Local User\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\KOKOTSAJA\\GameBook.Server\\GameBook.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\GameBook.Server.csproj",
       "projectName": "GameBook.Server",
-      "projectPath": "D:\\KOKOTSAJA\\GameBook.Server\\GameBook.Server.csproj",
-      "packagesPath": "C:\\Users\\juki_\\.nuget\\packages\\",
-      "outputPath": "D:\\KOKOTSAJA\\GameBook.Server\\obj\\",
+      "projectPath": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\GameBook.Server.csproj",
+      "packagesPath": "C:\\Users\\Local User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\juki_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Local User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7455,7 +7455,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -7519,7 +7520,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
