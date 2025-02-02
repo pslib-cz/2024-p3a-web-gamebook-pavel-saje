@@ -16,18 +16,19 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<DataInteractiblesItem>> Get()
+        public async Task<ActionResult<IEnumerable<ViewInteractiblesItem>>> GetInteractiblesItems()
         {
-            return Ok(_context.InteractiblesItems.ToList());
+            return Ok(_context.InteractiblesItem.ToList());
         }
 
         [HttpGet("{id}")]
         public ActionResult<DataInteractiblesItem> Get(int id)
         {
-            var item = _context.InteractiblesItems
+            var item = _context.InteractiblesItem
                 .Include(i => i.Interactible)
                 .Include(i => i.Item)
                 .FirstOrDefault(i => i.InteractiblesItemID == id);
+>>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
 
             if (item == null)
             {
@@ -36,6 +37,8 @@ namespace GameBook.Server.Controllers
 
             return Ok(item);
         }
+<<<<<<< HEAD
+=======
 
         [HttpPost]
         public ActionResult<DataInteractiblesItem> Post(DataInteractiblesItem item)
@@ -73,5 +76,6 @@ namespace GameBook.Server.Controllers
 
             return NoContent();
         }
+>>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
     }
 }
