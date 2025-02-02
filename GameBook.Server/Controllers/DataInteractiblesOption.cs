@@ -18,13 +18,13 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DataInteractiblesOption>> Get()
         {
-            return Ok(_context.InteractiblesOptions.ToList());
+            return Ok(_context.InteractiblesOption.ToList());
         }
 
         [HttpGet("{id}")]
         public ActionResult<DataInteractiblesOption> Get(int id)
         {
-            var option = _context.InteractiblesOptions
+            var option = _context.InteractiblesOption
                 .Include(o => o.Interactible)
                 .Include(o => o.Option)
                 .FirstOrDefault(o => o.InteractiblesOptionID == id);
@@ -37,10 +37,36 @@ namespace GameBook.Server.Controllers
             return Ok(option);
         }
 
+        [HttpGet("Interactible/{id}")]
+        public async Task<ActionResult<ViewInteractiblesOption>> rGetOptionsByInteractibleId(int id)
+        {
+            var Option = await _context.InteractiblesOption
+                .Where(i => i.InteractibleID == id)
+                .Include(i => i.Option)
+                .Select(i => new ViewInteractiblesOption
+                {
+                    InteractibleID = i.InteractibleID,
+                    OptionID = i.OptionID,
+                    Option = new ViewInteractOption
+                    {
+                        OptionID = i.Option.OptionID,
+                        OptionText = i.Option.OptionText
+                    }
+                }).ToListAsync();
+
+
+            if (Option == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(Option);
+        }
+
         [HttpPost]
         public ActionResult<DataInteractiblesOption> Post(DataInteractiblesOption option)
         {
-            _context.InteractiblesOptions.Add(option);
+            _context.InteractiblesOption.Add(option);
             _context.SaveChanges();
             return CreatedAtAction("Get", new { id = option.InteractiblesOptionID }, option);
         }
@@ -62,13 +88,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DataInteractiblesOption> Delete(int id)
         {
-            var option = _context.InteractiblesOptions.Find(id);
+            var option = _context.InteractiblesOption.Find(id);
             if (option == null)
             {
                 return NotFound();
             }
 
-            _context.InteractiblesOptions.Remove(option);
+            _context.InteractiblesOption.Remove(option);
             _context.SaveChanges();
 
             return NoContent();
