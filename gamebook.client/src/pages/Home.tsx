@@ -12,14 +12,14 @@ const Home = () => {
         return <div>Error: Game context is not available.</div>;
     }
 
-    const {resetAll}  = gameContext;
+    const {resetAll, defaultLastLocationId, lastLocationId}  = gameContext;
     return (
         <>
             <h1 className={styles.TITLE}>Stíny popela</h1>
             <div className={styles.menubar}>
-                <Link className={styles.link} onClick={() => resetAll()} to="/Game/3">Play</Link>
+                <Link className={styles.link} onClick={() => resetAll()} to={`Game/${defaultLastLocationId}`}>Play</Link>
 
-                <Link className={styles.link} to="/Game">Continue</Link>
+                <Link className={styles.link} to={`Game/${lastLocationId}`}>Continue</Link>
 
                 <Link className={styles.link} to="/Admin">Admin</Link>
                 </div>

@@ -30,6 +30,7 @@ interface GameContextProps {
   setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<string[]>>;
   resetInteractiblesRemovedFromLocation: () => void;
 
+  defaultLastLocationId : number;
   lastLocationId: number;
   setLastLocationId: React.Dispatch<React.SetStateAction<number>>;
   resetLastLocationId: () => void;
@@ -78,10 +79,12 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     return savedCanBeVisited !== null ? JSON.parse(savedCanBeVisited) : [];
   });
 
+  const defaultLastLocationId = 3;
   const [lastLocationId, setLastLocationId] = useState<number>(() => {
     const savedLastLocationId = localStorage.getItem('lastLocationId');
-    return savedLastLocationId !== null ? parseInt(savedLastLocationId, 10) : 0;
+    return savedLastLocationId !== null ? parseInt(savedLastLocationId, 10) : defaultLastLocationId;
   });
+
 
 
 
@@ -164,6 +167,7 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         setCanBeVisited,
         resetCanBeVisited,
         resetAll,
+        defaultLastLocationId,
         lastLocationId,
         setLastLocationId,
         resetLastLocationId

@@ -9,3 +9,8 @@
   filter: drop-shadow(4px 4px 2px var(--green)) 
           drop-shadow(-4px -4px 2px var(--green));
 }
+
+.interactible img{
+    width: 7rem;
+    aspect-ratio: 1;
+}

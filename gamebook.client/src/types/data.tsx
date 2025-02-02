@@ -43,7 +43,7 @@ export type InteractiblesOption = {
     interactibleID: number;
     optionID: number;
     interactible: Interactible;
-    option: InteractiblesOption;
+    option: InteractOption;
 };
 
 export type InteractOption = {
