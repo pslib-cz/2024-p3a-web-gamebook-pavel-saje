@@ -167,6 +167,88 @@
       ]
     },
     {
+      "Route": "Uploads/Interactibles/FoodCan.nl6uvf82wg.png",
+      "AssetFile": "Uploads/Interactibles/FoodCan.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "606078"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FWjLvFDgmkbFnFlYsJIbGFuzcwx+D9ssfGx0GK/Vwfk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 02 Feb 2025 12:14:30 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nl6uvf82wg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FWjLvFDgmkbFnFlYsJIbGFuzcwx+D9ssfGx0GK/Vwfk="
+        },
+        {
+          "Name": "label",
+          "Value": "Uploads/Interactibles/FoodCan.png"
+        }
+      ]
+    },
+    {
+      "Route": "Uploads/Interactibles/FoodCan.png",
+      "AssetFile": "Uploads/Interactibles/FoodCan.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "606078"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FWjLvFDgmkbFnFlYsJIbGFuzcwx+D9ssfGx0GK/Vwfk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 02 Feb 2025 12:14:30 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-FWjLvFDgmkbFnFlYsJIbGFuzcwx+D9ssfGx0GK/Vwfk="
+        }
+      ]
+    },
+    {
       "Route": "Uploads/Interactibles/survivor.png",
       "AssetFile": "Uploads/Interactibles/survivor.png",
       "Selectors": [],
