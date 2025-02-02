@@ -38,7 +38,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("ItemID");
 
-                    b.ToTable("ConsumableItem");
+                    b.ToTable("ConsumableItems");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataDialog", b =>
@@ -63,7 +63,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("NextDialogID");
 
-                    b.ToTable("DataDialog");
+                    b.ToTable("Dialogs");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataDialogResponse", b =>
@@ -91,7 +91,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("NextDialogID");
 
-                    b.ToTable("DataDialogResponse");
+                    b.ToTable("DialogResponses");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataInteractOption", b =>
@@ -106,7 +106,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasKey("OptionID");
 
-                    b.ToTable("InteractOption");
+                    b.ToTable("InteractOptions");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataInteractible", b =>
@@ -125,7 +125,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasKey("InteractibleID");
 
-                    b.ToTable("Interactible");
+                    b.ToTable("Interactibles");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataInteractiblesItem", b =>
@@ -146,7 +146,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("ItemId");
 
-                    b.ToTable("InteractiblesItem");
+                    b.ToTable("InteractiblesItems");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataInteractiblesOption", b =>
@@ -167,7 +167,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("OptionID");
 
-                    b.ToTable("InteractiblesOption");
+                    b.ToTable("InteractiblesOptions");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataItem", b =>
@@ -193,7 +193,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Item");
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataItemCategory", b =>
@@ -208,7 +208,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("ItemCategory");
+                    b.ToTable("ItemCategories");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataLocation", b =>
@@ -230,7 +230,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasKey("LocationID");
 
-                    b.ToTable("Location");
+                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataLocationContent", b =>
@@ -257,7 +257,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("LocationID");
 
-                    b.ToTable("LocationContent");
+                    b.ToTable("LocationContents");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataLocationPath", b =>
@@ -281,7 +281,7 @@ namespace GameBook.Server.Migrations
 
                     b.HasIndex("SecondNodeID");
 
-                    b.ToTable("LocationPath");
+                    b.ToTable("LocationPaths");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataRequiredItems", b =>

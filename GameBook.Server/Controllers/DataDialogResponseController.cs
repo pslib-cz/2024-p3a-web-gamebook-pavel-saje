@@ -18,13 +18,13 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DataDialogResponse>> Get()
         {
-            return Ok(_context.DataDialogResponses.ToList());
+            return Ok(_context.DialogResponses.ToList());
         }
 
         [HttpGet("{id}")]
         public ActionResult<DataDialogResponse> Get(int id)
         {
-            var response = _context.DataDialogResponses
+            var response = _context.DialogResponses
                 .Include(d => d.Dialog)
                 .Include(d => d.NextDialog)
                 .FirstOrDefault(d => d.DialogResponseID == id);
@@ -40,7 +40,7 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<DataDialogResponse> Post(DataDialogResponse response)
         {
-            _context.DataDialogResponses.Add(response);
+            _context.DialogResponses.Add(response);
             _context.SaveChanges();
             return CreatedAtAction("Get", new { id = response.DialogResponseID }, response);
         }
@@ -62,13 +62,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DataDialogResponse> Delete(int id)
         {
-            var response = _context.DataDialogResponses.Find(id);
+            var response = _context.DialogResponses.Find(id);
             if (response == null)
             {
                 return NotFound();
             }
 
-            _context.DataDialogResponses.Remove(response);
+            _context.DialogResponses.Remove(response);
             _context.SaveChanges();
 
             return NoContent();

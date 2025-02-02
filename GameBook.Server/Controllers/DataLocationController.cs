@@ -22,7 +22,7 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ViewLocation>>> GetLocations()
         {
-            var locations = await _context.Location
+            var locations = await _context.Locations
                 .Include(l => l.LocationContents)
                 .Include(l => l.RequiredItems)
                     .ThenInclude(ri => ri.Item)
@@ -65,7 +65,7 @@ namespace GameBook.Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ViewLocation>> GetLocationById(int id)
         {
-            var location = await _context.Location
+            var location = await _context.Locations
                 .Include(l => l.LocationContents)
                 .Include(l => l.RequiredItems)
                     .ThenInclude(ri => ri.Item)
@@ -114,7 +114,7 @@ namespace GameBook.Server.Controllers
         [HttpGet("{id}/connected")]
         public async Task<ActionResult<List<ViewLocation>>> GetConnectedLocations(int id)
         {
-            var locationPaths = await _context.LocationPath
+            var locationPaths = await _context.LocationPaths
                 .Where(lp => lp.FirstNodeID == id || lp.SecondNodeID == id)
                 .Include(lp => lp.FirstNode).ThenInclude(l => l.LocationContents).ThenInclude(lc => lc.Interactible)
                 .Include(lp => lp.FirstNode).ThenInclude(l => l.RequiredItems).ThenInclude(ri => ri.Item).ThenInclude(i => i.Category)
@@ -170,7 +170,7 @@ namespace GameBook.Server.Controllers
         [HttpGet("connections")]
         public async Task<ActionResult<List<ViewLocationPath>>> GetLocationConnections()
         {
-            var locationPaths = await _context.LocationPath
+            var locationPaths = await _context.LocationPaths
                 .Include(lp => lp.FirstNode)
                 .ThenInclude(l => l.LocationContents)
                 .Include(lp => lp.FirstNode)

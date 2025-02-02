@@ -18,13 +18,13 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DataInteractiblesOption>> Get()
         {
-            return Ok(_context.InteractiblesOption.ToList());
+            return Ok(_context.InteractiblesOptions.ToList());
         }
 
         [HttpGet("{id}")]
         public ActionResult<DataInteractiblesOption> Get(int id)
         {
-            var option = _context.InteractiblesOption
+            var option = _context.InteractiblesOptions
                 .Include(o => o.Interactible)
                 .Include(o => o.Option)
                 .FirstOrDefault(o => o.InteractiblesOptionID == id);
@@ -40,7 +40,7 @@ namespace GameBook.Server.Controllers
         [HttpGet("Interactible/{id}")]
         public async Task<ActionResult<ViewInteractiblesOption>> rGetOptionsByInteractibleId(int id)
         {
-            var Option = await _context.InteractiblesOption
+            var Option = await _context.InteractiblesOptions
                 .Where(i => i.InteractibleID == id)
                 .Include(i => i.Option)
                 .Select(i => new ViewInteractiblesOption
@@ -66,7 +66,7 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<DataInteractiblesOption> Post(DataInteractiblesOption option)
         {
-            _context.InteractiblesOption.Add(option);
+            _context.InteractiblesOptions.Add(option);
             _context.SaveChanges();
             return CreatedAtAction("Get", new { id = option.InteractiblesOptionID }, option);
         }
@@ -88,13 +88,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DataInteractiblesOption> Delete(int id)
         {
-            var option = _context.InteractiblesOption.Find(id);
+            var option = _context.InteractiblesOptions.Find(id);
             if (option == null)
             {
                 return NotFound();
             }
 
-            _context.InteractiblesOption.Remove(option);
+            _context.InteractiblesOptions.Remove(option);
             _context.SaveChanges();
 
             return NoContent();

@@ -16,18 +16,40 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<DataDialog>> Get()
+        public ActionResult<IEnumerable<ViewDialog>> Get()
         {
-            return Ok(_context.DataDialogs.ToList());
+            var dialogs = _context.Dialogs
+                .Include(d => d.DialogResponses)
+                .ThenInclude(dr => dr.NextDialog)
+                .Select(d => new ViewDialog
+                {
+                    DialogID = d.DialogID,
+                    NextDialogID = d.NextDialogID,
+                    Text = d.Text,
+                    Interactible = new ViewInteractible
+                    {
+                        InteractibleID = d.IteractibleID
+                    },
+                    DialogResponses = d.DialogResponses.Select(dr => new ViewDialogResponse
+                    {
+                        DialogResponseID = dr.DialogResponseID,
+                        DialogID = dr.DialogID,
+                        NextDialogID = dr.NextDialogID,
+                        ResponseText = dr.ResponseText,
+                        RelationshipEffect = dr.RelationshipEffect,
+                    }).ToList()
+                })
+                .ToList();
+
+            return Ok(dialogs);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<DataDialog> Get(int id)
+        public ActionResult<ViewDialog> Get(int id)
         {
-            var dialog = _context.DataDialogs
+            var dialog = _context.Dialogs
                 .Include(d => d.DialogResponses)
-                .Include(d => d.Interactible)
-                .Include(d => d.NextDialog)
+                .ThenInclude(dr => dr.NextDialog)
                 .FirstOrDefault(d => d.DialogID == id);
 
             if (dialog == null)
@@ -35,13 +57,30 @@ namespace GameBook.Server.Controllers
                 return NotFound();
             }
 
-            return Ok(dialog);
+            return Ok(new ViewDialog
+            {
+                DialogID = dialog.DialogID,
+                NextDialogID = dialog.NextDialogID,
+                Text = dialog.Text,
+                Interactible = new ViewInteractible
+                {
+                    InteractibleID = dialog.IteractibleID
+                },
+                DialogResponses = dialog.DialogResponses.Select(dr => new ViewDialogResponse
+                {
+                    DialogResponseID = dr.DialogResponseID,
+                    DialogID = dr.DialogID,
+                    NextDialogID = dr.NextDialogID,
+                    ResponseText = dr.ResponseText,
+                    RelationshipEffect = dr.RelationshipEffect,
+                }).ToList()
+            });
         }
 
         [HttpPost]
         public ActionResult<DataDialog> Post(DataDialog dialog)
         {
-            _context.DataDialogs.Add(dialog);
+            _context.Dialogs.Add(dialog);
             _context.SaveChanges();
             return CreatedAtAction("Get", new { id = dialog.DialogID }, dialog);
         }
@@ -63,13 +102,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DataDialog> Delete(int id)
         {
-            var dialog = _context.DataDialogs.Find(id);
+            var dialog = _context.Dialogs.Find(id);
             if (dialog == null)
             {
                 return NotFound();
             }
 
-            _context.DataDialogs.Remove(dialog);
+            _context.Dialogs.Remove(dialog);
             _context.SaveChanges();
 
             return NoContent();

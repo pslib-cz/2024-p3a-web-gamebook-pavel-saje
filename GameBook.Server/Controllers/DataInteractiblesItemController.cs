@@ -18,6 +18,7 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ViewInteractiblesItem>>> GetInteractiblesItems()
         {
+<<<<<<< HEAD
             var interactibleItems = await _context.InteractiblesItem
                 .Include(i => i.Item)
                 .Select(i => new ViewInteractiblesItem
@@ -47,11 +48,15 @@ namespace GameBook.Server.Controllers
                 }).ToListAsync();
 
             return Ok(interactibleItems);
+=======
+            return Ok(_context.InteractiblesItems.ToList());
+>>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ViewItem>> GetItemById(int id)
         {
+<<<<<<< HEAD
             var item = await _context.Item
                 .Include(i => i.Category)
                 .Where(i => i.ItemID == id)
@@ -68,6 +73,12 @@ namespace GameBook.Server.Controllers
                         Name = i.Category.Name
                     }
                 }).FirstOrDefaultAsync();
+=======
+            var item = _context.InteractiblesItems
+                .Include(i => i.Interactible)
+                .Include(i => i.Item)
+                .FirstOrDefault(i => i.InteractiblesItemID == id);
+>>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
 
             if (item == null)
             {
@@ -76,5 +87,45 @@ namespace GameBook.Server.Controllers
 
             return Ok(item);
         }
+<<<<<<< HEAD
+=======
+
+        [HttpPost]
+        public ActionResult<DataInteractiblesItem> Post(DataInteractiblesItem item)
+        {
+            _context.InteractiblesItems.Add(item);
+            _context.SaveChanges();
+            return CreatedAtAction("Get", new { id = item.InteractiblesItemID }, item);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult<DataInteractiblesItem> Put(int id, DataInteractiblesItem item)
+        {
+            if (id != item.InteractiblesItemID)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(item).State = EntityState.Modified;
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult<DataInteractiblesItem> Delete(int id)
+        {
+            var item = _context.InteractiblesItems.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.InteractiblesItems.Remove(item);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+>>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
     }
 }

@@ -18,7 +18,7 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<ViewConsumableItem>> Get()
         {
-            var consumableItems = _context.ConsumableItem
+            var consumableItems = _context.ConsumableItems
                 .Include(ci => ci.Item)
                 .Select(ci => new ViewConsumableItem
                 {
@@ -49,7 +49,7 @@ namespace GameBook.Server.Controllers
         [HttpGet("{id}")]
         public ActionResult<ViewConsumableItem> Get(int id)
         {
-            var consumableItem = _context.ConsumableItem
+            var consumableItem = _context.ConsumableItems
                 .Include(ci => ci.Item)
                 .ThenInclude(i => i.Category)
                 .FirstOrDefault(ci => ci.ItemID == id);
@@ -85,7 +85,7 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<DataConsumableItem> Post(DataConsumableItem consumableItem)
         {
-            _context.ConsumableItem.Add(consumableItem);
+            _context.ConsumableItems.Add(consumableItem);
             _context.SaveChanges();
             return CreatedAtAction("Get", new { id = consumableItem.ConsumableItemID }, consumableItem);
         }
@@ -105,12 +105,12 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DataConsumableItem> Delete(int id)
         {
-            var consumableItem = _context.ConsumableItem.Find(id);
+            var consumableItem = _context.ConsumableItems.Find(id);
             if (consumableItem == null)
             {
                 return NotFound();
             }
-            _context.ConsumableItem.Remove(consumableItem);
+            _context.ConsumableItems.Remove(consumableItem);
             _context.SaveChanges();
             return NoContent();
         }

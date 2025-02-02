@@ -22,7 +22,7 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ViewItem>>> GetItems()
         {
-            var items = await _context.Item
+            var items = await _context.Items
                 .Include(i => i.Category)
                 .Select(i => new ViewItem
                 {
@@ -44,7 +44,7 @@ namespace GameBook.Server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ViewItem>> GetItemById(int id)
         {
-            var item = await _context.Item
+            var item = await _context.Items
                 .Include(i => i.Category)
                 .Where(i => i.ItemID == id)
                 .Select(i => new ViewItem
