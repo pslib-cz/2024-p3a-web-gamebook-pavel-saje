@@ -25,10 +25,19 @@ namespace GameBook.Server.Controllers
                 {
                     DialogID = d.DialogID,
                     NextDialogID = d.NextDialogID,
+                    FromInteractibleID = d.FromInteractibleID,
                     Text = d.Text,
                     Interactible = new ViewInteractible
                     {
-                        InteractibleID = d.IteractibleID
+                        InteractibleID = d.IteractibleID,
+                        ImagePath = d.Interactible.ImagePath,
+                        Name = d.Interactible.Name,
+                    },
+                    FromInteractible = d.FromInteractible == null ? null : new ViewInteractible
+                    {
+                        InteractibleID = d.FromInteractible.InteractibleID,
+                        ImagePath = d.FromInteractible.ImagePath,
+                        Name = d.FromInteractible.Name,
                     },
                     DialogResponses = d.DialogResponses.Select(dr => new ViewDialogResponse
                     {

@@ -16,19 +16,42 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ViewInteractiblesItem>>> GetInteractiblesItems()
+        public ActionResult<IEnumerable<DataInteractiblesItem>> Get()
         {
-            return Ok(_context.InteractiblesItem.ToList());
+            var items = _context.InteractiblesItems
+                .Include(i => i.Interactible)
+                .Include(i => i.Item)
+                .Select(i => new DataInteractiblesItem
+                {
+                    InteractiblesItemID = i.InteractiblesItemID,
+                    InteractibleID = i.InteractibleID,
+                    ItemId = i.ItemId,
+                    Interactible = new DataInteractible
+                    {
+                        InteractibleID = i.Interactible.InteractibleID,
+                        ImagePath = i.Interactible.ImagePath,
+                        Name = i.Interactible.Name,
+                    },
+                    Item = new DataItem
+                    {
+                        ItemID = i.Item.ItemID,
+                        Name = i.Item.Name,
+                        Category = i.Item.Category,
+                        Stackable = i.Item.Stackable,
+                        TradeValue = i.Item.TradeValue,
+                    }
+                }).ToList();
+
+            return Ok(items);
         }
 
         [HttpGet("{id}")]
         public ActionResult<DataInteractiblesItem> Get(int id)
         {
-            var item = _context.InteractiblesItem
+            var item = _context.InteractiblesItems
                 .Include(i => i.Interactible)
                 .Include(i => i.Item)
                 .FirstOrDefault(i => i.InteractiblesItemID == id);
->>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
 
             if (item == null)
             {
@@ -37,8 +60,6 @@ namespace GameBook.Server.Controllers
 
             return Ok(item);
         }
-<<<<<<< HEAD
-=======
 
         [HttpPost]
         public ActionResult<DataInteractiblesItem> Post(DataInteractiblesItem item)
@@ -76,6 +97,5 @@ namespace GameBook.Server.Controllers
 
             return NoContent();
         }
->>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
     }
 }

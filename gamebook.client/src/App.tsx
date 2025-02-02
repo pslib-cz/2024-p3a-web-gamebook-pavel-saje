@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Fight from "./pages/Fight";
 import Ending from "./pages/End";
+import Dialog from "./pages/Dialog";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,16 @@ const router = createBrowserRouter([
             {
                 path: "/Ending:id",
                 element: <Ending />
+            }
+        ]
+    },
+    {
+        path: "/Dialog",
+        element: <Dialog/>,
+        children:[
+            {
+                path:"/Dialog:id",
+                element: <Dialog/>
             }
         ]
     }

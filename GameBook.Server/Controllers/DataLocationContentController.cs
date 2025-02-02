@@ -2,6 +2,7 @@
 using GameBook.Server.Data;
 using GameBook.Server.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders.Composite;
 
 namespace GameBook.Server.Controllers
 {
@@ -18,6 +19,30 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DataLocationContent>> Get()
         {
+            var contents = _context.LocationContents
+                .Include(l => l.Location)
+                .Include(l => l.Interactible)
+                .Select(l => new DataLocationContent
+                {
+                    LocationContentID = l.LocationContentID,
+                    LocationID = l.LocationID,
+                    InteractibleID = l.InteractibleID,
+                    XPos = l.XPos,
+                    YPos = l.YPos,
+                    Location = new DataLocation
+                    {
+                        LocationID = l.Location.LocationID,
+                        Name = l.Location.Name,
+                        BackgroundImagePath = l.Location.BackgroundImagePath,
+                        RadiationGain = l.Location.RadiationGain,
+                    },
+                    Interactible = new DataInteractible
+                    {
+                        InteractibleID = l.Interactible.InteractibleID,
+                        Name = l.Interactible.Name,
+                        ImagePath = l.Interactible.ImagePath,
+                    }
+                }).ToList();
             return Ok(_context.LocationContents.ToList());
         }
 

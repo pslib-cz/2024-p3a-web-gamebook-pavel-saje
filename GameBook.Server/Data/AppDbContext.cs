@@ -19,6 +19,7 @@ namespace GameBook.Server.Data
         public DbSet<DataLocationContent> LocationContents { get; set; }
         public DbSet<DataLocationPath> LocationPaths { get; set; }
         public DbSet<DataRequiredItems> RequiredItems { get; set; }
+        public DbSet<DataEnd> Ends { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)

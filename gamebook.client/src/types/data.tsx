@@ -13,7 +13,6 @@ export type Dialog = {
     dialogOrder: number;
     text: string;
     interactible: Interactible;
-    dialogResponses: Array<DialogResponse>;
 };
 
 export type DialogResponse = {
@@ -25,7 +24,7 @@ export type DialogResponse = {
 };
 
 export type Interactible = {
-    iteractibleID: number;
+    interactibleID: number;
     name: string;
     imagePath: string;
 };
@@ -33,8 +32,10 @@ export type Interactible = {
 export type InteractiblesItem = {
     interactibleItemID: number;
     interactibleID: number;
+    fromInteractibleID: number;
     itemId: number;
     interactible: Interactible;
+    fromInteractible: Interactible;
     item: Item;
 };
 

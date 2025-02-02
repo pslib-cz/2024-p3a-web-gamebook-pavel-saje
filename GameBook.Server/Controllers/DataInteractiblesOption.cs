@@ -18,7 +18,28 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DataInteractiblesOption>> Get()
         {
-            return Ok(_context.InteractiblesOptions.ToList());
+            var options = _context.InteractiblesOptions
+                .Include(o => o.Interactible)
+                .Include(o => o.Option)
+                .Select(o => new DataInteractiblesOption
+                {
+                    InteractiblesOptionID = o.InteractiblesOptionID,
+                    InteractibleID = o.InteractibleID,
+                    OptionID = o.OptionID,
+                    Interactible = new DataInteractible
+                    {
+                        InteractibleID = o.Interactible.InteractibleID,
+                        ImagePath = o.Interactible.ImagePath,
+                        Name = o.Interactible.Name,
+                    },
+                    Option = new DataInteractOption
+                    {
+                        OptionID = o.Option.OptionID,
+                        OptionText = o.Option.OptionText
+                    }
+                }).ToList();
+
+            return Ok(options);
         }
 
         [HttpGet("{id}")]

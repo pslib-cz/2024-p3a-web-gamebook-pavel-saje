@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameBook.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250202122203_CiganyNesnasim")]
-    partial class CiganyNesnasim
+    [Migration("20250202182651_MamMasivniSykorku")]
+    partial class MamMasivniSykorku
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -95,6 +95,24 @@ namespace GameBook.Server.Migrations
                     b.HasIndex("NextDialogID");
 
                     b.ToTable("DialogResponses");
+                });
+
+            modelBuilder.Entity("GameBook.Server.Models.DataEnd", b =>
+                {
+                    b.Property<int>("EndID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("EndID");
+
+                    b.ToTable("Ends");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataInteractOption", b =>

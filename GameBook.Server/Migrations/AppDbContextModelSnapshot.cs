@@ -47,6 +47,9 @@ namespace GameBook.Server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("FromInteractibleID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("IteractibleID")
                         .HasColumnType("INTEGER");
 
@@ -58,6 +61,8 @@ namespace GameBook.Server.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("DialogID");
+
+                    b.HasIndex("FromInteractibleID");
 
                     b.HasIndex("IteractibleID");
 
@@ -92,6 +97,24 @@ namespace GameBook.Server.Migrations
                     b.HasIndex("NextDialogID");
 
                     b.ToTable("DialogResponses");
+                });
+
+            modelBuilder.Entity("GameBook.Server.Models.DataEnd", b =>
+                {
+                    b.Property<int>("EndID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("EndID");
+
+                    b.ToTable("Ends");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataInteractOption", b =>
@@ -318,6 +341,10 @@ namespace GameBook.Server.Migrations
 
             modelBuilder.Entity("GameBook.Server.Models.DataDialog", b =>
                 {
+                    b.HasOne("GameBook.Server.Models.DataInteractible", "FromInteractible")
+                        .WithMany()
+                        .HasForeignKey("FromInteractibleID");
+
                     b.HasOne("GameBook.Server.Models.DataInteractible", "Interactible")
                         .WithMany()
                         .HasForeignKey("IteractibleID")
@@ -327,6 +354,8 @@ namespace GameBook.Server.Migrations
                     b.HasOne("GameBook.Server.Models.DataDialog", "NextDialog")
                         .WithMany()
                         .HasForeignKey("NextDialogID");
+
+                    b.Navigation("FromInteractible");
 
                     b.Navigation("Interactible");
 
