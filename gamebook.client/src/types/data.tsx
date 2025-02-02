@@ -27,7 +27,7 @@ export type DialogResponse = {
 export type Interactible = {
     iteractibleID: number;
     name: string;
-    image: string;
+    imagePath: string;
 };
 
 export type InteractiblesItem = {
@@ -70,6 +70,8 @@ export type DataLocation = {
     name: string;
     backgroundImagePath: string;
     radiationGain: number;
+    requiredItems: RequiredItems[];
+    locationContents: LocationContent[];
 };
 
 export type LocationContent = {
@@ -79,7 +81,7 @@ export type LocationContent = {
     xPos: number;
     yPos: number;
     location: Location;
-    interactible: Interactible;
+    interactible: Interactible
 };
 
 export type LocationPath = {

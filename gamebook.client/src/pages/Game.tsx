@@ -13,7 +13,10 @@ const Game: React.FC = () => {
     return (
       <>
         <Stats />
-        <span className={styles.menu}><MapWithGraph /><Inventory/></span>
+        <span className={styles.menu}>
+          <MapWithGraph />
+          <Inventory/>
+          </span>
       
         <NetopyriVarle/>
       </>

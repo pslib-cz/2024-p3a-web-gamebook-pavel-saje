@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
-import { Item } from '../types';
+import { Item, DataLocation } from '../types';
 
 interface GameContextProps {
   hp: number;
@@ -21,8 +21,8 @@ interface GameContextProps {
 
   defaultEnergy: number;
 
-  canBeVisited: Location[];
-  setCanBeVisited: React.Dispatch<React.SetStateAction<Location[]>>;
+  canBeVisited: DataLocation[];
+  setCanBeVisited: React.Dispatch<React.SetStateAction<DataLocation[]>>;
   resetCanBeVisited: () => void;
 
   //NOTE vzor: LocatioID-KEY
@@ -30,6 +30,9 @@ interface GameContextProps {
   setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<string[]>>;
   resetInteractiblesRemovedFromLocation: () => void;
 
+  lastLocationId: number;
+  setLastLocationId: React.Dispatch<React.SetStateAction<number>>;
+  resetLastLocationId: () => void;
 
   resetAll: () => void;
 }
@@ -70,26 +73,28 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     return savedInteractiblesRemovedFromLocation !== null ? JSON.parse(savedInteractiblesRemovedFromLocation) : [];
   });
 
-  const [canBeVisited, setCanBeVisited] = useState<Location[]>(() => {
+  const [canBeVisited, setCanBeVisited] = useState<DataLocation[]>(() => {
     const savedCanBeVisited = localStorage.getItem('canBeVisited');
     return savedCanBeVisited !== null ? JSON.parse(savedCanBeVisited) : [];
+  });
+
+  const [lastLocationId, setLastLocationId] = useState<number>(() => {
+    const savedLastLocationId = localStorage.getItem('lastLocationId');
+    return savedLastLocationId !== null ? parseInt(savedLastLocationId, 10) : 0;
   });
 
 
 
   useEffect(() => {
-    localStorage.setItem('hp', hp.toString());
-    localStorage.setItem('energy', energy.toString());
-    localStorage.setItem('radiation', radiation.toString());
-    localStorage.setItem('money', money.toString());
-
-    localStorage.setItem('inventory', JSON.stringify(inventory));
-
-    localStorage.setItem('InteractiblesRemovedFromLocation', JSON.stringify(InteractiblesRemovedFromLocation));
-
-    localStorage.setItem('canBeVisited', JSON.stringify(canBeVisited));
-
-  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation, canBeVisited]);
+    if (hp !== undefined) localStorage.setItem('hp', hp.toString());
+    if (energy !== undefined) localStorage.setItem('energy', energy.toString());
+    if (radiation !== undefined) localStorage.setItem('radiation', radiation.toString());
+    if (money !== undefined) localStorage.setItem('money', money.toString());
+    if (inventory !== undefined) localStorage.setItem('inventory', JSON.stringify(inventory));
+    if (InteractiblesRemovedFromLocation !== undefined) localStorage.setItem('InteractiblesRemovedFromLocation', JSON.stringify(InteractiblesRemovedFromLocation));
+    if (canBeVisited !== undefined) localStorage.setItem('canBeVisited', JSON.stringify(canBeVisited));
+    if (lastLocationId !== undefined) localStorage.setItem('lastLocationId', lastLocationId.toString());
+  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation, canBeVisited, lastLocationId]);
 
   const resetHp = () => {
     setHp(defaultHp);
@@ -118,6 +123,10 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         setCanBeVisited([]);
     }
 
+    const resetLastLocationId = () => {
+        setLastLocationId(3);
+    }
+
     const resetAll = () => {
         resetHp();
         resetEnergy();
@@ -126,6 +135,7 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         resetInventory();
         resetInteractiblesRemovedFromLocation();
         resetCanBeVisited();
+        resetLastLocationId();
     }
 
   return (
@@ -153,7 +163,10 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         canBeVisited,
         setCanBeVisited,
         resetCanBeVisited,
-        resetAll
+        resetAll,
+        lastLocationId,
+        setLastLocationId,
+        resetLastLocationId
       }}
     >
       {children}

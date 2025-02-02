@@ -18,13 +18,13 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DataInteractible>> Get()
         {
-            return Ok(_context.Interactible.ToList());
+            return Ok(_context.Interactibles.ToList());
         }
 
         [HttpGet("{id}")]
         public ActionResult<DataInteractible> Get(int id)
         {
-            var interactible = _context.Interactible
+            var interactible = _context.Interactibles
                 .Include(i => i.InteractOptions)
                 .Include(i => i.LocationContents)
                 .FirstOrDefault(i => i.InteractibleID == id);
@@ -40,7 +40,7 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<DataInteractible> Post(DataInteractible interactible)
         {
-            _context.Interactible.Add(interactible);
+            _context.Interactibles.Add(interactible);
             _context.SaveChanges();
             return CreatedAtAction("Get", new { id = interactible.InteractibleID }, interactible);
         }
@@ -62,13 +62,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DataInteractible> Delete(int id)
         {
-            var interactible = _context.Interactible.Find(id);
+            var interactible = _context.Interactibles.Find(id);
             if (interactible == null)
             {
                 return NotFound();
             }
 
-            _context.Interactible.Remove(interactible);
+            _context.Interactibles.Remove(interactible);
             _context.SaveChanges();
 
             return NoContent();

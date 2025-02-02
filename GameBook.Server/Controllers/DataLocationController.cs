@@ -1,33 +1,107 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using GameBook.Server.Data;
-using GameBook.Server.Models;
 using Microsoft.EntityFrameworkCore;
+using GameBook.Server.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using GameBook.Server.Data;
 
 namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataLocationController : ControllerBase
+    public class LocationsController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataLocationController(AppDbContext context)
+
+        public LocationsController(AppDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<DataLocation>> Get()
+        public async Task<ActionResult<IEnumerable<ViewLocation>>> GetLocations()
         {
-            return Ok(_context.Location.ToList());
+            var locations = await _context.Locations
+                .Include(l => l.LocationContents)
+                .Include(l => l.RequiredItems)
+                    .ThenInclude(ri => ri.Item)
+                .Select(l => new ViewLocation
+                {
+                    LocationID = l.LocationID,
+                    Name = l.Name,
+                    BackgroundImagePath = l.BackgroundImagePath,
+                    RadiationGain = l.RadiationGain,
+                    LocationContents = l.LocationContents.Select(lc => new ViewLocationContent
+                    {
+                        InteractibleID = lc.InteractibleID,
+                        Interactible = new ViewInteractible
+                        {
+                            InteractibleID = lc.Interactible.InteractibleID,
+                            Name = lc.Interactible.Name,
+                            ImagePath = lc.Interactible.ImagePath
+                        },
+                        XPos = lc.XPos,
+                        YPos = lc.YPos
+                    }).ToList(),
+                    RequiredItems = l.RequiredItems.Select(ri => new ViewItem
+                    {
+                        ItemID = ri.Item.ItemID,
+                        Name = ri.Item.Name,
+                        TradeValue = ri.Item.TradeValue,
+                        Stackable = ri.Item.Stackable,
+                        CategoryId = ri.Item.CategoryId,
+                        Category = new ViewItemCategory
+                        {
+                            CategoryID = ri.Item.Category.CategoryID,
+                            Name = ri.Item.Category.Name
+                        }
+                    }).ToList()
+                }).ToListAsync();
+
+            return Ok(locations);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<DataLocation> Get(int id)
+        public async Task<ActionResult<ViewLocation>> GetLocationById(int id)
         {
-            var location = _context.Location
+            var location = await _context.Locations
                 .Include(l => l.LocationContents)
                 .Include(l => l.RequiredItems)
-                .FirstOrDefault(l => l.LocationID == id);
+                    .ThenInclude(ri => ri.Item)
+                .Where(l => l.LocationID == id)
+                .Select(l => new ViewLocation
+                {
+                    LocationID = l.LocationID,
+                    Name = l.Name,
+                    BackgroundImagePath = l.BackgroundImagePath,
+                    RadiationGain = l.RadiationGain,
+                    LocationContents = l.LocationContents.Select(lc => new ViewLocationContent
+                    {
+                        InteractibleID = lc.InteractibleID,
+                        Interactible = new ViewInteractible
+                        {
+                            InteractibleID = lc.Interactible.InteractibleID,
+                            Name = lc.Interactible.Name,
+                            ImagePath = lc.Interactible.ImagePath
+                        },
+                        XPos = lc.XPos,
+                        YPos = lc.YPos
+                    }).ToList(),
+                    RequiredItems = l.RequiredItems.Select(ri => new ViewItem
+                    {
+                        ItemID = ri.Item.ItemID,
+                        Name = ri.Item.Name,
+                        TradeValue = ri.Item.TradeValue,
+                        Stackable = ri.Item.Stackable,
+                        CategoryId = ri.Item.CategoryId,
+                        Category = new ViewItemCategory
+                        {
+                            CategoryID = ri.Item.Category.CategoryID,
+                            Name = ri.Item.Category.Name
+                        }
+                    }).ToList()
+                }).FirstOrDefaultAsync();
 
             if (location == null)
             {
@@ -37,63 +111,141 @@ namespace GameBook.Server.Controllers
             return Ok(location);
         }
 
-        [HttpGet("GetNearestLocation/{locationId}")]
-        public ActionResult<DataLocation> GetNearestLocation(int locationId)
+        [HttpGet("{id}/connected")]
+        public async Task<ActionResult<List<ViewLocation>>> GetConnectedLocations(int id)
         {
-            List<DataLocation> NearBy = new List<DataLocation>();
+            var locationPaths = await _context.LocationPaths
+                .Where(lp => lp.FirstNodeID == id || lp.SecondNodeID == id)
+                .Include(lp => lp.FirstNode).ThenInclude(l => l.LocationContents).ThenInclude(lc => lc.Interactible)
+                .Include(lp => lp.FirstNode).ThenInclude(l => l.RequiredItems).ThenInclude(ri => ri.Item).ThenInclude(i => i.Category)
+                .Include(lp => lp.SecondNode).ThenInclude(l => l.LocationContents).ThenInclude(lc => lc.Interactible)
+                .Include(lp => lp.SecondNode).ThenInclude(l => l.RequiredItems).ThenInclude(ri => ri.Item).ThenInclude(i => i.Category)
+                .ToListAsync();
 
-            var locations = _context.LocationPath
-                .Where(x => x.FirstNodeID == locationId || x.SecondNodeID == locationId)
-                .ToList();
+            var connectedLocations = locationPaths.Select(lp => lp.FirstNodeID == id ? lp.SecondNode : lp.FirstNode)
+                .Select(l => new ViewLocation
+                {
+                    LocationID = l.LocationID,
+                    Name = l.Name,
+                    BackgroundImagePath = l.BackgroundImagePath,
+                    RadiationGain = l.RadiationGain,
+                    LocationContents = l.LocationContents
+                        .Where(lc => lc.Interactible != null)
+                        .Select(lc => new ViewLocationContent
+                        {
+                            InteractibleID = lc.InteractibleID,
+                            Interactible = new ViewInteractible
+                            {
+                                InteractibleID = lc.Interactible.InteractibleID,
+                                Name = lc.Interactible.Name,
+                                ImagePath = lc.Interactible.ImagePath
+                            },
+                            XPos = lc.XPos,
+                            YPos = lc.YPos
+                        }).ToList(),
+                    RequiredItems = l.RequiredItems.Select(ri => new ViewItem
+                    {
+                        ItemID = ri.Item.ItemID,
+                        Name = ri.Item.Name,
+                        TradeValue = ri.Item.TradeValue,
+                        Stackable = ri.Item.Stackable,
+                        CategoryId = ri.Item.CategoryId,
+                        Category = new ViewItemCategory
+                        {
+                            CategoryID = ri.Item.Category.CategoryID,
+                            Name = ri.Item.Category.Name
+                        }
+                    }).ToList()
+                }).ToList();
 
-            var location = locations
-                .Select(x => x.FirstNodeID == locationId ? x.SecondNodeID : x.FirstNodeID)
-                .ToList();
-
-            foreach (int loc in location)
-            {
-                var Near = _context.Location.Find(loc);
-                NearBy.Add(Near);
-            }
-
-            return Ok(NearBy);
-        }
-
-        [HttpPost]
-        public ActionResult<DataLocation> Post(DataLocation location)
-        {
-            _context.Location.Add(location);
-            _context.SaveChanges();
-            return CreatedAtAction("Get", new { id = location.LocationID }, location);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<DataLocation> Put(int id, DataLocation location)
-        {
-            if (id != location.LocationID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(location).State = EntityState.Modified;
-            _context.SaveChanges();
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public ActionResult<DataLocation> Delete(int id)
-        {
-            var location = _context.Location.Find(id);
-            if (location == null)
+            if (!connectedLocations.Any())
             {
                 return NotFound();
             }
 
-            _context.Location.Remove(location);
-            _context.SaveChanges();
+            return Ok(connectedLocations);
+        }
 
-            return NoContent();
+
+        [HttpGet("connections")]
+        public async Task<ActionResult<List<ViewLocationPath>>> GetLocationConnections()
+        {
+            var locationPaths = await _context.LocationPaths
+                .Include(lp => lp.FirstNode)
+                .ThenInclude(l => l.LocationContents)
+                .Include(lp => lp.FirstNode)
+                .ThenInclude(l => l.RequiredItems)
+                .ThenInclude(ri => ri.Item)
+                .ThenInclude(i => i.Category)
+                .Include(lp => lp.SecondNode)
+                .ThenInclude(l => l.LocationContents)
+                .Include(lp => lp.SecondNode)
+                .ThenInclude(l => l.RequiredItems)
+                .ThenInclude(ri => ri.Item)
+                .ThenInclude(i => i.Category)
+                .ToListAsync();
+
+            var viewLocationPaths = locationPaths.Select(lp => new ViewLocationPath
+            {
+                PathID = lp.PathID,
+                FirstNodeID = lp.FirstNodeID,
+                SecondNodeID = lp.SecondNodeID,
+                EnergyTravelCost = lp.EnergyTravelCost,
+                FirstNode = new ViewLocation
+                {
+                    LocationID = lp.FirstNode.LocationID,
+                    Name = lp.FirstNode.Name,
+                    BackgroundImagePath = lp.FirstNode.BackgroundImagePath,
+                    RadiationGain = lp.FirstNode.RadiationGain,
+                    LocationContents = lp.FirstNode.LocationContents.Select(lc => new ViewLocationContent
+                    {
+                        InteractibleID = lc.InteractibleID,
+                        XPos = lc.XPos,
+                        YPos = lc.YPos
+                    }).ToList(),
+                    RequiredItems = lp.FirstNode.RequiredItems.Select(ri => new ViewItem
+                    {
+                        ItemID = ri.Item.ItemID,
+                        Name = ri.Item.Name,
+                        TradeValue = ri.Item.TradeValue,
+                        Stackable = ri.Item.Stackable,
+                        CategoryId = ri.Item.CategoryId,
+                        Category = new ViewItemCategory
+                        {
+                            CategoryID = ri.Item.Category.CategoryID,
+                            Name = ri.Item.Category.Name
+                        }
+                    }).ToList()
+                },
+                SecondNode = new ViewLocation
+                {
+                    LocationID = lp.SecondNode.LocationID,
+                    Name = lp.SecondNode.Name,
+                    BackgroundImagePath = lp.SecondNode.BackgroundImagePath,
+                    RadiationGain = lp.SecondNode.RadiationGain,
+                    LocationContents = lp.SecondNode.LocationContents.Select(lc => new ViewLocationContent
+                    {
+                        InteractibleID = lc.InteractibleID,
+                        XPos = lc.XPos,
+                        YPos = lc.YPos
+                    }).ToList(),
+                    RequiredItems = lp.SecondNode.RequiredItems.Select(ri => new ViewItem
+                    {
+                        ItemID = ri.Item.ItemID,
+                        Name = ri.Item.Name,
+                        TradeValue = ri.Item.TradeValue,
+                        Stackable = ri.Item.Stackable,
+                        CategoryId = ri.Item.CategoryId,
+                        Category = new ViewItemCategory
+                        {
+                            CategoryID = ri.Item.Category.CategoryID,
+                            Name = ri.Item.Category.Name
+                        }
+                    }).ToList()
+                }
+            }).ToList();
+
+            return Ok(viewLocationPaths);
         }
     }
 }

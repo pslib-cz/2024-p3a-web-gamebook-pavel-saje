@@ -1,0 +1,11 @@
+.interactible{
+    position: "absolute",
+}
+
+.interactible:hover{
+    cursor: pointer;
+    -webkit-filter: drop-shadow(4px 4px 2px var(--green))
+                  drop-shadow(-4px -4px 2px var(--green));
+  filter: drop-shadow(4px 4px 2px var(--green)) 
+          drop-shadow(-4px -4px 2px var(--green));
+}

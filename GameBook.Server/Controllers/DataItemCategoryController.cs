@@ -18,13 +18,13 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DataItemCategory>> Get()
         {
-            return Ok(_context.ItemCategory.ToList());
+            return Ok(_context.ItemCategories.ToList());
         }
 
         [HttpGet("{id}")]
         public ActionResult<DataItemCategory> Get(int id)
         {
-            var category = _context.ItemCategory
+            var category = _context.ItemCategories
                 .Include(c => c.Items)
                 .FirstOrDefault(c => c.CategoryID == id);
 
@@ -39,7 +39,7 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<DataItemCategory> Post(DataItemCategory category)
         {
-            _context.ItemCategory.Add(category);
+            _context.ItemCategories.Add(category);
             _context.SaveChanges();
             return CreatedAtAction("Get", new { id = category.CategoryID }, category);
         }
@@ -61,13 +61,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DataItemCategory> Delete(int id)
         {
-            var category = _context.ItemCategory.Find(id);
+            var category = _context.ItemCategories.Find(id);
             if (category == null)
             {
                 return NotFound();
             }
 
-            _context.ItemCategory.Remove(category);
+            _context.ItemCategories.Remove(category);
             _context.SaveChanges();
 
             return NoContent();

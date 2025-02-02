@@ -1,76 +1,65 @@
 import { useEffect, useState, useContext } from "react";
-import { Location, LocationContent, Item } from "../types";
+import { DataLocation, LocationContent, Item } from "../types";
 
 import { GameContext } from '../context/GameContext';
+import { Position } from "react-flow-renderer";
 
+import styles from '../styles/content.module.css'
+
+import { domain } from "../utils";
 
 interface ContentProps {
-    lokace: Location | null;
+    location: DataLocation | null;
     }
 
 
-    const Content: React.FC<ContentProps> = ({ lokace }) => {
-      const [items, setItems] = useState<Item[]>([]);
-      const [content, setContent] = useState<LocationContent[]>([]);
-      const gameContext = useContext(GameContext);
-      if (!gameContext) {
-        throw new Error("GameContext is undefined");
-      }
-      const { inventory, setInventory } = gameContext;
-      const { InteractiblesRemovedFromLocation, setInteractiblesRemovedFromLocation } = gameContext;
+    const Content: React.FC<ContentProps> = ({ location }) => {
+      // const [items, setItems] = useState<Item[]>([]);
+      // const gameContext = useContext(GameContext);
+      // if (!gameContext) {
+      //   throw new Error("GameContext is undefined");
+      // }
+      // const { inventory, setInventory } = gameContext;
+      // const { InteractiblesRemovedFromLocation, setInteractiblesRemovedFromLocation } = gameContext;
     
-      useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch(`https://localhost:7092/api/LocationContent/podlelokace/${lokace?.locationID}`);
-            if (!response.ok) {
-              throw new Error("Failed to fetch data");
-            }
-            const json = await response.json();
-            setContent(json);
-          } catch (error) {
-            console.error(error);
-          }
-        };
-        fetchData();
+      // useEffect(() => {
+      //   localStorage.setItem('inventory', JSON.stringify(inventory));
+      // }, [inventory]);
 
-        const fetchItems = async () => {
-          try {
-            const response = await fetch(`https://localhost:7092/api/InteractibleItems/GetInteractibleIDs/${lokace?.locationID}`);
-            if (!response.ok) {
-              throw new Error("Failed to fetch data");
-            }
-            const json = await response.json();
-            setItems(json);
-          } catch (error) {
-            console.error(error);
-          }
-        };
-        fetchItems();
-      }, [lokace]);
-    
-      useEffect(() => {
-        localStorage.setItem('inventory', JSON.stringify(inventory));
-      }, [inventory]);
-
-      useEffect(() => {
-        localStorage.setItem('InteractiblesRemovedFromLocation', JSON.stringify(InteractiblesRemovedFromLocation));
-      }, [InteractiblesRemovedFromLocation]);
+      // useEffect(() => {
+      //   localStorage.setItem('InteractiblesRemovedFromLocation', JSON.stringify(InteractiblesRemovedFromLocation));
+      // }, [InteractiblesRemovedFromLocation]);
 
       
 
     
-      const getItemByInteractibleID = (interactibleID: number): Item | undefined => {
-        console.log("item",interactibleID);
-        return items.find(item => item.itemID === interactibleID);
-      };
+      // const getItemByInteractibleID = (interactibleID: number): Item | undefined => {
+      //   console.log("item",interactibleID);
+      //   return items.find(item => item.itemID === interactibleID);
+      // };
+
+      console.log(location?.locationContents)
 
       return (
         <>
+          {location?.locationContents &&
+            location.locationContents.map((content, index) => (
+              <span className={styles.interactible} style={{
+                position: "absolute",
+                bottom: `${content.yPos}%`,
+                left: `${content.xPos}%`,
+              }}>
+                {/* KOKOT{content.interactible.name} */}
+                <img style={{
+                  width: "7rem",
+                  aspectRatio: 1
+                }} src={domain + content.interactible.imagePath} alt={`${content.interactibleID}`}/>
+              </span>
+            ))}
 
-        {content &&
-          content.map((contentItem, index) => {
-            const key = lokace?.locationID + "-" + index;
+          {/* {location?.locationContents &&
+          location.locationContents.map((contentItem, index) => {
+            const key = location?.locationID + "-" + index;
             // const item = getItemByInteractibleID(contentItem.interactibleID);
             const item = items[0];
             console.log("pes",items[0]);
@@ -100,9 +89,9 @@ interface ContentProps {
                 )}
               </span>
             );
-          })}
-      </>
-    );
+          })} */}
+        </>
+      );
     
   }
     export default Content;

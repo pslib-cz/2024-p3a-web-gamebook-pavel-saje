@@ -25,7 +25,7 @@ const NextLocation: React.FC<NextLocationProps> = ({locationId}) => {
     useEffect(() => {
         const fetchData = async () => {
             try{
-                const response = await fetch(`https://localhost:7092/api/DataLocation/GetNearestLocation/${locationId}`);
+                const response = await fetch(`https://localhost:7092/api/Locations/${locationId}/connected`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
                 }

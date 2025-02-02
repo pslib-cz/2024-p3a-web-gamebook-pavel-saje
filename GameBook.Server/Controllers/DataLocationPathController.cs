@@ -18,13 +18,13 @@ namespace GameBook.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DataLocationPath>> Get()
         {
-            return Ok(_context.LocationPath.ToList());
+            return Ok(_context.LocationPaths.ToList());
         }
 
         [HttpGet("{id}")]
         public ActionResult<DataLocationPath> Get(int id)
         {
-            var path = _context.LocationPath
+            var path = _context.LocationPaths
                 .Include(lp => lp.FirstNode)
                 .Include(lp => lp.SecondNode)
                 .FirstOrDefault(lp => lp.PathID == id);
@@ -40,7 +40,7 @@ namespace GameBook.Server.Controllers
         [HttpPost]
         public ActionResult<DataLocationPath> Post(DataLocationPath path)
         {
-            _context.LocationPath.Add(path);
+            _context.LocationPaths.Add(path);
             _context.SaveChanges();
             return CreatedAtAction("Get", new { id = path.PathID }, path);
         }
@@ -62,13 +62,13 @@ namespace GameBook.Server.Controllers
         [HttpDelete("{id}")]
         public ActionResult<DataLocationPath> Delete(int id)
         {
-            var path = _context.LocationPath.Find(id);
+            var path = _context.LocationPaths.Find(id);
             if (path == null)
             {
                 return NotFound();
             }
 
-            _context.LocationPath.Remove(path);
+            _context.LocationPaths.Remove(path);
             _context.SaveChanges();
 
             return NoContent();
