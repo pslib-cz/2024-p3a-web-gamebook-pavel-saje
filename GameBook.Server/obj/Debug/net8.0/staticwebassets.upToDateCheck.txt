@@ -1,5 +1,6 @@
 wwwroot\Uploads\Interactibles\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg
 wwwroot\Uploads\Interactibles\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg
+wwwroot\Uploads\Interactibles\FoodCan.png
 wwwroot\Uploads\Interactibles\survivor.png
 wwwroot\Uploads\Locations\7236e62c-a374-410c-8fd1-83bdc1a2e351_R.jpg
 wwwroot\Uploads\Locations\Airport.png

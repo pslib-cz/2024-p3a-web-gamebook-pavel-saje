@@ -16,69 +16,18 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ViewInteractiblesItem>>> GetInteractiblesItems()
+        public ActionResult<IEnumerable<DataInteractiblesItem>> Get()
         {
-<<<<<<< HEAD
-            var interactibleItems = await _context.InteractiblesItem
-                .Include(i => i.Item)
-                .Select(i => new ViewInteractiblesItem
-                {
-                    InteractibleID = i.InteractibleID,
-                    Interactible = new ViewInteractible
-                    {
-                        InteractibleID = i.Interactible.InteractibleID,
-                        Name = i.Interactible.Name,
-                        ImagePath = i.Interactible.ImagePath
-                    },
-                    ItemId = i.ItemId,
-                    Item = new ViewItem
-                    {
-                        ItemID = i.Item.ItemID,
-                        Name = i.Item.Name,
-                        TradeValue = i.Item.TradeValue,
-                        Stackable = i.Item.Stackable,
-                        CategoryId = i.Item.CategoryId,
-                        Category = new ViewItemCategory
-                        {
-                            CategoryID = i.Item.Category.CategoryID,
-                            Name = i.Item.Category.Name
-                        }
-                    }
-                    
-                }).ToListAsync();
-
-            return Ok(interactibleItems);
-=======
             return Ok(_context.InteractiblesItems.ToList());
->>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ViewItem>> GetItemById(int id)
+        public ActionResult<DataInteractiblesItem> Get(int id)
         {
-<<<<<<< HEAD
-            var item = await _context.Item
-                .Include(i => i.Category)
-                .Where(i => i.ItemID == id)
-                .Select(i => new ViewItem
-                {
-                    ItemID = i.ItemID,
-                    Name = i.Name,
-                    TradeValue = i.TradeValue,
-                    Stackable = i.Stackable,
-                    CategoryId = i.CategoryId,
-                    Category = new ViewItemCategory
-                    {
-                        CategoryID = i.Category.CategoryID,
-                        Name = i.Category.Name
-                    }
-                }).FirstOrDefaultAsync();
-=======
             var item = _context.InteractiblesItems
                 .Include(i => i.Interactible)
                 .Include(i => i.Item)
                 .FirstOrDefault(i => i.InteractiblesItemID == id);
->>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
 
             if (item == null)
             {
@@ -87,8 +36,6 @@ namespace GameBook.Server.Controllers
 
             return Ok(item);
         }
-<<<<<<< HEAD
-=======
 
         [HttpPost]
         public ActionResult<DataInteractiblesItem> Post(DataInteractiblesItem item)
@@ -126,6 +73,5 @@ namespace GameBook.Server.Controllers
 
             return NoContent();
         }
->>>>>>> 3ae8db0ae371b3abcf923d6a0a3f6d7406feca78
     }
 }
