@@ -38,7 +38,6 @@ const NetopyriVarle: React.FC = () => {
                     throw new Error("Failed to fetch data");
                 }
                 const json = await response.json();
-
                 const requiredItemIds = json?.requiredItems.map((item: RequiredItems) => item.itemID) || [];
 
                 const inventoryItemIds = inventory.map((item) => item.itemID);

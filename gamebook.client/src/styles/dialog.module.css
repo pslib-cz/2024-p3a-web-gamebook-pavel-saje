@@ -1,0 +1,25 @@
+.interactible{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box{
+    width: 100%;
+    background-color: black;
+    
+    position: absolute;
+    bottom: 0;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.interacts{
+    display: flex;
+    justify-content: space-between;
+}

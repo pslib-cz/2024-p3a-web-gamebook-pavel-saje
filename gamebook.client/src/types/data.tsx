@@ -10,9 +10,10 @@ export type ConsumableItem = {
 export type Dialog = {
     dialogID: number;
     iteractibleID: number;
-    dialogOrder: number;
+    nextDialogID: number;
     text: string;
     interactible: Interactible;
+    dialogResponses: DialogResponse[];
 };
 
 export type DialogResponse = {
@@ -21,6 +22,7 @@ export type DialogResponse = {
     responseText: string;
     relationshipEffect: number;
     dialog: Dialog;
+    nextDialogID: number;
 };
 
 export type Interactible = {
