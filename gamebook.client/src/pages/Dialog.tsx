@@ -14,7 +14,7 @@ const DialogPage = () => {
     return <div>Erro: GameContext</div>;
   }
 
-  const lastLocationId = gameContext;
+  const { lastLocation } = gameContext;
 
   const [dialog, setDialog] = useState<Dialog>();
   const [error, setError] = useState<Error | null>(null);
@@ -40,7 +40,13 @@ const DialogPage = () => {
   }, [id]);
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: `url(${domain}${lastLocation.backgroundImagePath})`,
+        width: "100%",
+        height: "100vh",
+      }}
+    >
       <img
         className={styles.interactible}
         src={`${domain}${dialog?.interactible.imagePath}`}
@@ -62,11 +68,11 @@ const DialogPage = () => {
             {dialog?.nextDialogID && (
               <Link to={`/Dialog/${dialog.nextDialogID}`}>Další</Link>
             )}
-            <Link to={`/Game/${lastLocationId}`}>Ukončit</Link>
+            <Link to={`/Game/${lastLocation.locationID}`}>Ukončit</Link>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -23,7 +23,7 @@ const NetopyriVarle: React.FC = () => {
         return <div>Error: Game context is not available.</div>;
       }
 
-    const {lastLocationId, setLastLocationId} = gameContext;
+    const {lastLocation, setLastLocation} = gameContext;
 
     const [error, setError] = useState<Error | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -49,9 +49,10 @@ const NetopyriVarle: React.FC = () => {
 
                 if(allItemsPresent){
                     setTargetLocation(json);
-                    setLastLocationId(json.LocatioID)
+                    setLastLocation(json);
+                    localStorage.setItem("lastLocationId", json.toString());
                 }else{
-                    navigate(`/Game/${lastLocationId}`);
+                    navigate(`/Game/${lastLocation}`);
                      alert("nemáš potřebné věci pro lokaci")
                 }
 

@@ -134,9 +134,9 @@
               "Title": "DataDialogController.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\DataDialogController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\DataDialogController.cs",
-              "ToolTip": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\DataDialogController.cs*",
-              "RelativeToolTip": "GameBook.Server\\Controllers\\DataDialogController.cs*",
-              "ViewState": "AgIAADQAAAAAAAAAAAAkwE0AAAA0AAAAAAAAAA==",
+              "ToolTip": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\DataDialogController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\DataDialogController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwD0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-02T18:02:33.028Z",
               "EditorCaption": ""
@@ -151,8 +151,7 @@
               "RelativeToolTip": "GameBook.Server\\Controllers\\DataLocationContentController.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAAwCwAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T17:04:05.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-02T17:04:05.566Z"
             },
             {
               "$type": "Document",

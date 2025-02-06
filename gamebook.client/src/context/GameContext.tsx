@@ -30,10 +30,10 @@ interface GameContextProps {
   setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<string[]>>;
   resetInteractiblesRemovedFromLocation: () => void;
 
-  defaultLastLocationId : number;
-  lastLocationId: number;
-  setLastLocationId: React.Dispatch<React.SetStateAction<number>>;
-  resetLastLocationId: () => void;
+  defaultLastLocation : DataLocation;
+  lastLocation: DataLocation;
+  setLastLocation: React.Dispatch<React.SetStateAction<DataLocation>>;
+  resetLastLocation: () => void;
 
   resetAll: () => void;
 }
@@ -79,10 +79,17 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     return savedCanBeVisited !== null ? JSON.parse(savedCanBeVisited) : [];
   });
 
-  const defaultLastLocationId = 3;
-  const [lastLocationId, setLastLocationId] = useState<number>(() => {
-    const savedLastLocationId = localStorage.getItem('lastLocationId');
-    return savedLastLocationId !== null ? parseInt(savedLastLocationId, 10) : defaultLastLocationId;
+  const defaultLastLocation: DataLocation = {
+    locationID: 3,
+    name: 'Start',
+    backgroundImagePath: 'start.jpg',
+    radiationGain: 0,
+    requiredItems: [],
+    locationContents: [],
+  };
+  const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
+    const savedLatLocation = localStorage.getItem('lastLocation');
+    return savedLatLocation !== null ? JSON.parse(savedLatLocation) : defaultLastLocation;
   });
 
 
@@ -96,8 +103,8 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     if (inventory !== undefined) localStorage.setItem('inventory', JSON.stringify(inventory));
     if (InteractiblesRemovedFromLocation !== undefined) localStorage.setItem('InteractiblesRemovedFromLocation', JSON.stringify(InteractiblesRemovedFromLocation));
     if (canBeVisited !== undefined) localStorage.setItem('canBeVisited', JSON.stringify(canBeVisited));
-    if (lastLocationId !== undefined) localStorage.setItem('lastLocationId', lastLocationId.toString());
-  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation, canBeVisited, lastLocationId]);
+    if (lastLocation !== undefined) localStorage.setItem('lastLocation', JSON.stringify(lastLocation));
+  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation, canBeVisited, lastLocation]);
 
   const resetHp = () => {
     setHp(defaultHp);
@@ -126,8 +133,8 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         setCanBeVisited([]);
     }
 
-    const resetLastLocationId = () => {
-        setLastLocationId(3);
+    const resetLastLocation = () => {
+        setLastLocation(defaultLastLocation);
     }
 
     const resetAll = () => {
@@ -138,7 +145,7 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         resetInventory();
         resetInteractiblesRemovedFromLocation();
         resetCanBeVisited();
-        resetLastLocationId();
+        resetLastLocation();
     }
 
   return (
@@ -167,10 +174,10 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         setCanBeVisited,
         resetCanBeVisited,
         resetAll,
-        defaultLastLocationId,
-        lastLocationId,
-        setLastLocationId,
-        resetLastLocationId
+        defaultLastLocation,
+        lastLocation,
+        setLastLocation,
+        resetLastLocation
       }}
     >
       {children}
