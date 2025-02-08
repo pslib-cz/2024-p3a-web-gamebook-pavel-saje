@@ -1,4 +1,5 @@
 ﻿using GameBook.Server.Models;
+//using GameBook.Server.Models.DataModels;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
@@ -20,6 +21,9 @@ namespace GameBook.Server.Data
         public DbSet<DataLocationPath> LocationPaths { get; set; }
         public DbSet<DataRequiredItems> RequiredItems { get; set; }
         public DbSet<DataEnd> Ends { get; set; }
+        public DbSet<DataNpc> Npcs { get; set; }
+        public DbSet<DataWeapon> Weapons { get; set; }
+        public DbSet<DataInteractiblesNpc> InteractiblesNpcs { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)

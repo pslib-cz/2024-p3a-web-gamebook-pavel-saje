@@ -67,7 +67,7 @@ const Option: React.FC<OptionProps> = ({interactOption, interactible, interactib
         ) : interactOption.optionID == 2 ? (
           <p>{interactOption.optionText}</p>
         ) : (
-          interactOption.optionID == 1 && <Link to="/Fight">{interactOption.optionText}</Link>
+          interactOption.optionID == 1 && <Link to={`/Fight/${interactible.interactibleID}`}>{interactOption.optionText}</Link>
         )}
       </>
     );

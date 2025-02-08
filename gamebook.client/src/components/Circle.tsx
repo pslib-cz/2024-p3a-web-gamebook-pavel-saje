@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { GameContext } from '../context/GameContext';
+import { Npc } from '../types/data';
+import { useNavigate } from 'react-router-dom';
 
-const Circle: React.FC = () => {
+interface CircleProps {
+  npc: Npc;
+}
+
+const Circle: React.FC<CircleProps> = ({npc}) => {
   const duration = 2000;
 
   const emptyStart = 120; 
@@ -27,29 +33,68 @@ const Circle: React.FC = () => {
     throw new Error('GameContext must be used within a GameProvider');
   }
   const { hp, setHp } = gameContext;
+  const [isResetting, setIsResetting] = useState(false);
+  const navigate = useNavigate();
+
+  const [wholeRotation, setWholeRotation] = useState(0);
 
   useEffect(() => {
     let angle = 0;
+    let animationFrame: number;
     const start = performance.now();
+  
     const animate = (timestamp: number) => {
+      if (isResetting) {
+        setWholeRotation(Math.random() * 360);
+        // Resetujeme úhel a pozici polygonu
+        setCurrentAngle(0);
+        if (rotationRef.current) {
+          rotationRef.current.setAttribute("transform", "rotate(0, 0, 0)");
+        }
+        setIsResetting(false); // Ukončíme resetovací stav
+        return;
+      }
+  
       const elapsed = (timestamp - start) % duration;
       angle = (360 * elapsed) / duration;
-      setCurrentAngle(angle - 90);
-
-      if (rotationRef.current) {
-        rotationRef.current.setAttribute(
-          'transform',
-          `rotate(${angle}, 0, 0)`
-        );
+      setCurrentAngle(angle);
+      if(angle>= 350){
+        setIsResetting(true);
+        setHp((prevHp: number) => prevHp - npc.weapon.damage)
       }
-
-      requestAnimationFrame(animate);
+  
+      if (rotationRef.current) {
+        rotationRef.current.setAttribute("transform", `rotate(${angle}, 0, 0)`);
+      }
+  
+      animationFrame = requestAnimationFrame(animate);
     };
-
-    const animationFrame = requestAnimationFrame(animate);
-
+  
+    animationFrame = requestAnimationFrame(animate);
+  
     return () => cancelAnimationFrame(animationFrame);
-  }, []);
+  }, [isResetting]); // Přidáme `isResetting` do závislostí
+  
+  // Reset polygonu po zmáčknutí mezerníku
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.code === "Space") {
+        setIsResetting(true);
+        if (currentSegment === "circle") {
+          console.log("hit");
+          setHp((prevHp: number) => prevHp - npc.weapon.damage);
+          if (hp <= 0) {
+            navigate("/Ending/1");
+          }
+        }
+      }
+    };
+  
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [currentSegment, setHp, currentAngle]);
 
   useEffect(() => {
     if (currentAngle >= emptyStart && currentAngle < emptyEnd) {
@@ -61,27 +106,9 @@ const Circle: React.FC = () => {
     }
   }, [currentAngle]);
 
-  useEffect(() => {
-    const handleKeyPress = (event: KeyboardEvent) => {
-      if (event.code === 'Space') {
-        console.log(currentSegment);
-        if (currentSegment === 'circle') {
-          console.log('hit');
-          setHp((prevHp: number) => prevHp - 10);
-        }
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyPress);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyPress);
-    };
-  }, [currentSegment, setHp]);
-
   return (
     <div>
-      <svg viewBox="0 0 230 230">
+      <svg viewBox="0 0 230 230" style={{transform: `rotate(${wholeRotation}deg)`}}>
         <circle
           cx="110"
           cy="110"

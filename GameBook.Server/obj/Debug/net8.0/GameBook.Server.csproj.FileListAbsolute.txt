@@ -1403,3 +1403,4 @@ C:\Users\Local User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Serve
 C:\Users\Local User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Server\obj\Debug\net8.0\GameBook.Server.pdb
 C:\Users\Local User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Server\obj\Debug\net8.0\GameBook.Server.genruntimeconfig.cache
 C:\Users\Local User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Server\obj\Debug\net8.0\ref\GameBook.Server.dll
+D:\KokotSaja\GameBook.Server\bin\Debug\net8.0\PowerArgs.dll

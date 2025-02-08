@@ -1,5 +1,4 @@
-﻿
-namespace GameBook.Server.Models
+﻿namespace GameBook.Server.Models
 {
     public class ViewItem
     {

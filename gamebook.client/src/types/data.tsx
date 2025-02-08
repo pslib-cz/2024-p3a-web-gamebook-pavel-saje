@@ -96,14 +96,27 @@ export type LocationPath = {
     secondNode: Location;
 };
 
+export type Npc = {
+    npcID: number;
+    name: string;
+    health: number;
+    weapon: weapon;
+}
+
 export type RequiredItems = {
     requiredItemsID: number;
     locationID: number;
     itemID: number;
 };
 
+export type weapon = {
+    weaponID: number;
+    name: string;
+    damage: number;
+};
+
 export type End = {
     endID: number;
-    name: string;
-    description: string;
+    text: string;
+    imagePath: string;
 };

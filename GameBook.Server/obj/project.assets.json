@@ -2002,6 +2002,15 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
         }
       },
+      "PowerArgs/4.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/PowerArgs.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/PowerArgs.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
         "type": "package",
         "dependencies": {
@@ -6364,6 +6373,19 @@
         "nuget.versioning.nuspec"
       ]
     },
+    "PowerArgs/4.0.3": {
+      "sha512": "8baSCh4j3oF6nQYkfnERl3pk5vvidJmx6LUIdNVV2F7whx0+BuE4QUwHX+lczHUHAFKDJKABXrjrSZzAJlfWxA==",
+      "type": "package",
+      "path": "powerargs/4.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/PowerArgs.dll",
+        "powerargs.4.0.3.nupkg.sha512",
+        "powerargs.nuspec",
+        "readme.md"
+      ]
+    },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
       "sha512": "UxWuisvZ3uVcVOLJQv7urM/JiQH+v3TmaJc1BLKl5Dxfm/nTzTUrqswCqg/INiYLi61AXnHo1M1JPmPqqLnAdg==",
       "type": "package",
@@ -7408,27 +7430,28 @@
       "Microsoft.EntityFrameworkCore.Sqlite.Core >= 9.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.7",
+      "PowerArgs >= 4.0.3",
       "Swashbuckle.AspNetCore >= 7.2.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Local User\\.nuget\\packages\\": {},
+    "C:\\Users\\juki_\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\GameBook.Server.csproj",
+      "projectUniqueName": "D:\\KokotSaja\\GameBook.Server\\GameBook.Server.csproj",
       "projectName": "GameBook.Server",
-      "projectPath": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\GameBook.Server.csproj",
-      "packagesPath": "C:\\Users\\Local User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\obj\\",
+      "projectPath": "D:\\KokotSaja\\GameBook.Server\\GameBook.Server.csproj",
+      "packagesPath": "C:\\Users\\juki_\\.nuget\\packages\\",
+      "outputPath": "D:\\KokotSaja\\GameBook.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Local User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\juki_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7455,8 +7478,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -7496,6 +7518,10 @@
             "target": "Package",
             "version": "[8.0.7, )"
           },
+          "PowerArgs": {
+            "target": "Package",
+            "version": "[4.0.3, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[7.2.0, )"
@@ -7520,7 +7546,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
