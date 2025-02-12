@@ -37,6 +37,27 @@ interface ContentProps {
           fetchData();
         }, [location]);
 
+        const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+        const [showInteractText, setShowInteractText] = useState(false);
+
+        useEffect(() => {
+          const handleMouseMove = (event: MouseEvent) => {
+            setMousePosition({ x: event.clientX, y: event.clientY });
+          };
+
+          
+
+          window.addEventListener('mousemove', handleMouseMove);
+
+          return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+          };
+        }, []);
+
+        useEffect(() => {
+          console.log(mousePosition);
+        }, [mousePosition]);
+
 
 
       const getOptions = (interactibleId: number): InteractiblesOption[] | undefined => {
@@ -64,6 +85,8 @@ interface ContentProps {
                     bottom: `${content.yPos}%`,
                     left: `${content.xPos}%`,
                   }}
+                  onMouseEnter={() => setShowInteractText(true)}
+                  onMouseLeave={() => setShowInteractText(false)}
                 >
                   <img
                     src={domain + content.interactible.imagePath}
@@ -82,6 +105,10 @@ interface ContentProps {
                     </ul>
                   </span>
                 </span>
+
+                {showInteractText && (
+                <p style={{position: "absolute", top: mousePosition.y, left: mousePosition.x}}>click to interact</p>
+                )}
                 </>
               ) : null;
             }).filter(Boolean)}
