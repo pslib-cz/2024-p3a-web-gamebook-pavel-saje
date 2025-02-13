@@ -1,12 +1,105 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\local user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\local user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\controllers\\datadialogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\datadialogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\local user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\controllers\\dataitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\dataitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\local user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\controllers\\datalocationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\datalocationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|c:\\users\\local user\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.server\\controllers\\datadialogresponsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\datadialogresponsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Program.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Program.cs",
+              "RelativeToolTip": "GameBook.Server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T21:52:25.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataItemController.cs",
+              "DocumentMoniker": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\DataItemController.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\DataItemController.cs",
+              "ToolTip": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\DataItemController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\DataItemController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAewCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T12:10:17.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataLocationController.cs",
+              "DocumentMoniker": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\DataLocationController.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\DataLocationController.cs",
+              "ToolTip": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\DataLocationController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\DataLocationController.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAAcwKwAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T12:10:04.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataDialogResponseController.cs",
+              "DocumentMoniker": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\DataDialogResponseController.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\DataDialogResponseController.cs",
+              "ToolTip": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\DataDialogResponseController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\DataDialogResponseController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T12:06:21.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataDialogController.cs",
+              "DocumentMoniker": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\DataDialogController.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\DataDialogController.cs",
+              "ToolTip": "C:\\Users\\Local User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\Controllers\\DataDialogController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\DataDialogController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwEcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T12:05:39.834Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

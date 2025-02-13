@@ -1537,3 +1537,4 @@ C:\Users\User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Server\bin\
 C:\Users\User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Server\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Server\obj\Debug\net8.0\staticwebassets\msbuild.GameBook.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Local User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Server\bin\Debug\net8.0\PowerArgs.dll
