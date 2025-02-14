@@ -38,7 +38,7 @@ interface ContentProps {
         }, [location]);
 
         const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-        const [showInteractText, setShowInteractText] = useState(false);
+        const [showOptions, setShowOptions] = useState(false);
 
         useEffect(() => {
           const handleMouseMove = (event: MouseEvent) => {
@@ -85,8 +85,8 @@ interface ContentProps {
                     bottom: `${content.yPos}%`,
                     left: `${content.xPos}%`,
                   }}
-                  onMouseEnter={() => setShowInteractText(true)}
-                  onMouseLeave={() => setShowInteractText(false)}
+                  onMouseEnter={() => setShowOptions(true)}
+                  onMouseLeave={() => setShowOptions(false)}
                 >
                   <img
                     src={domain + content.interactible.imagePath}
@@ -106,12 +106,23 @@ interface ContentProps {
                   </span>
                 </span>
 
-                {showInteractText && (
-                <p style={{position: "absolute", top: mousePosition.y, left: mousePosition.x}}>click to interact</p>
-                )}
+                
                 </>
               ) : null;
             }).filter(Boolean)}
+            {showOptions && (
+                <ul style={{position: "absolute", top: mousePosition.y + 16, left: mousePosition.x}}>
+                  <li>{"sex"}</li>
+                  <li>click to interact</li>
+                  {/* {options && options.map((option) => (
+                        <Option
+                        interactibleKey={key}
+                          interactOption={option.option}
+                          interactible={content.interactible}
+                        />
+                      ))} */}
+                </ul>
+                )}
         </>
       );
     
