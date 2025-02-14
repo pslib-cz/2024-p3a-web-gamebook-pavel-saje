@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/Fight:id",
-                element: <Fight/>
+                element: <Fight/>,
             }
         ]
     },

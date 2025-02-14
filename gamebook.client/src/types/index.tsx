@@ -7,12 +7,14 @@ import {
     type InteractiblesItem,
     type InteractiblesOption,
     type Item,
+    type ItemTypes,
     type ItemCategory,
     type DataLocation,
     type LocationContent,
     type LocationPath,
     type RequiredItems,
-    type End
+    type End,
+    type Weapon
 } from "./data";
 
 export type {
@@ -24,10 +26,12 @@ export type {
     InteractiblesItem,
     InteractiblesOption,
     Item,
+    ItemTypes,
     ItemCategory,
     DataLocation,
     LocationContent,
     LocationPath,
     RequiredItems,
-    End
+    End,
+    Weapon
 }

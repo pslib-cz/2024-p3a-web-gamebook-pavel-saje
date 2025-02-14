@@ -1,10 +1,11 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
-import { Item, DataLocation } from '../types';
+import { Item, DataLocation, Weapon } from '../types';
 
 interface GameContextProps {
   hp: number;
   setHp: React.Dispatch<React.SetStateAction<number>>;
   resetHp: () => void;
+  defaultHp: number;
   energy: number;
   setEnergy: React.Dispatch<React.SetStateAction<number>>;
   resetEnergy: () => void;
@@ -25,7 +26,7 @@ interface GameContextProps {
   setCanBeVisited: React.Dispatch<React.SetStateAction<DataLocation[]>>;
   resetCanBeVisited: () => void;
 
-  //NOTE vzor: LocatioID-KEY
+  //NOTE vzor: LocatioID-Index
   InteractiblesRemovedFromLocation: string[];
   setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<string[]>>;
   resetInteractiblesRemovedFromLocation: () => void;
@@ -34,6 +35,10 @@ interface GameContextProps {
   lastLocation: DataLocation;
   setLastLocation: React.Dispatch<React.SetStateAction<DataLocation>>;
   resetLastLocation: () => void;
+
+  equipedWeapon: Weapon | undefined;
+  setEquipedWeapon: React.Dispatch<React.SetStateAction<Weapon | undefined>>;
+  resetEquipedWeapon: () => void;
 
   resetAll: () => void;
 }
@@ -69,6 +74,11 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     return savedInventory !== null ? JSON.parse(savedInventory) : [];
   });
 
+  const [equipedWeapon, setEquipedWeapon] = useState<Weapon | undefined>(() => {;
+   const savedEquipedWeapon = localStorage.getItem("equipedWeapon");
+   return savedEquipedWeapon !== null ? JSON.parse(savedEquipedWeapon) : undefined;
+  });
+
   const [InteractiblesRemovedFromLocation, setInteractiblesRemovedFromLocation] = useState<string[]>(() => {
     const savedInteractiblesRemovedFromLocation = localStorage.getItem('InteractiblesRemovedFromLocation');
     return savedInteractiblesRemovedFromLocation !== null ? JSON.parse(savedInteractiblesRemovedFromLocation) : [];
@@ -78,6 +88,7 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     const savedCanBeVisited = localStorage.getItem('canBeVisited');
     return savedCanBeVisited !== null ? JSON.parse(savedCanBeVisited) : [];
   });
+
 
   const defaultLastLocation: DataLocation = {
     locationID: 3,
@@ -137,6 +148,10 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         setLastLocation(defaultLastLocation);
     }
 
+    const resetEquipedWeapon = () => {
+        setEquipedWeapon(undefined);
+    }
+
     const resetAll = () => {
         resetHp();
         resetEnergy();
@@ -146,6 +161,7 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         resetInteractiblesRemovedFromLocation();
         resetCanBeVisited();
         resetLastLocation();
+        resetEquipedWeapon();
     }
 
   return (
@@ -154,6 +170,7 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         hp,
         setHp,
         resetHp,
+        defaultHp,
         energy,
         setEnergy,
         resetEnergy,
@@ -177,7 +194,10 @@ const [inventory, setInventory] = useState<Item[]>(() => {
         defaultLastLocation,
         lastLocation,
         setLastLocation,
-        resetLastLocation
+        resetLastLocation,
+        equipedWeapon,
+        setEquipedWeapon,
+        resetEquipedWeapon,
       }}
     >
       {children}

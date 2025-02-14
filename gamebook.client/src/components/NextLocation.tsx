@@ -47,7 +47,7 @@ const NextLocation: React.FC<NextLocationProps> = ({locationId}) => {
             }
         }
         fetchData();
-    })
+    }, [locationId]);
 
     return (
       <>

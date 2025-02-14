@@ -63,6 +63,11 @@ export type Item = {
     category: ItemCategory;
 };
 
+export type ItemTypes = {
+    consumables: ConsumableItem[];
+    weapons: Weapon[];
+};
+
 export type ItemCategory = {
     categoryID: number;
     name: string;
@@ -100,7 +105,7 @@ export type Npc = {
     npcID: number;
     name: string;
     health: number;
-    weapon: weapon;
+    weapon: Weapon;
 }
 
 export type RequiredItems = {
@@ -109,10 +114,12 @@ export type RequiredItems = {
     itemID: number;
 };
 
-export type weapon = {
+export type Weapon = {
     weaponID: number;
     name: string;
     damage: number;
+    itemID: number;
+    item: Item;
 };
 
 export type End = {

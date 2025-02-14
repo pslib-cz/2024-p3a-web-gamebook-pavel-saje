@@ -5,13 +5,14 @@ import { useNavigate } from 'react-router-dom';
 
 interface CircleProps {
   npc: Npc;
+  iKey: string;
 }
 
-const Circle: React.FC<CircleProps> = ({npc}) => {
+const Circle: React.FC<CircleProps> = ({npc, iKey}) => {
   const duration = 2000;
 
   const emptyStart = 120; 
-  const emptyEnd = emptyStart + 50;
+  const emptyEnd = emptyStart + 30;
   const filledEnd = emptyEnd + 10;
 
   const color = "#00FF00";
@@ -26,17 +27,17 @@ const Circle: React.FC<CircleProps> = ({npc}) => {
   const [currentAngle, setCurrentAngle] = useState(0);
   const rotationRef = useRef<SVGPolygonElement>(null);
 
-  const [currentSegment, setCurrentSegment] = useState('circle');
-
   const gameContext = useContext(GameContext);
   if (!gameContext) {
     throw new Error('GameContext must be used within a GameProvider');
   }
-  const { hp, setHp } = gameContext;
+  const { hp, setHp, equipedWeapon, lastLocation, setInteractiblesRemovedFromLocation } = gameContext;
   const [isResetting, setIsResetting] = useState(false);
   const navigate = useNavigate();
 
   const [wholeRotation, setWholeRotation] = useState(0);
+
+  const [npcsHp, setNpcsHp] = useState(npc.health);
 
   useEffect(() => {
     let angle = 0;
@@ -57,11 +58,11 @@ const Circle: React.FC<CircleProps> = ({npc}) => {
   
       const elapsed = (timestamp - start) % duration;
       angle = (360 * elapsed) / duration;
-      setCurrentAngle(angle);
-      if(angle>= 350){
-        setIsResetting(true);
-        setHp((prevHp: number) => prevHp - npc.weapon.damage)
-      }
+      setCurrentAngle(angle - 90);
+      // if(angle>= 350){
+      //   setIsResetting(true);
+      //   setHp((prevHp: number) => prevHp - npc.weapon.damage)
+      // }
   
       if (rotationRef.current) {
         rotationRef.current.setAttribute("transform", `rotate(${angle}, 0, 0)`);
@@ -73,19 +74,23 @@ const Circle: React.FC<CircleProps> = ({npc}) => {
     animationFrame = requestAnimationFrame(animate);
   
     return () => cancelAnimationFrame(animationFrame);
-  }, [isResetting]); // Přidáme `isResetting` do závislostí
-  
-  // Reset polygonu po zmáčknutí mezerníku
+  }, [isResetting]);
+
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.code === "Space") {
         setIsResetting(true);
-        if (currentSegment === "circle") {
+        
+        if (currentAngle >= emptyStart && currentAngle < emptyEnd) { //empty
+          setNpcsHp((prevNpcsHp: number) => prevNpcsHp - (equipedWeapon?.damage || 1));
+        }
+        else if (currentAngle >= emptyEnd && currentAngle < filledEnd) { //filled
+          console.log("hit");
+          setNpcsHp((prevNpcsHp: number) => prevNpcsHp - (equipedWeapon?.damage || 1) * 2);
+        }
+        else{
           console.log("hit");
           setHp((prevHp: number) => prevHp - npc.weapon.damage);
-          if (hp <= 0) {
-            navigate("/Ending/1");
-          }
         }
       }
     };
@@ -94,17 +99,20 @@ const Circle: React.FC<CircleProps> = ({npc}) => {
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, [currentSegment, setHp, currentAngle]);
+  }, [currentAngle]);
 
   useEffect(() => {
-    if (currentAngle >= emptyStart && currentAngle < emptyEnd) {
-      setCurrentSegment('empty');
-    } else if (currentAngle >= emptyEnd && currentAngle < filledEnd) {
-      setCurrentSegment('filled');
-    } else {
-      setCurrentSegment('circle');
+    if (hp <= 0) {
+      alert("chcipls ty slaba močko")
     }
-  }, [currentAngle]);
+    if (npcsHp <= 0) {
+      alert("ty vrahu")
+      navigate(`/game/${lastLocation.locationID}`);
+      setInteractiblesRemovedFromLocation((prevInteractiblesRemovedFromLocation: string[]) => {
+        return [...prevInteractiblesRemovedFromLocation, iKey];
+      });
+    }
+  }, [hp, npcsHp]);
 
   return (
     <div>
@@ -152,9 +160,11 @@ const Circle: React.FC<CircleProps> = ({npc}) => {
         </g>
       </svg>
 
+      <p>{equipedWeapon?.name}</p>
       <p>Current Angle: {currentAngle.toFixed(0)}°</p>
-      <p>{currentSegment}</p>
       <p>HP: {hp}</p>
+      <p>EnemyHP: {npcsHp}</p>
+      <p>{iKey}</p>
     </div>
   );
 };

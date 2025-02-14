@@ -8,12 +8,25 @@ import { Npc } from "../types/data";
 const Fight = () => {
   const {id} = useParams();
 
+  const [iKEy, setIKey] = useState<string | null>(null);
+  const [npcID, setNpcID] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (id) {
+      const parts = id.split("&");
+      if (parts.length > 1) {
+        setIKey(parts[1]);
+      }
+      setNpcID(parseInt(parts[0]));
+    }
+  }, [id]);
+
   const [npc, setNpc] = useState<Npc>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${domain}/api/Npc/ByInteractibleId/${id}`);
+        const response = await fetch(`${domain}/api/Npc/ByInteractibleId/${npcID}`);
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -30,7 +43,7 @@ const Fight = () => {
         <div className="fight">
           <h1>Fight</h1>
           <div className="circle">
-            {npc && <Circle npc={npc}/>}
+            {npc && <Circle npc={npc} iKey={iKEy ?? ''}/>}
           </div>
           <p>space pro potvrzení</p>
         </div>

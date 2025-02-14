@@ -54,10 +54,6 @@ interface ContentProps {
           };
         }, []);
 
-        useEffect(() => {
-          console.log(mousePosition);
-        }, [mousePosition]);
-
 
 
       const getOptions = (interactibleId: number): InteractiblesOption[] | undefined => {
@@ -70,6 +66,7 @@ interface ContentProps {
 
       return (
         <>
+        {/* TODO když je to npc a je mrtvé tak místo toho udělat náhrobek */}
           {location?.locationContents &&
             location.locationContents.map((content, index) => {
               const key = location?.locationID + "-" + index;

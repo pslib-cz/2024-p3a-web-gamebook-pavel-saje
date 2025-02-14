@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "FdA2Xj1UkKO7C8+KOWUwm8IvgV6tPOT6nMxqMMNxsuo=",
+  "Hash": "YX4mdPuK8wkhWUvuutTQysaUAFUsSqwfTPo0LOXDnBc=",
   "Source": "GameBook.Server",
   "BasePath": "_content/GameBook.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\gamebook.client\\gamebook.client.esproj",
+      "Identity": "D:\\KokotSaja\\gamebook.client\\gamebook.client.esproj",
       "Version": 2,
       "Source": "gamebook.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
@@ -22,3309 +22,562 @@
     {
       "Name": "GameBook.Server\\wwwroot",
       "Source": "GameBook.Server",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Interactibles/03877499-3bef-4466-b8d7-684dbac378c2_kocicka#[.{fingerprint}]?.jpg",
+      "RelativePath": "Uploads/Interactibles/03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "yfz6y0i37q",
-      "Integrity": "7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Interactibles/681000db-7d63-4e4b-886f-e03e477644d8_kocicka#[.{fingerprint}]?.jpg",
+      "RelativePath": "Uploads/Interactibles/681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "yfz6y0i37q",
-      "Integrity": "7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\FoodCan.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\FoodCan.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Interactibles/FoodCan#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Interactibles/FoodCan.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "nl6uvf82wg",
-      "Integrity": "FWjLvFDgmkbFnFlYsJIbGFuzcwx+D9ssfGx0GK/Vwfk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Interactibles\\FoodCan.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\survivor.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\survivor.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Interactibles/survivor#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Interactibles/survivor.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zsoa6r24n1",
-      "Integrity": "7TGN1huEZn33nQnsAf7861RdIuXMnhE9xu3nsH7e+00=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Interactibles\\survivor.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Benzinka.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Benzinka.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Benzinka#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Benzinka.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "yosye4o49m",
-      "Integrity": "wqNdPzaCowk1I2iAbS1j/SrvDdT1PrtOYeW6l+rxFKo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Benzinka.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\CestaKVysilaci.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\CestaKVysilaci.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/CestaKVysilaci#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/CestaKVysilaci.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ja5wa396qm",
-      "Integrity": "NddZ7pVPNTmrVV5EhKog5P77LlbtsHSgwMQe8IXZLPo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\CestaKVysilaci.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Chodba.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Dalnice.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Chodba#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Dalnice.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "w78xh1npxp",
-      "Integrity": "JFOm9uYtLXba0Fuy4vltBBUbU5M8p9a6O6w+Y9lu+qg=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Chodba.png"
-    },
-    {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Dalnice.png",
-      "SourceId": "GameBook.Server",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
-      "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Dalnice#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "nha64m9jex",
-      "Integrity": "m2aNhDF4lJ1vCJ83KrLwZEDIDwGAO6YoidXqexb9iVo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Dalnice.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_911.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_911.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Ending_911#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Ending_911.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "j0oimazqee",
-      "Integrity": "7cf8usZlZfyINyMyOnmS9OzgfoaDKh3ZrxiyMTc02Hk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Ending_911.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_Otroctvi.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_Otroctvi.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Ending_Otroctvi#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Ending_Otroctvi.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "orsea4ga5e",
-      "Integrity": "JOMB0iAgfi88pamzk8H5WuasGQtoGxZKWAzygSRySsc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Ending_Otroctvi.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Gastrom.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Gastrom.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Gastrom#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Gastrom.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "0aw81ol1s0",
-      "Integrity": "mBnqty1o1CHVkTnkZUNNKZfgK6plx0omHrQ3iuTdaCo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Gastrom.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\HlavniCesta.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\HlavniCesta.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/HlavniCesta#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/HlavniCesta.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "pkilzwd2r0",
-      "Integrity": "t9uvNFoZUBfO31p/XwR4YNhLbqzTL3TzJH5s5amo/YA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\HlavniCesta.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JadernaElektrarna.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Chodba.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/JadernaElektrarna#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Chodba.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "7zyj1jhmwo",
-      "Integrity": "05QLm7sFauBzLu02/6/E+uJ6ftJN74auh12V505tkXA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\JadernaElektrarna.png"
+      "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Chodba.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JidloObchod.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JidloObchod.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/JidloObchod#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/JidloObchod.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jr8v927r11",
-      "Integrity": "H18RMkWtYYgsea1ZoTJWDVzjemX2Hk2NEAb0NmEfxZs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\JidloObchod.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kanal.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\KomunitniBunkr.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Kanal#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/KomunitniBunkr.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gid7c83mgi",
-      "Integrity": "2GPzjv2b6ab4tc6clJ6QnXE+a0hQ5lrRey9bJVqYIVU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Kanal.png"
-    },
-    {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\KomunitniBunkr.png",
-      "SourceId": "GameBook.Server",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
-      "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/KomunitniBunkr#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "mqxkbr8d5y",
-      "Integrity": "zt6GrKBu6Zt5q4IT2B2ULtq+0H/ZsuJHX9dCB42ptgg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\KomunitniBunkr.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kuchyne.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kuchyne.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Kuchyne#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Kuchyne.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2612bf95i5",
-      "Integrity": "ljagA4Z466+6Vomtta70oEjJgkAWdLTAC6gTeP8NaRw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Kuchyne.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kulna.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kulna.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Kulna#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Kulna.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "wyq63povce",
-      "Integrity": "+Ar9D7eFjNqnRW01xU78wSHny3co8RhUd85m7OoyZNs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Kulna.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Lekarna.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Lekarna.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Lekarna#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Lekarna.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ec1gucc9rm",
-      "Integrity": "zvjzgiObXrJLVEKod6qgHoWEKKCK9AWrh86dcLA99Z0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Lekarna.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Letiste.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Letiste.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Letiste#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Letiste.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "41st4uuszr",
-      "Integrity": "KM+8fClAV8VtXte6c4EEOyP/QQHh247PjwHIu86Yj9Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Letiste.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Namesti.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Namesti.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Namesti#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Namesti.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "t677dep5uc",
-      "Integrity": "2+oK7QZd0CCmyNqDFuMvL1S30wWIPHDMDLKKeSbf8fA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Namesti.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Prazska.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Prazska.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Prazska#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Prazska.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "jpeubycgqd",
-      "Integrity": "CedfzlyiXgulApvwQ8ty/9wIgm81yMAtFAggjstHiIw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Prazska.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Radnice.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Radnice.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Radnice#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Radnice.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "v1l5uyyj3s",
-      "Integrity": "03/A8XmLfDUj+Hdr+qf98LMbgdP45Vwwx9Xv0MafnxY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Radnice.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RidiciBlok.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RidiciBlok.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/RidiciBlok#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/RidiciBlok.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "10al1budi9",
-      "Integrity": "4fIglbWS4YB0l0GZod/KxMxbLjShxzmcE1njkEbVl/0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\RidiciBlok.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Rozcesti.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Rozcesti.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Rozcesti#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Rozcesti.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "qqi4nts3xb",
-      "Integrity": "Hj1tIdQEV1Lm0xIfdEcytBjwqypd8OsZYvmLp0aIzsc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Rozcesti.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RuinyUniverzity.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RuinyUniverzity.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/RuinyUniverzity#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/RuinyUniverzity.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "x1zi3p1x01",
-      "Integrity": "C0eS9xTrYnGDuSLDU5P762owA3JekvxQsgsCpPbqISw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\RuinyUniverzity.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sidliste.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sidliste.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Sidliste#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Sidliste.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "uru0aptpgq",
-      "Integrity": "NgZ05NlD/d+j/Tjbpy/j8LKv6TwwlNuq9jFVfD+qp+4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Sidliste.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sklad.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sklad.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Sklad#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Sklad.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "kyxd7w8wsh",
-      "Integrity": "LFQSk7RPGjdEtAw6YBzTUzFhifHEUT32u3YNIRFp+4o=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Sklad.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\UniverzitniKnihovna.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\UniverzitniKnihovna.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/UniverzitniKnihovna#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/UniverzitniKnihovna.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "hblhb7lyzd",
-      "Integrity": "00L3NZxNPMjnOezMfhG2uR/0Ym+ruHetzq+V0gFx1to=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\UniverzitniKnihovna.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Vstup.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Vstup.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Vstup#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/Vstup.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "iklqkwzapp",
-      "Integrity": "Tkw9UCGmV4GSIfhj4Xjfhfq1kPqa4Q6hsxDL4dFo8+w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Vstup.png"
     },
     {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Vysilac.png",
+      "Identity": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\VysilacVstup.png",
       "SourceId": "GameBook.Server",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
+      "ContentRoot": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\",
       "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/Vysilac#[.{fingerprint}]?.png",
+      "RelativePath": "Uploads/Locations/VysilacVstup.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "7rrbyc7ak3",
-      "Integrity": "vZyIBXKl8Cn0nmze3BRXj0EWKD08bhb2q3p8VHkDplU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\Vysilac.png"
-    },
-    {
-      "Identity": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\VysilacVstup.png",
-      "SourceId": "GameBook.Server",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\",
-      "BasePath": "_content/GameBook.Server",
-      "RelativePath": "Uploads/Locations/VysilacVstup#[.{fingerprint}]?.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "v2irg789mi",
-      "Integrity": "R+BOpk0hc/0BbmBlShbI3esdWXS6r6PVnEnxxn67H/c=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Locations\\VysilacVstup.png"
-    }
-  ],
-  "Endpoints": [
-    {
-      "Route": "Uploads/Interactibles/03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13043"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 24 Jan 2025 14:58:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Interactibles/03877499-3bef-4466-b8d7-684dbac378c2_kocicka.yfz6y0i37q.jpg",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13043"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 24 Jan 2025 14:58:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "yfz6y0i37q"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Interactibles/03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Interactibles/681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13043"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 24 Jan 2025 14:58:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Interactibles/681000db-7d63-4e4b-886f-e03e477644d8_kocicka.yfz6y0i37q.jpg",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13043"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 24 Jan 2025 14:58:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "yfz6y0i37q"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Interactibles/681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7jo13SrsE8B5zBwqy/tquHsxjyWv2JEz2ywLMmxml+E="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Interactibles/FoodCan.nl6uvf82wg.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\FoodCan.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "606078"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"FWjLvFDgmkbFnFlYsJIbGFuzcwx+D9ssfGx0GK/Vwfk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 02 Feb 2025 12:14:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "nl6uvf82wg"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Interactibles/FoodCan.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-FWjLvFDgmkbFnFlYsJIbGFuzcwx+D9ssfGx0GK/Vwfk="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Interactibles/FoodCan.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\FoodCan.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "606078"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"FWjLvFDgmkbFnFlYsJIbGFuzcwx+D9ssfGx0GK/Vwfk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 02 Feb 2025 12:14:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-FWjLvFDgmkbFnFlYsJIbGFuzcwx+D9ssfGx0GK/Vwfk="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Interactibles/survivor.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\survivor.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1266521"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7TGN1huEZn33nQnsAf7861RdIuXMnhE9xu3nsH7e+00=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 24 Jan 2025 14:58:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-7TGN1huEZn33nQnsAf7861RdIuXMnhE9xu3nsH7e+00="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Interactibles/survivor.zsoa6r24n1.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\survivor.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1266521"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7TGN1huEZn33nQnsAf7861RdIuXMnhE9xu3nsH7e+00=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 24 Jan 2025 14:58:41 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zsoa6r24n1"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Interactibles/survivor.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7TGN1huEZn33nQnsAf7861RdIuXMnhE9xu3nsH7e+00="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Benzinka.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Benzinka.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1876619"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"wqNdPzaCowk1I2iAbS1j/SrvDdT1PrtOYeW6l+rxFKo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-wqNdPzaCowk1I2iAbS1j/SrvDdT1PrtOYeW6l+rxFKo="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Benzinka.yosye4o49m.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Benzinka.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1876619"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"wqNdPzaCowk1I2iAbS1j/SrvDdT1PrtOYeW6l+rxFKo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "yosye4o49m"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Benzinka.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-wqNdPzaCowk1I2iAbS1j/SrvDdT1PrtOYeW6l+rxFKo="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/CestaKVysilaci.ja5wa396qm.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\CestaKVysilaci.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1473960"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NddZ7pVPNTmrVV5EhKog5P77LlbtsHSgwMQe8IXZLPo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ja5wa396qm"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/CestaKVysilaci.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-NddZ7pVPNTmrVV5EhKog5P77LlbtsHSgwMQe8IXZLPo="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/CestaKVysilaci.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\CestaKVysilaci.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1473960"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NddZ7pVPNTmrVV5EhKog5P77LlbtsHSgwMQe8IXZLPo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-NddZ7pVPNTmrVV5EhKog5P77LlbtsHSgwMQe8IXZLPo="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Chodba.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Chodba.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1704714"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"JFOm9uYtLXba0Fuy4vltBBUbU5M8p9a6O6w+Y9lu+qg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-JFOm9uYtLXba0Fuy4vltBBUbU5M8p9a6O6w+Y9lu+qg="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Chodba.w78xh1npxp.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Chodba.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1704714"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"JFOm9uYtLXba0Fuy4vltBBUbU5M8p9a6O6w+Y9lu+qg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "w78xh1npxp"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Chodba.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-JFOm9uYtLXba0Fuy4vltBBUbU5M8p9a6O6w+Y9lu+qg="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Dalnice.nha64m9jex.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Dalnice.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1404130"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"m2aNhDF4lJ1vCJ83KrLwZEDIDwGAO6YoidXqexb9iVo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "nha64m9jex"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Dalnice.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-m2aNhDF4lJ1vCJ83KrLwZEDIDwGAO6YoidXqexb9iVo="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Dalnice.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Dalnice.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1404130"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"m2aNhDF4lJ1vCJ83KrLwZEDIDwGAO6YoidXqexb9iVo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-m2aNhDF4lJ1vCJ83KrLwZEDIDwGAO6YoidXqexb9iVo="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Ending_911.j0oimazqee.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_911.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1442330"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7cf8usZlZfyINyMyOnmS9OzgfoaDKh3ZrxiyMTc02Hk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "j0oimazqee"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Ending_911.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7cf8usZlZfyINyMyOnmS9OzgfoaDKh3ZrxiyMTc02Hk="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Ending_911.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_911.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1442330"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7cf8usZlZfyINyMyOnmS9OzgfoaDKh3ZrxiyMTc02Hk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-7cf8usZlZfyINyMyOnmS9OzgfoaDKh3ZrxiyMTc02Hk="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Ending_Otroctvi.orsea4ga5e.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_Otroctvi.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1337478"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"JOMB0iAgfi88pamzk8H5WuasGQtoGxZKWAzygSRySsc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "orsea4ga5e"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Ending_Otroctvi.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-JOMB0iAgfi88pamzk8H5WuasGQtoGxZKWAzygSRySsc="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Ending_Otroctvi.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_Otroctvi.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1337478"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"JOMB0iAgfi88pamzk8H5WuasGQtoGxZKWAzygSRySsc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-JOMB0iAgfi88pamzk8H5WuasGQtoGxZKWAzygSRySsc="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Gastrom.0aw81ol1s0.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Gastrom.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1274246"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"mBnqty1o1CHVkTnkZUNNKZfgK6plx0omHrQ3iuTdaCo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0aw81ol1s0"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Gastrom.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-mBnqty1o1CHVkTnkZUNNKZfgK6plx0omHrQ3iuTdaCo="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Gastrom.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Gastrom.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1274246"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"mBnqty1o1CHVkTnkZUNNKZfgK6plx0omHrQ3iuTdaCo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-mBnqty1o1CHVkTnkZUNNKZfgK6plx0omHrQ3iuTdaCo="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/HlavniCesta.pkilzwd2r0.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\HlavniCesta.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1636443"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"t9uvNFoZUBfO31p/XwR4YNhLbqzTL3TzJH5s5amo/YA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "pkilzwd2r0"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/HlavniCesta.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-t9uvNFoZUBfO31p/XwR4YNhLbqzTL3TzJH5s5amo/YA="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/HlavniCesta.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\HlavniCesta.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1636443"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"t9uvNFoZUBfO31p/XwR4YNhLbqzTL3TzJH5s5amo/YA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-t9uvNFoZUBfO31p/XwR4YNhLbqzTL3TzJH5s5amo/YA="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/JadernaElektrarna.7zyj1jhmwo.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JadernaElektrarna.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1845018"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"05QLm7sFauBzLu02/6/E+uJ6ftJN74auh12V505tkXA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7zyj1jhmwo"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/JadernaElektrarna.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-05QLm7sFauBzLu02/6/E+uJ6ftJN74auh12V505tkXA="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/JadernaElektrarna.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JadernaElektrarna.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1845018"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"05QLm7sFauBzLu02/6/E+uJ6ftJN74auh12V505tkXA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-05QLm7sFauBzLu02/6/E+uJ6ftJN74auh12V505tkXA="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/JidloObchod.jr8v927r11.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JidloObchod.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2729247"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"H18RMkWtYYgsea1ZoTJWDVzjemX2Hk2NEAb0NmEfxZs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jr8v927r11"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/JidloObchod.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-H18RMkWtYYgsea1ZoTJWDVzjemX2Hk2NEAb0NmEfxZs="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/JidloObchod.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JidloObchod.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2729247"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"H18RMkWtYYgsea1ZoTJWDVzjemX2Hk2NEAb0NmEfxZs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-H18RMkWtYYgsea1ZoTJWDVzjemX2Hk2NEAb0NmEfxZs="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Kanal.gid7c83mgi.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kanal.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2719394"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2GPzjv2b6ab4tc6clJ6QnXE+a0hQ5lrRey9bJVqYIVU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:45 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "gid7c83mgi"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Kanal.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-2GPzjv2b6ab4tc6clJ6QnXE+a0hQ5lrRey9bJVqYIVU="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Kanal.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kanal.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2719394"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2GPzjv2b6ab4tc6clJ6QnXE+a0hQ5lrRey9bJVqYIVU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:45 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-2GPzjv2b6ab4tc6clJ6QnXE+a0hQ5lrRey9bJVqYIVU="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/KomunitniBunkr.mqxkbr8d5y.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\KomunitniBunkr.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2405896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zt6GrKBu6Zt5q4IT2B2ULtq+0H/ZsuJHX9dCB42ptgg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "mqxkbr8d5y"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/KomunitniBunkr.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-zt6GrKBu6Zt5q4IT2B2ULtq+0H/ZsuJHX9dCB42ptgg="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/KomunitniBunkr.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\KomunitniBunkr.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2405896"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zt6GrKBu6Zt5q4IT2B2ULtq+0H/ZsuJHX9dCB42ptgg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-zt6GrKBu6Zt5q4IT2B2ULtq+0H/ZsuJHX9dCB42ptgg="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Kuchyne.2612bf95i5.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kuchyne.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1705564"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ljagA4Z466+6Vomtta70oEjJgkAWdLTAC6gTeP8NaRw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2612bf95i5"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Kuchyne.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ljagA4Z466+6Vomtta70oEjJgkAWdLTAC6gTeP8NaRw="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Kuchyne.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kuchyne.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1705564"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ljagA4Z466+6Vomtta70oEjJgkAWdLTAC6gTeP8NaRw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ljagA4Z466+6Vomtta70oEjJgkAWdLTAC6gTeP8NaRw="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Kulna.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kulna.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1587576"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"+Ar9D7eFjNqnRW01xU78wSHny3co8RhUd85m7OoyZNs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-+Ar9D7eFjNqnRW01xU78wSHny3co8RhUd85m7OoyZNs="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Kulna.wyq63povce.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kulna.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1587576"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"+Ar9D7eFjNqnRW01xU78wSHny3co8RhUd85m7OoyZNs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "wyq63povce"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Kulna.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-+Ar9D7eFjNqnRW01xU78wSHny3co8RhUd85m7OoyZNs="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Lekarna.ec1gucc9rm.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Lekarna.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2799010"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zvjzgiObXrJLVEKod6qgHoWEKKCK9AWrh86dcLA99Z0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ec1gucc9rm"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Lekarna.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-zvjzgiObXrJLVEKod6qgHoWEKKCK9AWrh86dcLA99Z0="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Lekarna.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Lekarna.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2799010"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zvjzgiObXrJLVEKod6qgHoWEKKCK9AWrh86dcLA99Z0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-zvjzgiObXrJLVEKod6qgHoWEKKCK9AWrh86dcLA99Z0="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Letiste.41st4uuszr.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Letiste.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1489095"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KM+8fClAV8VtXte6c4EEOyP/QQHh247PjwHIu86Yj9Y=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "41st4uuszr"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Letiste.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-KM+8fClAV8VtXte6c4EEOyP/QQHh247PjwHIu86Yj9Y="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Letiste.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Letiste.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1489095"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KM+8fClAV8VtXte6c4EEOyP/QQHh247PjwHIu86Yj9Y=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-KM+8fClAV8VtXte6c4EEOyP/QQHh247PjwHIu86Yj9Y="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Namesti.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Namesti.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1598185"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2+oK7QZd0CCmyNqDFuMvL1S30wWIPHDMDLKKeSbf8fA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-2+oK7QZd0CCmyNqDFuMvL1S30wWIPHDMDLKKeSbf8fA="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Namesti.t677dep5uc.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Namesti.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1598185"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2+oK7QZd0CCmyNqDFuMvL1S30wWIPHDMDLKKeSbf8fA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "t677dep5uc"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Namesti.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-2+oK7QZd0CCmyNqDFuMvL1S30wWIPHDMDLKKeSbf8fA="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Prazska.jpeubycgqd.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Prazska.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1633499"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"CedfzlyiXgulApvwQ8ty/9wIgm81yMAtFAggjstHiIw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "jpeubycgqd"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Prazska.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-CedfzlyiXgulApvwQ8ty/9wIgm81yMAtFAggjstHiIw="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Prazska.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Prazska.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1633499"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"CedfzlyiXgulApvwQ8ty/9wIgm81yMAtFAggjstHiIw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-CedfzlyiXgulApvwQ8ty/9wIgm81yMAtFAggjstHiIw="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Radnice.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Radnice.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1534652"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"03/A8XmLfDUj+Hdr+qf98LMbgdP45Vwwx9Xv0MafnxY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-03/A8XmLfDUj+Hdr+qf98LMbgdP45Vwwx9Xv0MafnxY="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Radnice.v1l5uyyj3s.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Radnice.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1534652"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"03/A8XmLfDUj+Hdr+qf98LMbgdP45Vwwx9Xv0MafnxY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "v1l5uyyj3s"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Radnice.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-03/A8XmLfDUj+Hdr+qf98LMbgdP45Vwwx9Xv0MafnxY="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/RidiciBlok.10al1budi9.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RidiciBlok.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2062250"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4fIglbWS4YB0l0GZod/KxMxbLjShxzmcE1njkEbVl/0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "10al1budi9"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/RidiciBlok.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-4fIglbWS4YB0l0GZod/KxMxbLjShxzmcE1njkEbVl/0="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/RidiciBlok.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RidiciBlok.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2062250"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4fIglbWS4YB0l0GZod/KxMxbLjShxzmcE1njkEbVl/0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-4fIglbWS4YB0l0GZod/KxMxbLjShxzmcE1njkEbVl/0="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Rozcesti.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Rozcesti.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1617676"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Hj1tIdQEV1Lm0xIfdEcytBjwqypd8OsZYvmLp0aIzsc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Hj1tIdQEV1Lm0xIfdEcytBjwqypd8OsZYvmLp0aIzsc="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Rozcesti.qqi4nts3xb.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Rozcesti.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1617676"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Hj1tIdQEV1Lm0xIfdEcytBjwqypd8OsZYvmLp0aIzsc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "qqi4nts3xb"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Rozcesti.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Hj1tIdQEV1Lm0xIfdEcytBjwqypd8OsZYvmLp0aIzsc="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/RuinyUniverzity.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RuinyUniverzity.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1544593"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"C0eS9xTrYnGDuSLDU5P762owA3JekvxQsgsCpPbqISw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-C0eS9xTrYnGDuSLDU5P762owA3JekvxQsgsCpPbqISw="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/RuinyUniverzity.x1zi3p1x01.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RuinyUniverzity.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1544593"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"C0eS9xTrYnGDuSLDU5P762owA3JekvxQsgsCpPbqISw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "x1zi3p1x01"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/RuinyUniverzity.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-C0eS9xTrYnGDuSLDU5P762owA3JekvxQsgsCpPbqISw="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Sidliste.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sidliste.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2073723"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NgZ05NlD/d+j/Tjbpy/j8LKv6TwwlNuq9jFVfD+qp+4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-NgZ05NlD/d+j/Tjbpy/j8LKv6TwwlNuq9jFVfD+qp+4="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Sidliste.uru0aptpgq.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sidliste.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2073723"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NgZ05NlD/d+j/Tjbpy/j8LKv6TwwlNuq9jFVfD+qp+4=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "uru0aptpgq"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Sidliste.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-NgZ05NlD/d+j/Tjbpy/j8LKv6TwwlNuq9jFVfD+qp+4="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Sklad.kyxd7w8wsh.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sklad.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1261661"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LFQSk7RPGjdEtAw6YBzTUzFhifHEUT32u3YNIRFp+4o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "kyxd7w8wsh"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Sklad.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-LFQSk7RPGjdEtAw6YBzTUzFhifHEUT32u3YNIRFp+4o="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Sklad.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sklad.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1261661"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LFQSk7RPGjdEtAw6YBzTUzFhifHEUT32u3YNIRFp+4o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-LFQSk7RPGjdEtAw6YBzTUzFhifHEUT32u3YNIRFp+4o="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/UniverzitniKnihovna.hblhb7lyzd.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\UniverzitniKnihovna.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2343272"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"00L3NZxNPMjnOezMfhG2uR/0Ym+ruHetzq+V0gFx1to=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "hblhb7lyzd"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/UniverzitniKnihovna.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-00L3NZxNPMjnOezMfhG2uR/0Ym+ruHetzq+V0gFx1to="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/UniverzitniKnihovna.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\UniverzitniKnihovna.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2343272"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"00L3NZxNPMjnOezMfhG2uR/0Ym+ruHetzq+V0gFx1to=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-00L3NZxNPMjnOezMfhG2uR/0Ym+ruHetzq+V0gFx1to="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Vstup.iklqkwzapp.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Vstup.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1507467"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Tkw9UCGmV4GSIfhj4Xjfhfq1kPqa4Q6hsxDL4dFo8+w=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "iklqkwzapp"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Vstup.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Tkw9UCGmV4GSIfhj4Xjfhfq1kPqa4Q6hsxDL4dFo8+w="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Vstup.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Vstup.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1507467"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Tkw9UCGmV4GSIfhj4Xjfhfq1kPqa4Q6hsxDL4dFo8+w=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Tkw9UCGmV4GSIfhj4Xjfhfq1kPqa4Q6hsxDL4dFo8+w="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Vysilac.7rrbyc7ak3.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Vysilac.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1267094"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vZyIBXKl8Cn0nmze3BRXj0EWKD08bhb2q3p8VHkDplU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:17:58 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7rrbyc7ak3"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/Vysilac.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-vZyIBXKl8Cn0nmze3BRXj0EWKD08bhb2q3p8VHkDplU="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/Vysilac.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Vysilac.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1267094"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"vZyIBXKl8Cn0nmze3BRXj0EWKD08bhb2q3p8VHkDplU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:17:58 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-vZyIBXKl8Cn0nmze3BRXj0EWKD08bhb2q3p8VHkDplU="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/VysilacVstup.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\VysilacVstup.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2652258"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"R+BOpk0hc/0BbmBlShbI3esdWXS6r6PVnEnxxn67H/c=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-R+BOpk0hc/0BbmBlShbI3esdWXS6r6PVnEnxxn67H/c="
-        }
-      ]
-    },
-    {
-      "Route": "Uploads/Locations/VysilacVstup.v2irg789mi.png",
-      "AssetFile": "C:\\Users\\Local User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\VysilacVstup.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2652258"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"R+BOpk0hc/0BbmBlShbI3esdWXS6r6PVnEnxxn67H/c=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 13 Feb 2025 19:16:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "v2irg789mi"
-        },
-        {
-          "Name": "label",
-          "Value": "Uploads/Locations/VysilacVstup.png"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-R+BOpk0hc/0BbmBlShbI3esdWXS6r6PVnEnxxn67H/c="
-        }
-      ]
     }
   ]
 }

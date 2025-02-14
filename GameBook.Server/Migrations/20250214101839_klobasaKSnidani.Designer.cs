@@ -2,6 +2,7 @@
 using GameBook.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameBook.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250214101839_klobasaKSnidani")]
+    partial class klobasaKSnidani
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
@@ -380,7 +383,7 @@ namespace GameBook.Server.Migrations
                     b.Property<int>("Damage")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("ItemID")
+                    b.Property<int>("ItemID")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
@@ -584,7 +587,9 @@ namespace GameBook.Server.Migrations
                 {
                     b.HasOne("GameBook.Server.Models.DataItem", "Item")
                         .WithMany()
-                        .HasForeignKey("ItemID");
+                        .HasForeignKey("ItemID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Item");
                 });
