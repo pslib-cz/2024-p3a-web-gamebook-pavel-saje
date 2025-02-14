@@ -1,124 +1,120 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg",
       "PackagePath": "staticwebassets\\Uploads\\Interactibles\\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg",
       "PackagePath": "staticwebassets\\Uploads\\Interactibles\\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\FoodCan.png",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\FoodCan.png",
       "PackagePath": "staticwebassets\\Uploads\\Interactibles\\FoodCan.png"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\survivor.png",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Interactibles\\survivor.png",
       "PackagePath": "staticwebassets\\Uploads\\Interactibles\\survivor.png"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Benzinka.png",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Benzinka.png",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Benzinka.png"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\CestaKVysilaci.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\CestaKVysilaci.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\CestaKVysilaci.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Chodba.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Chodba.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Chodba.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Dalnice.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Dalnice.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Dalnice.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_911.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_911.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Ending_911.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_Otroctvi.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Ending_Otroctvi.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Ending_Otroctvi.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Gastrom.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Gastrom.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Gastrom.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\HlavniCesta.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\HlavniCesta.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\HlavniCesta.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JidloObchod.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\JidloObchod.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\JidloObchod.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\KomunitniBunkr.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\KomunitniBunkr.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\KomunitniBunkr.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kuchyne.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kuchyne.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Kuchyne.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kulna.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Kulna.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Kulna.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Lekarna.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Lekarna.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Lekarna.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Letiste.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Letiste.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Letiste.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Namesti.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Namesti.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Namesti.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Prazska.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Prazska.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Prazska.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Radnice.png",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Radnice.png",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Radnice.png"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RidiciBlok.png",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\RidiciBlok.png",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\RidiciBlok.png"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Rozcesti.png",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Rozcesti.png",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Rozcesti.png"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sidliste.png",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sidliste.png",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Sidliste.png"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sklad.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Sklad.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Sklad.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Univerzita.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Univerzita.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Univerzita.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\UniverzitniKnihovna.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\UniverzitniKnihovna.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\UniverzitniKnihovna.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Vstup.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\Vstup.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\Vstup.webp"
     },
     {
-      "Id": "C:\\Users\\User\\Source\\Repos\\2024-p3a-web-gamebook-pavel-saje\\GameBook.Server\\wwwroot\\Uploads\\Locations\\VysilacVstup.webp",
+      "Id": "D:\\KokotSaja\\GameBook.Server\\wwwroot\\Uploads\\Locations\\VysilacVstup.webp",
       "PackagePath": "staticwebassets\\Uploads\\Locations\\VysilacVstup.webp"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GameBook.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GameBook.Server.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -8,18 +8,10 @@ import { Npc } from "../types/data";
 const Fight = () => {
   const {id} = useParams();
 
-  const [iKEy, setIKey] = useState<string | null>(null);
-  const [npcID, setNpcID] = useState<number | null>(null);
+  const parts = id?.split("&") ?? [];
 
-  useEffect(() => {
-    if (id) {
-      const parts = id.split("&");
-      if (parts.length > 1) {
-        setIKey(parts[1]);
-      }
-      setNpcID(parseInt(parts[0]));
-    }
-  }, [id]);
+  const [iKEy, setIKey] = useState<string | null>(parts[1] ?? null);
+  const [npcID, setNpcID] = useState<number | null>(parts[0] ? parseInt(parts[0]) : null);
 
   const [npc, setNpc] = useState<Npc>();
 
