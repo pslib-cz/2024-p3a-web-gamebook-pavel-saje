@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\KOKOTSAJA\\",
   "Documents": [
     {
@@ -119,10 +120,15 @@
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\migrations\\20250208203141_npcsnweapons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
+=======
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\2024-p3a-web-gamebook-pavel-saje\\",
+  "Documents": [],
+>>>>>>> 76def1f84bbc67fc5048b6205c8ee6b003d0a4aa
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
+<<<<<<< HEAD
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -502,6 +508,9 @@
           ]
         }
       ]
+=======
+      "DocumentGroups": []
+>>>>>>> 76def1f84bbc67fc5048b6205c8ee6b003d0a4aa
     }
   ]
 }
