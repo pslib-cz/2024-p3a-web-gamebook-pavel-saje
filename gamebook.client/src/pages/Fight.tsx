@@ -10,8 +10,8 @@ const Fight = () => {
 
   const parts = id?.split("&") ?? [];
 
-  const [iKEy, setIKey] = useState<string | null>(parts[1] ?? null);
-  const [npcID, setNpcID] = useState<number | null>(parts[0] ? parseInt(parts[0]) : null);
+  const iKEy = parts[1] ?? null;
+  const npcID = parts[0] ? parseInt(parts[0]) : null;
 
   const [npc, setNpc] = useState<Npc>();
 

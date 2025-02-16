@@ -70,38 +70,62 @@ const [radiation, setRadiation] = useState<number>(() => {
     });
 
 const [inventory, setInventory] = useState<Item[]>(() => {
-    const savedInventory = localStorage.getItem("inventory");
+  const savedInventory = localStorage.getItem("inventory");
+  try {
     return savedInventory !== null ? JSON.parse(savedInventory) : [];
-  });
+  } catch (e) {
+    console.error("Error parsing inventory from localStorage", e);
+    return [];
+  }
+});
 
-  const [equipedWeapon, setEquipedWeapon] = useState<Weapon | undefined>(() => {;
-   const savedEquipedWeapon = localStorage.getItem("equipedWeapon");
-   return savedEquipedWeapon !== null ? JSON.parse(savedEquipedWeapon) : undefined;
-  });
+const [equipedWeapon, setEquipedWeapon] = useState<Weapon | undefined>(() => {
+  const savedEquipedWeapon = localStorage.getItem("equipedWeapon");
+  try {
+    return savedEquipedWeapon ? JSON.parse(savedEquipedWeapon) : undefined;
+  } catch (e) {
+    console.error("Error parsing equipedWeapon from localStorage", e);
+    return undefined;
+  }
+});
 
-  const [InteractiblesRemovedFromLocation, setInteractiblesRemovedFromLocation] = useState<string[]>(() => {
-    const savedInteractiblesRemovedFromLocation = localStorage.getItem('InteractiblesRemovedFromLocation');
+const [InteractiblesRemovedFromLocation, setInteractiblesRemovedFromLocation] = useState<string[]>(() => {
+  const savedInteractiblesRemovedFromLocation = localStorage.getItem('InteractiblesRemovedFromLocation');
+  try {
     return savedInteractiblesRemovedFromLocation !== null ? JSON.parse(savedInteractiblesRemovedFromLocation) : [];
-  });
+  } catch (e) {
+    console.error("Error parsing InteractiblesRemovedFromLocation from localStorage", e);
+    return [];
+  }
+});
 
-  const [canBeVisited, setCanBeVisited] = useState<DataLocation[]>(() => {
-    const savedCanBeVisited = localStorage.getItem('canBeVisited');
+const [canBeVisited, setCanBeVisited] = useState<DataLocation[]>(() => {
+  const savedCanBeVisited = localStorage.getItem('canBeVisited');
+  try {
     return savedCanBeVisited !== null ? JSON.parse(savedCanBeVisited) : [];
-  });
+  } catch (e) {
+    console.error("Error parsing canBeVisited from localStorage", e);
+    return [];
+  }
+});
 
-
-  const defaultLastLocation: DataLocation = {
-    locationID: 3,
-    name: 'Start',
-    backgroundImagePath: 'start.jpg',
-    radiationGain: 0,
-    requiredItems: [],
-    locationContents: [],
-  };
-  const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
-    const savedLatLocation = localStorage.getItem('lastLocation');
+const defaultLastLocation: DataLocation = {
+  locationID: 3,
+  name: 'Start',
+  backgroundImagePath: 'start.jpg',
+  radiationGain: 0,
+  requiredItems: [],
+  locationContents: [],
+};
+const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
+  const savedLatLocation = localStorage.getItem('lastLocation');
+  try {
     return savedLatLocation !== null ? JSON.parse(savedLatLocation) : defaultLastLocation;
-  });
+  } catch (e) {
+    console.error("Error parsing lastLocation from localStorage", e);
+    return defaultLastLocation;
+  }
+});
 
 
 
@@ -115,7 +139,8 @@ const [inventory, setInventory] = useState<Item[]>(() => {
     if (InteractiblesRemovedFromLocation !== undefined) localStorage.setItem('InteractiblesRemovedFromLocation', JSON.stringify(InteractiblesRemovedFromLocation));
     if (canBeVisited !== undefined) localStorage.setItem('canBeVisited', JSON.stringify(canBeVisited));
     if (lastLocation !== undefined) localStorage.setItem('lastLocation', JSON.stringify(lastLocation));
-  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation, canBeVisited, lastLocation]);
+    if (equipedWeapon !== undefined) localStorage.setItem('equipedWeapon', JSON.stringify(equipedWeapon));
+  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation, canBeVisited, lastLocation, equipedWeapon]);
 
   const resetHp = () => {
     setHp(defaultHp);

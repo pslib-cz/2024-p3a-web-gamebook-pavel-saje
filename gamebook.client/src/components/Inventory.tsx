@@ -1,14 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import { GameContext } from '../context/GameContext';
 import { FaTimes, FaBox } from 'react-icons/fa';
-import { ConsumableItem, ItemTypes, Weapon } from '../types';
+import { ConsumableItem, ItemTypes, Weapon, Item } from '../types';
 import { domain } from '../utils';
 
 import styles from '../styles/inventory.module.css';
 
 const Inventory: React.FC = () => {
   const gameContext = useContext(GameContext);
-  const [inventory, setInventory] = useState(gameContext?.inventory || []);
   const [isVisible, setIsVisible] = useState(false);
   const [types, setTypes] = useState<ItemTypes[]>([]);
 
@@ -33,8 +32,7 @@ const Inventory: React.FC = () => {
     return <div>Error: Game context is not available.</div>;
   }
 
-  // const { energy, setEnergy, defaultEnergy } = gameContext;
-  const {hp, defaultHp, setHp, equipedWeapon, setEquipedWeapon, energy, setEnergy, defaultEnergy} = gameContext;
+  const {hp, defaultHp, setHp, equipedWeapon, setEquipedWeapon, energy, setEnergy, defaultEnergy, inventory, setInventory} = gameContext;
 
   useEffect(() => {
     const fetchTypes = async () => {
@@ -73,81 +71,59 @@ const Inventory: React.FC = () => {
     }
   };
 
-
-
-  // const energyGivenByConsumable = (id: number) => {
-  //   const consumable = findConsumable(id);
-  //   if (consumable) {
-  //     if (energy + consumable.energyValue <= defaultEnergy) {
-  //       return consumable.energyValue;
-  //     } else {
-  //       return defaultEnergy-energy;
-  //     }
-  //   }
-  //   return 0;
-  // }
-
   const handleToggleInventory = () => {
     setIsVisible(!isVisible);
     if (!isVisible) {
       const updatedInventory = JSON.parse(localStorage.getItem('inventory') || '[]');
       setInventory(updatedInventory);
+      const updatedEquipedWeapon = JSON.parse(localStorage.getItem('equipedWeapon') || '[]');
+      setEquipedWeapon(updatedEquipedWeapon);
     }
   };
 
   return (
     <>
-    {/* FIXME odebere všechny itemy stejného typu z inventu  */}
       <button onClick={handleToggleInventory}>
         {isVisible ? <FaTimes /> : <FaBox />}
       </button>
       {isVisible && (
         <div className={styles.inventory}>
           <h2>equiped weapon</h2>
-          <p>{equipedWeapon?.name}</p>
+          <p
+            onClick={() => {
+              
+              setInventory((prevInventory: Item[]) => [
+                ...prevInventory,
+                ...(equipedWeapon ? [equipedWeapon.item] : []),
+                
+              ]);
+              setEquipedWeapon(undefined);
+              localStorage.setItem('equipedWeapon', JSON.stringify(undefined));
+            }}
+          >
+            {equipedWeapon?.name}
+          </p>
           <h2>Inventory</h2>
           <ul>
             {inventory.map((item, index) => (
               <li
                 key={index}
                 onClick={() => {
+                  const updatedInventory = inventory.filter(
+                    (invItem, invIndex) => invIndex !== index
+                  );
+
                   const consumable = findConsumable(item.itemID);
                   if (consumable) {
                     heal(consumable);
-                  } else if (findWeapon(item.itemID)) {
+                    setInventory(updatedInventory);
+                  } else if (findWeapon(item.itemID) && !equipedWeapon) {
+                    setInventory(updatedInventory);
                     setEquipedWeapon(findWeapon(item.itemID));
-                    localStorage.setItem('equipedWeapon', JSON.stringify(findWeapon(item.itemID)));
-                  } else {
-                    alert('Item');
-                  }
-
+                  }    
                 }}
-                // onClick={() =>
-                //   findConsumable(item.itemID) &&
-                //   (
-                //   setEnergy(
-                //     (prevEn: number) =>
-                //       prevEn + energyGivenByConsumable(item.itemID)
-                //   ),
-                //   setInventory((prevInventory) =>
-                //     prevInventory.filter((invItem) => invItem.itemID !== item.itemID)
-                //   ),
-                //   localStorage.setItem(
-                //     'inventory',
-                //     JSON.stringify(inventory.filter((invItem) => invItem.itemID !== item.itemID))
-                //   )
-                //   // setInventory((prevInventory) =>
-                //   //   prevInventory.filter((invItem) => invItem.itemID !== item.itemID)
-                //   // ),
-                //   // () => {
-                //   //   const updatedInventory = inventory.filter((invItem) => invItem.itemID !== item.itemID);
-                //   //   localStorage.setItem('inventory', JSON.stringify(updatedInventory));
-                    
-                //   // }
-                //   )
-                // }
               >
-                <span>{index+1}</span>
+                <span>{index + 1}</span>
                 <p>{item.name}</p>
               </li>
             ))}
