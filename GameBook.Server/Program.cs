@@ -34,7 +34,6 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 app.UseDefaultFiles();
-app.UseStaticFiles();
 
 //Swagger
 if (app.Environment.IsDevelopment())

@@ -10,6 +10,46 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Uploads\Interactibles\03877499-3bef-4466-b8d7-684dbac378c2_kocicka.jpg" />
+    <Content Include="Uploads\Interactibles\681000db-7d63-4e4b-886f-e03e477644d8_kocicka.jpg" />
+    <Content Include="Uploads\Interactibles\bandage.png" />
+    <Content Include="Uploads\Interactibles\FoodCan.png" />
+    <Content Include="Uploads\Interactibles\knife.png" />
+    <Content Include="Uploads\Interactibles\M9.png" />
+    <Content Include="Uploads\Interactibles\medkit.png" />
+    <Content Include="Uploads\Interactibles\propeller.png" />
+    <Content Include="Uploads\Interactibles\survivor.png" />
+    <Content Include="Uploads\Locations\Benzinka.png" />
+    <Content Include="Uploads\Locations\CestaKVysilaci.webp" />
+    <Content Include="Uploads\Locations\Chodba.webp" />
+    <Content Include="Uploads\Locations\Dalnice.webp" />
+    <Content Include="Uploads\Locations\Ending_911.webp" />
+    <Content Include="Uploads\Locations\Ending_Otroctvi.webp" />
+    <Content Include="Uploads\Locations\Gastrom.webp" />
+    <Content Include="Uploads\Locations\HlavniCesta.webp" />
+    <Content Include="Uploads\Locations\JadernaElektrarna.png" />
+    <Content Include="Uploads\Locations\JidloObchod.webp" />
+    <Content Include="Uploads\Locations\Kanal.png" />
+    <Content Include="Uploads\Locations\KomunitniBunkr.webp" />
+    <Content Include="Uploads\Locations\Kuchyne.webp" />
+    <Content Include="Uploads\Locations\Kulna.webp" />
+    <Content Include="Uploads\Locations\Lekarna.webp" />
+    <Content Include="Uploads\Locations\Letiste.webp" />
+    <Content Include="Uploads\Locations\Namesti.webp" />
+    <Content Include="Uploads\Locations\Prazska.webp" />
+    <Content Include="Uploads\Locations\Radnice.png" />
+    <Content Include="Uploads\Locations\RidiciBlok.png" />
+    <Content Include="Uploads\Locations\Rozcesti.png" />
+    <Content Include="Uploads\Locations\Sidliste.png" />
+    <Content Include="Uploads\Locations\Sklad.webp" />
+    <Content Include="Uploads\Locations\Univerzita.webp" />
+    <Content Include="Uploads\Locations\UniverzitniKnihovna.webp" />
+    <Content Include="Uploads\Locations\Vstup.webp" />
+    <Content Include="Uploads\Locations\Vysilac.png" />
+    <Content Include="Uploads\Locations\VysilacVstup.webp" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>8.*-*</Version>
@@ -36,7 +76,6 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="Models\InputModels\" />
-    <Folder Include="wwwroot\Uploads\Interactibles\" />
   </ItemGroup>
 
 </Project>
