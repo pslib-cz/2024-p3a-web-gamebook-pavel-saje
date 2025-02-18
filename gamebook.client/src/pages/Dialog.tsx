@@ -4,6 +4,7 @@ import { Dialog } from "../types";
 import { domain } from "../utils";
 import { GameContext } from "../context/GameContext";
 import styles from "../styles/dialog.module.css";
+import StaggerText from "react-stagger-text";
 
 const DialogPage = () => {
   const { id } = useParams();
@@ -53,15 +54,26 @@ const DialogPage = () => {
         src={`${domain}${dialog?.interactible.imagePath}`}
         alt={dialog?.interactible.name}
       /> */}
-      {dialog?.interactible.imageBase64&&(
-  <img style={{ width: "100%", height: "100vh" }}
-    src={`data:image/webp;base64,${dialog.interactible.imageBase64}`}
-    alt={dialog.interactible.name}
-  />
-)}
+      {dialog?.interactible.imageBase64 && (
+        <img
+          style={{ width: "100%", height: "100vh" }}
+          src={`data:image/webp;base64,${dialog.interactible.imageBase64}`}
+          alt={dialog.interactible.name}
+        />
+      )}
       <div className={styles.box}>
         <h2>{dialog?.interactible.name}</h2>
-        <p>{dialog?.text}</p>
+        {/* TODO */}
+        {typeof dialog?.text === "string" && (
+          <StaggerText
+            staggerType="letter"
+            staggerEasing="ease"
+            staggerDuration={0.000001}
+            startDelay={0.004}
+          >
+            {dialog.text}
+          </StaggerText>
+        )}
         <div className={styles.interacts}>
           <div className={styles.buttons}>
             {dialog?.dialogResponses &&

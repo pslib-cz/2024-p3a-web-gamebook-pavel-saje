@@ -18,6 +18,7 @@
     <PackageJsonDependenciesReactForceGraph2D Condition="$(PackageJsonDependenciesReactForceGraph2D) == ''">^1.26.1</PackageJsonDependenciesReactForceGraph2D>
     <PackageJsonDependenciesReactIcons Condition="$(PackageJsonDependenciesReactIcons) == ''">^5.4.0</PackageJsonDependenciesReactIcons>
     <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^7.1.0</PackageJsonDependenciesReactRouterDom>
+    <PackageJsonDependenciesReactStaggerText Condition="$(PackageJsonDependenciesReactStaggerText) == ''">^1.1.0</PackageJsonDependenciesReactStaggerText>
     <PackageJsonDevdependenciesEslintJs Condition="$(PackageJsonDevdependenciesEslintJs) == ''">^9.15.0</PackageJsonDevdependenciesEslintJs>
     <PackageJsonDevdependenciesTypesNode Condition="$(PackageJsonDevdependenciesTypesNode) == ''">^20.11.1</PackageJsonDevdependenciesTypesNode>
     <PackageJsonDevdependenciesTypesReact Condition="$(PackageJsonDevdependenciesTypesReact) == ''">^18.3.12</PackageJsonDevdependenciesTypesReact>

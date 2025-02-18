@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { GameContext } from "../context/GameContext";
 import { domain } from "../utils";
 import { Link } from "react-router-dom";
+import styles from "../styles/options.module.css";
 
 interface OptionProps {
   interactOption: InteractOption;
@@ -58,7 +59,7 @@ const Option: React.FC<OptionProps> = ({
         switch (interactOption.optionID) {
           case 3:
             return (
-              <p
+              <p className={styles.option}
                 onClick={() => {
                   if (item) {
                     setInventory((prevInventory: Item[]) => [
@@ -82,10 +83,10 @@ const Option: React.FC<OptionProps> = ({
               </p>
             );
           case 2:
-            return <p>{interactOption.optionText}</p>;
+            return <p className={styles.option}>{interactOption.optionText}</p>;
           case 1:
             return (
-              <Link
+              <Link className={styles.option}
                 to={`/Fight/${interactible.interactibleID}&${interactibleKey}`}
               >
                 {interactOption.optionText}
