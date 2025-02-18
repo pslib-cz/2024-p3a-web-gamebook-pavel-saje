@@ -14,7 +14,7 @@ const DialogPage = () => {
     return <div>Erro: GameContext</div>;
   }
 
-  const { lastLocation } = gameContext;
+  const { lastLocation, radiation, setRadiation, inventory } = gameContext;
 
   const [dialog, setDialog] = useState<Dialog>();
   const [error, setError] = useState<Error | null>(null);
@@ -42,16 +42,23 @@ const DialogPage = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${domain}${lastLocation.backgroundImagePath})`,
+        backgroundImage: `url(data:image/webp;base64,${lastLocation?.backgroundImageBase64})`,
+        backgroundSize: "cover",
         width: "100%",
         height: "100vh",
       }}
     >
-      <img
+      {/* <img
         className={styles.interactible}
         src={`${domain}${dialog?.interactible.imagePath}`}
         alt={dialog?.interactible.name}
-      />
+      /> */}
+      {dialog?.interactible.imageBase64&&(
+  <img style={{ width: "100%", height: "100vh" }}
+    src={`data:image/webp;base64,${dialog.interactible.imageBase64}`}
+    alt={dialog.interactible.name}
+  />
+)}
       <div className={styles.box}>
         <h2>{dialog?.interactible.name}</h2>
         <p>{dialog?.text}</p>

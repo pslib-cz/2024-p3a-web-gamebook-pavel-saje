@@ -38,6 +38,7 @@ namespace GameBook.Server.Controllers
                     Name = weapon.Item.Name,
                     TradeValue = weapon.Item.TradeValue,
                     Stackable = weapon.Item.Stackable,
+                    RadiationGain = weapon.Item.RadiationGain,
                     Category = new ViewItemCategory
                     {
                         CategoryID = weapon.Item.CategoryId,

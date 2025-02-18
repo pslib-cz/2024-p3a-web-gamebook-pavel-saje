@@ -7,6 +7,7 @@
         public int? TradeValue { get; set; }
         public bool Stackable { get; set; }
         public int CategoryId { get; set; }
+        public int RadiationGain { get; set; }
         public ViewItemCategory Category { get; set; }
     }
 }

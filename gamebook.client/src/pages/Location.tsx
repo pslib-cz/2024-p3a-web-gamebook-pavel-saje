@@ -12,7 +12,6 @@ import { domain } from "../utils";
 
 const NetopyriVarle: React.FC = () => {
     const gameContext = useContext(GameContext);
-    const inventory = gameContext ? gameContext.inventory : [];
 
     const navigate = useNavigate();
 
@@ -23,7 +22,7 @@ const NetopyriVarle: React.FC = () => {
         return <div>Error: Game context is not available.</div>;
       }
 
-    const {lastLocation, setLastLocation} = gameContext;
+    const {lastLocation, setLastLocation, radiation, setRadiation, inventory} = gameContext;
 
     const [error, setError] = useState<Error | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -72,9 +71,15 @@ const NetopyriVarle: React.FC = () => {
 
     console.log(targetLocation);
 
+    if (targetLocation) {
+        console.log("inventory", inventory);
+        const totalRadiationGain = targetLocation.radiationGain + inventory.reduce((acc, item) => acc + item.radiationGain, 0);
+        setRadiation(totalRadiationGain);
+    }
+
     return (
         <>
-            {!loading && (
+            {/* {!loading && (
                 <img style={{ width: "100%", height: "100vh" }}
                     src={
                         domain + targetLocation?.backgroundImagePath ||
@@ -82,7 +87,14 @@ const NetopyriVarle: React.FC = () => {
                     }
                     alt=""
                 />
-            )}
+            )} */}
+
+{targetLocation && targetLocation.backgroundImageBase64 && (
+  <img style={{ width: "100%", height: "100vh" }}
+    src={`data:image/webp;base64,${targetLocation.backgroundImageBase64}`}
+    alt={targetLocation.name}
+  />
+)}
 
             <p>{error?.message}</p>
             {targetLocation != null && (

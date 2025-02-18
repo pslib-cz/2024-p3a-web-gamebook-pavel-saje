@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GameBook.Server.Data;
+using PowerArgs;
 
 namespace GameBook.Server.Controllers
 {
@@ -62,56 +63,80 @@ namespace GameBook.Server.Controllers
             return Ok(locations);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ViewLocation>> GetLocationById(int id)
-        {
-            var location = await _context.Locations
-                .Include(l => l.LocationContents)
-                .Include(l => l.RequiredItems)
-                    .ThenInclude(ri => ri.Item)
-                .Where(l => l.LocationID == id)
-                .Select(l => new ViewLocation
-                {
-                    LocationID = l.LocationID,
-                    Name = l.Name,
-                    BackgroundImagePath = l.BackgroundImagePath,
-                    RadiationGain = l.RadiationGain,
-                    LocationContents = l.LocationContents.Select(lc => new ViewLocationContent
-                    {
-                        InteractibleID = lc.InteractibleID,
-                        Interactible = new ViewInteractible
-                        {
-                            InteractibleID = lc.Interactible.InteractibleID,
-                            Name = lc.Interactible.Name,
-                            ImagePath = lc.Interactible.ImagePath
-                        },
-                        XPos = lc.XPos,
-                        YPos = lc.YPos
-                    }).ToList(),
-                    RequiredItems = l.RequiredItems.Select(ri => new ViewItem
-                    {
-                        ItemID = ri.Item.ItemID,
-                        Name = ri.Item.Name,
-                        TradeValue = ri.Item.TradeValue,
-                        Stackable = ri.Item.Stackable,
-                        CategoryId = ri.Item.CategoryId,
-                        Category = new ViewItemCategory
-                        {
-                            CategoryID = ri.Item.Category.CategoryID,
-                            Name = ri.Item.Category.Name
-                        }
-                    }).ToList()
-                }).FirstOrDefaultAsync();
 
-            if (location == null)
+[HttpGet("{id}")]
+public async Task<ActionResult<ViewLocation>> GetLocationById(int id)
+{
+    // Nejprve načteme data bez volání ConvertImageToBase64
+    var location = await _context.Locations
+        .Include(l => l.LocationContents)
+        .Include(l => l.RequiredItems)
+            .ThenInclude(ri => ri.Item)
+        .Where(l => l.LocationID == id)
+        .Select(l => new ViewLocation
+        {
+            LocationID = l.LocationID,
+            Name = l.Name,
+            BackgroundImagePath = l.BackgroundImagePath,
+            RadiationGain = l.RadiationGain,
+            LocationContents = l.LocationContents.Select(lc => new ViewLocationContent
             {
-                return NotFound();
-            }
+                InteractibleID = lc.InteractibleID,
+                Interactible = new ViewInteractible
+                {
+                    InteractibleID = lc.Interactible.InteractibleID,
+                    Name = lc.Interactible.Name,
+                    ImagePath = lc.Interactible.ImagePath
+                },
+                XPos = lc.XPos,
+                YPos = lc.YPos
+            }).ToList(),
+            RequiredItems = l.RequiredItems.Select(ri => new ViewItem
+            {
+                ItemID = ri.Item.ItemID,
+                Name = ri.Item.Name,
+                TradeValue = ri.Item.TradeValue,
+                Stackable = ri.Item.Stackable,
+                CategoryId = ri.Item.CategoryId,
+                Category = new ViewItemCategory
+                {
+                    CategoryID = ri.Item.Category.CategoryID,
+                    Name = ri.Item.Category.Name
+                }
+            }).ToList()
+        })
+        .FirstOrDefaultAsync();
+
+    if (location == null)
+    {
+        return NotFound();
+    }
+
+    // Až poté voláme metodu pro převod obrázku, mimo EF Core dotaz
+    location.BackgroundImageBase64 = ConvertImageToBase64(location.BackgroundImagePath);
+    location.LocationContents.ForEach(lc => lc.Interactible.ImageBase64 = ConvertImageToBase64(lc.Interactible.ImagePath));
 
             return Ok(location);
-        }
+}
 
-        [HttpGet("{id}/connected")]
+// Příklad pomocné metody (můžeš ji ponechat jako instance nebo statickou metodu)
+private string ConvertImageToBase64(string imagePath)
+{
+    var uploads = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
+    var filePath = Path.Combine(uploads, imagePath);
+
+    if (!System.IO.File.Exists(filePath))
+    {
+        return null; // nebo string.Empty
+    }
+
+    var imageBytes = System.IO.File.ReadAllBytes(filePath);
+    return Convert.ToBase64String(imageBytes);
+}
+
+
+
+    [HttpGet("{id}/connected")]
         public async Task<ActionResult<List<ViewLocation>>> GetConnectedLocations(int id)
         {
             var locationPaths = await _context.LocationPaths

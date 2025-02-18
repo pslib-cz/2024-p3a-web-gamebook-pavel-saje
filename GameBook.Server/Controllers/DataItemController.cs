@@ -33,6 +33,7 @@ namespace GameBook.Server.Controllers
                     TradeValue = i.TradeValue,
                     Stackable = i.Stackable,
                     CategoryId = i.CategoryId,
+                    RadiationGain = i.RadiationGain,
                     Category = new ViewItemCategory
                     {
                         CategoryID = i.Category.CategoryID,
@@ -56,6 +57,7 @@ namespace GameBook.Server.Controllers
                     TradeValue = i.TradeValue,
                     Stackable = i.Stackable,
                     CategoryId = i.CategoryId,
+                    RadiationGain = i.RadiationGain,
                     Category = new ViewItemCategory
                     {
                         CategoryID = i.Category.CategoryID,
@@ -89,6 +91,7 @@ namespace GameBook.Server.Controllers
                         Name = ci.Item.Name,
                         TradeValue = ci.Item.TradeValue,
                         Stackable = ci.Item.Stackable,
+                        RadiationGain = ci.Item.RadiationGain,
                         Category = new ViewItemCategory
                         {
                             CategoryID = ci.Item.CategoryId,
@@ -110,6 +113,7 @@ namespace GameBook.Server.Controllers
                                         Name = w.Item.Name,
                                         TradeValue = w.Item.TradeValue,
                                         Stackable = w.Item.Stackable,
+                                        RadiationGain = w.Item.RadiationGain,
                                         Category = new ViewItemCategory
                                         {
                                             CategoryID = w.Item.CategoryId,

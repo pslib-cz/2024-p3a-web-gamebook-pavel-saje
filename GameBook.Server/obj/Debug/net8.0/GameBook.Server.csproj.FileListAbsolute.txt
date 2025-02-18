@@ -830,7 +830,6 @@ D:\KOKOTSAJA\GameBook.Server\obj\Debug\net8.0\GameBook.Server.pdb
 D:\KOKOTSAJA\GameBook.Server\bin\Debug\net8.0\appsettings.Development.json
 D:\KOKOTSAJA\GameBook.Server\bin\Debug\net8.0\appsettings.json
 D:\KOKOTSAJA\GameBook.Server\bin\Debug\net8.0\spa.proxy.json
-D:\KOKOTSAJA\GameBook.Server\bin\Debug\net8.0\GameBook.Server.staticwebassets.runtime.json
 D:\KOKOTSAJA\GameBook.Server\bin\Debug\net8.0\GameBook.Server.exe
 D:\KOKOTSAJA\GameBook.Server\bin\Debug\net8.0\GameBook.Server.deps.json
 D:\KOKOTSAJA\GameBook.Server\bin\Debug\net8.0\GameBook.Server.runtimeconfig.json

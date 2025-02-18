@@ -227,6 +227,9 @@ namespace GameBook.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("RadiationGain")
+                        .HasColumnType("INTEGER");
+
                     b.Property<bool>("Stackable")
                         .HasColumnType("INTEGER");
 

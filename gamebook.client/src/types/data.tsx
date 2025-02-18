@@ -29,6 +29,7 @@ export type Interactible = {
     interactibleID: number;
     name: string;
     imagePath: string;
+    imageBase64: string;
 };
 
 export type InteractiblesItem = {
@@ -61,6 +62,7 @@ export type Item = {
     stackable: boolean;
     categoryId: number;
     category: ItemCategory;
+    radiationGain: number;
 };
 
 export type ItemTypes = {
@@ -80,6 +82,7 @@ export type DataLocation = {
     radiationGain: number;
     requiredItems: RequiredItems[];
     locationContents: LocationContent[];
+    backgroundImageBase64: string;
 };
 
 export type LocationContent = {

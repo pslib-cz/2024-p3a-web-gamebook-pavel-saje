@@ -85,10 +85,12 @@ interface ContentProps {
                   onMouseEnter={() => setShowOptions(true)}
                   onMouseLeave={() => setShowOptions(false)}
                 >
-                  <img
-                    src={domain + content.interactible.imagePath}
-                    alt={`${content.interactibleID}`}
-                  />
+                  {content.interactible.imageBase64 && (
+  <img style={{ width: "7rem" }}
+    src={`data:image/webp;base64,${content.interactible.imageBase64}`}
+    alt={content.interactible.name}
+  />
+)}
                   <span>
                     <p>{content.interactible.name}</p>
                     <ul>

@@ -10,6 +10,7 @@ namespace GameBook.Server.Models
         public required string Name { get; set; }
         public int? TradeValue { get; set; }
         public bool Stackable { get; set; }
+        public int RadiationGain { get; set; }
         public int CategoryId { get; set; }
         [ForeignKey(nameof(CategoryId))]
         public DataItemCategory Category { get; set; }

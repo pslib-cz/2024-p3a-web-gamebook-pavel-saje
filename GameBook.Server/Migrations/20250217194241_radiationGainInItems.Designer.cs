@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameBook.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250214101839_klobasaKSnidani")]
-    partial class klobasaKSnidani
+    [Migration("20250217194241_radiationGainInItems")]
+    partial class radiationGainInItems
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -230,6 +230,9 @@ namespace GameBook.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("RadiationGain")
+                        .HasColumnType("INTEGER");
+
                     b.Property<bool>("Stackable")
                         .HasColumnType("INTEGER");
 
@@ -383,7 +386,7 @@ namespace GameBook.Server.Migrations
                     b.Property<int>("Damage")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ItemID")
+                    b.Property<int?>("ItemID")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
@@ -587,9 +590,7 @@ namespace GameBook.Server.Migrations
                 {
                     b.HasOne("GameBook.Server.Models.DataItem", "Item")
                         .WithMany()
-                        .HasForeignKey("ItemID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ItemID");
 
                     b.Navigation("Item");
                 });

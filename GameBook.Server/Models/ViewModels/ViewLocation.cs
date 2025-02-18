@@ -10,5 +10,6 @@ namespace GameBook.Server.Models
         public int RadiationGain { get; set; }
         public ICollection<ViewLocationContent> LocationContents { get; set; } = new List<ViewLocationContent>();
         public ICollection<ViewItem> RequiredItems { get; set; } = new List<ViewItem>();
+        public string BackgroundImageBase64 { get; set; }
     }
 }
