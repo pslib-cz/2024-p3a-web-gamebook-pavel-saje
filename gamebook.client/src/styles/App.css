@@ -3,7 +3,8 @@
 :root {
     --red: #b54242;
     --yellow: #e7d13d;
-    --green: #3cd43c;
+    --green: #88ff00;
+    --green-transparent: #88ff00bb;
     --orange: #f5c030;
 }
 
@@ -31,6 +32,6 @@ ul {
     -webkit-text-stroke: 1px #000000;
 }
 
-.menubuttonvec  {
+.menubuttonvec {
     font-family: monospace;
 }

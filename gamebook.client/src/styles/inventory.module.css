@@ -1,25 +1,69 @@
-.inventory{
-    background-color: bisque;
+.inventory {
+    position: absolute;
+    width: 20%;
+    height: 50vh;
+    max-width: 260px;
+    max-height: 480px;
+    right: 16px;
+    top: 50vh;
+    transform: translateY(-50%);
+    background: none;
     color: black;
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    user-select: none;
 }
 
-.inventory p{
-    margin: .2rem;
+.inventory h1,
+.inventory h2,
+.inventory h3,
+.inventory h4,
+.inventory h5,
+.inventory p {
+    margin: 0;
 }
 
-.inventory li{
+.inventory ul {
+    margin: 0;
+}
+
+.inventory li {
+    padding: 1px;
     display: flex;
     align-items: center;
-    gap: .2rem;
 }
 
-.inventory li:hover{
-    color: var(--red);
+.inventory li:hover {
+    padding: 2px 1px;
+    background-color: var(--green-transparent);
     cursor: pointer;
 }
 
-.inventory span{
+.inventory > .container {
+    background-color: var(--green-transparent);
+    color: black;
+    padding: 8px;
+}
+
+.inventory > .container::-webkit-scrollbar {
+    width: 24px;
+    height: 12px;
+}
+
+.inventory > .container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.inventory > .container::-webkit-scrollbar-thumb {
+    border: 8px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: var(--green-transparent);
+}
+
+.inventory span {
     font-weight: 700;
     color: var(--red);
 }
