@@ -86,7 +86,7 @@ public async Task<ActionResult<ViewLocation>> GetLocationById(int id)
                 {
                     InteractibleID = lc.Interactible.InteractibleID,
                     Name = lc.Interactible.Name,
-                    ImagePath = lc.Interactible.ImagePath
+                    ImagePath = lc.Interactible.ImagePath,
                 },
                 XPos = lc.XPos,
                 YPos = lc.YPos
@@ -114,7 +114,8 @@ public async Task<ActionResult<ViewLocation>> GetLocationById(int id)
 
     // Až poté voláme metodu pro převod obrázku, mimo EF Core dotaz
     location.BackgroundImageBase64 = ConvertImageToBase64(location.BackgroundImagePath);
-    location.LocationContents.ForEach(lc => lc.Interactible.ImageBase64 = ConvertImageToBase64(lc.Interactible.ImagePath));
+
+    //location.LocationContents.ForEach(lc => lc.Interactible.ImageBase64 = ConvertImageToBase64(lc.Interactible.ImagePath));
 
             return Ok(location);
 }

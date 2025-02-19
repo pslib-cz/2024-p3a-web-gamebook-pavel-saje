@@ -1,5 +1,4 @@
 ﻿using GameBook.Server.Models;
-//using GameBook.Server.Models.DataModels;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
@@ -24,6 +23,9 @@ namespace GameBook.Server.Data
         public DbSet<DataNpc> Npcs { get; set; }
         public DbSet<DataWeapon> Weapons { get; set; }
         public DbSet<DataInteractiblesNpc> InteractiblesNpcs { get; set; }
+        public DbSet<DataTrade> Trade { get; set; }
+        public DbSet<DataTrades> Trades { get; set; }
+        public DbSet<DataBuy> Buy { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)

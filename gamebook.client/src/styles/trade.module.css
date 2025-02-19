@@ -1,0 +1,41 @@
+.trades{
+    display: flex;
+    flex-direction: row;
+}
+
+.canBuy, .def{
+    color: var(--green);
+    
+}
+.canBuy{
+    cursor: pointer;
+}
+
+.cantBuy{
+    color: var(--green);
+    opacity: 60%;
+    cursor: not-allowed;
+}
+
+.shop{
+    background-color: rgba(0, 0, 0, 0.445);
+    /* filter: blur(2px); */
+
+}
+
+.interactible{
+    width: 100%;
+    
+}
+
+.left{
+    /* display: grid; */
+    /* grid-template-rows: ; */
+}
+
+.tradePage {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

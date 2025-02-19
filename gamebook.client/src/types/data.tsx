@@ -1,3 +1,11 @@
+export type Buy = {
+    buyID: number,
+    interactibleID: number,
+    itemID: number,
+    interactible: Interactible,
+    item: Item
+}
+
 export type ConsumableItem = {
     consumableItemID: number;
     itemID: number;
@@ -116,6 +124,25 @@ export type RequiredItems = {
     locationID: number;
     itemID: number;
 };
+
+export type Shops = {
+    trades: Trades[],
+    buys: Buy[]
+}
+
+export type Trade = {
+    tradeID: number,
+    item1: Item,
+    item2: Item
+}
+
+export type Trades = {
+    tradesID: number,
+    interactibleID: number,
+    interactible: Interactible,
+    tradeID: number,
+    trade: Trade
+}
 
 export type Weapon = {
     weaponID: number;

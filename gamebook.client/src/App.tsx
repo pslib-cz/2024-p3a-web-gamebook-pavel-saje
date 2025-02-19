@@ -7,6 +7,7 @@ import Admin from "./pages/Admin";
 import Fight from "./pages/Fight";
 import Ending from "./pages/End";
 import Dialog from "./pages/Dialog";
+import TradePage from "./pages/Trade";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,16 @@ const router = createBrowserRouter([
             {
                 path:"/Dialog:id",
                 element: <Dialog/>
+            }
+        ]
+    },
+    {
+        path: "/Trade",
+        element: <TradePage/>,
+        children: [
+            {
+                path: "/Trade:id",
+                element: <TradePage/>
             }
         ]
     }

@@ -63,7 +63,7 @@ const [radiation, setRadiation] = useState<number>(() => {
         ? parseInt(savedRadiation, 10)
         : defaultRadiation;
     });
-    const defaultMoney = 0;
+    const defaultMoney = 100;
     const [money, setMoney] = useState<number>(() => {
         const savedMoney = localStorage.getItem("money");
         return savedMoney !== null ? parseInt(savedMoney, 10) : defaultMoney;

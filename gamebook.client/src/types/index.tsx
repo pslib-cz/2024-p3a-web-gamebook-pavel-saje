@@ -1,4 +1,5 @@
-import { 
+import {
+    type Buy,
     type ConsumableItem, 
     type Dialog, 
     type DialogResponse, 
@@ -13,11 +14,15 @@ import {
     type LocationContent,
     type LocationPath,
     type RequiredItems,
+    type Shops,
+    type Trade,
+    type Trades,
     type End,
     type Weapon
 } from "./data";
 
 export type {
+    Buy,
     ConsumableItem,
     Dialog,
     DialogResponse,
@@ -32,6 +37,9 @@ export type {
     LocationContent,
     LocationPath,
     RequiredItems,
+    Shops,
+    Trade,
+    Trades,
     End,
     Weapon
 }

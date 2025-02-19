@@ -57,6 +57,10 @@ const Option: React.FC<OptionProps> = ({
       {/* <p>{interactibleKey}</p> */}
       {(() => {
         switch (interactOption.optionID) {
+          case 4:
+            return(
+              <Link className={styles.option} to={`/Trade/${interactible.interactibleID}`}>{interactOption.optionText}</Link>
+            )
           case 3:
             return (
               <p className={styles.option}
