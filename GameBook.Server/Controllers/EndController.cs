@@ -28,8 +28,8 @@ namespace GameBook.Server.Controllers
             return Ok(new ViewEnd
             {
                 EndID = end.EndID,
-                Text = end.Text,
-                ImagePath = end.ImagePath,
+                LocationID = end.LocationID,
+                DialogID = end.DialogID
             });
         }
     }

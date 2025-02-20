@@ -60,6 +60,9 @@ const NetopyriVarle: React.FC = () => {
                 if (allItemsPresent) {
                     setTargetLocation(json);
                     setLastLocation(json);
+                    console.log(json.end
+                    )
+                    console.log(json)
                     localStorage.setItem("lastLocationId", json.toString());
                 } else {
                     navigate(`/Game/${lastLocation}`);
@@ -78,10 +81,11 @@ const NetopyriVarle: React.FC = () => {
         fetchData();
     }, [id]);
 
-    console.log(targetLocation);
+
+    // console.log(targetLocation?.end.endID);
 
     if (targetLocation) {
-        console.log("inventory", inventory);
+        // console.log("inventory", inventory);
         const totalRadiationGain =
             targetLocation.radiationGain +
             inventory.reduce((acc, item) => acc + item.radiationGain, 0);
@@ -90,16 +94,7 @@ const NetopyriVarle: React.FC = () => {
 
     return (
         <>
-            {/* {!loading && (
-                <img style={{ width: "100%", height: "100vh" }}
-                    src={
-                        domain + targetLocation?.backgroundImagePath ||
-                        "https://t4.ftcdn.net/jpg/00/89/02/67/360_F_89026793_eyw5a7WCQE0y1RHsizu41uhj7YStgvAA.jpg"
-                    }
-                    alt=""
-                />
-            )} */}
-
+        {/* {alert(targetLocation?.end.LocatioID)} */}
             {targetLocation && targetLocation.backgroundImageBase64 && (
                 <img
                     style={{

@@ -2,6 +2,15 @@
     position: absolute,
 }
 
+/* .interactible::after{
+    content: "*";
+    background-color: black;
+    width: 100%;
+    height: 2rem;
+    z-index: 100;
+    justify-content: center;
+} */
+
 .interactible:hover{
     cursor: pointer;
     -webkit-filter: drop-shadow(4px 4px 2px var(--green))
@@ -10,7 +19,7 @@
           drop-shadow(-4px -4px 2px var(--green));
 }
 
-.interactible img{
+/* .interactible img{
     width: 7rem;
     aspect-ratio: 1;
-}
+} */
