@@ -2,6 +2,7 @@
 using GameBook.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameBook.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250220155316_interactibleSize")]
+    partial class interactibleSize
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
@@ -126,17 +129,14 @@ namespace GameBook.Server.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DialogID")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("LocationID")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("EndID");
-
-                    b.HasIndex("DialogID");
-
-                    b.HasIndex("LocationID");
 
                     b.ToTable("Ends");
                 });
@@ -169,6 +169,9 @@ namespace GameBook.Server.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("size")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("InteractibleID");
 
@@ -320,9 +323,6 @@ namespace GameBook.Server.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("YPos")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("size")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("LocationContentID");
@@ -535,25 +535,6 @@ namespace GameBook.Server.Migrations
                     b.Navigation("Dialog");
 
                     b.Navigation("NextDialog");
-                });
-
-            modelBuilder.Entity("GameBook.Server.Models.DataEnd", b =>
-                {
-                    b.HasOne("GameBook.Server.Models.DataDialog", "Dialog")
-                        .WithMany()
-                        .HasForeignKey("DialogID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GameBook.Server.Models.DataLocation", "Location")
-                        .WithMany()
-                        .HasForeignKey("LocationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Dialog");
-
-                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("GameBook.Server.Models.DataInteractiblesItem", b =>

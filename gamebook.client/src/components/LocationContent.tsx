@@ -92,6 +92,9 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                     transform: "translate(-50%, 50%)",
                     bottom: `${content.yPos}%`,
                     left: `${content.xPos}%`,
+                    // backgroundColor: "red",
+                    width: `${content.size}%`,
+                    aspectRatio: 1
                   }}
                   onMouseEnter={() => {
                     !hoveredOptions && setShowClick(true);
@@ -116,7 +119,9 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                 >
                   {content.interactible.imageBase64 && (
                     <img
-                      style={{ width: "7rem" }}
+                      style={{ width: `${100}%`, 
+                      // height: "2rem"
+                     }}
                       src={`data:image/webp;base64,${content.interactible.imageBase64}`}
                       alt={content.interactible.name}
                     />

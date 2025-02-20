@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { GameContext } from "../context/GameContext";
 import { FaTimes, FaBox } from "react-icons/fa";
-import { ConsumableItem, ItemTypes, Weapon, Item } from "../types";
+import { ConsumableItem, Weapon, Item } from "../types";
 import { domain } from "../utils";
 
 import styles from "../styles/inventory.module.css";
@@ -9,7 +9,6 @@ import styles from "../styles/inventory.module.css";
 const Inventory: React.FC = () => {
     const gameContext = useContext(GameContext);
     const [isVisible, setIsVisible] = useState(false);
-    const [types, setTypes] = useState<ItemTypes[]>([]);
 
     const [consumables, setConsumables] = useState<ConsumableItem[]>([]);
     const [weapons, setWeapons] = useState<Weapon[]>([]);
@@ -54,7 +53,6 @@ const Inventory: React.FC = () => {
             );
             const data = await response.json();
 
-            setTypes(data);
             setWeapons(data.weapons);
             setConsumables(data.consumables);
             

@@ -8,5 +8,6 @@ namespace GameBook.Server.Models
         public ViewInteractible Interactible { get; set; }
         public int XPos { get; set; }
         public int YPos { get; set; }
+        public int size { get; set; }
     }
 }

@@ -65,60 +65,74 @@ namespace GameBook.Server.Controllers
 
 
 [HttpGet("{id}")]
-public async Task<ActionResult<ViewLocation>> GetLocationById(int id)
-{
-    // Nejprve načteme data bez volání ConvertImageToBase64
-    var location = await _context.Locations
-        .Include(l => l.LocationContents)
-        .Include(l => l.RequiredItems)
-            .ThenInclude(ri => ri.Item)
-        .Where(l => l.LocationID == id)
-        .Select(l => new ViewLocation
+        public async Task<ActionResult<ViewLocation>> GetLocationById(int id)
         {
-            LocationID = l.LocationID,
-            Name = l.Name,
-            BackgroundImagePath = l.BackgroundImagePath,
-            RadiationGain = l.RadiationGain,
-            LocationContents = l.LocationContents.Select(lc => new ViewLocationContent
-            {
-                InteractibleID = lc.InteractibleID,
-                Interactible = new ViewInteractible
+            var EndFetch = await _context.Ends
+                .Where(e => e.LocationID == id)
+                .Select(e => new ViewEnd
                 {
-                    InteractibleID = lc.Interactible.InteractibleID,
-                    Name = lc.Interactible.Name,
-                    ImagePath = lc.Interactible.ImagePath,
-                },
-                XPos = lc.XPos,
-                YPos = lc.YPos
-            }).ToList(),
-            RequiredItems = l.RequiredItems.Select(ri => new ViewItem
-            {
-                ItemID = ri.Item.ItemID,
-                Name = ri.Item.Name,
-                TradeValue = ri.Item.TradeValue,
-                Stackable = ri.Item.Stackable,
-                CategoryId = ri.Item.CategoryId,
-                Category = new ViewItemCategory
+                    EndID = e.EndID,
+                    DialogID = e.DialogID,
+                    LocationID = e.LocationID
+                })
+                .FirstOrDefaultAsync();
+
+            // Nejprve načteme data bez volání ConvertImageToBase64
+            var location = await _context.Locations
+                .Include(l => l.LocationContents)
+                .Include(l => l.RequiredItems)
+                    .ThenInclude(ri => ri.Item)
+                .Where(l => l.LocationID == id)
+                .Select(l => new ViewLocation
                 {
-                    CategoryID = ri.Item.Category.CategoryID,
-                    Name = ri.Item.Category.Name
-                }
-            }).ToList()
-        })
-        .FirstOrDefaultAsync();
+                    LocationID = l.LocationID,
+                    Name = l.Name,
+                    BackgroundImagePath = l.BackgroundImagePath,
+                    RadiationGain = l.RadiationGain,
+                    End = EndFetch == null ? null : new List<ViewEnd> { EndFetch },
+                    LocationContents = l.LocationContents.Select(lc => new ViewLocationContent
+                    {
+                        InteractibleID = lc.InteractibleID,
+                        Interactible = new ViewInteractible
+                        {
+                            InteractibleID = lc.Interactible.InteractibleID,
+                            Name = lc.Interactible.Name,
+                            ImagePath = lc.Interactible.ImagePath,
+                        },
+                        XPos = lc.XPos,
+                        YPos = lc.YPos,
+                        size = lc.size
+                    }).ToList(),
+                    RequiredItems = l.RequiredItems.Select(ri => new ViewItem
+                    {
+                        ItemID = ri.Item.ItemID,
+                        Name = ri.Item.Name,
+                        TradeValue = ri.Item.TradeValue,
+                        Stackable = ri.Item.Stackable,
+                        CategoryId = ri.Item.CategoryId,
+                        Category = new ViewItemCategory
+                        {
+                            CategoryID = ri.Item.Category.CategoryID,
+                            Name = ri.Item.Category.Name
+                        }
+                    }).ToList(),
+                })
+                .FirstOrDefaultAsync();
 
-    if (location == null)
-    {
-        return NotFound();
-    }
+            if (location == null)
+            {
+                return NotFound();
+            }
 
-    // Až poté voláme metodu pro převod obrázku, mimo EF Core dotaz
-    location.BackgroundImageBase64 = ConvertImageToBase64(location.BackgroundImagePath);
+            // Až poté voláme metodu pro převod obrázku, mimo EF Core dotaz
+            location.BackgroundImageBase64 = ConvertImageToBase64(location.BackgroundImagePath);
 
-    //location.LocationContents.ForEach(lc => lc.Interactible.ImageBase64 = ConvertImageToBase64(lc.Interactible.ImagePath));
+            //location.LocationContents.ForEach(lc => lc.Interactible.ImageBase64 = ConvertImageToBase64(lc.Interactible.ImagePath));
+
+            // Attach DialogID from ViewEnd based on LocationID
 
             return Ok(location);
-}
+        }
 
 // Příklad pomocné metody (můžeš ji ponechat jako instance nebo statickou metodu)
 private string ConvertImageToBase64(string imagePath)

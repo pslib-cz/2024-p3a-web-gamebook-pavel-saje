@@ -91,6 +91,8 @@ export type DataLocation = {
     requiredItems: RequiredItems[];
     locationContents: LocationContent[];
     backgroundImageBase64: string;
+    endID: number;
+    end: End;
 };
 
 export type LocationContent = {
@@ -99,6 +101,7 @@ export type LocationContent = {
     interactibleID: number;
     xPos: number;
     yPos: number;
+    size: number;
     location: Location;
     interactible: Interactible
 };
@@ -154,6 +157,6 @@ export type Weapon = {
 
 export type End = {
     endID: number;
-    text: string;
-    imagePath: string;
+    LocatioID: number;
+    DialogID: number;
 };
