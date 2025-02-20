@@ -16,13 +16,21 @@ const NetopyriVarle: React.FC = () => {
     const navigate = useNavigate();
 
     const { id } = useParams();
-    const [targetLocation, setTargetLocation] = useState<DataLocation | null>(null);
+    const [targetLocation, setTargetLocation] = useState<DataLocation | null>(
+        null
+    );
 
     if (!gameContext) {
         return <div>Error: Game context is not available.</div>;
-      }
+    }
 
-    const {lastLocation, setLastLocation, radiation, setRadiation, inventory} = gameContext;
+    const {
+        lastLocation,
+        setLastLocation,
+        radiation,
+        setRadiation,
+        inventory,
+    } = gameContext;
 
     const [error, setError] = useState<Error | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
@@ -37,25 +45,26 @@ const NetopyriVarle: React.FC = () => {
                     throw new Error("Failed to fetch data");
                 }
                 const json = await response.json();
-                const requiredItemIds = json?.requiredItems.map((item: RequiredItems) => item.itemID) || [];
+                const requiredItemIds =
+                    json?.requiredItems.map(
+                        (item: RequiredItems) => item.itemID
+                    ) || [];
 
                 const inventoryItemIds = inventory.map((item) => item.itemID);
                 const allItemsPresent = requiredItemIds.every(
                     (itemId: number) => inventoryItemIds.includes(itemId)
                 );
 
-                console.log("requireditemsids ",requiredItemIds)
+                console.log("requireditemsids ", requiredItemIds);
 
-                if(allItemsPresent){
+                if (allItemsPresent) {
                     setTargetLocation(json);
                     setLastLocation(json);
                     localStorage.setItem("lastLocationId", json.toString());
-                }else{
+                } else {
                     navigate(`/Game/${lastLocation}`);
-                     alert("nemáš potřebné věci pro lokaci")
+                    alert("nemáš potřebné věci pro lokaci");
                 }
-
-
             } catch (error) {
                 if (error instanceof Error) {
                     setError(error);
@@ -73,7 +82,9 @@ const NetopyriVarle: React.FC = () => {
 
     if (targetLocation) {
         console.log("inventory", inventory);
-        const totalRadiationGain = targetLocation.radiationGain + inventory.reduce((acc, item) => acc + item.radiationGain, 0);
+        const totalRadiationGain =
+            targetLocation.radiationGain +
+            inventory.reduce((acc, item) => acc + item.radiationGain, 0);
         setRadiation(totalRadiationGain);
     }
 
@@ -89,12 +100,18 @@ const NetopyriVarle: React.FC = () => {
                 />
             )} */}
 
-{targetLocation && targetLocation.backgroundImageBase64 && (
-  <img style={{ width: "100%", height: "100vh" }}
-    src={`data:image/webp;base64,${targetLocation.backgroundImageBase64}`}
-    alt={targetLocation.name}
-  />
-)}
+            {targetLocation && targetLocation.backgroundImageBase64 && (
+                <img
+                    style={{
+                        width: "100%",
+                        height: "100vh",
+                        userSelect: "none",
+                        pointerEvents: "none",
+                    }}
+                    src={`data:image/webp;base64,${targetLocation.backgroundImageBase64}`}
+                    alt={targetLocation.name}
+                />
+            )}
 
             <p>{error?.message}</p>
             {targetLocation != null && (
