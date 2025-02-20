@@ -174,8 +174,14 @@ const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
         setLastLocation(defaultLastLocation);
     }
 
+
     const resetEquipedWeapon = () => {
         setEquipedWeapon(undefined);
+        localStorage.setItem(
+          "equipedWeapon",
+          JSON.stringify(undefined)
+      );
+
     }
 
     const resetAll = () => {
@@ -188,6 +194,7 @@ const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
         resetCanBeVisited();
         resetLastLocation();
         resetEquipedWeapon();
+        // localStorage.clear();
     }
 
   return (
