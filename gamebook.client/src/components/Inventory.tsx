@@ -43,7 +43,7 @@ const Inventory: React.FC = () => {
         defaultEnergy,
         inventory,
         setInventory,
-        resetEquipedWeapon
+        resetEquipedWeapon,
     } = gameContext;
 
     useEffect(() => {
@@ -55,12 +55,9 @@ const Inventory: React.FC = () => {
 
             setWeapons(data.weapons);
             setConsumables(data.consumables);
-            
         };
         fetchTypes();
     }, []);
-
-    
 
     const findConsumable = (id: number) => {
         return consumables.find(
@@ -68,11 +65,10 @@ const Inventory: React.FC = () => {
         );
     };
 
-    
     const findWeapon = (id: number) => {
         return weapons.find((weapon: Weapon) => weapon.item.itemID === id);
     };
-    
+
     const heal = (consumable: ConsumableItem) => {
         if (hp + consumable.healthValue < defaultHp) {
             setHp(hp + consumable.healthValue);
@@ -116,6 +112,7 @@ const Inventory: React.FC = () => {
                             {inventory.map((item, index) => (
                                 <li
                                     key={index}
+                                    className={styles.inventoryItem}
                                     onClick={() => {
                                         const updatedInventory =
                                             inventory.filter(
@@ -129,21 +126,23 @@ const Inventory: React.FC = () => {
                                         if (consumable) {
                                             heal(consumable);
                                             setInventory(updatedInventory);
-                                        } else if (
-                                            findWeapon(item.itemID)
-                                            
-                                        ) {
+                                        } else if (findWeapon(item.itemID)) {
                                             setInventory(updatedInventory);
-                                            setInventory((prevInventory: Item[]) => [
-                                                ...prevInventory,
-                                                ...(equipedWeapon
-                                                    ? [equipedWeapon.item]
-                                                    : []),
-                                            ]);
-                                            setEquipedWeapon(
-                                                findWeapon(item.itemID),
+                                            setInventory(
+                                                (prevInventory: Item[]) => [
+                                                    ...prevInventory,
+                                                    ...(equipedWeapon
+                                                        ? [equipedWeapon.item]
+                                                        : []),
+                                                ]
                                             );
-                                            console.log("------",equipedWeapon)
+                                            setEquipedWeapon(
+                                                findWeapon(item.itemID)
+                                            );
+                                            console.log(
+                                                "------",
+                                                equipedWeapon
+                                            );
                                         }
                                     }}
                                 >
@@ -155,6 +154,7 @@ const Inventory: React.FC = () => {
                     <div className={styles.container}>
                         <h2>Equiped weapon</h2>
                         <p
+                            className={styles.inventoryItem}
                             onClick={() => {
                                 setInventory((prevInventory: Item[]) => [
                                     ...prevInventory,

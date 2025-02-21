@@ -29,14 +29,13 @@
     margin: 0;
 }
 
-.inventory li {
+.inventory .inventoryItem {
     padding: 1px;
     display: flex;
     align-items: center;
 }
 
-.inventory li:hover {
-    padding: 2px 1px;
+.inventory .inventoryItem:hover {
     background-color: var(--green-transparent);
     cursor: pointer;
 }
