@@ -30,16 +30,23 @@ const NetopyriVarle: React.FC = () => {
         radiation,
         setRadiation,
         inventory,
+        setEnergy,
+        energy
     } = gameContext;
 
     const [error, setError] = useState<Error | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
+    // https://localhost:7092/api/ShortestPath?FirstLocationId=3&SecondLocationId=3
+
+    // ?currentId=4
+
     useEffect(() => {
         const fetchData = async () => {
             try {
+
                 const response = await fetch(
-                    `https://localhost:7092/api/Locations/${id}`
+                    `https://localhost:7092/api/Locations/${id}${lastLocation && `?currentId=${lastLocation.locationID}`}`
                 );
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
@@ -57,16 +64,24 @@ const NetopyriVarle: React.FC = () => {
 
                 console.log("requireditemsids ", requiredItemIds);
 
-                if (allItemsPresent) {
+                if (!allItemsPresent) {
+                    navigate(`/Game/${lastLocation}`);
+                    alert("némáš potřebné věci pro lokaci")
+                } else if(json?.travelCost > energy){
+                    navigate(`/Game/${lastLocation}`);
+                    alert("nemáš dostatek energie na cestu")
+                }
+                 else {
                     setTargetLocation(json);
                     setLastLocation(json);
-                    console.log(json.end
-                    )
-                    console.log(json)
+                    console.log(json.end)
+                    console.log(targetLocation)
+                    
+                    if(targetLocation?.travelCost){
+                        setEnergy((prevEnergy: number) => prevEnergy - json.travelCost)
+                    }
+
                     localStorage.setItem("lastLocationId", json.toString());
-                } else {
-                    navigate(`/Game/${lastLocation}`);
-                    alert("nemáš potřebné věci pro lokaci");
                 }
             } catch (error) {
                 if (error instanceof Error) {
@@ -82,7 +97,7 @@ const NetopyriVarle: React.FC = () => {
     }, [id]);
 
 
-    // console.log(targetLocation?.end.endID);
+    
 
     if (targetLocation) {
         // console.log("inventory", inventory);
@@ -92,6 +107,10 @@ const NetopyriVarle: React.FC = () => {
         setRadiation(totalRadiationGain);
     }
 
+    if(targetLocation?.end != null){ 
+        // console.log(targetLocation?.end[0].endID);
+        navigate("/Dialog/1")
+    } 
     return (
         <>
         {/* {alert(targetLocation?.end.LocatioID)} */}

@@ -117,6 +117,7 @@ const defaultLastLocation: DataLocation = {
   requiredItems: [],
   locationContents: [],
   backgroundImageBase64: '',
+  travelCost:0
 };
 const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
   const savedLatLocation = localStorage.getItem('lastLocation');

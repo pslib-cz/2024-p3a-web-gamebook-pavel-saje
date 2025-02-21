@@ -87,7 +87,7 @@ const DialogPage = () => {
             {dialog?.nextDialogID && (
               <Link to={`/Dialog/${dialog.nextDialogID}`}>Další</Link>
             )}
-            <Link to={`/Game/${lastLocation.locationID}`}>Ukončit</Link>
+            <Link to={lastLocation.end != null ? "/" : `/Game/lastLocation.locationID`}>Ukončit</Link>
           </div>
         </div>
       </div>

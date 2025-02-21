@@ -65,8 +65,27 @@ namespace GameBook.Server.Controllers
 
 
 [HttpGet("{id}")]
-        public async Task<ActionResult<ViewLocation>> GetLocationById(int id)
+        public async Task<ActionResult<ViewLocation>> GetLocationById(int id, int currentId)
         {
+            var paths = await _context.LocationPaths.ToListAsync();
+
+            var graph = new Dictionary<int, List<(int, int)>>();
+
+            foreach (var path in paths)
+            {
+                if (!graph.ContainsKey(path.FirstNodeID))
+                    graph[path.FirstNodeID] = new List<(int, int)>();
+                if (!graph.ContainsKey(path.SecondNodeID))
+                    graph[path.SecondNodeID] = new List<(int, int)>();
+
+                graph[path.FirstNodeID].Add((path.SecondNodeID, path.EnergyTravelCost));
+                graph[path.SecondNodeID].Add((path.FirstNodeID, path.EnergyTravelCost));
+            }
+
+            var FirstLocationId = currentId != 0 ? currentId : id;
+
+            var result = Dijkstra(graph, FirstLocationId, id);
+
             var EndFetch = await _context.Ends
                 .Where(e => e.LocationID == id)
                 .Select(e => new ViewEnd
@@ -90,19 +109,7 @@ namespace GameBook.Server.Controllers
                     BackgroundImagePath = l.BackgroundImagePath,
                     RadiationGain = l.RadiationGain,
                     End = EndFetch == null ? null : new List<ViewEnd> { EndFetch },
-                    LocationContents = l.LocationContents.Select(lc => new ViewLocationContent
-                    {
-                        InteractibleID = lc.InteractibleID,
-                        Interactible = new ViewInteractible
-                        {
-                            InteractibleID = lc.Interactible.InteractibleID,
-                            Name = lc.Interactible.Name,
-                            ImagePath = lc.Interactible.ImagePath,
-                        },
-                        XPos = lc.XPos,
-                        YPos = lc.YPos,
-                        size = lc.size
-                    }).ToList(),
+                    
                     RequiredItems = l.RequiredItems.Select(ri => new ViewItem
                     {
                         ItemID = ri.Item.ItemID,
@@ -115,6 +122,23 @@ namespace GameBook.Server.Controllers
                             CategoryID = ri.Item.Category.CategoryID,
                             Name = ri.Item.Category.Name
                         }
+                    }).ToList(),
+
+
+                    travelCost = result,
+
+                    LocationContents = l.LocationContents.Select(lc => new ViewLocationContent
+                    {
+                        InteractibleID = lc.InteractibleID,
+                        Interactible = new ViewInteractible
+                        {
+                            InteractibleID = lc.Interactible.InteractibleID,
+                            Name = lc.Interactible.Name,
+                            ImagePath = lc.Interactible.ImagePath,
+                        },
+                        XPos = lc.XPos,
+                        YPos = lc.YPos,
+                        size = lc.size
                     }).ToList(),
                 })
                 .FirstOrDefaultAsync();
@@ -134,8 +158,46 @@ namespace GameBook.Server.Controllers
             return Ok(location);
         }
 
-// Příklad pomocné metody (můžeš ji ponechat jako instance nebo statickou metodu)
-private string ConvertImageToBase64(string imagePath)
+        private int Dijkstra(Dictionary<int, List<(int, int)>> graph, int start, int end)
+        {
+            var distances = new Dictionary<int, int>();
+            var previous = new Dictionary<int, int?>();
+            var pq = new SortedSet<(int, int)>();
+
+            foreach (var node in graph.Keys)
+            {
+                distances[node] = int.MaxValue;
+                previous[node] = null;
+            }
+
+            distances[start] = 0;
+            pq.Add((0, start));
+
+            while (pq.Count > 0)
+            {
+                var (currentDistance, current) = pq.Min;
+                pq.Remove((currentDistance, current));
+
+                if (current == end) break;
+
+                foreach (var (neighbor, weight) in graph[current])
+                {
+                    int newDist = currentDistance + weight;
+                    if (newDist < distances[neighbor])
+                    {
+                        pq.Remove((distances[neighbor], neighbor));
+                        distances[neighbor] = newDist;
+                        previous[neighbor] = current;
+                        pq.Add((newDist, neighbor));
+                    }
+                }
+            }
+
+            return distances[end];
+        }
+
+        // Příklad pomocné metody (můžeš ji ponechat jako instance nebo statickou metodu)
+        private string ConvertImageToBase64(string imagePath)
 {
     var uploads = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
     var filePath = Path.Combine(uploads, imagePath);

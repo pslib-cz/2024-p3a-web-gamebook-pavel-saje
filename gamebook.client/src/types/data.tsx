@@ -92,7 +92,8 @@ export type DataLocation = {
     locationContents: LocationContent[];
     backgroundImageBase64: string;
     endID: number;
-    end: End;
+    end: End[];
+    travelCost: number;
 };
 
 export type LocationContent = {
