@@ -50,8 +50,7 @@ const TradePage = () => {
 
   console.log(getInteractible(Number(id)))
   return (
-    <>
-    <div className={styles.tradePage} style={{backgroundImage: `url(data:image/webp;base64,${lastLocation?.backgroundImageBase64})`, backgroundSize: "cover"}}>
+    <div className={styles.tradePage}>
         <div className={styles.left}>
             <Link className={styles.def} to={`/Game/${lastLocation.locationID}`}>Zpět</Link>
         {/* <p>{getInteractible(Number(id))?.name}</p> */}
@@ -62,9 +61,9 @@ const TradePage = () => {
                     </div>
     <div className={styles.shop}>
     <p className={styles.def}>{`$ ${money}`}</p>
-    {shop?.buys && <h2 className={styles.def}>Výměny</h2>}
       {shop?.trades.map((trades, index) => (
         <>
+        <h2 className={styles.def}>Výměny</h2>
         <div
           key={index}
           className={`${styles.trades} ${
@@ -94,9 +93,9 @@ const TradePage = () => {
         </div>
         </>
       ))}
-        {shop?.buys && <h2 className={styles.def}>Nákupy</h2>}
       {shop?.buys.map((buys, index) => (
         <>
+        <h2 className={styles.def}>Nákupy</h2>
         <div
           key={index}
           className={
@@ -118,7 +117,6 @@ const TradePage = () => {
     </div>
     
     </div>
-    </>
   );
 };
 

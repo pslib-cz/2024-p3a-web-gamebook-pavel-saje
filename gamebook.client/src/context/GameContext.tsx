@@ -40,6 +40,10 @@ interface GameContextProps {
   setEquipedWeapon: React.Dispatch<React.SetStateAction<Weapon | undefined>>;
   resetEquipedWeapon: () => void;
 
+  discoveredLocations: number[];
+  setDiscoveredLocations: React.Dispatch<React.SetStateAction<number[]>>;
+  resetDiscoveredLocations: () => void;
+
   resetAll: () => void;
 }
 
@@ -109,6 +113,16 @@ const [canBeVisited, setCanBeVisited] = useState<DataLocation[]>(() => {
   }
 });
 
+const [discoveredLocations, setDiscoveredLocations] = useState<number[]>(() => {
+  const savedDiscoveredLocations = localStorage.getItem('discoveredLocations');
+  try {
+    return savedDiscoveredLocations !== null ? JSON.parse(savedDiscoveredLocations) : [];
+  } catch (e) {
+    console.error("Error parsing discoveredLocations from localStorage", e);
+    return [];
+  }
+});
+
 const defaultLastLocation: DataLocation = {
   locationID: 3,
   name: 'Start',
@@ -142,7 +156,8 @@ const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
     if (canBeVisited !== undefined) localStorage.setItem('canBeVisited', JSON.stringify(canBeVisited));
     if (lastLocation !== undefined) localStorage.setItem('lastLocation', JSON.stringify(lastLocation));
     if (equipedWeapon !== undefined) localStorage.setItem('equipedWeapon', JSON.stringify(equipedWeapon));
-  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation, canBeVisited, lastLocation, equipedWeapon]);
+    if (discoveredLocations !== undefined) localStorage.setItem('discoveredLocations', JSON.stringify(discoveredLocations));
+  }, [hp, energy, radiation, money, inventory, InteractiblesRemovedFromLocation, canBeVisited, lastLocation, equipedWeapon, discoveredLocations]);
 
   const resetHp = () => {
     setHp(defaultHp);
@@ -185,6 +200,10 @@ const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
 
     }
 
+    const resetDiscoveredLocations = () => {
+        setDiscoveredLocations([]);
+    }
+
     const resetAll = () => {
         resetHp();
         resetEnergy();
@@ -195,6 +214,7 @@ const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
         resetCanBeVisited();
         resetLastLocation();
         resetEquipedWeapon();
+        resetDiscoveredLocations();
         // localStorage.clear();
     }
 
@@ -232,6 +252,9 @@ const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
         equipedWeapon,
         setEquipedWeapon,
         resetEquipedWeapon,
+        discoveredLocations,
+        setDiscoveredLocations,
+        resetDiscoveredLocations,
       }}
     >
       {children}
