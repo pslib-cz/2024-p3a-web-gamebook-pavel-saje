@@ -17,9 +17,9 @@ const Home = () => {
         <>
             <h1 className={styles.TITLE}>Stíny popela</h1>
             <div className={styles.menubar}>
-                <Link className={styles.link} onClick={() => resetAll()} to={`Game/${defaultLastLocation.locationID}`}>Play</Link>
+                <Link className={styles.link} onClick={() => resetAll()} to={`Game/${defaultLastLocation.locationID}`}>Hrát si</Link>
 
-                <Link className={styles.link} to={`Game/${lastLocation.locationID}`}>Continue</Link>
+                <Link className={styles.link} to={`Game/${lastLocation.locationID}`}>Pokračovat</Link>
 
                 <Link className={styles.link} to="/Admin">Admin</Link>
                 </div>

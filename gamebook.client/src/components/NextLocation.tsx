@@ -3,6 +3,7 @@ import { DataLocation } from "../types";
 import { Link } from "react-router-dom";
 import styles from "../styles/nearBy.module.css";
 import { GameContext } from "../context/GameContext";
+import Loading from "./Loading";
 
 interface NextLocationProps {
   locationId: number;
@@ -70,8 +71,8 @@ const NextLocation: React.FC<NextLocationProps> = ({ locationId }) => {
 
   return (
     <>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error.message}</p>}
+      {loading && <Loading />}
+      {/* {error && <p>{error.message}</p>} */}
       <main className={styles.main}>
         <h4 className={styles.h4}>Přejít do lokace</h4>
         <ul className={styles.ul}>

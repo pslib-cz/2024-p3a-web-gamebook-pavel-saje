@@ -9,6 +9,7 @@ import { GameContext } from "../context/GameContext";
 
 import { DataLocation, RequiredItems } from "../types";
 import { domain } from "../utils";
+import Loading from "../components/Loading";
 
 const NetopyriVarle: React.FC = () => {
     const gameContext = useContext(GameContext);
@@ -113,6 +114,7 @@ const NetopyriVarle: React.FC = () => {
     } 
     return (
         <>
+        {/* {loading && <p>Načítám...</p>} */}
         {/* {alert(targetLocation?.end.LocatioID)} */}
             {targetLocation && targetLocation.backgroundImageBase64 && (
                 <img
@@ -127,7 +129,7 @@ const NetopyriVarle: React.FC = () => {
                 />
             )}
 
-            <p>{error?.message}</p>
+            {loading && <Loading />}
             {targetLocation != null && (
                 <h2 className="title">{targetLocation.name}</h2>
             )}

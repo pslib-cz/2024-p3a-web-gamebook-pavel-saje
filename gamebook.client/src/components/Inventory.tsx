@@ -139,14 +139,15 @@ const Inventory: React.FC = () => {
                                             setEquipedWeapon(
                                                 findWeapon(item.itemID)
                                             );
-                                            console.log(
-                                                "------",
-                                                equipedWeapon
-                                            );
                                         }
                                     }}
                                 >
                                     <p>{item.name}</p>
+                                    <span>
+                                    {findConsumable(item.itemID) && findConsumable(item.itemID)?.energyValue != 0 && <p>{findConsumable(item.itemID)?.energyValue}⚡</p>}
+                                    {findConsumable(item.itemID) && findConsumable(item.itemID)?.healthValue != 0 && <p>{findConsumable(item.itemID)?.healthValue}❤️</p>}
+                                    {findWeapon(item.itemID) && findWeapon(item.itemID)?.damage != 0 && <p>{findWeapon(item.itemID)?.damage}⚔️</p>}
+                                    </span>
                                 </li>
                             ))}
                         </ul>

@@ -12,7 +12,6 @@ const MapWithGraph2D: React.FC = () => {
   const [showGraph, setShowGraph] = useState<boolean>(false);
   const navigate = useNavigate();
   const graphRef = useRef<any>(null);
-
   const gameContext = useContext(GameContext);
 
   if (!gameContext) {

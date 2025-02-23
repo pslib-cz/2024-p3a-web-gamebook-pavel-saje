@@ -10,6 +10,7 @@ import { domain } from "../utils";
 import Option from "../components/Option";
 
 import optionStyles from "../styles/options.module.css";
+import Loading from "./Loading";
 
 interface ContentProps {
   location: DataLocation | null;
@@ -19,6 +20,7 @@ const Content: React.FC<ContentProps> = ({ location }) => {
   const [interactiblesOptionList, setInteractiblesOptionList] = useState<
     InteractiblesOption[]
   >([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const gameContext = useContext(GameContext);
   if (!gameContext) {
@@ -33,7 +35,9 @@ const Content: React.FC<ContentProps> = ({ location }) => {
         const data = await response.json();
         setInteractiblesOptionList(data);
       } catch (error) {
-        console.error("KOKOT");
+        console.error("Error fetching interactibles options", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -70,8 +74,10 @@ const Content: React.FC<ContentProps> = ({ location }) => {
     return list;
   };
 
+
   return (
     <>
+    {loading && <Loading />}
       {/* TODO když je to npc a je mrtvé tak místo toho udělat náhrobek */}
       {location?.locationContents &&
         location.locationContents
