@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { DataLocation, Interactible, InteractiblesOption } from "../types";
+import { DataLocation, Interactible, InteractiblesOption, LocationContent } from "../types";
 
 import { GameContext } from "../context/GameContext";
 
@@ -34,6 +34,7 @@ const Content: React.FC<ContentProps> = ({ location }) => {
         const response = await fetch(`${domain}/api/DataInteractiblesOption`);
         const data = await response.json();
         setInteractiblesOptionList(data);
+        console.log("pryc",InteractiblesRemovedFromLocation)
       } catch (error) {
         console.error("Error fetching interactibles options", error);
       } finally {
@@ -46,8 +47,8 @@ const Content: React.FC<ContentProps> = ({ location }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showOptions, setShowOptions] = useState(false);
   const [showClick, setShowClick] = useState(false);
-  const [hoveredInteractible, setHoveredInteractible] =
-    useState<Interactible | null>(null);
+  const [hoveredContent, setHoveredContent] =
+    useState<LocationContent | null>(null);
   const [hoveredOptions, setHoveredOptions] = useState<
     InteractiblesOption[] | null
   >(null);
@@ -85,9 +86,10 @@ const Content: React.FC<ContentProps> = ({ location }) => {
             // const options = hoveredOptions?.filter(
             //   (option) => option.interactibleID === content.interactibleID
             // );
-            const key = location?.locationID + "-" + index;
+            const key = location?.locationID + "-" + index + "-" + content.interactibleID;
             return !InteractiblesRemovedFromLocation.find(
-              (removed) => removed === key
+              (removed) => removed.locationContentID === content.locationContentID
+            // return (1 > 0
             ) ? (
               <>
                 <span
@@ -105,17 +107,17 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                   onMouseEnter={() => {
                     !hoveredOptions && setShowClick(true);
                     iKey != key &&
-                      (setHoveredInteractible(null),
+                      (setHoveredContent(null),
                       setHoveredOptions(null),
                       setShowOptions(false),
                       setShowClick(true));
-                    setHoveredInteractible(content.interactible);
+                    setHoveredContent(content);
                     setHoveredOptions(getOptions(content.interactibleID) || []);
                   }}
                   onMouseLeave={() => {
                     setShowClick(false);
                     !showOptions &&
-                      (setHoveredInteractible(null), setHoveredOptions(null));
+                      (setHoveredContent(null), setHoveredOptions(null));
                   }}
                   onClick={() => {
                     setIKey(key);
@@ -123,15 +125,15 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                     setShowClick(!showClick);
                   }}
                 >
-                  {content.interactible.imageBase64 && (
                     <img
                       style={{ width: `${100}%`, 
                       // height: "2rem"
                      }}
-                      src={`data:image/webp;base64,${content.interactible.imageBase64}`}
+                      // src={`data:image/webp;base64,${content.interactible.imageBase64}`}
+                      // src="https://localhost:7092/Interactibles%5CFoodCan.png"
+                      src={`${domain}/${encodeURIComponent(content.interactible.imagePath)}`}
                       alt={content.interactible.name}
                     />
-                  )}
                 </span>
               </>
             ) : null;
@@ -147,18 +149,18 @@ const Content: React.FC<ContentProps> = ({ location }) => {
       >
         {showClick && !showOptions && (
           <>
-            <li>{hoveredInteractible?.name}</li>
+            <li>{hoveredContent?.interactible.name}</li>
             <li>click to interact</li>
+            <li>{hoveredContent?.locationContentID}</li>
           </>
         )}
         {showOptions && (
           <li onClick={() => setShowOptions(false)}>
-            {hoveredInteractible &&
+            {hoveredContent &&
               hoveredOptions?.map((option) => (
                 <Option
-                  interactibleKey={iKey || ""}
+                  content={hoveredContent}
                   interactOption={option.option}
-                  interactible={hoveredInteractible}
                 />
               ))}
           </li>

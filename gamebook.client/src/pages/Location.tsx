@@ -116,7 +116,6 @@ const NetopyriVarle: React.FC = () => {
         <>
         {/* {loading && <p>Načítám...</p>} */}
         {/* {alert(targetLocation?.end.LocatioID)} */}
-            {targetLocation && targetLocation.backgroundImageBase64 && (
                 <img
                     style={{
                         width: "100%",
@@ -124,10 +123,10 @@ const NetopyriVarle: React.FC = () => {
                         userSelect: "none",
                         pointerEvents: "none",
                     }}
-                    src={`data:image/webp;base64,${targetLocation.backgroundImageBase64}`}
-                    alt={targetLocation.name}
+                    src={targetLocation ? `${domain}/${encodeURIComponent(targetLocation.backgroundImagePath)}` : ""}
+                    // src={`data:image/webp;base64,${targetLocation.backgroundImageBase64}`}
+                    alt={targetLocation?.name}
                 />
-            )}
 
             {loading && <Loading />}
             {targetLocation != null && (

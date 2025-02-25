@@ -129,6 +129,7 @@ namespace GameBook.Server.Controllers
 
                     LocationContents = l.LocationContents.Select(lc => new ViewLocationContent
                     {
+                        LocationContentID = lc.LocationContentID,
                         InteractibleID = lc.InteractibleID,
                         Interactible = new ViewInteractible
                         {
@@ -147,13 +148,6 @@ namespace GameBook.Server.Controllers
             {
                 return NotFound();
             }
-
-            // Až poté voláme metodu pro převod obrázku, mimo EF Core dotaz
-            location.BackgroundImageBase64 = ConvertImageToBase64(location.BackgroundImagePath);
-
-            //location.LocationContents.ForEach(lc => lc.Interactible.ImageBase64 = ConvertImageToBase64(lc.Interactible.ImagePath));
-
-            // Attach DialogID from ViewEnd based on LocationID
 
             return Ok(location);
         }
@@ -196,21 +190,6 @@ namespace GameBook.Server.Controllers
             return distances[end];
         }
 
-        // Příklad pomocné metody (můžeš ji ponechat jako instance nebo statickou metodu)
-        private string ConvertImageToBase64(string imagePath)
-{
-    var uploads = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
-    var filePath = Path.Combine(uploads, imagePath);
-
-    if (!System.IO.File.Exists(filePath))
-    {
-        return null; // nebo string.Empty
-    }
-
-    var imageBytes = System.IO.File.ReadAllBytes(filePath);
-    return Convert.ToBase64String(imageBytes);
-}
-
 
 
     [HttpGet("{id}/connected")]
@@ -232,9 +211,9 @@ namespace GameBook.Server.Controllers
                     BackgroundImagePath = l.BackgroundImagePath,
                     RadiationGain = l.RadiationGain,
                     LocationContents = l.LocationContents
-                        .Where(lc => lc.Interactible != null)
                         .Select(lc => new ViewLocationContent
                         {
+                            LocationContentID = lc.LocationContentID,
                             InteractibleID = lc.InteractibleID,
                             Interactible = new ViewInteractible
                             {
@@ -267,6 +246,8 @@ namespace GameBook.Server.Controllers
 
             return Ok(connectedLocations);
         }
+
+
 
 
         [HttpGet("connections")]

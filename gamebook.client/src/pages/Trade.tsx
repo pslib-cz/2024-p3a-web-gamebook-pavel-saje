@@ -4,17 +4,19 @@ import { domain } from "../utils";
 import { Shops } from "../types";
 import { GameContext } from "../context/GameContext";
 import styles from "../styles/trade.module.css";
+import Loading from "../components/Loading";
 
 const TradePage = () => {
   const { id } = useParams();
 
-  const [shop, setShop] = useState<Shops>();
+  const [shop, setShop] = useState<Shops | undefined>(undefined);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const gameContext = useContext(GameContext);
   if (!gameContext) {
     throw new Error("GameContext is undefined");
   }
-  const { inventory, setInventory, money, setMoney, lastLocation } = gameContext;
+  const { inventory, setInventory, money, setMoney, lastLocation, InteractiblesRemovedFromLocation } = gameContext;
 
   useEffect(() => {
     const FetchData = async () => {
@@ -24,9 +26,11 @@ const TradePage = () => {
         );
         const data = await response.json();
         setShop(data);
-        console.log(data.trades);
+        console.log(data);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
     FetchData();
@@ -37,85 +41,150 @@ const TradePage = () => {
   };
 
   const getInteractible = (intId: number) => {
-    if(shop?.buys) {
-        const interactible = shop.buys.find((buy) => buy.interactible.interactibleID === intId);
-        return interactible ? interactible.interactible : null;
+    if (shop?.buys) {
+      const interactible = shop.buys.find((buy) => buy.interactible.interactibleID === intId);
+      return interactible ? interactible.interactible : null;
+    } else if (shop?.trades) {
+      const interactible = shop.trades.find((trade) => trade.interactible.interactibleID === intId);
+      return interactible ? interactible.interactible : null;
     }
-    else if(shop?.trades) {
-        const interactible = shop.trades.find((trade) => trade.interactible.interactibleID === intId);
-        return interactible ? interactible.interactible : null;
-    }
-    
+    return null;
+  };
+
+  if (loading) {
+    return <Loading />;
   }
 
-  console.log(getInteractible(Number(id)))
+
   return (
     <div className={styles.tradePage}>
-        <div className={styles.left}>
-            <Link className={styles.def} to={`/Game/${lastLocation.locationID}`}>Zpět</Link>
-        {/* <p>{getInteractible(Number(id))?.name}</p> */}
-        <img className={styles.interactible}
-                      src={`data:image/webp;base64,${getInteractible(Number(id))?.imageBase64}`}
-                      alt={getInteractible(Number(id))?.name}
-                    />
-                    </div>
-    <div className={styles.shop}>
-    <p className={styles.def}>{`$ ${money}`}</p>
-      {shop?.trades.map((trades, index) => (
-        <>
-        <h2 className={styles.def}>Výměny</h2>
-        <div
-          key={index}
-          className={`${styles.trades} ${
-            isInInvent(trades.trade.item1.itemID)
-              ? styles.canBuy
-              : styles.cantBuy
-          }`}
-          onClick={() => {
-            if (isInInvent(trades.trade.item1.itemID)) {
-                setInventory((prevInventory) => {
-                    const itemIndex = prevInventory.findIndex(
+      <div className={styles.left}>
+        <Link className={styles.def} to={`/Game/${lastLocation.locationID}`}>
+          Zpět
+        </Link>
+        {getInteractible(Number(id)) && (
+          <img
+            className={styles.interactible}
+            src={`${domain}/${encodeURIComponent(
+              getInteractible(Number(id))?.imagePath || ""
+            )}`}
+            alt={getInteractible(Number(id))?.name}
+          />
+        )}
+      </div>
+      <div className={styles.shop}>
+        <p className={styles.def}>{`$ ${money}`}</p>
+        {shop?.trades && shop.trades.length > 0 && (
+          <>
+            <h2 className={styles.def}>Výměny</h2>
+            {shop.trades.map((trades, index) => (
+              <div
+                key={index}
+                className={`${styles.trades} ${
+                  isInInvent(trades.trade.item1.itemID)
+                    ? styles.canBuy
+                    : styles.cantBuy
+                }`}
+                onClick={() => {
+                  if (isInInvent(trades.trade.item1.itemID)) {
+                    setInventory((prevInventory) => {
+                      const itemIndex = prevInventory.findIndex(
                         (item) => item.itemID === trades.trade.item1.itemID
-                    );
-                    if (itemIndex !== -1) {
+                      );
+                      if (itemIndex !== -1) {
                         const newInventory = [...prevInventory];
                         newInventory.splice(itemIndex, 1);
                         return newInventory.concat(trades.trade.item2);
-                    }
-                    return prevInventory;
-                });
-            }
-          }}
-        >
-          <p>{trades.trade.item1.name}</p>
-          <p>za</p>
-          <p>{trades.trade.item2.name}</p>
-        </div>
-        </>
-      ))}
-      {shop?.buys.map((buys, index) => (
-        <>
-        <h2 className={styles.def}>Nákupy</h2>
-        <div
-          key={index}
-          className={
-            money >= buys.item.tradeValue ? styles.canBuy : styles.cantBuy
-          }
-          onClick={() => {
-            if (money >= buys.item.tradeValue) {
-              setMoney((prevMoney: number) => prevMoney - buys.item.tradeValue);
-            setInventory((prevInventory) => [...prevInventory, buys.item]);
-            }
-          }}
-        >
-          <p>
-            {buys.item.name}...{buys.item.tradeValue}
-          </p>
-        </div>
-        </>
-      ))}
-    </div>
-    
+                      }
+                      return prevInventory;
+                    });
+                  }
+                }}
+              >
+                <p>{trades.trade.item1.name}</p>
+                <p>za</p>
+                <p>{trades.trade.item2.name}</p>
+              </div>
+            ))}
+          </>
+        )}
+        {shop?.tradeInteractibles && shop.tradeInteractibles.length > 0 && (
+          <>
+            <h2 className={styles.def}>za Interactibles - prac. název</h2>
+            {shop.tradeInteractibles.map((trades, index) => (
+                <div
+                key={index}
+                className={
+                  InteractiblesRemovedFromLocation.find(
+                    (removed) => removed.interactibleID === trades.tradeInteractibleID
+                  )
+                    ? styles.canBuy
+                    : styles.cantBuy
+                }
+                onClick={() => {
+                  if (InteractiblesRemovedFromLocation.find((removed) => removed.interactibleID === trades.tradeInteractibleID)) {
+                    setInventory((prevInventory) => [
+                      ...prevInventory,
+                      trades.item,
+                    ]);
+                  }
+                }}
+                >
+                <p>{trades.text}</p>
+                </div>
+            ))}
+
+            {/* {shop.tradeInteractibles.map((trades, index) => (
+              <div
+                key={index}
+                onClick={() => {
+                  setInventory((prevInventory) => [
+                    ...prevInventory,
+                    trades.tradeInteractible.item,
+                  ]);
+                }}
+              >
+                <p>{trades.tradeInteractible.text}</p>
+                <p>
+                  {InteractiblesRemovedFromLocation.includes(
+                    `${lastLocation.locationID}-${index}-${trades.tradeInteractible.interactible.interactibleID}`
+                  )
+                    ? "Removed"
+                    : "Available"}
+                </p>
+              </div>
+            ))} */}
+          </>
+        )}
+        {shop?.buys && shop.buys.length > 0 && (
+          <>
+            <h2 className={styles.def}>Nákupy</h2>
+            {shop.buys.map((buys, index) => (
+              <div
+                key={index}
+                className={
+                  money >= buys.item.tradeValue ? styles.canBuy : styles.cantBuy
+                }
+                onClick={() => {
+                  if (money >= buys.item.tradeValue) {
+                    setMoney(
+                      (prevMoney: number) => prevMoney - buys.item.tradeValue
+                    );
+                    setInventory((prevInventory) => [
+                      ...prevInventory,
+                      buys.item,
+                    ]);
+                  }
+                }}
+              >
+                <p>
+                  {buys.item.name}...{buys.item.tradeValue}
+                </p>
+              </div>
+            ))}
+          </>
+        )}
+      </div>
     </div>
   );
 };

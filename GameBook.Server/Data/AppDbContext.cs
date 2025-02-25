@@ -26,6 +26,8 @@ namespace GameBook.Server.Data
         public DbSet<DataTrade> Trade { get; set; }
         public DbSet<DataTrades> Trades { get; set; }
         public DbSet<DataBuy> Buy { get; set; }
+        public DbSet<DataTradeInteractible> TradeInteractibles { get; set; }
+        public DbSet<DataTradesInteractible> TradesInteractibles { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)

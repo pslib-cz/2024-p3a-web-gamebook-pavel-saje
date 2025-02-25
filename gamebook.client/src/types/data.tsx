@@ -37,7 +37,6 @@ export type Interactible = {
     interactibleID: number;
     name: string;
     imagePath: string;
-    imageBase64: string;
 };
 
 export type InteractiblesItem = {
@@ -90,7 +89,6 @@ export type DataLocation = {
     radiationGain: number;
     requiredItems: RequiredItems[];
     locationContents: LocationContent[];
-    backgroundImageBase64: string;
     endID: number;
     end: End[];
     travelCost: number;
@@ -131,7 +129,8 @@ export type RequiredItems = {
 
 export type Shops = {
     trades: Trades[],
-    buys: Buy[]
+    buys: Buy[],
+    tradeInteractibles: TradesInteractible[],
 }
 
 export type Trade = {
@@ -146,6 +145,24 @@ export type Trades = {
     interactible: Interactible,
     tradeID: number,
     trade: Trade
+}
+
+export type TradeInteractible = {
+    tradeInteractibleID: number,
+    interactibleID: number,
+    itemID: number,
+    interactible: Interactible,
+    item: Item,
+}
+
+export type TradesInteractible = {
+    tradesInteractibleID: number,
+    tradeInteractibleID: number,
+    interactibleID: number,
+    tradeInteractible: TradeInteractible,
+    interactible: Interactible,
+    text: string,
+    item: Item
 }
 
 export type Weapon = {

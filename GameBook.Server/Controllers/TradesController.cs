@@ -2,6 +2,7 @@
 using GameBook.Server.Data;
 using GameBook.Server.Models;
 using Microsoft.EntityFrameworkCore;
+using GameBook.Server.Migrations;
 
 namespace GameBook.Server.Controllers
 {
@@ -111,11 +112,37 @@ namespace GameBook.Server.Controllers
                     }
                 }).ToListAsync();
 
+            var tradesInteractible = await _context.TradesInteractibles
+                .Include(ti => ti.TradeInteractible)
+                .Include(ti => ti.Interactible)
+                .Where(ti => ti.InteractibleID == id)
+                .Select(ti => new ViewTradeInteractible
+                {
+                    TradeInteractibleID = ti.TradeInteractibleID,
+                    InteractibleID = ti.InteractibleID,
+                    Text = ti.TradeInteractible.Text,
+                    Interactible = new ViewInteractible
+                    {
+                        InteractibleID = ti.Interactible.InteractibleID,
+                        Name = ti.Interactible.Name,
+                        ImagePath = ti.Interactible.ImagePath
+                    },
+                    ItemID = ti.TradeInteractible.ItemID,
+                    Item = new ViewItem
+                    {
+                        ItemID = ti.TradeInteractible.Item.ItemID,
+                        Name = ti.TradeInteractible.Item.Name,
+                        TradeValue = ti.TradeInteractible.Item.TradeValue
+                    }
+                }).ToListAsync();
+
+
             var shops = new shops
             {
                 
                 trades = trades,
-                buys = buys
+                buys = buys,
+                tradeInteractibles = tradesInteractible
             };
 
             return Ok(shops);
@@ -125,6 +152,7 @@ namespace GameBook.Server.Controllers
         {
             public List<ViewTrades> trades { get; set; }
             public List<ViewBuy> buys { get; set; }
+            public List<ViewTradeInteractible> tradeInteractibles { get; set; }
         }
 
 

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
-import { Item, DataLocation, Weapon } from '../types';
+import { Item, DataLocation, Weapon, LocationContent } from '../types';
 
 interface GameContextProps {
   hp: number;
@@ -26,9 +26,9 @@ interface GameContextProps {
   setCanBeVisited: React.Dispatch<React.SetStateAction<DataLocation[]>>;
   resetCanBeVisited: () => void;
 
-  //NOTE vzor: LocatioID-Index
-  InteractiblesRemovedFromLocation: string[];
-  setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<string[]>>;
+  //NOTE vzor: LocatioID-Index-IntId
+  InteractiblesRemovedFromLocation: LocationContent[];
+  setInteractiblesRemovedFromLocation: React.Dispatch<React.SetStateAction<LocationContent[]>>;
   resetInteractiblesRemovedFromLocation: () => void;
 
   defaultLastLocation : DataLocation;
@@ -93,7 +93,7 @@ const [equipedWeapon, setEquipedWeapon] = useState<Weapon | undefined>(() => {
   }
 });
 
-const [InteractiblesRemovedFromLocation, setInteractiblesRemovedFromLocation] = useState<string[]>(() => {
+const [InteractiblesRemovedFromLocation, setInteractiblesRemovedFromLocation] = useState<LocationContent[]>(() => {
   const savedInteractiblesRemovedFromLocation = localStorage.getItem('InteractiblesRemovedFromLocation');
   try {
     return savedInteractiblesRemovedFromLocation !== null ? JSON.parse(savedInteractiblesRemovedFromLocation) : [];
@@ -124,14 +124,7 @@ const [discoveredLocations, setDiscoveredLocations] = useState<number[]>(() => {
 });
 
 const defaultLastLocation: DataLocation = {
-  locationID: 3,
-  name: 'Start',
-  backgroundImagePath: 'start.jpg',
-  radiationGain: 0,
-  requiredItems: [],
-  locationContents: [],
-  backgroundImageBase64: '',
-  travelCost:0
+  locationID: 3
 };
 const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
   const savedLatLocation = localStorage.getItem('lastLocation');

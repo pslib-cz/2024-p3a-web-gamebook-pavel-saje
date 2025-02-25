@@ -3,6 +3,7 @@ import {
   Interactible,
   Item,
   InteractiblesItem,
+  LocationContent
 } from "../types";
 import { useContext, useEffect, useState } from "react";
 import { GameContext } from "../context/GameContext";
@@ -12,14 +13,12 @@ import styles from "../styles/options.module.css";
 
 interface OptionProps {
   interactOption: InteractOption;
-  interactible: Interactible;
-  interactibleKey: string;
+  content: LocationContent;
 }
 
 const Option: React.FC<OptionProps> = ({
   interactOption,
-  interactible,
-  interactibleKey,
+  content,
 }) => {
   // console.log("key", key)
 
@@ -33,7 +32,7 @@ const Option: React.FC<OptionProps> = ({
           setItem(
             data.find(
               (intItem: InteractiblesItem) =>
-                intItem.interactibleID === interactible.interactibleID
+                intItem.interactibleID === content.interactible.interactibleID
             )
           );
         } catch (error) {}
@@ -49,7 +48,7 @@ const Option: React.FC<OptionProps> = ({
   if (!gameContext) {
     throw new Error("GameContext is undefined");
   }
-  const { inventory, setInventory, setInteractiblesRemovedFromLocation } =
+  const { inventory, setInventory, setInteractiblesRemovedFromLocation, InteractiblesRemovedFromLocation } =
     gameContext;
 
   return (
@@ -59,26 +58,24 @@ const Option: React.FC<OptionProps> = ({
         switch (interactOption.optionID) {
           case 4:
             return(
-              <Link className={styles.option} to={`/Trade/${interactible.interactibleID}`}>{interactOption.optionText}</Link>
+              <Link className={styles.option} to={`/Trade/${content.interactible.interactibleID}`}>{interactOption.optionText}</Link>
             )
           case 3:
             return (
               <p className={styles.option}
                 onClick={() => {
                   if (item) {
-                    setInventory((prevInventory: Item[]) => [
-                      ...prevInventory,
-                      item.item,
-                    ]);
+                    setInventory((prevInventory: Item[]) => {
+                      const newInventory = [...prevInventory, item.item];
+                      localStorage.setItem("inventory", JSON.stringify(newInventory));
+                      return newInventory;
+                    });
                     setInteractiblesRemovedFromLocation(
-                      (prevInteractiblesRemovedFromLocation: string[]) => [
-                        ...prevInteractiblesRemovedFromLocation,
-                        interactibleKey,
-                      ]
-                    );
-                    localStorage.setItem(
-                      "inventory",
-                      JSON.stringify(inventory)
+                      (prevInteractiblesRemoved: LocationContent[]) => {
+                        const newInteractiblesRemoved = [...prevInteractiblesRemoved, content];
+                        localStorage.setItem("InteractiblesRemovedFromLocation", JSON.stringify(newInteractiblesRemoved));
+                        return newInteractiblesRemoved;
+                      }
                     );
                   }
                 }}
@@ -91,7 +88,7 @@ const Option: React.FC<OptionProps> = ({
           case 1:
             return (
               <Link className={styles.option}
-                to={`/Fight/${interactible.interactibleID}&${interactibleKey}`}
+                to={`/Fight/${content.interactible.interactibleID}`}
               >
                 {interactOption.optionText}
               </Link>
