@@ -1,10 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import {
-    DataLocation,
-    Interactible,
-    InteractiblesOption,
-    LocationContent,
-} from "../types";
+import { DataLocation, InteractiblesOption, LocationContent } from "../types";
 
 import { GameContext } from "../context/GameContext";
 

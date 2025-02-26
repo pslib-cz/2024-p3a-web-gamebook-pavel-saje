@@ -144,9 +144,39 @@ const Inventory: React.FC = () => {
                                 >
                                     <p>{item.name}</p>
                                     <span>
-                                    {findConsumable(item.itemID) && findConsumable(item.itemID)?.energyValue != 0 && <p>{findConsumable(item.itemID)?.energyValue}⚡</p>}
-                                    {findConsumable(item.itemID) && findConsumable(item.itemID)?.healthValue != 0 && <p>{findConsumable(item.itemID)?.healthValue}❤️</p>}
-                                    {findWeapon(item.itemID) && findWeapon(item.itemID)?.damage != 0 && <p>{findWeapon(item.itemID)?.damage}⚔️</p>}
+                                        {findConsumable(item.itemID) &&
+                                            findConsumable(item.itemID)
+                                                ?.energyValue != 0 && (
+                                                <p>
+                                                    {
+                                                        findConsumable(
+                                                            item.itemID
+                                                        )?.energyValue
+                                                    }
+                                                    ⚡
+                                                </p>
+                                            )}
+                                        {findConsumable(item.itemID) &&
+                                            findConsumable(item.itemID)
+                                                ?.healthValue != 0 && (
+                                                <p>
+                                                    {
+                                                        findConsumable(
+                                                            item.itemID
+                                                        )?.healthValue
+                                                    }
+                                                    ❤️
+                                                </p>
+                                            )}
+                                        {findWeapon(item.itemID) && (
+                                            <p>
+                                                {
+                                                    findWeapon(item.itemID)
+                                                        ?.damage
+                                                }
+                                                ⚔️
+                                            </p>
+                                        )}
                                     </span>
                                 </li>
                             ))}
@@ -154,20 +184,28 @@ const Inventory: React.FC = () => {
                     </div>
                     <div className={styles.container}>
                         <h2>Equiped weapon</h2>
-                        <p
-                            className={styles.inventoryItem}
-                            onClick={() => {
-                                setInventory((prevInventory: Item[]) => [
-                                    ...prevInventory,
-                                    ...(equipedWeapon
-                                        ? [equipedWeapon.item]
-                                        : []),
-                                ]);
-                                resetEquipedWeapon();
-                            }}
-                        >
-                            {equipedWeapon?.name}
-                        </p>
+                        {equipedWeapon && (
+                            <li
+                                className={styles.inventoryItem}
+                                onClick={() => {
+                                    setInventory((prevInventory: Item[]) => [
+                                        ...prevInventory,
+                                        ...(equipedWeapon
+                                            ? [equipedWeapon.item]
+                                            : []),
+                                    ]);
+                                    resetEquipedWeapon();
+                                }}
+                            >
+                                <p>{equipedWeapon?.name}</p>
+                                <span>
+                                    <p>
+                                        {equipedWeapon.damage}
+                                        ⚔️
+                                    </p>
+                                </span>
+                            </li>
+                        )}
                     </div>
                 </div>
             )}
