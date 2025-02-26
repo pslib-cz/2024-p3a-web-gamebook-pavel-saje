@@ -119,7 +119,8 @@ namespace GameBook.Server.Controllers
                 .Select(ti => new ViewTradeInteractible
                 {
                     TradeInteractibleID = ti.TradeInteractibleID,
-                    InteractibleID = ti.InteractibleID,
+                    InteractibleID = ti.TradeInteractible.InteractibleID,
+                   
                     Text = ti.TradeInteractible.Text,
                     Interactible = new ViewInteractible
                     {
@@ -133,7 +134,8 @@ namespace GameBook.Server.Controllers
                         ItemID = ti.TradeInteractible.Item.ItemID,
                         Name = ti.TradeInteractible.Item.Name,
                         TradeValue = ti.TradeInteractible.Item.TradeValue
-                    }
+                    },
+                    
                 }).ToListAsync();
 
 

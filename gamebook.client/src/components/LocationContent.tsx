@@ -168,7 +168,6 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                     <>
                         <li>{hoveredContent?.interactible.name}</li>
                         <li>click to interact</li>
-                        <li>{hoveredContent?.locationContentID}</li>
                     </>
                 )}
                 {showOptions && (

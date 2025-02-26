@@ -40,6 +40,8 @@ const TradePage = () => {
     return inventory.some((item) => item.itemID === itemID);
   };
 
+  console.log(InteractiblesRemovedFromLocation)
+
   const getInteractible = (intId: number) => {
     if (shop?.buys) {
       const interactible = shop.buys.find((buy) => buy.interactible.interactibleID === intId);
@@ -116,13 +118,14 @@ const TradePage = () => {
                 key={index}
                 className={
                   InteractiblesRemovedFromLocation.find(
-                    (removed) => removed.interactibleID === trades.tradeInteractibleID
+                    (removed) => removed.interactibleID === trades.interactibleID
                   )
                     ? styles.canBuy
                     : styles.cantBuy
                 }
                 onClick={() => {
-                  if (InteractiblesRemovedFromLocation.find((removed) => removed.interactibleID === trades.tradeInteractibleID)) {
+                  console.log(trades)
+                  if (InteractiblesRemovedFromLocation.find((removed) => removed.interactibleID === trades.interactibleID)) {
                     setInventory((prevInventory) => [
                       ...prevInventory,
                       trades.item,
