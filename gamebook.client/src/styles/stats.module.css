@@ -1,17 +1,17 @@
-.hp{
+.hp {
     color: var(--red);
 }
-.energy{
+.energy {
     color: var(--yellow);
 }
-.radiation{
+.radiation {
     color: var(--orange);
 }
-.money{
+.money {
     color: var(--green);
 }
 
-.stats{
+.stats {
     position: absolute;
     font-size: 1.2rem;
     font-weight: 700;
@@ -19,6 +19,8 @@
     left: 2rem;
 }
 
-.stats p{
-    margin: .5rem;
+.stats p {
+    margin: 0.5rem;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
