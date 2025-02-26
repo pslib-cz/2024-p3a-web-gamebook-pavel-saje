@@ -3,27 +3,23 @@ import Circle from "../components/Circle";
 import "../styles/fight.css"
 import { useEffect, useState } from "react";
 import { domain } from "../utils";
-import { Npc } from "../types/data";
+import { NpcContent } from "../types/data";
+import styles from '../styles/fight.module.css'
 
 const Fight = () => {
   const {id} = useParams();
 
-  const parts = id?.split("&") ?? [];
-
-  const iKEy = parts[1] ?? null;
-  const npcID = parts[0] ? parseInt(parts[0]) : null;
-
-  const [npc, setNpc] = useState<Npc>();
+  const [data, setData] = useState<NpcContent>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${domain}/api/Npc/ByInteractibleId/${npcID}`);
+        const response = await fetch(`${domain}/api/Npc/ByContentId/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
         const json = await response.json();
-        setNpc(json);
+        setData(json);
       } catch (error) {
         console.error(error);
       }
@@ -32,10 +28,10 @@ const Fight = () => {
   }, [id]);
 
     return (
-        <div className="fight">
+        <div className={styles.fight}>
           <h1>Fight</h1>
-          <div className="circle">
-            {npc && <Circle npc={npc} iKey={iKEy ?? ''}/>}
+          <div>
+            {data && <Circle npc={data.npc} content={data.content}/>}
           </div>
           <p>space pro potvrzení</p>
         </div>

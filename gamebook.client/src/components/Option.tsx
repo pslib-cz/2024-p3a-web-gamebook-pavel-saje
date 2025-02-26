@@ -1,6 +1,5 @@
 import {
   InteractOption,
-  Interactible,
   Item,
   InteractiblesItem,
   LocationContent
@@ -48,8 +47,10 @@ const Option: React.FC<OptionProps> = ({
   if (!gameContext) {
     throw new Error("GameContext is undefined");
   }
-  const { inventory, setInventory, setInteractiblesRemovedFromLocation, InteractiblesRemovedFromLocation } =
-    gameContext;
+  const {
+    setInventory,
+    setInteractiblesRemovedFromLocation,
+  } = gameContext;
 
   return (
     <>
@@ -88,7 +89,7 @@ const Option: React.FC<OptionProps> = ({
           case 1:
             return (
               <Link className={styles.option}
-                to={`/Fight/${content.interactible.interactibleID}`}
+                to={`/Fight/${content.locationContentID}`}
               >
                 {interactOption.optionText}
               </Link>

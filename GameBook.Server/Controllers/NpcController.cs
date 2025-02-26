@@ -15,20 +15,48 @@ namespace GameBook.Server.Controllers
             _context = context;
         }
 
-        [HttpGet("ByInteractibleId/{id}")]
+        [HttpGet("ByContentId/{id}")]
         public ActionResult<ViewNpc> Get(int id)
         {
-                var npc = _context.InteractiblesNpcs
+            var content = _context.LocationContents
+                .Include(l => l.Location)
+                .Include(l => l.Interactible)
+                .Select(l => new DataLocationContent
+                {
+                    LocationContentID = l.LocationContentID,
+                    LocationID = l.LocationID,
+                    InteractibleID = l.InteractibleID,
+                    XPos = l.XPos,
+                    YPos = l.YPos,
+                    Location = new DataLocation
+                    {
+                        LocationID = l.Location.LocationID,
+                        Name = l.Location.Name,
+                        BackgroundImagePath = l.Location.BackgroundImagePath,
+                        RadiationGain = l.Location.RadiationGain,
+                    },
+                    Interactible = new DataInteractible
+                    {
+                        InteractibleID = l.Interactible.InteractibleID,
+                        Name = l.Interactible.Name,
+                        ImagePath = l.Interactible.ImagePath,
+                    }
+                })
+                .FirstOrDefault(l => l.LocationContentID == id);
+
+            var npc = _context.InteractiblesNpcs
                     .Include(inpc => inpc.Npc)
                     .ThenInclude(n => n.Weapon)
-                    .FirstOrDefault(inpc => inpc.InteractibleID == id);
+                    .FirstOrDefault(inpc => inpc.InteractibleID == content.InteractibleID);
 
                 if (npc == null)
                 {
                     return NotFound();
                 }
 
-                return Ok(new ViewNpc
+            var NpcContent = new NPCnContent
+            {
+                Npc = new ViewNpc
                 {
                     NpcID = npc.Npc.NpcID,
                     Name = npc.Npc.Name,
@@ -39,7 +67,17 @@ namespace GameBook.Server.Controllers
                         Name = npc.Npc.Weapon.Name,
                         Damage = npc.Npc.Weapon.Damage,
                     }
-                });
-            }
+                },
+                Content = content
+            };
+
+                return Ok(NpcContent);
         }
+        }
+
+    public class NPCnContent
+    {
+        public ViewNpc Npc { get; set; }
+        public DataLocationContent Content { get; set; }
+    }
     }

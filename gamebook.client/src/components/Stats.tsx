@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { GameContext } from '../context/GameContext';
 
 import styles from '../styles/stats.module.css';
@@ -12,8 +12,14 @@ const Stats: React.FC = () => {
 
   const { hp } = gameContext;
   const { energy } = gameContext;
-    const { radiation } = gameContext;
-    const { money } = gameContext;
+  const { radiation } = gameContext;
+  const { money } = gameContext;
+
+  useEffect(() => {
+    if(radiation >= 100 || hp <= 0){
+      alert("zkapals")
+    }
+  }, [radiation])
 
   return (
     <div className={styles.stats}>

@@ -1,0 +1,13 @@
+.fight{
+    width: 100%;
+}
+
+.circle{
+    display: grid;
+    grid-template-columns: 1fr 30% 1fr;
+}
+
+.circle img{
+    width: 100%;
+    
+}

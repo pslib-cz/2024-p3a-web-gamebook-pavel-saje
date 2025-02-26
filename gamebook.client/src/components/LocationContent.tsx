@@ -126,11 +126,8 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                   }}
                 >
                     <img
-                      style={{ width: `${100}%`, 
-                      // height: "2rem"
+                      style={{ width: `${100}%`,
                      }}
-                      // src={`data:image/webp;base64,${content.interactible.imageBase64}`}
-                      // src="https://localhost:7092/Interactibles%5CFoodCan.png"
                       src={`${domain}/${encodeURIComponent(content.interactible.imagePath)}`}
                       alt={content.interactible.name}
                     />
@@ -151,7 +148,6 @@ const Content: React.FC<ContentProps> = ({ location }) => {
           <>
             <li>{hoveredContent?.interactible.name}</li>
             <li>click to interact</li>
-            <li>{hoveredContent?.locationContentID}</li>
           </>
         )}
         {showOptions && (

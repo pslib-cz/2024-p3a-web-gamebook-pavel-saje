@@ -1,32 +1,34 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { GameContext } from '../context/GameContext';
-import { Npc } from '../types/data';
+import { LocationContent, Npc } from '../types/data';
 import { useNavigate } from 'react-router-dom';
+import { domain } from '../utils';
+import styles from '../styles/fight.module.css'
+
 
 interface CircleProps {
   npc: Npc;
-  iKey: string;
+  content: LocationContent;
 }
 
-const Circle: React.FC<CircleProps> = ({npc, iKey}) => {
-  const duration = 2000;
-
+const Circle: React.FC<CircleProps> = ({npc, content}) => {
+  
   const emptyStart = 120; 
   const emptyEnd = emptyStart + 30;
   const filledEnd = emptyEnd + 10;
-
+  
   const color = "#00FF00";
-
+  
   const radius = 90;
   const circumference = 2 * Math.PI * radius;
-
+  
   const emptyStartOffset = (emptyStart / 360) * circumference;
   const emptyEndOffset = (emptyEnd / 360) * circumference;
   const filledEndOffset = (filledEnd / 360) * circumference;
-
+  
   const [currentAngle, setCurrentAngle] = useState(0);
   const rotationRef = useRef<SVGPolygonElement>(null);
-
+  
   const gameContext = useContext(GameContext);
   if (!gameContext) {
     throw new Error('GameContext must be used within a GameProvider');
@@ -34,6 +36,10 @@ const Circle: React.FC<CircleProps> = ({npc, iKey}) => {
   const { hp, setHp, equipedWeapon, lastLocation, setInteractiblesRemovedFromLocation } = gameContext;
   const [isResetting, setIsResetting] = useState(false);
   const navigate = useNavigate();
+  
+  const fast = 600;
+  const slow = 1700;
+  const duration = equipedWeapon ? (100 - equipedWeapon.damage)*14 >= fast ? (100 - equipedWeapon.damage)*14 : fast : slow;
 
   const [wholeRotation, setWholeRotation] = useState(0);
 
@@ -47,22 +53,17 @@ const Circle: React.FC<CircleProps> = ({npc, iKey}) => {
     const animate = (timestamp: number) => {
       if (isResetting) {
         setWholeRotation(Math.random() * 360);
-        // Resetujeme úhel a pozici polygonu
         setCurrentAngle(0);
         if (rotationRef.current) {
           rotationRef.current.setAttribute("transform", "rotate(0, 0, 0)");
         }
-        setIsResetting(false); // Ukončíme resetovací stav
+        setIsResetting(false);
         return;
       }
   
       const elapsed = (timestamp - start) % duration;
       angle = (360 * elapsed) / duration;
       setCurrentAngle(angle - 90);
-      // if(angle>= 350){
-      //   setIsResetting(true);
-      //   setHp((prevHp: number) => prevHp - npc.weapon.damage)
-      // }
   
       if (rotationRef.current) {
         rotationRef.current.setAttribute("transform", `rotate(${angle}, 0, 0)`);
@@ -108,15 +109,35 @@ const Circle: React.FC<CircleProps> = ({npc, iKey}) => {
     if (npcsHp <= 0) {
       alert("ty vrahu")
       navigate(`/game/${lastLocation.locationID}`);
-      setInteractiblesRemovedFromLocation((prevInteractiblesRemovedFromLocation: string[]) => {
-        return [...prevInteractiblesRemovedFromLocation, iKey];
+      setInteractiblesRemovedFromLocation((prevInteractiblesRemovedFromLocation: LocationContent[]) => {
+        return [...prevInteractiblesRemovedFromLocation, content];
       });
     }
   }, [hp, npcsHp]);
 
   return (
-    <div>
-      <svg viewBox="0 0 230 230" style={{transform: `rotate(${wholeRotation}deg)`}}>
+    <div className={styles.circle}>
+      <div className={styles.npc}>
+        <img
+style={{
+  WebkitFilter: `drop-shadow(4px 4px 2px rgba(255, 0, 0, ${1 - (npcsHp/npc.health)})) drop-shadow(-4px -4px 2px rgba(255, 0, 0, ${1 - (npcsHp/npc.health)}))`,
+  filter: `drop-shadow(4px 4px 2px rgba(255, 0, 0, ${1 - (npcsHp/npc.health)})) drop-shadow(-4px -4px 2px rgba(255, 0, 0, ${1 - (npcsHp/npc.health)}))`
+}}
+          src={`${domain}/${encodeURIComponent(
+            content.interactible.imagePath
+          )}`}
+          alt={content.interactible.name}
+        />
+        <ul>
+          <li>{npc.weapon.name}</li>
+          <li>{npc.weapon.damage}</li>
+          <li>{npcsHp}</li>
+        </ul>
+      </div>
+      <svg
+        viewBox="0 0 230 230"
+        style={{ transform: `rotate(${wholeRotation}deg)` }}
+      >
         <circle
           cx="110"
           cy="110"
@@ -160,11 +181,10 @@ const Circle: React.FC<CircleProps> = ({npc, iKey}) => {
         </g>
       </svg>
 
-      <p>{equipedWeapon?.name}</p>
-      <p>Current Angle: {currentAngle.toFixed(0)}°</p>
-      <p>HP: {hp}</p>
-      <p>EnemyHP: {npcsHp}</p>
-      <p>{iKey}</p>
+      <ul>
+        <li>{equipedWeapon?.name}</li>
+        <li>{equipedWeapon?.damage}</li>
+      </ul>
     </div>
   );
 };

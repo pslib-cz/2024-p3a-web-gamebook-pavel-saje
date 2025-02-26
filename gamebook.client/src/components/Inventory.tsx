@@ -82,6 +82,12 @@ const Inventory: React.FC = () => {
         }
     };
 
+    const calculateTotalRadiationGain = () => {
+        return inventory.reduce((total, item) => {
+            return total + (item ? item.radiationGain : 0);
+        }, 0);
+    };
+
     const handleToggleInventory = () => {
         setIsVisible(!isVisible);
         if (!isVisible) {

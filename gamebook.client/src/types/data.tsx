@@ -121,6 +121,11 @@ export type Npc = {
     weapon: Weapon;
 }
 
+export type NpcContent = {
+    npc: Npc;
+    content: LocationContent;
+}
+
 export type RequiredItems = {
     requiredItemsID: number;
     locationID: number;

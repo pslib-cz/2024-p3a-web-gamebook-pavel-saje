@@ -45,7 +45,7 @@ const NetopyriVarle: React.FC = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-
+                
                 const response = await fetch(
                     `https://localhost:7092/api/Locations/${id}${lastLocation && `?currentId=${lastLocation.locationID}`}`
                 );
@@ -63,26 +63,36 @@ const NetopyriVarle: React.FC = () => {
                     (itemId: number) => inventoryItemIds.includes(itemId)
                 );
 
-                console.log("requireditemsids ", requiredItemIds);
-
+                // console.log("requireditemsids ", requiredItemIds);
+                console.log("1", "target:", targetLocation, "last:", lastLocation, "json", json)
                 if (!allItemsPresent) {
-                    navigate(`/Game/${lastLocation}`);
+                    console.log("lastlocation = ", lastLocation)
+                    navigate(`/Game/${lastLocation.locationID}`);
                     alert("némáš potřebné věci pro lokaci")
                 } else if(json?.travelCost > energy){
-                    navigate(`/Game/${lastLocation}`);
+                    console.log("lastlocation = ", lastLocation)
+                    navigate(`/Game/${lastLocation.locationID}`);
+                    
                     alert("nemáš dostatek energie na cestu")
                 }
                  else {
                     setTargetLocation(json);
                     setLastLocation(json);
-                    console.log(json.end)
-                    console.log(targetLocation)
+                    // console.log(json)
+                    // console.log("targetLocation = ", targetLocation)
                     
-                    if(targetLocation?.travelCost){
+                    if(json?.travelCost){
                         setEnergy((prevEnergy: number) => prevEnergy - json.travelCost)
                     }
 
-                    localStorage.setItem("lastLocationId", json.toString());
+                    // localStorage.setItem("lastLocationId", json.toString());
+                    console.log("2", "target:", targetLocation, "last:", lastLocation, "json", json)
+                }
+                if (targetLocation) {
+                    const totalRadiationGain =
+                        targetLocation.radiationGain +
+                        inventory.reduce((acc, item) => acc + item.radiationGain, 0);
+                    setRadiation(totalRadiationGain);
                 }
             } catch (error) {
                 if (error instanceof Error) {

@@ -20,7 +20,8 @@ import {
     type TradeInteractible,
     type TradesInteractible,
     type End,
-    type Weapon
+    type Weapon,
+    type NpcContent
 } from "./data";
 
 export type {
@@ -45,5 +46,6 @@ export type {
     TradeInteractible,
     TradesInteractible,
     End,
-    Weapon
+    Weapon,
+    NpcContent
 }

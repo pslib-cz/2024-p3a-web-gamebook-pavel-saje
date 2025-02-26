@@ -1,4 +1,5 @@
-﻿namespace GameBook.Server.Models
+﻿
+namespace GameBook.Server.Models
 {
     public class ViewNpc
     {
@@ -7,5 +8,10 @@
         public int? Health { get; set; }
         public int? WeaponID { get; set; }
         public ViewWeapon? Weapon { get; set; }
+
+        public static implicit operator ViewNpc(DataInteractiblesNpc v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

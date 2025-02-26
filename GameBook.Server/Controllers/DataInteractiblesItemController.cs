@@ -39,6 +39,7 @@ namespace GameBook.Server.Controllers
                         Category = i.Item.Category,
                         Stackable = i.Item.Stackable,
                         TradeValue = i.Item.TradeValue,
+                        RadiationGain = i.Item.RadiationGain,
                     }
                 }).ToList();
 

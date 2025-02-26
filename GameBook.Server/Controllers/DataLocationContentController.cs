@@ -52,6 +52,27 @@ namespace GameBook.Server.Controllers
             var content = _context.LocationContents
                 .Include(l => l.Location)
                 .Include(l => l.Interactible)
+                .Select(l => new DataLocationContent
+                {
+                    LocationContentID = l.LocationContentID,
+                    LocationID = l.LocationID,
+                    InteractibleID = l.InteractibleID,
+                    XPos = l.XPos,
+                    YPos = l.YPos,
+                    Location = new DataLocation
+                    {
+                        LocationID = l.Location.LocationID,
+                        Name = l.Location.Name,
+                        BackgroundImagePath = l.Location.BackgroundImagePath,
+                        RadiationGain = l.Location.RadiationGain,
+                    },
+                    Interactible = new DataInteractible
+                    {
+                        InteractibleID = l.Interactible.InteractibleID,
+                        Name = l.Interactible.Name,
+                        ImagePath = l.Interactible.ImagePath,
+                    }
+                })
                 .FirstOrDefault(l => l.LocationContentID == id);
 
             if (content == null)

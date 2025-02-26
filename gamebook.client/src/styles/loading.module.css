@@ -33,7 +33,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     position: relative;
-    overflow: hidden;
     box-sizing: border-box;
   }
   
@@ -59,7 +58,6 @@
   .text {
     display: inline-block;
     white-space: nowrap;
-    overflow: hidden;
     border-right: 0.2em solid green; /* Cursor */
     animation:
       typeAndDelete 4s steps(11) infinite,
