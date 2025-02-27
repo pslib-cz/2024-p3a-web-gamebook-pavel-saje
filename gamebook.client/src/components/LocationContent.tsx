@@ -56,14 +56,15 @@ const Content: React.FC<ContentProps> = ({ location }) => {
         fetchData();
         setShowClick(false);
         setShowOptions(false)
-    }, [location]);
+    }, [location, InteractiblesRemovedFromLocation]);
 
     
 
     useEffect(() => {
         const handleMouseMove = (event: MouseEvent) => {
-            !showOptions &&
+            if (!showOptions) {
                 setMousePosition({ x: event.clientX, y: event.clientY });
+            }
         };
 
         window.addEventListener("mousemove", handleMouseMove);
@@ -99,10 +100,10 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                             "-" +
                             content.interactibleID;
                         return !InteractiblesRemovedFromLocation.find(
-                            (removed) =>
-                                removed.locationContentID ===
-                                content.locationContentID
-                            // return (1 > 0
+                            (removed) => {
+                                return removed.locationContentID ===
+                                content.locationContentID;
+                            }
                         ) ? (
                             <>
                                 <span
@@ -118,12 +119,15 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                                         aspectRatio: 1,
                                     }}
                                     onMouseEnter={() => {
-                                        !hoveredOptions && setShowClick(true);
-                                        iKey != key &&
-                                            (setHoveredContent(null),
-                                            setHoveredOptions(null),
-                                            setShowOptions(false),
-                                            setShowClick(true));
+                                        if (!hoveredOptions) {
+                                            setShowClick(true);
+                                        }
+                                        if(iKey != key){
+                                            setHoveredContent(null);
+                                            setHoveredOptions(null);
+                                            setShowOptions(false);
+                                            setShowClick(true);
+                                        }
                                         setHoveredContent(content);
                                         setHoveredOptions(
                                             getOptions(
@@ -133,9 +137,10 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                                     }}
                                     onMouseLeave={() => {
                                         setShowClick(false);
-                                        !showOptions &&
-                                            (setHoveredContent(null),
-                                            setHoveredOptions(null));
+                                        if(!showOptions){
+                                            setHoveredContent(null);
+                                            setHoveredOptions(null);
+                                        }
                                     }}
                                     onClick={() => {
                                         setIKey(key);

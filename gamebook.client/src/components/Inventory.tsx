@@ -28,9 +28,23 @@ const Inventory: React.FC = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const fetchTypes = async () => {
+            const response = await fetch(
+                `${domain}/api/Items/Consumables&Weapons`
+            );
+            const data = await response.json();
+
+            setWeapons(data.weapons);
+            setConsumables(data.consumables);
+        };
+        fetchTypes();
+    }, []);
+
     if (!gameContext) {
         return <div>Error: Game context is not available.</div>;
     }
+
 
     const {
         hp,
@@ -46,18 +60,6 @@ const Inventory: React.FC = () => {
         resetEquipedWeapon,
     } = gameContext;
 
-    useEffect(() => {
-        const fetchTypes = async () => {
-            const response = await fetch(
-                `${domain}/api/Items/Consumables&Weapons`
-            );
-            const data = await response.json();
-
-            setWeapons(data.weapons);
-            setConsumables(data.consumables);
-        };
-        fetchTypes();
-    }, []);
 
     const findConsumable = (id: number) => {
         return consumables.find(
@@ -80,12 +82,6 @@ const Inventory: React.FC = () => {
         } else {
             setEnergy(defaultEnergy);
         }
-    };
-
-    const calculateTotalRadiationGain = () => {
-        return inventory.reduce((total, item) => {
-            return total + (item ? item.radiationGain : 0);
-        }, 0);
     };
 
     const handleToggleInventory = () => {

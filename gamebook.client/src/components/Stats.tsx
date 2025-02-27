@@ -19,9 +19,9 @@ const Stats: React.FC = () => {
 
   useEffect(() => {
     if(radiation >= 100 || hp <= 0){
-      navigate("./Dialog/30")
+      navigate("../Dialog/30")
     }
-  }, [radiation])
+  }, [radiation, hp])
 
   return (
     <div className={styles.stats}>
