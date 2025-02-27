@@ -104,7 +104,7 @@ const Circle: React.FC<CircleProps> = ({npc, content}) => {
 
   useEffect(() => {
     if (hp <= 0) {
-      navigate("./Dialog/30")
+      navigate("../Dialog/30")
     }
     if (npcsHp <= 0) {
       alert("ty vrahu")
