@@ -813,7 +813,6 @@ C:\Users\juki_\Documents\Gamebook\GameBook.Server\obj\Debug\net8.0\refint\GameBo
 C:\Users\juki_\Documents\Gamebook\GameBook.Server\obj\Debug\net8.0\GameBook.Server.pdb
 C:\Users\juki_\Documents\Gamebook\GameBook.Server\obj\Debug\net8.0\GameBook.Server.genruntimeconfig.cache
 C:\Users\juki_\Documents\Gamebook\GameBook.Server\obj\Debug\net8.0\ref\GameBook.Server.dll
-C:\Users\User\Source\Repos\2024-p3a-web-gamebook-pavel-saje\GameBook.Server\bin\Debug\net8.0\GameBook.Server.staticwebassets.runtime.json
 D:\GameBook\GameBook.Server\bin\Debug\net8.0\GameBook.Server.staticwebassets.runtime.json
 D:\KOKOTSAJA\GameBook.Server\obj\Debug\net8.0\GameBook.Server.csproj.AssemblyReference.cache
 D:\KOKOTSAJA\GameBook.Server\obj\Debug\net8.0\spa.proxy.json

@@ -9,6 +9,8 @@ namespace GameBook.Server.Controllers
         [HttpGet("{path}")]
         public IActionResult GetImage(string path)
         {
+            if (path == null) return BadRequest("Empty file path");
+
             var uploads = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
 
             var filePath = Path.Combine(uploads, path);
