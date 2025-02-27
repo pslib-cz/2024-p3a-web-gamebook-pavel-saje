@@ -46,10 +46,16 @@ const TradePage = () => {
     if (shop?.buys) {
       const interactible = shop.buys.find((buy) => buy.interactible.interactibleID === intId);
       return interactible ? interactible.interactible : null;
+    }else if (shop?.sells) {
+      const interactible = shop.sells.find((sell) => sell.interactible.interactibleID === intId);
+      return interactible ? interactible.interactible : null; 
     } else if (shop?.trades) {
       const interactible = shop.trades.find((trade) => trade.interactible.interactibleID === intId);
       return interactible ? interactible.interactible : null;
-    }
+    } else if (shop?.tradeInteractibles) {
+      const interactible = shop.tradeInteractibles.find((trade) => trade.interactible.interactibleID === intId);
+      return interactible ? interactible.interactible : null; 
+    } 
     return null;
   };
 
@@ -112,7 +118,7 @@ const TradePage = () => {
         )}
         {shop?.tradeInteractibles && shop.tradeInteractibles.length > 0 && (
           <>
-            <h2 className={styles.def}>za Interactibles - prac. název</h2>
+            <h2 className={styles.def}>Úkolové věci</h2>
             {shop.tradeInteractibles.map((trades, index) => (
                 <div
                 key={index}
@@ -136,27 +142,6 @@ const TradePage = () => {
                 <p>{trades.text}</p>
                 </div>
             ))}
-
-            {/* {shop.tradeInteractibles.map((trades, index) => (
-              <div
-                key={index}
-                onClick={() => {
-                  setInventory((prevInventory) => [
-                    ...prevInventory,
-                    trades.tradeInteractible.item,
-                  ]);
-                }}
-              >
-                <p>{trades.tradeInteractible.text}</p>
-                <p>
-                  {InteractiblesRemovedFromLocation.includes(
-                    `${lastLocation.locationID}-${index}-${trades.tradeInteractible.interactible.interactibleID}`
-                  )
-                    ? "Removed"
-                    : "Available"}
-                </p>
-              </div>
-            ))} */}
           </>
         )}
         {shop?.buys && shop.buys.length > 0 && (
@@ -164,27 +149,60 @@ const TradePage = () => {
             <h2 className={styles.def}>Nákupy</h2>
             {shop.buys.map((buys, index) => (
               <div
-                key={index}
-                className={
-                  money >= buys.item.tradeValue ? styles.canBuy : styles.cantBuy
+              key={index}
+              className={
+                money >= buys.item.tradeValue ? styles.canBuy : styles.cantBuy
+              }
+              onClick={() => {
+                if (money >= buys.item.tradeValue) {
+                  setMoney(
+                    (prevMoney: number) => prevMoney - buys.item.tradeValue
+                  );
+                  setInventory((prevInventory) => [
+                    ...prevInventory,
+                    buys.item,
+                  ]);
                 }
-                onClick={() => {
-                  if (money >= buys.item.tradeValue) {
-                    setMoney(
-                      (prevMoney: number) => prevMoney - buys.item.tradeValue
-                    );
-                    setInventory((prevInventory) => [
-                      ...prevInventory,
-                      buys.item,
-                    ]);
-                  }
-                }}
+              }}
               >
                 <p>
                   {buys.item.name}...{buys.item.tradeValue}
                 </p>
               </div>
             ))}
+          </>
+        )}
+        {shop?.sells && shop.sells.length > 0 && (
+          <>
+            <h2 className={styles.def}>Výkupy</h2>
+            {shop.sells.map((sell, index) => (
+              <div
+                key={index}
+                className={`${styles.trades} ${
+                  isInInvent(sell.item.itemID)
+                    ? styles.canBuy
+                    : styles.cantBuy
+                }`}
+                onClick={() => {
+                  if (isInInvent(sell.item.itemID)) {
+                    setInventory((prevInventory) => {
+                      const itemIndex = prevInventory.findIndex(
+                        (item) => item.itemID === sell.item.itemID
+                      );
+                      if (itemIndex !== -1) {
+                        const newInventory = [...prevInventory];
+                        newInventory.splice(itemIndex, 1);
+                        return newInventory;
+                      }
+                      return prevInventory;
+                    });
+                    setMoney((prevMoney) => prevMoney + sell.item.tradeValue);
+                  }
+                }}
+              >
+                <p>{sell.item.name}...{sell.item.tradeValue}</p>
+              </div>
+            ))} 
           </>
         )}
       </div>

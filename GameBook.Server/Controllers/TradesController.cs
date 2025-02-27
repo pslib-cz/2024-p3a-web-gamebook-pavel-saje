@@ -138,13 +138,36 @@ namespace GameBook.Server.Controllers
                     
                 }).ToListAsync();
 
+            var sells = await _context.Sell
+                .Include(s => s.Item)
+                .Include(s => s.Interactible)
+                .Where(s => s.interactibleID == id)
+                .Select(s => new ViewSell
+                {
+                    SellID = s.SellID,
+                    interactibleID = s.interactibleID,
+                    itemID = s.itemID,
+                    Interactible = new ViewInteractible
+                    {
+                        InteractibleID = s.interactibleID,
+                        Name = s.Interactible.Name,
+                        ImagePath = s.Interactible.ImagePath
+                    },
+                    Item = new ViewItem
+                    {
+                        ItemID = s.Item.ItemID,
+                        Name = s.Item.Name,
+                        TradeValue = s.Item.TradeValue,
+                    }
+                }).ToListAsync();
 
             var shops = new shops
             {
                 
                 trades = trades,
                 buys = buys,
-                tradeInteractibles = tradesInteractible
+                tradeInteractibles = tradesInteractible,
+                sells = sells
             };
 
             return Ok(shops);
@@ -155,6 +178,7 @@ namespace GameBook.Server.Controllers
             public List<ViewTrades> trades { get; set; }
             public List<ViewBuy> buys { get; set; }
             public List<ViewTradeInteractible> tradeInteractibles { get; set; }
+            public List<ViewSell> sells { get; set; }
         }
 
 

@@ -2,8 +2,10 @@ import React, { useContext, useEffect } from 'react';
 import { GameContext } from '../context/GameContext';
 
 import styles from '../styles/stats.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Stats: React.FC = () => {
+  const navigate = useNavigate();
   const gameContext = useContext(GameContext);
 
   if (!gameContext) {
@@ -17,7 +19,7 @@ const Stats: React.FC = () => {
 
   useEffect(() => {
     if(radiation >= 100 || hp <= 0){
-      alert("zkapals")
+      navigate("./Dialog/30")
     }
   }, [radiation])
 

@@ -132,10 +132,19 @@ export type RequiredItems = {
     itemID: number;
 };
 
+export type Sell = {
+    sellID: number,
+    interactibleID: number,
+    itemID: number,
+    interactible: Interactible,
+    item: Item
+}
+
 export type Shops = {
     trades: Trades[],
     buys: Buy[],
     tradeInteractibles: TradesInteractible[],
+    sells: Sell[]
 }
 
 export type Trade = {

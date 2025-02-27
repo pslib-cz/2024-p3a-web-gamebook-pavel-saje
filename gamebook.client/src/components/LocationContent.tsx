@@ -28,6 +28,16 @@ const Content: React.FC<ContentProps> = ({ location }) => {
     }
     const { InteractiblesRemovedFromLocation } = gameContext;
 
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [showOptions, setShowOptions] = useState(false);
+    const [showClick, setShowClick] = useState(false);
+    const [hoveredContent, setHoveredContent] =
+        useState<LocationContent | null>(null);
+    const [hoveredOptions, setHoveredOptions] = useState<
+        InteractiblesOption[] | null
+    >(null);
+    const [iKey, setIKey] = useState<string | null>(null);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -44,17 +54,11 @@ const Content: React.FC<ContentProps> = ({ location }) => {
             }
         };
         fetchData();
+        setShowClick(false);
+        setShowOptions(false)
     }, [location]);
 
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [showOptions, setShowOptions] = useState(false);
-    const [showClick, setShowClick] = useState(false);
-    const [hoveredContent, setHoveredContent] =
-        useState<LocationContent | null>(null);
-    const [hoveredOptions, setHoveredOptions] = useState<
-        InteractiblesOption[] | null
-    >(null);
-    const [iKey, setIKey] = useState<string | null>(null);
+    
 
     useEffect(() => {
         const handleMouseMove = (event: MouseEvent) => {

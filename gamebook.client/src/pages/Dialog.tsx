@@ -15,7 +15,7 @@ const DialogPage = () => {
     return <div>Erro: GameContext</div>;
   }
 
-  const { lastLocation, radiation, setRadiation, inventory } = gameContext;
+  const { lastLocation, radiation, hp } = gameContext;
 
   const [dialog, setDialog] = useState<Dialog>();
   const [error, setError] = useState<Error | null>(null);
@@ -54,11 +54,13 @@ const DialogPage = () => {
         src={`${domain}${dialog?.interactible.imagePath}`}
         alt={dialog?.interactible.name}
       /> */}
+        {dialog?.interactible.imagePath &&
         <img
           style={{ width: "100%", height: "100vh" }}
           src={`${domain}/${encodeURIComponent(dialog?.interactible.imagePath || '')}`}
           alt={dialog?.interactible.name}
         />
+}
       <div className={styles.box}>
         <h2>{dialog?.interactible.name}</h2>
         {/* TODO */}
@@ -85,7 +87,7 @@ const DialogPage = () => {
             {dialog?.nextDialogID && (
               <Link to={`/Dialog/${dialog.nextDialogID}`}>Další</Link>
             )}
-            <Link to={lastLocation.end != null ? "/" : `/Game/lastLocation.locationID`}>Ukončit</Link>
+            <Link to={lastLocation.end != null || radiation>=100 || hp<=0 ? "/" : `/Game/lastLocation.locationID`}>Ukončit</Link>
           </div>
         </div>
       </div>
