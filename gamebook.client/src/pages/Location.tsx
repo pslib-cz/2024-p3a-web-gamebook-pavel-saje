@@ -23,28 +23,6 @@ const NetopyriVarle: React.FC = () => {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-<<<<<<< HEAD
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://localhost:7092/api/Locations/${id}${
-            lastLocation && `?currentId=${lastLocation.locationID}`
-          }`
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const json = await response.json();
-        const requiredItemIds =
-          json?.requiredItems.map((item: RequiredItems) => item.itemID) || [];
-
-        const inventoryItemIds = inventory.map((item) => item.itemID);
-        const allItemsPresent = requiredItemIds.every((itemId: number) =>
-          inventoryItemIds.includes(itemId)
-        );
-
-=======
   
 
   if (!gameContext) {
@@ -81,7 +59,6 @@ const NetopyriVarle: React.FC = () => {
           inventoryItemIds.includes(itemId)
         );
 
->>>>>>> 91aed314dbebe6fe8d08c3ddc7bb46ed7bed8fe9
         if (!allItemsPresent) {
           navigate(`/Game/${lastLocation.locationID}`);
           alert("némáš potřebné věci pro lokaci");
@@ -115,33 +92,6 @@ const NetopyriVarle: React.FC = () => {
       }
     };
     fetchData();
-<<<<<<< HEAD
-  }, [id, navigate, targetLocation]);
-
-  if (!gameContext) {
-    return <div>Error: Game context is not available.</div>;
-  }
-
-  const {
-    lastLocation,
-    setLastLocation,
-    setRadiation,
-    inventory,
-    setEnergy,
-    energy,
-  } = gameContext;
-
-  if (targetLocation) {
-    const totalRadiationGain =
-      targetLocation.radiationGain +
-      inventory.reduce((acc, item) => acc + item.radiationGain, 0);
-    setRadiation(totalRadiationGain);
-  }
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-=======
   }, [id]);
 
   if (targetLocation) {
@@ -154,7 +104,6 @@ const NetopyriVarle: React.FC = () => {
     return <div>Error: {error.message}</div>;
   }
 
->>>>>>> 91aed314dbebe6fe8d08c3ddc7bb46ed7bed8fe9
   if (targetLocation?.end != null) {
     navigate(`/Dialog/${targetLocation.end[0].DialogID}`);
   }
