@@ -1,13 +1,89 @@
-.fight{
+.fight {
     width: 100%;
 }
 
-.circle{
+.circle {
     display: grid;
     grid-template-columns: 1fr 30% 1fr;
 }
 
-.circle img{
+.circle img {
     width: 100%;
-    
+}
+
+.attackhelper {
+    position: absolute;
+    bottom: 0vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spacekey {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #495057;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 rgba(73, 80, 87, 0.8), inset -2px -2px 10px #131313;
+    font-weight: 700;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.spacekey:active {
+    box-shadow: 3px 3px 0 rgba(73, 80, 87, 0.8), inset -7px -7px 10px #131313;
+    transform: translate(calc((2px)-50%), calc((2px)-50%));
+    transition: 0.01s;
+}
+
+.text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--green);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.npc.hit {
+    animation-name: hit;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.npc.criticalhit {
+    animation-name: critical;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes hit {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5%);
+    }
+    75% {
+        transform: translateX(5%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes critical {
+    0% {
+        transform: translate(0);
+    }
+    25% {
+        transform: translate(-10%, 2%);
+    }
+    75% {
+        transform: translate(10%, -2%);
+    }
+    100% {
+        transform: translate(0);
+    }
 }

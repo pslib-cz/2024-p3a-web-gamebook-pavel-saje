@@ -1,9 +1,9 @@
-.circle{
+.circle {
     width: 20rem;
     aspect-ratio: 1;
 }
 
-body{
+body {
     /* background-image: url('../images/FightScene.jpg'); */
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: darken;
@@ -11,7 +11,7 @@ body{
     color: whitesmoke;
 }
 
-body #root{
+body #root {
     display: flex;
     flex-direction: column;
     align-items: center;

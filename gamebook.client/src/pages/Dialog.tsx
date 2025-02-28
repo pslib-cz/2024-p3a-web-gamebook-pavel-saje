@@ -14,6 +14,8 @@ const DialogPage = () => {
 
   const gameContext = useContext(GameContext);
 
+<<<<<<< HEAD
+=======
   if (!gameContext) {
     return <div>Erro: GameContext</div>;
   }
@@ -21,6 +23,7 @@ const DialogPage = () => {
   const { lastLocation, radiation, hp } = gameContext;
 
 
+>>>>>>> 91aed314dbebe6fe8d08c3ddc7bb46ed7bed8fe9
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -34,6 +37,12 @@ const DialogPage = () => {
     };
     fetchData();
   }, [id]);
+
+  if (!gameContext) {
+    return <div>Erro: GameContext</div>;
+  }
+
+  const { lastLocation, radiation, hp } = gameContext;
 
   return (
     <>
