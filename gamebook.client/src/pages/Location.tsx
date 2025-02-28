@@ -7,6 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import { GameContext } from "../context/GameContext";
 
+
 import { DataLocation, RequiredItems } from "../types";
 import { domain } from "../utils";
 import Loading from "../components/Loading";
@@ -23,27 +24,11 @@ const NetopyriVarle: React.FC = () => {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  
-
-  if (!gameContext) {
-    return <div>Error: Game context is not available.</div>;
-  }
-
-  const {
-    lastLocation,
-    setLastLocation,
-    setRadiation,
-    inventory,
-    setEnergy,
-    energy,
-  } = gameContext;
-
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://localhost:7092/api/Locations/${id}${
+          `${domain}/api/Locations/${id}${
             lastLocation && `?currentId=${lastLocation.locationID}`
           }`
         );
@@ -94,6 +79,18 @@ const NetopyriVarle: React.FC = () => {
     fetchData();
   }, [id]);
 
+  if (!gameContext) {
+    return <div>Error: Game context is not available.</div>;
+  }
+
+  const {
+    lastLocation,
+    setLastLocation,
+    setRadiation,
+    inventory,
+    setEnergy,
+    energy,
+  } = gameContext;
   if (targetLocation) {
     const totalRadiationGain =
       targetLocation.radiationGain +
