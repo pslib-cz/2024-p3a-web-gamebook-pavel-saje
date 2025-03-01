@@ -151,10 +151,7 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                                     <img
                                         style={{
                                             width: `${100}%`,
-                                            // height: "2rem"
                                         }}
-                                        // src={`data:image/webp;base64,${content.interactible.imageBase64}`}
-                                        // src="https://localhost:7092/Interactibles%5CFoodCan.png"
                                         src={`${domain}/${encodeURIComponent(
                                             content.interactible.imagePath
                                         )}`}

@@ -189,6 +189,6 @@ export type Weapon = {
 
 export type End = {
     endID: number;
-    LocatioID: number;
-    DialogID: number;
+    locatioID: number;
+    dialogID: number;
 };

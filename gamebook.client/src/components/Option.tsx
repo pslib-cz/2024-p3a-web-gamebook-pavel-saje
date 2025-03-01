@@ -26,7 +26,7 @@ const Option: React.FC<OptionProps> = ({
     const fetchData = async () => {
       if (location) {
         try {
-          const response = await fetch(`${domain}/api/DataInteractiblesItem`);
+          const response = await fetch(`${domain}/api/InteractiblesItem`);
           const data = await response.json();
           setItem(
             data.find(
@@ -34,7 +34,9 @@ const Option: React.FC<OptionProps> = ({
                 intItem.interactibleID === content.interactible.interactibleID
             )
           );
-        } catch (error) {}
+        } catch (error) {
+          console.log(error)
+        }
       }
     };
 

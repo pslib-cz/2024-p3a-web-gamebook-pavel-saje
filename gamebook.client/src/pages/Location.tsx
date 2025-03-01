@@ -102,7 +102,8 @@ const NetopyriVarle: React.FC = () => {
   }
 
   if (targetLocation?.end != null) {
-    navigate(`/Dialog/${targetLocation.end[0].DialogID}`);
+    console.log("////////////", targetLocation.end[0].endID)
+    navigate(`/Dialog/${targetLocation.end[0].dialogID}`);
   }
   return (
     <>

@@ -17,7 +17,7 @@ const DialogPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${domain}/api/DataDialog/${id}`);
+        const response = await fetch(`${domain}/api/Dialog/${id}`);
         const json = await response.json();
         setDialog(json);
       } catch (error) {
@@ -45,7 +45,7 @@ const DialogPage = () => {
           height: "100vh",
         }}
       >
-        {dialog?.interactible.imagePath &&
+        {dialog?.interactible?.imagePath &&
           <img
             style={{ width: "100%", height: "100vh" }}
             src={`${domain}/${encodeURIComponent(dialog?.interactible.imagePath || '')}`}
@@ -53,7 +53,7 @@ const DialogPage = () => {
           />
         }
         <div className={styles.box}>
-          <h2>{dialog?.interactible.name}</h2>
+          <h2>{dialog?.interactible?.name}</h2>
           {/* TODO */}
           {typeof dialog?.text === "string" && (
             <StaggerText
