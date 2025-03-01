@@ -12,7 +12,7 @@ export type EndpointHeader = {
 //headers
 
 export const EndpointHeaderMap: Record<string, EndpointHeader> = {
-    "/api/Category": {
+    "/api/ItemCategory": {
         primaryKey: "categoryID",
         content: [
             {
@@ -22,7 +22,7 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
             },
         ],
     },
-    "/api/Consumable": {
+    "/api/ConsumableItem": {
         primaryKey: "consumableItemID",
         content: [
             {
@@ -47,7 +47,7 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
             },
         ],
     },
-    "/api/InteractibleItems": {
+    "/api/InteractiblesItem": {
         primaryKey: "interactibleItemID",
         content: [
             {
@@ -62,7 +62,7 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
             },
         ],
     },
-    "/api/InteractibleOptions": {
+    "/api/DataInteractiblesOption": {
         primaryKey: "interactibleOptionID",
         content: [
             {
@@ -77,7 +77,7 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
             },
         ],
     },
-    "/api/Interactibles": {
+    "/api/Interactible": {
         primaryKey: "interactibleID",
         content: [
             {
@@ -142,7 +142,7 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
             },
         ],
     },
-    "/api/LocationPaths": {
+    "/api/LocationPath": {
         primaryKey: "pathID",
         content: [
             {
@@ -177,7 +177,7 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
             },
         ],
     },
-    "/api/NpcDialog": {
+    "/api/Dialog": {
         primaryKey: "dialogID",
         content: [
             {
@@ -197,7 +197,7 @@ export const EndpointHeaderMap: Record<string, EndpointHeader> = {
             },
         ],
     },
-    "/api/NpcDialogResponses": {
+    "/api/DialogResponse": {
         primaryKey: "dialogResponseID",
         content: [
             {

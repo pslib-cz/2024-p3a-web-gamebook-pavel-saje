@@ -330,5 +330,36 @@ namespace GameBook.Server.Controllers
 
             return Ok(viewLocationPaths);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<DataLocation>> PostLocation(InputLocation inputLocation)
+        {
+            var location = new DataLocation
+            {
+                Name = inputLocation.Name,
+                BackgroundImagePath = inputLocation.ImagePath,
+                RadiationGain = inputLocation.RadiationGain
+            };
+
+            _context.Locations.Add(location);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetLocations), new { id = location.LocationID }, location);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteLocation(int id)
+        {
+            var location = await _context.Locations.FindAsync(id);
+            if (location == null)
+            {
+                return NotFound();
+            }
+
+            _context.Locations.Remove(location);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }
