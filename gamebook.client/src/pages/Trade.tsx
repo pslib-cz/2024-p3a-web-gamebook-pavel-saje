@@ -5,10 +5,12 @@ import { Shops } from "../types";
 import { GameContext } from "../context/GameContext";
 import styles from "../styles/trade.module.css";
 import Loading from "../components/Loading";
+import LandscapeWarning from "../components/LandscapeWarning";
+import { useOrientation } from "../hooks/useOrientation";
 
 const TradePage = () => {
+  const isLandscape = useOrientation();
   const { id } = useParams();
-
   const [shop, setShop] = useState<Shops | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -19,6 +21,11 @@ const TradePage = () => {
   const { inventory, setInventory, money, setMoney, lastLocation, InteractiblesRemovedFromLocation } = gameContext;
 
   useEffect(() => {
+    if (!isLandscape) {
+      setLoading(false);
+      return;
+    }
+
     const FetchData = async () => {
       try {
         const response = await fetch(
@@ -34,7 +41,7 @@ const TradePage = () => {
       }
     };
     FetchData();
-  }, [id]);
+  }, [id, isLandscape]);
 
   const isInInvent = (itemID: number) => {
     return inventory.some((item) => item.itemID === itemID);
@@ -59,10 +66,13 @@ const TradePage = () => {
     return null;
   };
 
+  if (!isLandscape) {
+    return <LandscapeWarning />;
+  }
+
   if (loading) {
     return <Loading />;
   }
-
 
   return (
     <div className={styles.tradePage}>

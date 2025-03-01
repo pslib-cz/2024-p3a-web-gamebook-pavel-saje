@@ -8,10 +8,10 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataLocationContentController : ControllerBase
+    public class LocationContentController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataLocationContentController(AppDbContext context)
+        public LocationContentController(AppDbContext context)
         {
             _context = context;
         }
@@ -84,29 +84,25 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataLocationContent> Post(DataLocationContent content)
+        public async Task<ActionResult<ViewLocationContent>> Post(InputLocationContent input)
         {
+            var content = new DataLocationContent
+            {
+                LocationID = input.LocationID,
+                InteractibleID = input.InteractibleID,
+                XPos = input.XPos,
+                YPos = input.YPos,
+                size = input.size
+            };
+
             _context.LocationContents.Add(content);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
             return CreatedAtAction("Get", new { id = content.LocationContentID }, content);
         }
 
-        [HttpPut("{id}")]
-        public ActionResult<DataLocationContent> Put(int id, DataLocationContent content)
-        {
-            if (id != content.LocationContentID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(content).State = EntityState.Modified;
-            _context.SaveChanges();
-
-            return NoContent();
-        }
-
         [HttpDelete("{id}")]
-        public ActionResult<DataLocationContent> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var content = _context.LocationContents.Find(id);
             if (content == null)
@@ -115,7 +111,7 @@ namespace GameBook.Server.Controllers
             }
 
             _context.LocationContents.Remove(content);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

@@ -1,13 +1,15 @@
 import { useParams } from "react-router-dom";
 import Circle from "../components/Circle";
-import "../styles/fight.css";
+import LandscapeWarning from "../components/LandscapeWarning";
 import { useContext, useEffect, useState } from "react";
 import { domain } from "../utils";
 import { NpcContent } from "../types/data";
 import styles from "../styles/fight.module.css";
 import { GameContext } from "../context/GameContext";
+import { useOrientation } from "../hooks/useOrientation";
 
 const Fight = () => {
+    const isLandscape = useOrientation();
     const { id } = useParams();
     const gameContext = useContext(GameContext);
     if (!gameContext) {
@@ -16,6 +18,8 @@ const Fight = () => {
     const [data, setData] = useState<NpcContent>();
 
     useEffect(() => {
+        if (!isLandscape) return;
+
         const fetchData = async () => {
             try {
                 const response = await fetch(
@@ -31,7 +35,11 @@ const Fight = () => {
             }
         };
         fetchData();
-    }, [id]);
+    }, [id, isLandscape]);
+
+    if (!isLandscape) {
+        return <LandscapeWarning />;
+    }
 
     return (
         <div className={styles.fight}>

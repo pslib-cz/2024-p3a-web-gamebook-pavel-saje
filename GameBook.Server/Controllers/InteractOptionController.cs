@@ -7,10 +7,10 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataInteractOptionController : ControllerBase
+    public class InteractOptionController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataInteractOptionController(AppDbContext context)
+        public InteractOptionController(AppDbContext context)
         {
             _context = context;
         }
@@ -37,38 +37,31 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataInteractOption> Post(DataInteractOption option)
+        public async Task<ActionResult<ViewInteractOption>> PostOption(InputInteractOption input)
         {
-            _context.InteractOptions.Add(option);
-            _context.SaveChanges();
-            return CreatedAtAction("Get", new { id = option.OptionID }, option);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<DataInteractOption> Put(int id, DataInteractOption option)
-        {
-            if (id != option.OptionID)
+            var option = new DataInteractOption
             {
-                return BadRequest();
-            }
+                OptionText = input.OptionText,
+                
+            };
 
-            _context.Entry(option).State = EntityState.Modified;
-            _context.SaveChanges();
+            _context.InteractOptions.Add(option);
+            await _context.SaveChangesAsync();
 
-            return NoContent();
+            return CreatedAtAction(nameof(Get), new { id = option.OptionID }, option);
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<DataInteractOption> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var option = _context.InteractiblesOptions.Find(id);
+            var option = _context.InteractOptions.Find(id);
             if (option == null)
             {
                 return NotFound();
             }
 
-            _context.InteractiblesOptions.Remove(option);
-            _context.SaveChanges();
+            _context.InteractOptions.Remove(option);
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

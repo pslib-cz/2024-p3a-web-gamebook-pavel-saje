@@ -7,10 +7,10 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataRequiredItemsController : ControllerBase
+    public class RequiredItemsController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataRequiredItemsController(AppDbContext context)
+        public RequiredItemsController(AppDbContext context)
         {
             _context = context;
         }
@@ -38,29 +38,22 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataRequiredItems> Post(DataRequiredItems requiredItem)
+        public async Task<ActionResult<ViewRequiredItems>> Post(InputRequiredItem requiredItem)
         {
-            _context.RequiredItems.Add(requiredItem);
-            _context.SaveChanges();
-            return CreatedAtAction("Get", new { id = requiredItem.RequiredItemsID }, requiredItem);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<DataRequiredItems> Put(int id, DataRequiredItems requiredItem)
-        {
-            if (id != requiredItem.RequiredItemsID)
+            var dataRequiredItem = new DataRequiredItems
             {
-                return BadRequest();
-            }
+                LocationID = requiredItem.LocationID,
+                ItemID = requiredItem.ItemID
+            };
 
-            _context.Entry(requiredItem).State = EntityState.Modified;
-            _context.SaveChanges();
+            _context.RequiredItems.Add(dataRequiredItem);
+            await _context.SaveChangesAsync();
 
-            return NoContent();
+            return CreatedAtAction(nameof(Get), new { id = dataRequiredItem.RequiredItemsID }, requiredItem);
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<DataRequiredItems> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var requiredItem = _context.RequiredItems.Find(id);
             if (requiredItem == null)
@@ -69,7 +62,7 @@ namespace GameBook.Server.Controllers
             }
 
             _context.RequiredItems.Remove(requiredItem);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

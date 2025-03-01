@@ -38,12 +38,12 @@ const NetopyriVarle: React.FC = () => {
         const json = await response.json();
         const requiredItemIds =
           json?.requiredItems.map((item: RequiredItems) => item.itemID) || [];
-
-        const inventoryItemIds = inventory.map((item) => item.itemID);
-        const allItemsPresent = requiredItemIds.every((itemId: number) =>
+          
+          const inventoryItemIds = inventory.map((item) => item.itemID);
+          const allItemsPresent = requiredItemIds.every((itemId: number) =>
           inventoryItemIds.includes(itemId)
         );
-
+        
         if (!allItemsPresent) {
           navigate(`/Game/${lastLocation.locationID}`);
           alert("némáš potřebné věci pro lokaci");
@@ -54,15 +54,15 @@ const NetopyriVarle: React.FC = () => {
         } else {
           setTargetLocation(json);
           setLastLocation(json);
-
+          
           if (json?.travelCost) {
             setEnergy((prevEnergy: number) => prevEnergy - json.travelCost);
           }
         }
         if (targetLocation) {
           const totalRadiationGain =
-            targetLocation.radiationGain +
-            inventory.reduce((acc, item) => acc + item.radiationGain, 0);
+          targetLocation.radiationGain +
+          inventory.reduce((acc, item) => acc + item.radiationGain, 0);
           setRadiation(totalRadiationGain);
         }
       } catch (error) {
@@ -78,7 +78,7 @@ const NetopyriVarle: React.FC = () => {
     };
     fetchData();
   }, [id]);
-
+  
   if (!gameContext) {
     return <div>Error: Game context is not available.</div>;
   }

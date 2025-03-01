@@ -73,7 +73,38 @@ namespace GameBook.Server.Controllers
 
                 return Ok(NpcContent);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<ViewNpc>> Post(InputNpc input)
+        {
+            var npc = new DataNpc
+            {
+                Name = input.Name,
+                Health = input.Health,
+                WeaponID = input.WeaponID
+            };
+
+            _context.Npcs.Add(npc);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(Get), new { id = npc.NpcID }, npc);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var npc = _context.Npcs.Find(id);
+            if (npc == null)
+            {
+                return NotFound();
+            }
+
+            _context.Npcs.Remove(npc);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+    }
 
     public class NPCnContent
     {

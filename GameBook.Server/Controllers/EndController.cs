@@ -32,5 +32,36 @@ namespace GameBook.Server.Controllers
                 DialogID = end.DialogID
             });
         }
+
+        [HttpPost]
+        public async Task<ActionResult<ViewEnd>> Post(InputEnd inputEnd)
+        {
+            var end = new DataEnd
+            {
+                LocationID = inputEnd.LocationID,
+                DialogID = inputEnd.DialogID
+            };
+
+            _context.Ends.Add(end);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(Get), new { id = end.EndID }, inputEnd);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ViewEnd>> Delete(int id)
+        {
+            var end = await _context.Ends.FindAsync(id);
+
+            if (end == null)
+            {
+                return NotFound();
+            }
+
+            _context.Ends.Remove(end);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

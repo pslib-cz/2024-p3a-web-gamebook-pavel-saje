@@ -7,10 +7,10 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataLocationPathController : ControllerBase
+    public class LocationPathController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataLocationPathController(AppDbContext context)
+        public LocationPathController(AppDbContext context)
         {
             _context = context;
         }
@@ -38,29 +38,23 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataLocationPath> Post(DataLocationPath path)
+        public async Task<ActionResult<DataLocationPath>> Post(InputLocationPath input)
         {
-            _context.LocationPaths.Add(path);
-            _context.SaveChanges();
-            return CreatedAtAction("Get", new { id = path.PathID }, path);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<DataLocationPath> Put(int id, DataLocationPath path)
-        {
-            if (id != path.PathID)
+            var path = new DataLocationPath
             {
-                return BadRequest();
-            }
+                FirstNodeID = input.FirstNodeID,
+                SecondNodeID = input.SecondNodeID,
+                EnergyTravelCost = input.EnergyTravelCost
+            };
 
-            _context.Entry(path).State = EntityState.Modified;
-            _context.SaveChanges();
+            _context.LocationPaths.Add(path);
+            await _context.SaveChangesAsync();
 
-            return NoContent();
+            return CreatedAtAction(nameof(Get), new { id = path.PathID }, path);
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<DataLocationPath> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var path = _context.LocationPaths.Find(id);
             if (path == null)
@@ -69,7 +63,7 @@ namespace GameBook.Server.Controllers
             }
 
             _context.LocationPaths.Remove(path);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

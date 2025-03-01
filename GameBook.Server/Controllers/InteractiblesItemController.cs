@@ -7,10 +7,10 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataInteractiblesItemController : ControllerBase
+    public class InteractiblesItemController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataInteractiblesItemController(AppDbContext context)
+        public InteractiblesItemController(AppDbContext context)
         {
             _context = context;
         }
@@ -63,29 +63,23 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataInteractiblesItem> Post(DataInteractiblesItem item)
+        public async Task<ActionResult<ViewInteractiblesItem>> PostInteractiblesItem(InputInteractiblesItem input)
         {
+            var item = new DataInteractiblesItem
+            {
+                InteractibleID = input.InteractibleId,
+                ItemId = input.ItemId
+            };
+
             _context.InteractiblesItems.Add(item);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
             return CreatedAtAction("Get", new { id = item.InteractiblesItemID }, item);
         }
 
-        [HttpPut("{id}")]
-        public ActionResult<DataInteractiblesItem> Put(int id, DataInteractiblesItem item)
-        {
-            if (id != item.InteractiblesItemID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(item).State = EntityState.Modified;
-            _context.SaveChanges();
-
-            return NoContent();
-        }
 
         [HttpDelete("{id}")]
-        public ActionResult<DataInteractiblesItem> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var item = _context.InteractiblesItems.Find(id);
             if (item == null)
@@ -94,7 +88,7 @@ namespace GameBook.Server.Controllers
             }
 
             _context.InteractiblesItems.Remove(item);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

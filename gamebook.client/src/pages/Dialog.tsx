@@ -14,16 +14,6 @@ const DialogPage = () => {
 
   const gameContext = useContext(GameContext);
 
-<<<<<<< HEAD
-=======
-  if (!gameContext) {
-    return <div>Erro: GameContext</div>;
-  }
-
-  const { lastLocation, radiation, hp } = gameContext;
-
-
->>>>>>> 91aed314dbebe6fe8d08c3ddc7bb46ed7bed8fe9
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -55,11 +45,6 @@ const DialogPage = () => {
           height: "100vh",
         }}
       >
-        {/* <img
-          className={styles.interactible}
-          src={`${domain}${dialog?.interactible.imagePath}`}
-          alt={dialog?.interactible.name}
-        /> */}
         {dialog?.interactible.imagePath &&
           <img
             style={{ width: "100%", height: "100vh" }}
@@ -74,7 +59,7 @@ const DialogPage = () => {
             <StaggerText
               staggerType="letter"
               staggerEasing="ease"
-              staggerDuration={0.000001}
+              staggerDuration={0.01}
               startDelay={0.004}
             >
               {dialog.text}

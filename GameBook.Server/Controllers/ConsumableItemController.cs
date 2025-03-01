@@ -85,36 +85,36 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataConsumableItem> Post(DataConsumableItem consumableItem)
+        public ActionResult<ViewConsumableItem> Post(InputConsumableItem inputConsumableItem)
         {
-            _context.ConsumableItems.Add(consumableItem);
-            _context.SaveChanges();
-            return CreatedAtAction("Get", new { id = consumableItem.ConsumableItemID }, consumableItem);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<DataConsumableItem> Put(int id, DataConsumableItem consumableItem)
-        {
-            if (id != consumableItem.ConsumableItemID)
+            var dataConsumableItem = new DataConsumableItem
             {
-                return BadRequest();
-            }
-            _context.Entry(consumableItem).State = EntityState.Modified;
+                ItemID = inputConsumableItem.ItemID,
+                HealthValue = inputConsumableItem.HealthValue,
+                EnergyValue = inputConsumableItem.EnergyValue,
+                RadiationValue = inputConsumableItem.RadiationValue
+            };
+
+            _context.ConsumableItems.Add(dataConsumableItem);
             _context.SaveChanges();
-            return NoContent();
+
+            return CreatedAtAction("Get", new { id = dataConsumableItem.ConsumableItemID }, inputConsumableItem);
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<DataConsumableItem> Delete(int id)
+        public ActionResult Delete(int id)
         {
             var consumableItem = _context.ConsumableItems.Find(id);
+
             if (consumableItem == null)
             {
                 return NotFound();
             }
+
             _context.ConsumableItems.Remove(consumableItem);
             _context.SaveChanges();
-            return NoContent();
+
+            return Ok();
         }
     }
 }

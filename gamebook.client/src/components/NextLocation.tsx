@@ -72,7 +72,6 @@ const NextLocation: React.FC<NextLocationProps> = ({ locationId }) => {
   return (
     <>
       {loading && <Loading />}
-      {/* {error && <p>{error.message}</p>} */}
       <main className={styles.main}>
         <h4 className={styles.h4}>Přejít do lokace</h4>
         <ul className={styles.ul}>

@@ -5,7 +5,6 @@ import Game from "./pages/Game";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Fight from "./pages/Fight";
-import Ending from "./pages/End";
 import Dialog from "./pages/Dialog";
 import TradePage from "./pages/Trade";
 
@@ -38,16 +37,7 @@ const router = createBrowserRouter([
             }
         ]
     },
-    {
-        path: "/Ending",
-        element: <Ending/>,
-        children: [
-            {
-                path: "/Ending:id",
-                element: <Ending />
-            }
-        ]
-    },
+    
     {
         path: "/Dialog",
         element: <Dialog/>,

@@ -7,10 +7,10 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataDialogResponseController : ControllerBase
+    public class DialogResponseController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataDialogResponseController(AppDbContext context)
+        public DialogResponseController(AppDbContext context)
         {
             _context = context;
         }
@@ -38,29 +38,31 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataDialogResponse> Post(DataDialogResponse response)
+        public async Task<ActionResult<ViewDialogResponse>> PostResponse(InputDialogResponse inputResponse)
         {
-            _context.DialogResponses.Add(response);
-            _context.SaveChanges();
-            return CreatedAtAction("Get", new { id = response.DialogResponseID }, response);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<DataDialogResponse> Put(int id, DataDialogResponse response)
-        {
-            if (id != response.DialogResponseID)
+            var dialog = await _context.Dialogs.FindAsync(inputResponse.DialogID);
+            if (dialog == null)
             {
-                return BadRequest();
+                return BadRequest("Invalid DialogID.");
             }
 
-            _context.Entry(response).State = EntityState.Modified;
-            _context.SaveChanges();
+            var dataResponse = new DataDialogResponse
+            {
+                DialogID = inputResponse.DialogID,
+                NextDialogID = inputResponse.NextDialogID,
+                ResponseText = inputResponse.ResponseText,
+                RelationshipEffect = inputResponse.RelationshipEffect,
+                Dialog = dialog
+            };
 
-            return NoContent();
+            _context.DialogResponses.Add(dataResponse);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("Get", new { id = dataResponse.DialogResponseID }, inputResponse);
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<DataDialogResponse> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var response = _context.DialogResponses.Find(id);
             if (response == null)
@@ -69,7 +71,7 @@ namespace GameBook.Server.Controllers
             }
 
             _context.DialogResponses.Remove(response);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

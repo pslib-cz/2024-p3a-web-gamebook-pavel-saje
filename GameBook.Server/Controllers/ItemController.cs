@@ -130,11 +130,45 @@ namespace GameBook.Server.Controllers
 
             return Ok(itemTypes);
         }
-    }
 
-    internal class itemTypes
-    {
-        public List<ViewWeapon> Weapons { get; set; }
-        public List<ViewConsumableItem> Consumables { get; set; }
+        [HttpPost]
+        public async Task<ActionResult<ViewItem>> PostItem(InputItem inputItem)
+        {
+            var dataItem = new DataItem
+            {
+                Name = inputItem.Name,
+                TradeValue = inputItem.TradeValue,
+                Stackable = inputItem.Stackable,
+                RadiationGain = inputItem.RadiationGain,
+                CategoryId = inputItem.CategoryId
+            };
+
+            _context.Items.Add(dataItem);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetItems", new { id = dataItem.ItemID }, inputItem);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteItem(int id)
+        {
+            var item = await _context.Items.FindAsync(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.Items.Remove(item);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+
+        internal class itemTypes
+        {
+            public List<ViewWeapon> Weapons { get; set; }
+            public List<ViewConsumableItem> Consumables { get; set; }
+        }
     }
 }

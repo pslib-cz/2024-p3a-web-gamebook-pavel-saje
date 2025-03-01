@@ -6,13 +6,22 @@ import { GameContext } from '../context/GameContext';
 
 import styles from '../styles/home.module.css';
 
+import LandscapeWarning from "../components/LandscapeWarning";
+import { useOrientation } from "../hooks/useOrientation";
+
 const Home = () => {
+    const isLandscape = useOrientation();
     const gameContext = useContext(GameContext);
     if (!gameContext) {
         return <div>Error: Game context is not available.</div>;
     }
 
     const {resetAll, defaultLastLocation, lastLocation}  = gameContext;
+
+    if (!isLandscape) {
+        return <LandscapeWarning />;
+    }
+
     return (
         <>
             <h1 className={styles.TITLE}>Stíny popela</h1>

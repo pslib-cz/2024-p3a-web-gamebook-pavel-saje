@@ -85,29 +85,22 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataInteractiblesOption> Post(DataInteractiblesOption option)
+        public async Task<ActionResult<ViewInteractiblesOption>> PostInteractiblesOption(InputInteractiblesOption inputInteractiblesOption)
         {
+            var option = new DataInteractiblesOption
+            {
+                InteractibleID = inputInteractiblesOption.InteractibleID,
+                OptionID = inputInteractiblesOption.OptionID
+            };
+
             _context.InteractiblesOptions.Add(option);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
             return CreatedAtAction("Get", new { id = option.InteractiblesOptionID }, option);
         }
 
-        [HttpPut("{id}")]
-        public ActionResult<DataInteractiblesOption> Put(int id, DataInteractiblesOption option)
-        {
-            if (id != option.InteractiblesOptionID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(option).State = EntityState.Modified;
-            _context.SaveChanges();
-
-            return NoContent();
-        }
-
         [HttpDelete("{id}")]
-        public ActionResult<DataInteractiblesOption> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var option = _context.InteractiblesOptions.Find(id);
             if (option == null)
@@ -116,7 +109,7 @@ namespace GameBook.Server.Controllers
             }
 
             _context.InteractiblesOptions.Remove(option);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

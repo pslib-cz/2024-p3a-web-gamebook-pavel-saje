@@ -7,10 +7,10 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataInteractibleController : ControllerBase
+    public class InteractibleController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataInteractibleController(AppDbContext context)
+        public InteractibleController(AppDbContext context)
         {
             _context = context;
         }
@@ -25,8 +25,6 @@ namespace GameBook.Server.Controllers
         public ActionResult<DataInteractible> Get(int id)
         {
             var interactible = _context.Interactibles
-                .Include(i => i.InteractOptions)
-                .Include(i => i.LocationContents)
                 .FirstOrDefault(i => i.InteractibleID == id);
 
             if (interactible == null)
@@ -38,29 +36,22 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataInteractible> Post(DataInteractible interactible)
+        public async Task<ActionResult<ViewInteractible>> PostInteractible(InputInteractible input)
         {
-            _context.Interactibles.Add(interactible);
-            _context.SaveChanges();
-            return CreatedAtAction("Get", new { id = interactible.InteractibleID }, interactible);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<DataInteractible> Put(int id, DataInteractible interactible)
-        {
-            if (id != interactible.InteractibleID)
+            var interactible = new DataInteractible
             {
-                return BadRequest();
-            }
+                Name = input.Name,
+                ImagePath = input.ImagePath
+            };
 
-            _context.Entry(interactible).State = EntityState.Modified;
-            _context.SaveChanges();
+            _context.Interactibles.Add(interactible);
+            await _context.SaveChangesAsync();
 
-            return NoContent();
+            return CreatedAtAction(nameof(Get), new { id = interactible.InteractibleID }, interactible);
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<DataInteractible> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var interactible = _context.Interactibles.Find(id);
             if (interactible == null)
@@ -69,7 +60,7 @@ namespace GameBook.Server.Controllers
             }
 
             _context.Interactibles.Remove(interactible);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

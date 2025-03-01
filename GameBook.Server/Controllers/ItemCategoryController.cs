@@ -7,10 +7,10 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataItemCategoryController : ControllerBase
+    public class ItemCategoryController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataItemCategoryController(AppDbContext context)
+        public ItemCategoryController(AppDbContext context)
         {
             _context = context;
         }
@@ -37,29 +37,22 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataItemCategory> Post(DataItemCategory category)
+        public async Task<ActionResult<ViewItemCategory>> PostCategory(InputItemCategory category)
         {
-            _context.ItemCategories.Add(category);
-            _context.SaveChanges();
-            return CreatedAtAction("Get", new { id = category.CategoryID }, category);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<DataItemCategory> Put(int id, DataItemCategory category)
-        {
-            if (id != category.CategoryID)
+            var dataCategory = new DataItemCategory
             {
-                return BadRequest();
-            }
+                Name = category.Name
+            };
 
-            _context.Entry(category).State = EntityState.Modified;
-            _context.SaveChanges();
+            _context.ItemCategories.Add(dataCategory);
+            await _context.SaveChangesAsync();
 
-            return NoContent();
+            return CreatedAtAction(nameof(Get), new { id = dataCategory.CategoryID }, dataCategory);
+
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<DataItemCategory> Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var category = _context.ItemCategories.Find(id);
             if (category == null)
@@ -68,7 +61,7 @@ namespace GameBook.Server.Controllers
             }
 
             _context.ItemCategories.Remove(category);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

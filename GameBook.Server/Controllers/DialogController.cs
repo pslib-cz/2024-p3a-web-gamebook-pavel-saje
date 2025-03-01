@@ -7,10 +7,10 @@ namespace GameBook.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DataDialogController : ControllerBase
+    public class DialogController : ControllerBase
     {
         private readonly AppDbContext _context;
-        public DataDialogController(AppDbContext context)
+        public DialogController(AppDbContext context)
         {
             _context = context;
         }
@@ -91,38 +91,33 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<DataDialog> Post(DataDialog dialog)
+        public async Task<ActionResult<ViewDialog>> PostDialog(InputDialog inputDialog)
         {
-            _context.Dialogs.Add(dialog);
-            _context.SaveChanges();
-            return CreatedAtAction("Get", new { id = dialog.DialogID }, dialog);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<DataDialog> Put(int id, DataDialog dialog)
-        {
-            if (id != dialog.DialogID)
+            var dataDialog = new DataDialog
             {
-                return BadRequest();
-            }
+                FromInteractibleID = inputDialog.FromInteractibleID,
+                IteractibleID = inputDialog.IteractibleID,
+                NextDialogID = inputDialog.NextDialogID,
+                Text = inputDialog.Text
+            };
 
-            _context.Entry(dialog).State = EntityState.Modified;
-            _context.SaveChanges();
+            _context.Dialogs.Add(dataDialog);
+            await _context.SaveChangesAsync();
 
-            return NoContent();
+            return CreatedAtAction("GetDialog", new { id = dataDialog.DialogID }, inputDialog);
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<DataDialog> Delete(int id)
+        public async Task<IActionResult> DeleteDialog(int id)
         {
-            var dialog = _context.Dialogs.Find(id);
-            if (dialog == null)
+            var dataDialog = _context.Dialogs.Find(id);
+            if (dataDialog == null)
             {
                 return NotFound();
             }
 
-            _context.Dialogs.Remove(dialog);
-            _context.SaveChanges();
+            _context.Dialogs.Remove(dataDialog);
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }

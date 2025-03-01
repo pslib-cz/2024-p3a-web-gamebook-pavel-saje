@@ -9,7 +9,5 @@ namespace GameBook.Server.Models
         public int InteractibleID { get; set; }
         public string Name { get; set; }
         public string ImagePath { get; set; }
-        public ICollection<DataInteractiblesOption>? InteractOptions { get; set; } = new List<DataInteractiblesOption>();
-        public ICollection<DataLocationContent> LocationContents { get; set; } = new List<DataLocationContent>();
     }
 }
