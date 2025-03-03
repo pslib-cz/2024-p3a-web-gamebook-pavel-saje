@@ -37,7 +37,7 @@ const DialogPage = () => {
   return (
     <>
       {loading && <Loading/>}
-      <div
+      <main className={styles.dialog}
         style={{
           backgroundImage: `url(${domain}/${encodeURIComponent(lastLocation?.backgroundImagePath)})`,
           backgroundSize: "cover",
@@ -53,6 +53,7 @@ const DialogPage = () => {
           />
         }
         <div className={styles.box}>
+          <span>
           <h2>{dialog?.interactible?.name}</h2>
           {/* TODO */}
           {typeof dialog?.text === "string" && (
@@ -69,20 +70,21 @@ const DialogPage = () => {
             <div className={styles.buttons}>
               {dialog?.dialogResponses &&
                 dialog.dialogResponses.map((response) => (
-                  <Link to={`/Dialog/${response.nextDialogID}`}>
+                  <Link className={styles.link} to={`/Dialog/${response.nextDialogID}`}>
                     {response.responseText}
                   </Link>
                 ))}
             </div>
             <div className={styles.buttons}>
               {dialog?.nextDialogID && (
-                <Link to={`/Dialog/${dialog.nextDialogID}`}>Další</Link>
+                <Link className={styles.link} to={`/Dialog/${dialog.nextDialogID}`}>Další</Link>
               )}
-              <Link to={lastLocation.end != null || radiation>=100 || hp<=0 ? "/" : `/Game/lastLocation.locationID`}>Ukončit</Link>
+              <Link className={styles.link} to={lastLocation.end != null || radiation>=100 || hp<=0 ? "/" : `/Game/lastLocation.locationID`}>Ukončit</Link>
             </div>
           </div>
+          </span>
         </div>
-      </div>
+      </main>
     </>
   );
 };

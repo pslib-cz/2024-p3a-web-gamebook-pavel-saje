@@ -9,8 +9,9 @@
 }
 
 body {
-    /* background-image: url("https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vZGNjNGRkNzktOTdmMy00MzQ1LTg2MzQtNGU3Yzg2YTEzNWNiLmpwZWc.webp"); */
+    background-image: url("https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vZGNjNGRkNzktOTdmMy00MzQ1LTg2MzQtNGU3Yzg2YTEzNWNiLmpwZWc.webp");
     background-repeat: no-repeat;
+    object-fit: cover;
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;

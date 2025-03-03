@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using GameBook.Server.Data;
 using PowerArgs;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authorization;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace GameBook.Server.Controllers
 {
@@ -22,8 +24,33 @@ namespace GameBook.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ViewBuy>>> GetBuys()
+        public async Task<ActionResult<IEnumerable<ViewBuy>>> GetBuys(
+            //[FromQuery] string access_token
+            )
         {
+            //if (string.IsNullOrEmpty(access_token))
+            //{
+            //    return Unauthorized("Token is missing.");
+            //}
+
+            //var handler = new JwtSecurityTokenHandler();
+            //var jsonToken = handler.ReadToken(access_token) as JwtSecurityToken;
+
+            //if (jsonToken == null)
+            //{
+            //    return Unauthorized("Invalid token.");
+            //}
+
+            //// Pokud chceš použít role nebo jiné údaje z tokenu, můžeš to zde zkontrolovat.
+            //var username = jsonToken.Claims.FirstOrDefault(c => c.Type == "unique_name")?.Value;
+
+            //// Autorizace dle získaného username nebo jiného údaje z tokenu
+            //if (username != "admin")
+            //{
+            //    return Unauthorized("Invalid user.");
+            //}
+
+            // Pokud je token validní, pokračuj ve zpracování
             var buys = await _context.Buy
                 .Include(b => b.Interactible)
                 .Include(b => b.Item)
@@ -57,6 +84,7 @@ namespace GameBook.Server.Controllers
 
             return Ok(buys);
         }
+
 
         [HttpPost]
         public async Task<ActionResult<ViewBuy>> PostBuy(InputBuy inputBuy)

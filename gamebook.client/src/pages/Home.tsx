@@ -30,7 +30,6 @@ const Home = () => {
 
                 <Link className={styles.link} to={`Game/${lastLocation.locationID}`}>Pokračovat</Link>
 
-                <Link className={styles.link} to="/Admin">Admin</Link>
                 </div>
 
 

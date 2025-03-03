@@ -8,21 +8,21 @@ const Stats: React.FC = () => {
   const navigate = useNavigate();
   const gameContext = useContext(GameContext);
 
+  useEffect(() => {
+    if (gameContext && (gameContext.radiation >= 100 || gameContext.hp <= 0)) {
+      navigate("../Dialog/30");
+    }
+  }, [gameContext, navigate]);
+
   if (!gameContext) {
     return <div>Error: Game context is not available.</div>;
   }
-
+  
   const { hp } = gameContext;
   const { energy } = gameContext;
   const { radiation } = gameContext;
   const { money } = gameContext;
-
-  useEffect(() => {
-    if(radiation >= 100 || hp <= 0){
-      navigate("../Dialog/30")
-    }
-  }, [radiation, hp])
-
+  
   return (
     <div className={styles.stats}>
       <p className={styles.hp}>♥️ {hp}</p>

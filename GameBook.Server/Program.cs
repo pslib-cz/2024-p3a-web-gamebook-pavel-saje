@@ -3,21 +3,35 @@ using GameBook.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using GameBook.Server.Controllers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var key = "your-32-character-long-secret-key";
+
+var keyBytes = Encoding.UTF8.GetBytes(key);
+
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(keyBytes)
+        };
+    });
+builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-/*builder.Services.AddAuthorization();
-builder.Services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme);
-builder.Services.AddIdentityCore<Admin>()
-    .AddEntityFrameworkStores<AppDbContext>();
-*/
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite("Data Source=database.db"));
 
@@ -33,9 +47,11 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseDefaultFiles();
 
-//Swagger
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -52,15 +68,5 @@ app.MapControllers();
 app.UseCors();
 
 app.MapFallbackToFile("index.html");
-
-
-//app.UseSpa(spa =>
-//{
-//    spa.Options.SourcePath = "gameBook.client"; // Zadejte spr?vnou cestu k adres??i klienta
-//    if (app.Environment.IsDevelopment())
-//    {
-//        spa.UseProxyToSpaDevelopmentServer("https://localhost:5173"); // Port v?vojov?ho serveru SPA
-//    }
-//});
 
 app.Run();

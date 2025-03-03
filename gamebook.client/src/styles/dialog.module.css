@@ -6,17 +6,31 @@
 }
 
 .box{
-    width: 100%;
+    /* width: 100%; */
     background-color: black;
     
-    position: absolute;
-    bottom: 0;
+    /* position: absolute;
+    bottom: 0; */
+}
+
+.dialog{
+    color: var(--green)
 }
 
 .buttons{
     display: flex;
     flex-direction: column;
     gap: .5rem;
+}
+
+.link{
+    color: var(--green);
+}
+
+.link:hover::before{
+    color: var(--green);
+    
+    content: ">";
 }
 
 .interacts{
