@@ -37,6 +37,12 @@ Jak se přibližujete k místu určení, dozvíte se od několika přeživších
 
 ## **Závěr - Cesta k pravdě:**
 
+#Screenshoty ze hry
+![image](https://github.com/user-attachments/assets/2e49bf34-001d-4b55-986b-a5fd701aa4d1)
+
+![image](https://github.com/user-attachments/assets/2bb7bc9a-8cf8-45df-b62d-fc27bc664b56)
+
+
 Po dlouhé a náročné cestě se dostáváte k místu, které by mělo odpovědět na všechny vaše otázky. Zda se jedná o místo, které nabízí skutečnou šanci pro obnovu, nebo zda je **Zelený horizont** pouze mýtem, který vás dovede do záhuby.
 
 - Pokud jste se rozhodli cestovat k horizontu, tak bossfight se strážemi, pokud vyhrajete dostanete se dovnitř, kde jste v hrozivých podmínkách využit pro otrockou práci.
