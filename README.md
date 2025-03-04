@@ -55,6 +55,7 @@ po dosažení 0 života nebo 100 u radiaci či energie, postava zemře a hra tí
 energie je potřeba k průchodu lokacemi, doplnit se dá itemy v inventáři
 životy se též doplní itemy v inventáři
 radiace se navyšuje podle radiace v lokaci v součtu s radiací itemů
+radiaci lze snížit plynovou maskou kterou stačí sebrat
 
 ## Boj
 v boji je třeba zasáhnout tlustší část kruhu, plná barva ubere nepříteli životy o dvojnásobné hodnoty síly zbraně
@@ -64,3 +65,10 @@ základní úder je 1
 
 ## cíl
 cílem je získat 3 předměty od letadla, poté je možné "doletět" k bráně a hru dohrát
+
+## Mapa
+svět je otevřený a kam se kdo rozhodne jít, tam může. K lokacím je však třeba se nejdříve přiblížit. Pro ryhlejší cestování na delších vzdálenostech je zde mapa kde stačí zvolit cílovou lokaci.
+
+## Trade systém
+u některých interactibles můžete věci nakupovat, prodávat nebo vyměňovat. Nachází se zde však i questy kde musí hráč něco udělat aby získal dannou věc.
+k této mechanice slouží peníze
