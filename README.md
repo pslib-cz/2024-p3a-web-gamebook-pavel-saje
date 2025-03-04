@@ -41,3 +41,34 @@ Po dlouhé a náročné cestě se dostáváte k místu, které by mělo odpověd
 
 - Pokud jste se rozhodli cestovat k horizontu, tak bossfight se strážemi, pokud vyhrajete dostanete se dovnitř, kde jste v hrozivých podmínkách využit pro otrockou práci.
 - Pokud jste se rozhodli k horizontu nejít, vydáte se jinou cestou, najdete cizí bunkr s jinou skupinou, skupina vás přijme a vezme k sobě. Zde vám ukážou pravdu o zeleném horizontu a jaké hrůzy by vás čekaly kdyby jste sem šli.
+
+
+## Screenshoty ze hry
+![image](https://github.com/user-attachments/assets/2e49bf34-001d-4b55-986b-a5fd701aa4d1)
+![image](https://github.com/user-attachments/assets/2c8a6d76-2f6d-4f55-bd91-3a0e5f649ead)
+
+![image](https://github.com/user-attachments/assets/2bb7bc9a-8cf8-45df-b62d-fc27bc664b56)
+
+## staty
+je nutné hlídat si životy, energii a radiaci
+po dosažení 0 života nebo 100 u radiaci či energie, postava zemře a hra tím končí.
+energie je potřeba k průchodu lokacemi, doplnit se dá itemy v inventáři
+životy se též doplní itemy v inventáři
+radiace se navyšuje podle radiace v lokaci v součtu s radiací itemů
+radiaci lze snížit plynovou maskou kterou stačí sebrat
+
+## Boj
+v boji je třeba zasáhnout tlustší část kruhu, plná barva ubere nepříteli životy o dvojnásobné hodnoty síly zbraně
+zbraně je třeba si "nasadit" v inventáři
+čím je zbraň silnější ti rychleji běhá šipka kolem kruhu
+základní úder je 1
+
+## cíl
+cílem je získat 3 předměty od letadla, poté je možné "doletět" k bráně a hru dohrát
+
+## Mapa
+svět je otevřený a kam se kdo rozhodne jít, tam může. K lokacím je však třeba se nejdříve přiblížit. Pro ryhlejší cestování na delších vzdálenostech je zde mapa kde stačí zvolit cílovou lokaci.
+
+## Trade systém
+u některých interactibles můžete věci nakupovat, prodávat nebo vyměňovat. Nachází se zde však i questy kde musí hráč něco udělat aby získal dannou věc.
+k této mechanice slouží peníze
