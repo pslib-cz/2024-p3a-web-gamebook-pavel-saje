@@ -23,20 +23,22 @@ const Home = () => {
     }
 
     return (
-        <>
-            <h1 className={styles.TITLE}>Stíny popela</h1>
-            <div className={styles.menubar}>
-                <Link className={styles.link} onClick={() => resetAll()} to={`Game/${defaultLastLocation.locationID}`}>Hrát si</Link>
+      <>
+        <h1 className={styles.TITLE}>Stíny popela</h1>
+        <div className={styles.menubar}>
+          <Link
+            className={styles.link}
+            onClick={() => resetAll()}
+            to={`Game/${defaultLastLocation.locationID}`}
+          >
+            Hrát si
+          </Link>
 
-                <Link className={styles.link} to={`Game/${lastLocation.locationID}`}>Pokračovat</Link>
-
-                </div>
-
-
-            <p className={styles.p} onClick={() => alert("YOU ARE KOKOT🐒🐒🐒AND NIGGA🐒🐒🐒")}>
-                Jsem kokot
-            </p>
-        </>
+          <Link className={styles.link} to={`Game/${lastLocation.locationID}`}>
+            Pokračovat
+          </Link>
+        </div>
+      </>
     );
 };
 export default Home;

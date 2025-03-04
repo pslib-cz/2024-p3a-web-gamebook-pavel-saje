@@ -53,14 +53,27 @@ namespace GameBook.Server.Controllers
             return Ok(dialogs);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<ViewDialog> Get(int id)
+        [HttpGet("{id}&{init}")]
+        public ActionResult<ViewDialog> Get(int id, bool init)
         {
-            var dialog = _context.Dialogs
-                .Include(d => d.DialogResponses)
-                .ThenInclude(dr => dr.NextDialog)
-                 .Include(d => d.Interactible)
-                .FirstOrDefault(d => d.DialogID == id);
+            DataDialog dialog;
+
+            if (init == true)
+            {
+                dialog = _context.Dialogs
+                    .Include(d => d.DialogResponses)
+                        .ThenInclude(dr => dr.NextDialog)
+                    .Include(d => d.Interactible)
+                    .FirstOrDefault(d => d.FromInteractibleID == id);
+            }
+            else
+            {
+                dialog = _context.Dialogs
+                    .Include(d => d.DialogResponses)
+                        .ThenInclude(dr => dr.NextDialog)
+                    .Include(d => d.Interactible)
+                    .FirstOrDefault(d => d.DialogID == id);
+            }
 
             if (dialog == null)
             {
@@ -74,10 +87,9 @@ namespace GameBook.Server.Controllers
                 Text = dialog.Text,
                 Interactible = new ViewInteractible
                 {
-                    InteractibleID = dialog.IteractibleID,
+                    InteractibleID = dialog.Interactible.InteractibleID,
                     Name = dialog.Interactible.Name,
                     ImagePath = dialog.Interactible.ImagePath,
-
                 },
                 DialogResponses = dialog.DialogResponses.Select(dr => new ViewDialogResponse
                 {

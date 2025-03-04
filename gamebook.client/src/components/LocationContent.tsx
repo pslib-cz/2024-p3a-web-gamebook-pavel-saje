@@ -84,111 +84,107 @@ const Content: React.FC<ContentProps> = ({ location }) => {
     };
 
     return (
-        <>
-            {loading && <Loading />}
-            {/* TODO když je to npc a je mrtvé tak místo toho udělat náhrobek */}
-            {location?.locationContents &&
-                location.locationContents
-                    .map((content, index) => {
-                        // const options = hoveredOptions?.filter(
-                        //   (option) => option.interactibleID === content.interactibleID
-                        // );
-                        const key =
-                            location?.locationID +
-                            "-" +
-                            index +
-                            "-" +
-                            content.interactibleID;
-                        return !InteractiblesRemovedFromLocation.find(
-                            (removed) => {
-                                return removed.locationContentID ===
-                                content.locationContentID;
-                            }
-                        ) ? (
-                            <>
-                                <span
-                                    key={key}
-                                    className={styles.interactible}
-                                    style={{
-                                        position: "absolute",
-                                        transform: "translate(-50%, 50%)",
-                                        bottom: `${content.yPos}%`,
-                                        left: `${content.xPos}%`,
-                                        // backgroundColor: "red",
-                                        width: `${content.size}%`,
-                                        aspectRatio: 1,
-                                    }}
-                                    onMouseEnter={() => {
-                                        if (!hoveredOptions) {
-                                            setShowClick(true);
-                                        }
-                                        if(iKey != key){
-                                            setHoveredContent(null);
-                                            setHoveredOptions(null);
-                                            setShowOptions(false);
-                                            setShowClick(true);
-                                        }
-                                        setHoveredContent(content);
-                                        setHoveredOptions(
-                                            getOptions(
-                                                content.interactibleID
-                                            ) || []
-                                        );
-                                    }}
-                                    onMouseLeave={() => {
-                                        setShowClick(false);
-                                        if(!showOptions){
-                                            setHoveredContent(null);
-                                            setHoveredOptions(null);
-                                        }
-                                    }}
-                                    onClick={() => {
-                                        setIKey(key);
-                                        setShowOptions(!showOptions);
-                                        setShowClick(!showClick);
-                                    }}
-                                >
-                                    <img
-                                        style={{
-                                            width: `${100}%`,
-                                        }}
-                                        src={`${domain}/${encodeURIComponent(
-                                            content.interactible.imagePath
-                                        )}`}
-                                        alt={content.interactible.name}
-                                    />
-                                </span>
-                            </>
-                        ) : null;
-                    })
-                    .filter(Boolean)}
-            <ul
-                className={optionStyles.optioncontainer}
-                style={{
-                    position: "absolute",
-                    top: mousePosition.y + 16,
-                    left: mousePosition.x,
-                }}
-            >
-                {showClick && !showOptions && (
-                    <>
-                        <li>{hoveredContent?.interactible.name}</li>
-                        <li>click to interact</li>
-                    </>
-                )}
-                {showOptions && (
-                    <li onClick={() => setShowOptions(false)}>
-                        {hoveredContent &&
-                            hoveredOptions?.map((option) => (
-                                <Option
-                                    content={hoveredContent}
-                                    interactOption={option.option}
-                                />
-                            ))}
-                    </li>
-                )}
+      <>
+        {loading && <Loading />}
+        {/* TODO když je to npc a je mrtvé tak místo toho udělat náhrobek */}
+        {location?.locationContents &&
+          location.locationContents
+            .map((content, index) => {
+              // const options = hoveredOptions?.filter(
+              //   (option) => option.interactibleID === content.interactibleID
+              // );
+              const key =
+                location?.locationID +
+                "-" +
+                index +
+                "-" +
+                content.interactibleID;
+              return !InteractiblesRemovedFromLocation.find((removed) => {
+                return removed.locationContentID === content.locationContentID;
+              }) ? (
+                <>
+                  <span
+                    key={key}
+                    className={styles.interactible}
+                    style={{
+                      position: "absolute",
+                      transform: "translate(-50%, 50%)",
+                      bottom: `${content.yPos}%`,
+                      left: `${content.xPos}%`,
+                      // backgroundColor: "red",
+                      width: `${content.size}%`,
+                      aspectRatio: 1,
+                    }}
+                    onMouseEnter={() => {
+                      if (!hoveredOptions) {
+                        setShowClick(true);
+                      }
+                      if (iKey != key) {
+                        setHoveredContent(null);
+                        setHoveredOptions(null);
+                        setShowOptions(false);
+                        setShowClick(true);
+                      }
+                      setHoveredContent(content);
+                      setHoveredOptions(
+                        getOptions(content.interactibleID) || []
+                      );
+                    }}
+                    onMouseLeave={() => {
+                      setShowClick(false);
+                      if (!showOptions) {
+                        setHoveredContent(null);
+                        setHoveredOptions(null);
+                      }
+                    }}
+                    onClick={() => {
+                      setIKey(key);
+                      setShowOptions(!showOptions);
+                      setShowClick(!showClick);
+                    }}
+                  >
+                    <img
+                      style={{
+                        width: `${100}%`,
+                      }}
+                      src={`${domain}/${encodeURIComponent(
+                        content.interactible.imagePath
+                      )}`}
+                      alt={content.interactible.name}
+                    />
+                  </span>
+                </>
+              ) : null;
+            })
+            .filter(Boolean)}
+        <ol
+          className={optionStyles.optioncontainer}
+          style={{
+            top: mousePosition.y,
+            left: mousePosition.x -16,
+          }}
+        >
+          {showClick && !showOptions && (
+            <>
+              <ul>{hoveredContent?.interactible.name}</ul>
+              <li>click to interact</li>
+            </>
+          )}
+          {showOptions && (
+            <ul onClick={() => setShowOptions(false)}>
+              {hoveredContent &&
+                hoveredOptions?.map((option) => (
+                    <li>
+                  <Option
+                    content={hoveredContent}
+                    interactOption={option.option}
+                  />
+                  </li>
+                ))}
             </ul>
-        </>
+          )}
+        </ol>
+      </>
     );
 };
 export default Content;

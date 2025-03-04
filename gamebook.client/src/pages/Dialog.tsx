@@ -14,10 +14,13 @@ const DialogPage = () => {
 
   const gameContext = useContext(GameContext);
 
+  const processedId = id?.split("&")[0];
+  const init = id?.split("&")[1] ? id?.split("&")[1] : false
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${domain}/api/Dialog/${id}`);
+        const response = await fetch(`${domain}/api/Dialog/${processedId}&${init}`);
         const json = await response.json();
         setDialog(json);
       } catch (error) {
@@ -79,7 +82,7 @@ const DialogPage = () => {
               {dialog?.nextDialogID && (
                 <Link className={styles.link} to={`/Dialog/${dialog.nextDialogID}`}>Další</Link>
               )}
-              <Link className={styles.link} to={lastLocation.end != null || radiation>=100 || hp<=0 ? "/" : `/Game/lastLocation.locationID`}>Ukončit</Link>
+              <Link className={styles.link} to={lastLocation.end != null || radiation>=100 || hp<=0 ? "/" : `/Game/${lastLocation.locationID}`}>Ukončit</Link>
             </div>
           </div>
           </span>

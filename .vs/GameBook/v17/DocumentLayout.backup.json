@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "D:\\KOKOTSAJA\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\controllers\\dialogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\dialogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\controllers\\interactiblesitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\interactiblesitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\controllers\\buycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\buycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\controllers\\authtestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,14 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\models\\inputmodels\\inputinteractiblesitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\models\\inputmodels\\inputinteractiblesitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\controllers\\interactiblesitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\interactiblesitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|solutionrelative:gamebook.server\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5729EC9F-CC3B-41EB-B95E-802BE5A665F9}|GameBook.Server\\GameBook.Server.csproj|d:\\kokotsaja\\gamebook.server\\models\\inputmodels\\inputlocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -120,11 +124,24 @@
         },
         {
           "DockedWidth": 131,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "DialogController.cs",
+              "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\DialogController.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\DialogController.cs",
+              "ToolTip": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\DialogController.cs*",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\DialogController.cs*",
+              "ViewState": "AgIAACkAAAAAAAAAAAAQwEMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T17:48:12.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\AuthController.cs",
@@ -132,25 +149,23 @@
               "RelativeToolTip": "GameBook.Server\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAtwAgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T17:46:43.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BuyController.cs",
-              "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\BuyController.cs",
-              "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\BuyController.cs",
-              "ToolTip": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\BuyController.cs*",
-              "RelativeToolTip": "GameBook.Server\\Controllers\\BuyController.cs*",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAuwFQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T17:44:24.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-03T17:46:43.345Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "BuyController.cs",
+              "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\BuyController.cs",
+              "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\BuyController.cs",
+              "ToolTip": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\BuyController.cs",
+              "RelativeToolTip": "GameBook.Server\\Controllers\\BuyController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwDwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T17:44:24.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AuthTestController.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\AuthTestController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\AuthTestController.cs",
@@ -158,25 +173,23 @@
               "RelativeToolTip": "GameBook.Server\\Controllers\\AuthTestController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T17:41:30.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-03T17:41:30.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Program.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Program.cs",
               "ToolTip": "D:\\KOKOTSAJA\\GameBook.Server\\Program.cs",
               "RelativeToolTip": "GameBook.Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T17:38:13.509Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-03T17:38:13.509Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "InputLocationPath.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputLocationPath.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputLocationPath.cs",
@@ -184,12 +197,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputLocationPath.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T17:13:18.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T17:13:18.402Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "InputDialogResponse.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputDialogResponse.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputDialogResponse.cs",
@@ -197,12 +209,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputDialogResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T16:58:41.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T16:58:41.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "InputInteractiblesItem.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputInteractiblesItem.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputInteractiblesItem.cs",
@@ -210,25 +221,23 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputInteractiblesItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T16:52:49.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T16:52:49.523Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "InteractiblesItemController.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\InteractiblesItemController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\InteractiblesItemController.cs",
               "ToolTip": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\InteractiblesItemController.cs",
               "RelativeToolTip": "GameBook.Server\\Controllers\\InteractiblesItemController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T16:51:53.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T16:51:53.752Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "InputLocation.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputLocation.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputLocation.cs",
@@ -236,25 +245,24 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputLocation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T16:13:07.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T16:13:07.478Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "LocationController.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\LocationController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\LocationController.cs",
               "ToolTip": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\LocationController.cs",
               "RelativeToolTip": "GameBook.Server\\Controllers\\LocationController.cs",
-              "ViewState": "AgIAAEoBAAAAAAAAAAAuwGoBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAG4AAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-01T16:12:41.032Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "InputLocationContent.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputLocationContent.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputLocationContent.cs",
@@ -262,12 +270,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputLocationContent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T15:04:11.28Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T15:04:11.28Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "InteractibleController.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\InteractibleController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\InteractibleController.cs",
@@ -275,12 +282,11 @@
               "RelativeToolTip": "GameBook.Server\\Controllers\\InteractibleController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T14:47:05.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T14:47:05.017Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "InputItem.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputItem.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputItem.cs",
@@ -288,12 +294,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T14:37:26.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T14:37:26.633Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "InputInteractible.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputInteractible.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputInteractible.cs",
@@ -301,12 +306,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputInteractible.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T14:37:40.332Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T14:37:40.332Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "InputDialog.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputDialog.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputDialog.cs",
@@ -314,12 +318,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputDialog.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T14:37:31.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T14:37:31.932Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "InputTrades.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputTrades.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputTrades.cs",
@@ -327,12 +330,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputTrades.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:52:42.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:52:42.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "InputTrade.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputTrade.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputTrade.cs",
@@ -340,12 +342,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputTrade.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:51:22.415Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:51:22.415Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "DataTradesInteractible.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\DataModels\\DataTradesInteractible.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\DataModels\\DataTradesInteractible.cs",
@@ -353,12 +354,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\DataModels\\DataTradesInteractible.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:50:05.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:50:05.441Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "TradesController.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Controllers\\TradesController.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Controllers\\TradesController.cs",
@@ -366,12 +366,11 @@
               "RelativeToolTip": "GameBook.Server\\Controllers\\TradesController.cs",
               "ViewState": "AgIAAPYAAAAAAAAAAAAAwBcBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:49:24.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:49:24.61Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "InputTradeInteractible.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputTradeInteractible.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputTradeInteractible.cs",
@@ -379,12 +378,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputTradeInteractible.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:57:50.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:57:50.648Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "InputTradesInteractible.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\InputModels\\InputTradesInteractible.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\InputModels\\InputTradesInteractible.cs",
@@ -392,12 +390,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\InputModels\\InputTradesInteractible.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:59:31.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:59:31.229Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "DataTradeInteractible.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\DataModels\\DataTradeInteractible.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\DataModels\\DataTradeInteractible.cs",
@@ -405,12 +402,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\DataModels\\DataTradeInteractible.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:50:03.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:50:03.858Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "DataTrade.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\DataModels\\DataTrade.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\DataModels\\DataTrade.cs",
@@ -418,12 +414,11 @@
               "RelativeToolTip": "GameBook.Server\\Models\\DataModels\\DataTrade.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:50:03.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:50:03.174Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "DataTrades.cs",
               "DocumentMoniker": "D:\\KOKOTSAJA\\GameBook.Server\\Models\\DataModels\\DataTrades.cs",
               "RelativeDocumentMoniker": "GameBook.Server\\Models\\DataModels\\DataTrades.cs",
@@ -431,8 +426,7 @@
               "RelativeToolTip": "GameBook.Server\\Models\\DataModels\\DataTrades.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T11:50:04.702Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T11:50:04.702Z"
             }
           ]
         }

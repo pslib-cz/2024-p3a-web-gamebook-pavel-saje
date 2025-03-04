@@ -87,7 +87,7 @@ const Option: React.FC<OptionProps> = ({
               </p>
             );
           case 2:
-            return <p className={styles.option}>{interactOption.optionText}</p>;
+            return <Link to={`/Dialog/${content.interactible.interactibleID}&true`} className={styles.option}>{interactOption.optionText}</Link>;
           case 1:
             return (
               <Link className={styles.option}
