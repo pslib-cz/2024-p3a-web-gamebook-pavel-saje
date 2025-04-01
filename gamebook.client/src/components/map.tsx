@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FaMap, FaTimes } from "react-icons/fa";
 import styles from "../styles/menu.module.css";
 import { GameContext } from "../context/GameContext";
+import { domain } from "../utils";
 
 const MapWithGraph2D: React.FC = () => {
     const [data, setData] = useState<any[] | null>(null);
@@ -25,7 +26,7 @@ const MapWithGraph2D: React.FC = () => {
             setLoading(true);
             try {
                 const response = await fetch(
-                    "https://id-66.pslib.cloud//api/Locations/connections"
+                    `${domain}/api/Locations/connections`
                 );
                 const jsonData = await response.json();
                 console.log("Data (raw):", jsonData);

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styles from "../styles/nearBy.module.css";
 import { GameContext } from "../context/GameContext";
 import Loading from "./Loading";
+import { domain } from "../utils";
 
 interface NextLocationProps {
     locationId: number;
@@ -27,7 +28,7 @@ const NextLocation: React.FC<NextLocationProps> = ({ locationId }) => {
         const fetchData = async () => {
             try {
                 const response = await fetch(
-                    `https://id-66.pslib.cloud//api/Locations/${locationId}/connected`
+                    `${domain}/api/Locations/${locationId}/connected`
                 );
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
