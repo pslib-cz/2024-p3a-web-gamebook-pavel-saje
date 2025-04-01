@@ -118,7 +118,7 @@ const Inventory: React.FC = () => {
                                     onClick={() => {
                                         const updatedInventory =
                                             inventory.filter(
-                                                (invItem, invIndex) =>
+                                                (_invItem, invIndex) =>
                                                     invIndex !== index
                                             );
 

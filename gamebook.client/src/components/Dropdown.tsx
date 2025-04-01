@@ -3,7 +3,7 @@ import React from "react";
 
 interface DropdownProps {
     title: string;
-    children: React.ReactNode;
+    children: React.ReactElement<{ className?: string }> | React.ReactElement<{ className?: string }>[];
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ title, children }) => {

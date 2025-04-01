@@ -124,7 +124,15 @@ const [discoveredLocations, setDiscoveredLocations] = useState<number[]>(() => {
 });
 
 const defaultLastLocation: DataLocation = {
-  locationID: 3
+  locationID: 3,
+  name: '',
+  backgroundImagePath: '',
+  radiationGain: 0,
+  requiredItems: [],
+  locationContents: [],
+  endID: 0,
+  end: [],
+  travelCost: 0
 };
 const [lastLocation, setLastLocation] = useState<DataLocation>(() => {
   const savedLatLocation = localStorage.getItem('lastLocation');

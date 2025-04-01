@@ -11,7 +11,8 @@ interface NextLocationProps {
 
 const NextLocation: React.FC<NextLocationProps> = ({ locationId }) => {
   const [locations, setLocations] = useState<DataLocation[]>([]);
-  const [error, setError] = useState<Error | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
   const gameContext = useContext(GameContext);
