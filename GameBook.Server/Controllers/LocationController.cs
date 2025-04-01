@@ -331,7 +331,7 @@ namespace GameBook.Server.Controllers
             return Ok(viewLocationPaths);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<DataLocation>> PostLocation(InputLocation inputLocation)
         {
             var location = new DataLocation
@@ -347,7 +347,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction(nameof(GetLocations), new { id = location.LocationID }, location);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> DeleteLocation(int id)
         {
             var location = await _context.Locations.FindAsync(id);

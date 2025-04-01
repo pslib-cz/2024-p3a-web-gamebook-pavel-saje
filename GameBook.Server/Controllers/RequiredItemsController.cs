@@ -37,7 +37,7 @@ namespace GameBook.Server.Controllers
             return Ok(requiredItem);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewRequiredItems>> Post(InputRequiredItem requiredItem)
         {
             var dataRequiredItem = new DataRequiredItems
@@ -52,7 +52,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction(nameof(Get), new { id = dataRequiredItem.RequiredItemsID }, requiredItem);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var requiredItem = _context.RequiredItems.Find(id);

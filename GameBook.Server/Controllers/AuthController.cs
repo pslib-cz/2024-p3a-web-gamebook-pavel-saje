@@ -10,7 +10,7 @@ public class AuthController : ControllerBase
 {
     private readonly string key = "aTpqueLZr/AHwU0rDK0KTInroOaZszuwzGDShIaQW9U="; // Klíč pro šifrování JWT tokenu
 
-    [HttpPost("login")]
+    [NonAction][HttpPost("login")]
     public IActionResult Login([FromBody] LoginModel login)
     {
         // Simulovaná kontrola přihlašovacích údajů

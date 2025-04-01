@@ -37,7 +37,7 @@ namespace GameBook.Server.Controllers
             return Ok(path);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<DataLocationPath>> Post(InputLocationPath input)
         {
             var path = new DataLocationPath
@@ -53,7 +53,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction(nameof(Get), new { id = path.PathID }, path);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var path = _context.LocationPaths.Find(id);

@@ -1,1 +1,1 @@
-export const domain = "https://localhost:7092";
+export const domain = "https://id-66.pslib.cloud/";

@@ -33,7 +33,7 @@ namespace GameBook.Server.Controllers
             });
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewEnd>> Post(InputEnd inputEnd)
         {
             var end = new DataEnd
@@ -48,7 +48,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction(nameof(Get), new { id = end.EndID }, inputEnd);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<ActionResult<ViewEnd>> Delete(int id)
         {
             var end = await _context.Ends.FindAsync(id);

@@ -84,7 +84,7 @@ namespace GameBook.Server.Controllers
             );
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public ActionResult<ViewConsumableItem> Post(InputConsumableItem inputConsumableItem)
         {
             var dataConsumableItem = new DataConsumableItem
@@ -101,7 +101,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("Get", new { id = dataConsumableItem.ConsumableItemID }, inputConsumableItem);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
             var consumableItem = _context.ConsumableItems.Find(id);

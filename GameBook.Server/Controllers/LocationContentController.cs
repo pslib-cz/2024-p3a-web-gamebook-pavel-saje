@@ -83,7 +83,7 @@ namespace GameBook.Server.Controllers
             return Ok(content);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewLocationContent>> Post(InputLocationContent input)
         {
             var content = new DataLocationContent
@@ -101,7 +101,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("Get", new { id = content.LocationContentID }, content);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var content = _context.LocationContents.Find(id);

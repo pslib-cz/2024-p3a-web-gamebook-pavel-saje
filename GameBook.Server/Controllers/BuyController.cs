@@ -86,7 +86,7 @@ namespace GameBook.Server.Controllers
         }
 
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewBuy>> PostBuy(InputBuy inputBuy)
         {
             var dataBuy = new DataBuy
@@ -101,7 +101,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("GetBuys", new { id = dataBuy.BuyID }, inputBuy);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBuy(int id)
         {
             var dataBuy = await _context.Buy.FindAsync(id);

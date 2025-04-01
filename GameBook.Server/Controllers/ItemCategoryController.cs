@@ -36,7 +36,7 @@ namespace GameBook.Server.Controllers
             return Ok(category);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewItemCategory>> PostCategory(InputItemCategory category)
         {
             var dataCategory = new DataItemCategory
@@ -51,7 +51,7 @@ namespace GameBook.Server.Controllers
 
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var category = _context.ItemCategories.Find(id);

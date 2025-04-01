@@ -37,7 +37,7 @@ namespace GameBook.Server.Controllers
             return Ok(response);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewDialogResponse>> PostResponse(InputDialogResponse inputResponse)
         {
             var dialog = await _context.Dialogs.FindAsync(inputResponse.DialogID);
@@ -61,7 +61,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("Get", new { id = dataResponse.DialogResponseID }, inputResponse);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var response = _context.DialogResponses.Find(id);

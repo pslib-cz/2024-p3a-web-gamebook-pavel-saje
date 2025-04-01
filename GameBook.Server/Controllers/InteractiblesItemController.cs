@@ -62,7 +62,7 @@ namespace GameBook.Server.Controllers
             return Ok(item);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewInteractiblesItem>> PostInteractiblesItem(InputInteractiblesItem input)
         {
             var item = new DataInteractiblesItem
@@ -78,7 +78,7 @@ namespace GameBook.Server.Controllers
         }
 
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var item = _context.InteractiblesItems.Find(id);

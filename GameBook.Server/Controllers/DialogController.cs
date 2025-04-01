@@ -102,7 +102,7 @@ namespace GameBook.Server.Controllers
             });
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewDialog>> PostDialog(InputDialog inputDialog)
         {
             var dataDialog = new DataDialog
@@ -119,7 +119,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("GetDialog", new { id = dataDialog.DialogID }, inputDialog);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDialog(int id)
         {
             var dataDialog = _context.Dialogs.Find(id);

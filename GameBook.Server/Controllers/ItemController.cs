@@ -131,7 +131,7 @@ namespace GameBook.Server.Controllers
             return Ok(itemTypes);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewItem>> PostItem(InputItem inputItem)
         {
             var dataItem = new DataItem
@@ -149,7 +149,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("GetItems", new { id = dataItem.ItemID }, inputItem);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<ActionResult> DeleteItem(int id)
         {
             var item = await _context.Items.FindAsync(id);

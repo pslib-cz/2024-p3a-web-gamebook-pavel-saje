@@ -173,7 +173,7 @@ namespace GameBook.Server.Controllers
             return Ok(shops);
         }
 
-        [HttpPost("Trade")]
+        [NonAction][HttpPost("Trade")]
         public async Task<ActionResult<ViewTrade>> Post(InputTrade inputTrade)
         {
             var dataTrade = new DataTrade
@@ -186,7 +186,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("Get", new { id = dataTrade.TradeID }, inputTrade);
         }
 
-        [HttpPost("Trades")]
+        [NonAction][HttpPost("Trades")]
         public async Task<ActionResult<ViewTrades>> Post(InputTrades inputTrades)
         {
             var dataTrades = new DataTrades
@@ -199,7 +199,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("Get", new { id = dataTrades.TradesID }, inputTrades);
         }
 
-        [HttpPost("TradeInteractible")]
+        [NonAction][HttpPost("TradeInteractible")]
         public async Task<ActionResult<ViewTradeInteractible>> Post(InputTradeInteractible inputTradeInteractible)
         {
             var dataTradeInteractible = new DataTradeInteractible
@@ -214,7 +214,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("Get", new { id = dataTradeInteractible.TradeInteractibleID }, inputTradeInteractible);
         }
 
-        [HttpPost("TradesInteractible")]
+        [NonAction][HttpPost("TradesInteractible")]
         public async Task<ActionResult<ViewTradeInteractible>> Post(InputTradesInteractible inputTradesInteractibles)
         {
             var dataTradesInteractibles = new DataTradesInteractible
@@ -227,7 +227,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction("Get", new { id = dataTradesInteractibles.TradesInteractibleID }, inputTradesInteractibles);
         }
 
-        [HttpDelete("Trade/{id}")]
+        [NonAction][HttpDelete("Trade/{id}")]
         public async Task<ActionResult<ViewTrade>> DeleteTrade(int id)
         {
             var trade = await _context.Trade.FindAsync(id);
@@ -240,7 +240,7 @@ namespace GameBook.Server.Controllers
             return Ok();
         }
 
-        [HttpDelete("Trades/{id}")]
+        [NonAction][HttpDelete("Trades/{id}")]
         public async Task<ActionResult<ViewTrades>> DeleteTrades(int id)
         {
             var trades = await _context.Trades.FindAsync(id);
@@ -253,7 +253,7 @@ namespace GameBook.Server.Controllers
             return Ok();
         }
 
-        [HttpDelete("TradeInteractible/{id}")]
+        [NonAction][HttpDelete("TradeInteractible/{id}")]
         public async Task<ActionResult<ViewTradeInteractible>> DeleteTradeInteractible(int id)
         {
             var tradeInteractible = await _context.TradeInteractibles.FindAsync(id);
@@ -266,7 +266,7 @@ namespace GameBook.Server.Controllers
             return Ok();
         }
 
-        [HttpDelete("TradesInteractible/{id}")]
+        [NonAction][HttpDelete("TradesInteractible/{id}")]
         public async Task<ActionResult<ViewTradeInteractible>> DeleteTradesInteractible(int id)
         {
             var tradesInteractible = await _context.TradesInteractibles.FindAsync(id);

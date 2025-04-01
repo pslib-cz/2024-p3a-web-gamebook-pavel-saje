@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 public class AuthTestController : ControllerBase
 {
     [Authorize] // Tohle zajistí, že pouze ověřený uživatel může volat tuto metodu
-    [HttpPost("secure")]
+    [NonAction][HttpPost("secure")]
     public IActionResult SecurePost([FromBody] TestModel model)
     {
         return Ok(new { message = "Úspěšně ověřený požadavek!", data = model });

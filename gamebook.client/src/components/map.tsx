@@ -25,7 +25,7 @@ const MapWithGraph2D: React.FC = () => {
             setLoading(true);
             try {
                 const response = await fetch(
-                    "https://localhost:7092/api/Locations/connections"
+                    "https://id-66.pslib.cloud//api/Locations/connections"
                 );
                 const jsonData = await response.json();
                 console.log("Data (raw):", jsonData);

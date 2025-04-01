@@ -74,7 +74,7 @@ namespace GameBook.Server.Controllers
                 return Ok(NpcContent);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewNpc>> Post(InputNpc input)
         {
             var npc = new DataNpc
@@ -90,7 +90,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction(nameof(Get), new { id = npc.NpcID }, npc);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var npc = _context.Npcs.Find(id);

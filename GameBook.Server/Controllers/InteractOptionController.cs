@@ -36,7 +36,7 @@ namespace GameBook.Server.Controllers
             return Ok(option);
         }
 
-        [HttpPost]
+        [NonAction][HttpPost]
         public async Task<ActionResult<ViewInteractOption>> PostOption(InputInteractOption input)
         {
             var option = new DataInteractOption
@@ -51,7 +51,7 @@ namespace GameBook.Server.Controllers
             return CreatedAtAction(nameof(Get), new { id = option.OptionID }, option);
         }
 
-        [HttpDelete("{id}")]
+        [NonAction][HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var option = _context.InteractOptions.Find(id);
