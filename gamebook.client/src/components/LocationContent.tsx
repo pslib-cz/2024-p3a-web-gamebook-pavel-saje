@@ -147,8 +147,8 @@ const Content: React.FC<ContentProps> = ({ location }) => {
                       style={{
                         width: `${100}%`,
                       }}
-                      src={`${domain}/${encodeURIComponent(
-                        content.interactible.imagePath
+                      src={`${domain}/Uploads/${encodeURIComponent(
+                        content.interactible.imagePath.replace("\\", "/")
                       )}`}
                       alt={content.interactible.name}
                     />

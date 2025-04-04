@@ -13,14 +13,18 @@ namespace GameBook.Server.Controllers
         {
             if (path == null) return BadRequest("Empty file path");
 
-            path = "/Uploads/" + path.Replace("%5C", "/");
+            path = path.Replace("%5C", "/");
             
+            if (!path.StartsWith("Uploads/"))
+            {
+                path = "Uploads/" + path;
+            }
+
             var webRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
             var uploads = Path.Combine(webRootPath, "Uploads");
 
             var filePath = Path.Combine(uploads, path);
             var fullPath = Path.GetFullPath(filePath);
-            fullPath = fullPath.Replace("%5C", "/");
 
             if (!fullPath.StartsWith(Path.GetFullPath(uploads)))
             {

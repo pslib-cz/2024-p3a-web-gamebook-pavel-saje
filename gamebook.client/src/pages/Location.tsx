@@ -115,8 +115,8 @@ const NetopyriVarle: React.FC = () => {
         }}
         src={
           targetLocation
-            ? `${domain}/${encodeURIComponent(
-                targetLocation.backgroundImagePath
+            ? `${domain}/Uploads/${encodeURIComponent(
+                targetLocation.backgroundImagePath.replace("\\", "/")
               )}`
             : ""
         }
