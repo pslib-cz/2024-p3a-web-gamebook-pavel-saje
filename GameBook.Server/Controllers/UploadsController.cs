@@ -13,7 +13,7 @@ namespace GameBook.Server.Controllers
         {
             if (path == null) return BadRequest("Empty file path");
 
-            path = HttpUtility.UrlDecode(path).Replace('\\', '/');
+            path = path.Replace("%5C", "/");
             
             if (!path.StartsWith("Uploads/"))
             {
