@@ -115,7 +115,7 @@ const NetopyriVarle: React.FC = () => {
         }}
         src={
           targetLocation
-            ? `${domain}/Uploads/Locations/${targetLocation.backgroundImagePath.replace(/%5C/g, "/")}`
+            ? `${domain}/Uploads/${targetLocation.backgroundImagePath.replace(/%5C/g, "/")}`
             : ""
         }
         alt={targetLocation?.name}
