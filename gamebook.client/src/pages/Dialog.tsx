@@ -42,7 +42,7 @@ const DialogPage = () => {
       {loading && <Loading/>}
       <main className={styles.dialog}
         style={{
-          backgroundImage: `url(${domain}/${encodeURIComponent(lastLocation?.backgroundImagePath)})`,
+          backgroundImage: `url(${domain}/Uploads/${lastLocation?.backgroundImagePath.replace(/\\/g, "/")})`,
           backgroundSize: "cover",
           width: "100%",
           height: "100vh",
@@ -51,7 +51,7 @@ const DialogPage = () => {
         {dialog?.interactible?.imagePath &&
           <img
             style={{ width: "100%", height: "100vh" }}
-            src={`${domain}/${encodeURIComponent(dialog?.interactible.imagePath || '')}`}
+            src={`${domain}/Uploads/${dialog?.interactible.imagePath.replace(/\\/g, "/")}`}
             alt={dialog?.interactible.name}
           />
         }

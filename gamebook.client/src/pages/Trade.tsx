@@ -83,9 +83,7 @@ const TradePage = () => {
         {getInteractible(Number(id)) && (
           <img
             className={styles.interactible}
-            src={`${domain}/${encodeURIComponent(
-              getInteractible(Number(id))?.imagePath || ""
-            )}`}
+            src={`${domain}/Uploads/${getInteractible(Number(id))?.imagePath.replace(/\\/g, "/")}`}
             alt={getInteractible(Number(id))?.name}
           />
         )}
