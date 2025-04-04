@@ -13,12 +13,16 @@ namespace GameBook.Server.Controllers
         {
             if (path == null) return BadRequest("Empty file path");
 
+            Console.WriteLine($"Původní cesta: {path}");
+            
             path = path.Replace("%5C", "/");
+            Console.WriteLine($"Cesta po nahrazení %5C: {path}");
             
             if (!path.StartsWith("Uploads/"))
             {
                 path = "Uploads/" + path;
             }
+            Console.WriteLine($"Finální cesta: {path}");
 
             var webRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
             var uploads = Path.Combine(webRootPath, "Uploads");
