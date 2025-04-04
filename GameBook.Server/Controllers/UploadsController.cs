@@ -12,6 +12,9 @@ namespace GameBook.Server.Controllers
         {
             if (path == null) return BadRequest("Empty file path");
 
+            // Normalizace cesty - nahrazení zpětných lomítek za normální
+            path = path.Replace('\\', '/');
+
             var webRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
             var uploads = Path.Combine(webRootPath, "Uploads");
 
