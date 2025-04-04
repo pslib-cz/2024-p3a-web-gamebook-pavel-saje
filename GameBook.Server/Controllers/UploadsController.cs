@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.StaticFiles;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Web;
 
 namespace GameBook.Server.Controllers
 {
@@ -12,7 +13,7 @@ namespace GameBook.Server.Controllers
         {
             if (path == null) return BadRequest("Empty file path");
 
-            path = path.Replace('\\', '/');
+            path = HttpUtility.UrlDecode(path).Replace('\\', '/');
             
             if (!path.StartsWith("Uploads/"))
             {
