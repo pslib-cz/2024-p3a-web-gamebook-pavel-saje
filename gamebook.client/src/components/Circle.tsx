@@ -233,8 +233,9 @@ const Circle: React.FC<CircleProps> = ({ npc, content }) => {
                             1 - state.npcsHp / npc.health
                         }))`,
                     }}
-                    src={`${domain}/${encodeURIComponent(
-                        content.interactible.imagePath
+                    src={`${domain}/Uploads/${content.interactible.imagePath.replace(
+                        /\\/g,
+                        "/"
                     )}`}
                     alt={content.interactible.name}
                 />
